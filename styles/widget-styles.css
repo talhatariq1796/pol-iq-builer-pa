@@ -1,0 +1,2565 @@
+/* Fix for ESRI UI positioning - Directly target the root container with 100px inset */
+.esri-ui.calcite-mode-light {
+    inset: 0px 0px 0px !important; /* Override the 100px top positioning */
+}
+
+/* Fix for ESRI UI inner containers - Add the specific offsets (10px down and 20px right) */
+.esri-ui-inner-container.esri-ui-corner-container {
+    inset: 10px 0px 0px 20px !important; /* Set to 10px from top, 20px from left */
+}
+
+/* Widget Icons Container */
+.widget-icons-container {
+  display: flex !important;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 4px;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Ensure widget icons are visible in left toolbar */
+.w-16 .widget-icons-container {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.widget-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: var(--theme-bg-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--theme-text-secondary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--theme-border-primary);
+}
+
+.widget-icon:hover {
+  background: var(--theme-bg-tertiary);
+  color: var(--theme-text-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px var(--theme-shadow-light);
+}
+
+.widget-icon.active {
+  background: var(--theme-accent-bg);
+  color: var(--theme-accent-text);
+  box-shadow: 0 2px 6px var(--theme-accent-shadow);
+}
+
+.widget-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Base Widget Container */
+.widget-container {
+    position: absolute !important;
+    top: 0px !important; /* Changed from 8px to remove the gap */
+    background-color: var(--theme-bg-primary) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+    z-index: 999 !important;
+    width: 320px !important;
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important;
+    font-family: "Helvetica Neue", sans-serif !important;
+    margin-top: 0 !important; /* Reset negative margin now that we fix the container directly */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    border: 1px solid var(--theme-border) !important;
+}
+
+.widget-container.visible {
+    display: block !important;
+}
+
+/* Widget Headers */
+.widget-container::before {
+    content: attr(data-widget-title) !important;
+    display: block !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid var(--theme-border) !important;
+    font-family: "Helvetica Neue", sans-serif !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* Widget Content */
+.widget-container > * {
+    font-size: 12px !important;
+    padding: 8px !important;
+    padding-top: 0px !important; /* Remove top padding to reduce the apparent space */
+    background-color: var(--theme-bg-primary) !important;
+}
+
+/* ESRI Widget Overrides */
+.esri-widget {
+    max-width: 280px !important;
+    width: 280px !important;
+    font-size: 12px !important;
+    background: var(--theme-bg-primary) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    display: block !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-widget.visible {
+    display: block !important;
+}
+
+.esri-widget__content {
+    font-size: 12px !important;
+    padding: 8px !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-widget__heading {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+    display: none !important;
+}
+
+/* Layer List Specific */
+.layer-control-content {
+    padding: 4px !important;
+}
+
+.layer-group {
+    margin-bottom: 2px !important;
+}
+
+.layer-group .mb-2 {
+    margin-bottom: 4px !important;
+}
+
+.layer-group h3 {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+.layer-group .space-y-4 {
+    margin-top: 2px !important;
+}
+
+.layer-group .pl-6 {
+    padding-left: 16px !important;
+}
+
+.layer-group .border-b {
+    padding-bottom: 2px !important;
+}
+
+.layer-group .group {
+    margin-bottom: 2px !important;
+}
+
+.layer-group .text-sm {
+    font-size: 12px !important;
+}
+
+.layer-group .space-x-3 > * + * {
+    margin-left: 6px !important;
+}
+
+/* Switch size reduction */
+.layer-group .h-5 {
+    height: 16px !important;
+}
+
+.layer-group .w-9 {
+    width: 28px !important;
+}
+
+.layer-group .h-4 {
+    height: 12px !important;
+}
+
+.layer-group .w-4 {
+    width: 12px !important;
+}
+
+/* Grip icon size */
+.layer-group .lucide-grip-vertical {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* Chevron icon size */
+.layer-group .lucide-chevron-right,
+.layer-group .lucide-chevron-down {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* Reduce padding around items */
+.layer-group .px-0\.5 {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+}
+
+.layer-group .py-1 {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+}
+
+/* Space between items */
+.layer-group .gap-2 {
+    gap: 4px !important;
+}
+
+/* Layer List Specific Styles */
+.esri-layer-list {
+    background-color: var(--theme-bg-primary) !important;
+    padding: 8px !important;
+    width: 280px !important;
+    max-width: 280px !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-layer-list__item,
+.esri-layer-list__item-container {
+    cursor: pointer !important;
+}
+
+.esri-layer-list__item:hover,
+.esri-layer-list__item-container:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+}
+
+.layer-group,
+.layer-group-header,
+.layer-group h3,
+.layer-group .text-sm {
+    cursor: pointer !important;
+}
+
+.layer-group-header:hover,
+.layer-group h3:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+}
+
+.layer-item {
+    cursor: pointer !important;
+}
+
+.layer-item:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+}
+
+/* Override any other styles that might interfere */
+.widget-container {
+    z-index: 999 !important;
+}
+
+.esri-widget.visible {
+    display: block !important;
+}
+
+/* Make sure layer list is visible */
+.widget-container[data-widget-type="layerList"] {
+    display: block !important;
+    max-height: 500px !important;
+    overflow-y: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.esri-layer-list__item-title {
+    cursor: pointer !important;
+    font-size: 14px !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-layer-list__item-title:hover {
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-layer-list__item-toggle {
+    cursor: pointer !important;
+}
+
+.esri-layer-list__item-toggle:hover {
+    opacity: 0.8 !important;
+}
+
+.esri-layer-list__item-actions-menu {
+    cursor: pointer !important;
+}
+
+.esri-layer-list__item-actions-menu:hover {
+    opacity: 0.8 !important;
+}
+
+/* Search Widget */
+.esri-search {
+    width: 280px !important;
+    max-width: 280px !important;
+    padding: 8px !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-search__input {
+    height: 32px !important;
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border: 1px solid var(--theme-border) !important;
+}
+
+/* Print Widget */
+.esri-print {
+    width: 280px !important;
+    max-width: 280px !important;
+    padding: 8px !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* Bookmarks Widget */
+.esri-bookmarks {
+    width: 280px !important;
+    max-width: 280px !important;
+    padding: 8px !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* Ensure all widget content is visible */
+.esri-widget__content,
+.esri-widget__heading,
+.esri-search__input,
+.esri-zoom__buttons,
+.esri-layer-list__item,
+.esri-legend__layer,
+.esri-bookmarks__bookmark-list-item,
+.esri-print__container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 12px !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* Widget-specific positioning */
+.widget-container[data-widget-type="layerList"],
+.widget-container[data-widget-type="search"],
+.widget-container[data-widget-type="filter"],
+.widget-container[data-widget-type="print"],
+.widget-container[data-widget-type="projects"] {
+    position: relative !important;
+    top: 8px !important;
+    background-color: var(--theme-bg-primary) !important;
+    width: 280px !important;
+    max-width: 280px !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* Close Button */
+.widget-close-button {
+    position: fixed !important;
+    top: 32px !important;
+    left: 300px !important; /* 64px (sidebar) + 280px (widget width) */
+    background-color: var(--theme-bg-primary) !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 2000 !important;
+    color: var(--theme-text-secondary) !important;
+    border: 1px solid var(--theme-border) !important;
+    border-radius: 6px !important;
+}
+
+.widget-close-button:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-accent-primary) !important;
+}
+
+/* Ensure the close button is always visible */
+.widget-close-button svg {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Ensure proper visibility of all widgets */
+.esri-widget:not([hidden]),
+.widget-container.visible,
+.esri-widget.visible {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Remove any interfering transforms */
+.esri-ui-corner {
+    transform: none !important;
+}
+
+/* Force widget visibility */
+.esri-widget,
+.widget-container {
+    position: absolute !important;
+    z-index: 1000 !important;
+}
+
+/* Ensure proper stacking */
+.esri-ui-top-left {
+    z-index: 999 !important;
+}
+
+/* Remove any duplicate close buttons */
+.widget-container button[aria-label="Close widget"]:not(.widget-close-button) {
+    display: none !important;
+}
+
+/* Special handling for search widget container */
+.widget-container[data-widget-type="search"] {
+    height: 100% !important;
+    overflow: visible !important;
+}
+
+/* Layer List Specific Styles */
+.esri-layer-list {
+    background-color: var(--theme-bg-primary) !important;
+    padding: 16px !important;
+}
+
+.esri-layer-list__list {
+    background-color: var(--theme-bg-primary) !important;
+}
+
+.esri-layer-list__item {
+    margin: 8px 0 !important;
+    border: 1px solid var(--theme-border) !important;
+    border-radius: 8px !important;
+    background-color: var(--theme-bg-secondary) !important;
+    transition: all 0.2s ease !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-layer-list__item-container {
+    background-color: var(--theme-bg-secondary) !important;
+    padding: 8px !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* Visibility Toggle (Eye Icon) */
+.esri-layer-list__item-toggle {
+    color: #33a852 !important;
+    opacity: 1 !important;
+    display: flex !important;
+    visibility: visible !important;
+}
+
+.esri-layer-list__item-toggle-icon {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Actions Menu */
+.esri-layer-list__item-actions {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.esri-layer-list__item-actions-menu {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.esri-layer-list__item-actions-list {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Legend Panel - Show by Default */
+.esri-layer-list__item-panel {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    margin: 0.5rem 0 !important;
+    padding: 0.25rem !important;
+    background-color: var(--theme-bg-secondary) !important;
+    border-radius: 0.25rem !important;
+    color: var(--theme-text-primary) !important;
+    border: 1px solid var(--theme-border) !important;
+}
+
+/* Show Legend Panel when Expanded */
+.esri-layer-list__item[aria-expanded="true"] .esri-layer-list__item-panel {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Hide legend when layer is invisible */
+.esri-layer-list__item--invisible .esri-legend {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Show legend when layer is visible */
+.esri-layer-list__item:not(.esri-layer-list__item--invisible) .esri-legend {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure legend content is visible */
+.esri-legend {
+    display: block !important;
+    padding: 8px 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.esri-legend__service {
+    padding: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure legend is visible in layer list */
+.esri-layer-list__item-actions-menu-item--legend .esri-legend,
+.esri-layer-list__item-actions-menu .esri-legend,
+.esri-layer-list__item-actions .esri-legend {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Remove any transforms that might hide the legend */
+.esri-layer-list__item-panel * {
+    transform: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Legend Content Visibility */
+.esri-layer-list__item-panel .esri-legend,
+.esri-layer-list__item-panel .esri-legend__service,
+.esri-layer-list__item-panel .esri-legend__layer,
+.esri-layer-list__item-panel .esri-legend__layer-table,
+.esri-layer-list__item-panel .esri-legend__layer-body,
+.esri-layer-list__item-panel .esri-legend__layer-row,
+.esri-layer-list__item-panel .esri-legend__layer-cell {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 4px !important;
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Legend Symbol Styles */
+.esri-layer-list__item-panel .esri-legend__symbol {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 4px !important;
+}
+
+/* Legend Text Styles */
+.esri-layer-list__item-panel .esri-legend__layer-cell--info {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    color: var(--theme-text-primary) !important;
+    padding: 2px 4px !important;
+}
+
+/* Legend Layout */
+.esri-layer-list__item-panel .esri-legend__layer-table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 2px !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-body {
+    display: table-row-group !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-row {
+    display: table-row !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-cell {
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
+
+/* Hide "no legend" messages */
+.esri-legend__message,
+.esri-legend--card__message,
+.esri-legend--card__section-header,
+.esri-legend .esri-widget__heading {
+    display: none !important;
+}
+
+/* Ensure legend container is visible */
+.esri-layer-list__item-panel {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 8px 0 !important;
+    padding: 8px !important;
+    background-color: var(--theme-bg-secondary) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hover States */
+.esri-layer-list__item:hover {
+    border-color: var(--theme-accent-primary) !important;
+    background-color: var(--theme-bg-tertiary) !important;
+}
+
+/* Action Buttons */
+.esri-layer-list__item-actions-menu-item {
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* List Items */
+.esri-layer-list__list-item {
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* Bookmarks Styles - Purple Theme */
+.esri-bookmarks {
+    padding: 16px !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-bookmarks__header {
+    display: none !important;
+}
+
+.esri-bookmarks__bookmark {
+    border: 1px solid var(--theme-border) !important;
+    border-radius: 8px !important;
+    margin: 8px 0 !important;
+    padding: 12px !important;
+    transition: all 0.2s ease !important;
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-bookmarks__bookmark:hover {
+    border-color: #6632a8 !important;
+    background-color: #f6f1fc !important;
+}
+
+.esri-bookmarks__bookmark-button {
+    background-color: #6632a8 !important;
+    color: white !important;
+    border-radius: 6px !important;
+}
+
+/* Print Widget Styles - Green Theme */
+.esri-print {
+    width: 320px !important;
+    padding: 16px !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-print__form-section-container {
+    border: 1px solid var(--theme-border) !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    margin: 8px 0 !important;
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-print__export-button {
+    background-color: #33a852 !important;
+    color: white !important;
+    border-radius: 6px !important;
+    width: 100% !important;
+}
+
+/* Override all blue/purple components in print widget */
+.esri-print .esri-button,
+.esri-print button,
+.esri-print .esri-select,
+.esri-print select,
+.esri-print .calcite-button,
+.esri-print .calcite-tab-title,
+.esri-print .calcite-tab-title[aria-selected="true"],
+.esri-print .calcite-tab,
+.esri-print .calcite-tabs,
+.esri-print [role="tab"],
+.esri-print [role="tab"][aria-selected="true"] {
+    background-color: #33a852 !important;
+    color: white !important;
+    border-color: #33a852 !important;
+}
+
+.esri-print .esri-button:hover,
+.esri-print button:hover,
+.esri-print .calcite-button:hover,
+.esri-print .calcite-tab-title:hover,
+.esri-print [role="tab"]:hover {
+    background-color: #2d8a47 !important;
+    border-color: #2d8a47 !important;
+}
+
+/* Fix any focus states */
+.esri-print .esri-button:focus,
+.esri-print button:focus,
+.esri-print .calcite-button:focus,
+.esri-print .calcite-tab-title:focus,
+.esri-print [role="tab"]:focus {
+    outline-color: #33a852 !important;
+    box-shadow: 0 0 0 2px rgba(51, 168, 82, 0.3) !important;
+}
+
+/* Override any active states */
+.esri-print .esri-button.esri-button--active,
+.esri-print .calcite-button--active,
+.esri-print .calcite-tab-title--active {
+    background-color: #33a852 !important;
+    color: white !important;
+}
+
+/* Fix any checkboxes or form controls */
+.esri-print input[type="checkbox"]:checked,
+.esri-print .calcite-checkbox:checked {
+    background-color: #33a852 !important;
+    border-color: #33a852 !important;
+}
+
+/* Fix export button specifically */
+.esri-print__export-button,
+.esri-print__export-button .esri-button,
+.esri-print .esri-print__export-button,
+.esri-print [class*="export"] button,
+.esri-print button[class*="export"],
+.esri-print .esri-button[class*="export"] {
+    background-color: #33a852 !important;
+    color: white !important;
+    border-color: #33a852 !important;
+}
+
+/* Fix specific export widget elements only */
+.esri-print .esri-widget__loader {
+    color: #33a852 !important;
+}
+
+/* Keep more conservative overrides for export widget */
+
+/* Search Widget Styles - Green Theme */
+.esri-search {
+    width: 100% !important;
+    padding: 16px !important;
+    height: 100% !important;
+    position: relative !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-search__container {
+    width: 100% !important;
+    height: calc(100% - 32px) !important;
+    position: relative !important;
+    background-color: var(--theme-bg-primary) !important;
+}
+
+.esri-search__input-container {
+    width: 100% !important;
+    height: auto !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    border-radius: 8px !important;
+    overflow: visible !important;
+    background-color: var(--theme-bg-primary) !important;
+}
+
+.esri-search__form {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.esri-search__input {
+    width: 100% !important;
+    height: 44px !important;
+    border: 1px solid var(--theme-border) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-search__input:focus {
+    border-color: var(--theme-accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(51, 168, 82, 0.2) !important;
+}
+
+.esri-search__suggestions-menu {
+    width: 100% !important;
+    max-height: 300px !important;
+    margin-top: 8px !important;
+    background-color: var(--theme-bg-primary) !important;
+    border: 1px solid var(--theme-border) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    overflow-y: auto !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-search__suggestions-list {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 8px 0 !important;
+    background-color: var(--theme-bg-primary) !important;
+}
+
+.esri-search__suggestion-item {
+    padding: 8px 16px !important;
+    cursor: pointer !important;
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-search__suggestion-item:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+}
+
+.esri-search__submit-button {
+    height: 44px !important;
+    width: 44px !important;
+    border-radius: 8px !important;
+    background-color: #33a852 !important;
+    color: white !important;
+}
+
+/* Common Button Styles */
+.esri-button {
+    font-family: "Helvetica Neue", sans-serif !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Layer List */
+.esri-layer-list .esri-button {
+    color: #33a852 !important;
+}
+
+/* Bookmarks */
+.esri-bookmarks .esri-button {
+    color: #6632a8 !important;
+}
+
+/* Print */
+.esri-print .esri-button {
+    color: #33a852 !important;
+}
+
+/* Widget Headers by Type */
+.widget-container[data-widget-type="layerList"]::before {
+    content: "Layers" !important;
+    color: #33a852 !important;
+}
+
+.widget-container[data-widget-type="basemapGallery"]::before {
+    content: "Basemaps" !important;
+    color: #33a852 !important;
+}
+
+.widget-container[data-widget-type="bookmarks"]::before {
+    content: "Bookmarks" !important;
+    color: #33a852 !important;
+}
+
+.widget-container[data-widget-type="print"]::before {
+    content: "Export" !important;
+    color: #33a852 !important;
+}
+
+.widget-container[data-widget-type="search"]::before {
+    content: "Search" !important;
+    color: #33a852 !important;
+}
+
+.widget-container[data-widget-type="projects"]::before {
+    content: "Study Areas" !important;
+    color: #a83269 !important;
+    display: block !important;
+    padding: 16px 20px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    font-family: "Helvetica Neue", sans-serif !important;
+}
+
+/* Scrollbar Styles */
+.widget-container::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.widget-container::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 4px !important;
+}
+
+.widget-container::-webkit-scrollbar-thumb {
+    background: #c5c5c5 !important;
+    border-radius: 4px !important;
+}
+
+.widget-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8 !important;
+}
+
+/* Form Controls */
+.esri-select {
+    font-family: "Helvetica Neue", sans-serif !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    transition: all 0.2s ease !important;
+}
+
+.esri-select:focus {
+    outline: none !important;
+    border-color: var(--widget-color) !important;
+    box-shadow: 0 0 0 2px var(--widget-color-alpha) !important;
+}
+
+/* Input Fields */
+.esri-input {
+    font-family: "Helvetica Neue", sans-serif !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    transition: all 0.2s ease !important;
+}
+
+.esri-input:focus {
+    outline: none !important;
+    border-color: var(--widget-color) !important;
+    box-shadow: 0 0 0 2px var(--widget-color-alpha) !important;
+}
+
+/* Ensure map widgets are visible */
+.esri-ui-top-left,
+.esri-ui-bottom-left {
+  z-index: 10;
+}
+
+/* Zoom Control - Bottom Right */
+.esri-ui-bottom-right {
+  position: absolute !important;
+  bottom: 90px !important;
+  right: 30px !important;
+  z-index: 100 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.esri-zoom {
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: transparent !important;
+  gap: 4px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.widget-container{
+    background-color: transparent !important;
+}
+
+.widget-container{
+    background-color: transparent !important;
+}
+
+.esri-widget{
+    background-color: transparent !important;
+
+}
+
+.esri-zoom .esri-widget--button {
+  width: 32px !important;
+  height: 32px !important;
+  background-color: transparent !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 6px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.esri-zoom .esri-widget--button:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.esri-zoom .esri-widget--button .esri-icon {
+  font-size: 14px !important;
+  color: #374151 !important;
+}
+
+.esri-home {
+  /* background-color: white; */
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.feature-table-container {
+    overflow: auto;
+  }
+  
+  .feature-table-container .esri-feature-table__header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+  }
+  
+  .feature-table-container .esri-feature-table__menu {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+  }
+  
+  /* Optional: Improve table appearance */
+  .feature-table-container .esri-feature-table__grid {
+    border: none;
+  }
+  
+  .feature-table-container .esri-feature-table__grid-cell {
+    border-color: #e5e7eb;
+  }
+  
+  .feature-table-container .esri-feature-table__grid-header {
+    background-color: #f9fafb;
+    font-weight: 600;
+  }
+  
+  .feature-table-container .esri-feature-table__grid-row:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .feature-table-container .esri-feature-table__grid-row--selected {
+    background-color: #e5e7eb;
+  }
+
+/* Add this to your widget-styles.css */
+.esri-view .esri-highlight {
+    background-color: rgba(51, 168, 82, 0.3) !important; /* Light green with 30% opacity */
+    outline-color: #33a852 !important; /* Solid green outline */
+    outline-width: 2px !important;
+}
+
+.esri-view .esri-feature-table__row--selected {
+    background-color: rgba(51, 168, 82, 0.1) !important; /* Lighter green for table rows */
+}
+
+.esri-view .esri-feature-layer__graphic--highlighted {
+    outline-color: #33a852 !important;
+    outline-width: 2px !important;
+    outline-style: solid !important;
+}
+
+/* Feature highlighting and selection */
+.esri-view .esri-highlight,
+.esri-view .esri-feature-highlight,
+.esri-view .esri-feature--highlighted,
+.esri-view [data-highlight="true"],
+.esri-feature-layer .esri-highlight {
+    background-color: rgba(51, 168, 82, 0.3) !important;
+    outline: 2px solid #33a852 !important;
+    outline-offset: 0px !important;
+}
+
+/* Feature table selections */
+.esri-feature-table__row--selected,
+.esri-feature-table__row--highlighted,
+.esri-feature-table__row[data-selected="true"] {
+    background-color: rgba(51, 168, 82, 0.1) !important;
+}
+
+/* Map feature highlighting */
+.esri-view .esri-feature-layer__graphic--highlighted,
+.esri-view .esri-feature-layer__graphic[data-highlight="true"],
+.esri-view .esri-feature-layer__graphic[aria-selected="true"] {
+    outline: 2px solid #33a852 !important;
+    outline-offset: 0px !important;
+}
+
+/* Selection handles and markers */
+.esri-view .esri-feature__highlight-handle {
+    background-color: #33a852 !important;
+    border-color: #33a852 !important;
+}
+
+/* Temporary graphics during selection */
+.esri-view .esri-graphics-layer .esri-graphic[data-type="selection"],
+.esri-view .esri-graphics-layer .esri-graphic[data-type="highlight"] {
+    fill: rgba(51, 168, 82, 0.3) !important;
+    stroke: #33a852 !important;
+    stroke-width: 2px !important;
+}
+
+@keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .legend-container {
+    min-height: 80px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    padding: 8px;
+    margin-top: 8px;
+  }
+  
+  .legend-container .esri-legend {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  .legend-container .esri-legend__service {
+    padding: 0;
+  }
+
+/* Update the switch styles in widget-styles.css */
+.esri-switch[data-state="checked"] {
+    background-color: #33a852 !important;
+  }
+
+/* Market share popup - larger size - detect by content */
+.esri-popup--is-docked .esri-popup__main-container:has(.market-share-popup-container) {
+  width: 560px !important;
+}
+
+/* Target all inner containers when market share content is present */
+.esri-popup--is-docked:has(.market-share-popup-container) .esri-features,
+.esri-popup--is-docked:has(.market-share-popup-container) calcite-flow,
+.esri-popup--is-docked:has(.market-share-popup-container) calcite-flow-item,
+.esri-popup--is-docked:has(.market-share-popup-container) .esri-features__container,
+.esri-popup--is-docked:has(.market-share-popup-container) .esri-feature,
+.esri-popup--is-docked:has(.market-share-popup-container) .esri-feature__size-container,
+.esri-popup--is-docked:has(.market-share-popup-container) .esri-feature__main-container,
+.esri-popup--is-docked:has(.market-share-popup-container) .esri-feature__content-node,
+.esri-popup--is-docked:has(.market-share-popup-container) .esri-feature-content {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Add to widget-styles.css */
+.esri-view .esri-layer,
+.esri-view .esri-graphics-layer {
+  visibility: visible !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.esri-view .esri-graphic {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.widget-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .layer-list-widget {
+    display: none; /* Hide the default layer list */
+  }
+  
+  .layer-controller {
+    width: 100%;
+    min-width: 280px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: white;
+  }
+  
+  /* Hide default ArcGIS LayerList elements */
+  .esri-layer-list__item-container,
+  .esri-layer-list__item-message,
+  calcite-list[data-layer-type*="operational"],
+  .esri-layer-list__item,
+  .esri-layer-list__item-message {
+    display: none !important;
+  }
+
+/* Base Widget Container */
+.widget-container {
+    position: absolute !important;
+    top: 8px !important;
+    background-color: transparent !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+    z-index: 1000 !important;
+    width: 320px !important;
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important;
+    font-family: "Helvetica Neue", sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid var(--theme-border) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* Close Button */
+.widget-close-button {
+    position: fixed !important;
+    top: 24px !important;
+    left: 320px !important; /* 64px (sidebar) + 280px (widget width) */
+    background-color: var(--theme-bg-primary) !important;
+    width: 32px !important;
+    height: 32px !important;
+    padding: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 2000 !important;
+    color: var(--theme-text-secondary) !important;
+    border: 1px solid var(--theme-border) !important;
+    border-radius: 6px !important;
+}
+
+.widget-close-button:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-accent-primary) !important;
+}
+
+/* Ensure the close button is always visible */
+.widget-close-button svg {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Ensure ESRI widgets don't override our styles */
+.esri-view .widget-container {
+    position: absolute !important;
+}
+
+/* Remove any existing close buttons */
+.widget-container .esri-widget--button {
+    display: none !important;
+}
+
+/* Widget-specific positioning if needed */
+.widget-container[data-widget-type="layerList"] {
+    top: 8px !important;
+}
+
+.widget-container[data-widget-type="search"] {
+    top: 8px !important;
+}
+
+.widget-container[data-widget-type="filter"] {
+    top: 8px !important;
+}
+
+.widget-container[data-widget-type="print"] {
+    top: 8px !important;
+}
+
+.widget-container[data-widget-type="projects"] {
+    top: 8px !important;
+}
+
+/* Hide duplicate close buttons */
+.widget-container button[aria-label="Close widget"]:not(.widget-close-button) {
+    display: none !important;
+}
+
+/* Fix positioning in ESRI view using transform instead of extreme negative margin */
+.esri-view .esri-ui-top-left {
+    z-index: 999 !important;
+    top: 0 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important; /* Reset margin */
+    transform: translateY(0) !important; /* Use transform to adjust position if needed */
+    max-height: 100% !important; /* Ensure content isn't cut off */
+    overflow-y: visible !important; /* Allow overflow */
+}
+
+/* Fix any parent containers and reset spacing */
+.esri-view .esri-ui > .esri-ui-top-left {
+    top: 0 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important; /* Reset margin */
+    transform: translateY(0) !important; /* Use transform to adjust position if needed */
+}
+
+.widget-container.esri-component {
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Search Widget Specific Styles */
+.widget-container[data-widget-type="search"] {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+.widget-container[data-widget-type="search"] .esri-search {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+.widget-container[data-widget-type="search"] .esri-search__container {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+.widget-container[data-widget-type="search"] .esri-search__input-container {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+.widget-container[data-widget-type="search"] .esri-search__form {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+.widget-container[data-widget-type="search"] .esri-search__input {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+.widget-container[data-widget-type="search"] .esri-search__suggestions-menu {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Ensure suggestions are properly styled */
+.esri-search__suggestions-list {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+.esri-search__suggestion-item {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+.esri-search__suggestion-item:hover {
+    background-color: #f3f8ff !important;
+}
+
+/* Ensure proper container styling */
+.widget-search {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Fix any transparency in the widget container */
+.esri-search .esri-widget {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Base Widget Container */
+.widget-container[data-widget-type="search"] {
+    background-color: var(--theme-bg-secondary) !important;
+    overflow: visible !important;
+    height: auto !important;
+}
+
+/* Search Widget and Its Components */
+.esri-search {
+    background-color: var(--theme-bg-secondary) !important;
+    padding: 16px !important;
+}
+
+/* Main container */
+.esri-search__container {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Input container */
+.esri-search__input-container {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Search form */
+.esri-search__form {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Search input */
+.esri-search__input {
+    background-color: var(--theme-bg-secondary) !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+}
+
+/* Search suggestions menu */
+.esri-search__suggestions-menu {
+    position: absolute !important;
+    background-color: var(--theme-bg-secondary) !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    margin-top: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Suggestions list */
+.esri-search__suggestions-list {
+    background-color: var(--theme-bg-secondary) !important;
+    padding: 8px 0 !important;
+}
+
+/* Individual suggestion items */
+.esri-search__suggestion-item {
+    background-color: var(--theme-bg-secondary) !important;
+    padding: 8px 16px !important;
+}
+
+.esri-search__suggestion-item:hover {
+    background-color: #f3f8ff !important;
+}
+
+/* Fix for any ESRI widget transparency */
+.esri-widget {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Ensure the entire search widget has background */
+.esri-search.esri-widget {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Additional fixes for any nested components */
+.esri-search .esri-widget * {
+    background-color: inherit !important;
+}
+
+/* Sources menu */
+.esri-search__sources-menu {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Clear button */
+.esri-search__clear-button {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Submit button */
+.esri-search__submit-button {
+    background-color: #33a852 !important;
+    color: white !important;
+}
+
+/* Sources button */
+.esri-search__sources-button {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Ensure the widget container itself is white */
+.widget-search.widget-container {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Force background color on the root element */
+.esri-view .esri-search {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Clear any transparency */
+.esri-view .widget-container[data-widget-type="search"] * {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Override any ArcGIS default transparent backgrounds */
+.esri-search .esri-widget--button {
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Hide the export widget header */
+.esri-print__header-title {
+    display: none !important;
+}
+
+/* Ensure proper spacing without the header */
+.esri-print {
+    padding-top: 0 !important;
+}
+
+/* Filter Widget Header */
+.widget-container[data-widget-type="filter"]::before {
+    content: "Filters" !important;
+    color: #6632a8 !important;
+}
+
+/* Filter Widget Specific Styles - Purple Theme */
+.esri-filter {
+    padding: 16px !important;
+    width: 320px !important;
+}
+
+.filter-widget {
+    width: 100% !important;
+}
+
+.filter-widget__group {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 8px !important;
+    margin: 8px 0 !important;
+    background-color: var(--theme-bg-secondary) !important;
+    transition: all 0.2s ease !important;
+}
+
+.filter-widget__group:hover {
+    border-color: #6632a8 !important;
+    background-color: #f6f1fc !important;
+}
+
+.filter-widget__header {
+    padding: 12px !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.filter-widget__content {
+    padding: 12px !important;
+}
+
+.filter-widget__field {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 2fr auto !important;
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+}
+
+.filter-widget select,
+.filter-widget input {
+    font-family: "Helvetica Neue", sans-serif !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 6px !important;
+    padding: 6px 8px !important;
+    font-size: 13px !important;
+    width: 100% !important;
+}
+
+.filter-widget select:focus,
+.filter-widget input:focus {
+    outline: none !important;
+    border-color: #6632a8 !important;
+    box-shadow: 0 0 0 2px rgba(102, 50, 168, 0.2) !important;
+}
+
+.filter-widget__button {
+    font-family: "Helvetica Neue", sans-serif !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    transition: all 0.2s ease !important;
+}
+
+.filter-widget__button--primary {
+    background-color: #6632a8 !important;
+    color: white !important;
+}
+
+.filter-widget__button--primary:hover {
+    background-color: #552a8c !important;
+}
+
+.filter-widget__button--secondary {
+    color: #6632a8 !important;
+}
+
+.filter-widget__button--secondary:hover {
+    background-color: #f6f1fc !important;
+}
+
+@keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    position: relative;
+  }
+  
+  .shimmer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgb(229, 231, 235);
+    z-index: -1;
+  }
+
+/* Index Widget Styles */
+.widget-container[data-widget-type="index"] {
+    background-color: var(--theme-bg-secondary) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+    z-index: 1000 !important;
+    min-width: 320px !important;
+    max-width: 400px !important;
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important;
+}
+
+.widget-container[data-widget-type="index"]::before {
+    content: "Create Index" !important;
+    color: #6632a8 !important;
+    display: block !important;
+    padding: 16px 20px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    font-family: "Helvetica Neue", sans-serif !important;
+}
+
+/* Hide all variations of "no legend" message */
+.esri-legend--card__section-header,
+.esri-legend__message,
+.esri-legend--card__message,
+.esri-legend--card.esri-legend--stacked .esri-legend__message,
+[class*="esri-legend"] [class*="message"],
+.esri-legend .esri-widget__heading {
+  display: none !important;
+}
+
+/* Ensure legend only shows when it has content */
+.esri-legend:empty {
+  display: none !important;
+}
+
+/* Bookmarks Widget Header - already defined above */
+
+/* Bookmarks Widget Styles - Yellow Theme */
+.esri-bookmarks {
+    padding: 16px !important;
+    width: 320px !important;
+}
+
+.esri-bookmarks__header {
+    display: none !important;
+}
+
+.esri-bookmarks__list {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.esri-bookmarks__bookmark {
+    border: 1px solid var(--theme-border) !important;
+    border-radius: 8px !important;
+    margin: 8px 0 !important;
+    padding: 12px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-bookmarks__bookmark:hover {
+    border-color: var(--theme-accent-primary) !important;
+    background-color: var(--theme-bg-tertiary) !important;
+}
+
+.esri-bookmarks__bookmark-button {
+    width: 100% !important;
+    text-align: left !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-family: "Helvetica Neue", sans-serif !important;
+    font-size: 14px !important;
+    color: var(--theme-text-primary) !important;
+    cursor: pointer !important;
+}
+
+.esri-bookmarks__bookmark-button:hover {
+    color: var(--theme-text-primary) !important;
+}
+
+.esri-bookmarks__bookmark-name {
+    font-weight: 500 !important;
+    color: inherit !important;
+}
+
+/* Hide the edit and add buttons */
+.esri-bookmarks__add-button,
+.esri-bookmarks__edit-button,
+.esri-bookmarks__actions {
+    display: none !important;
+}
+
+/* Ensure proper spacing */
+.esri-bookmarks__list-container {
+    margin-top: 0 !important;
+}
+
+/* Bookmark item focus state */
+.esri-bookmarks__bookmark:focus-within {
+    outline: 2px solid #fbbc05 !important;
+    outline-offset: 2px !important;
+}
+
+/* Super specific tooltip styles to override transparency */
+.esri-view [data-radix-popper-content-wrapper] > * {
+    background-color: var(--theme-bg-secondary) !important;
+    background: white !important;
+    opacity: 1 !important;
+}
+
+/* Target Radix UI tooltip specifically */
+[role="tooltip"][data-radix-popper-content-wrapper] {
+    background-color: var(--theme-bg-secondary) !important;
+    background: white !important;
+    opacity: 1 !important;
+}
+
+/* Target the specific tooltip content */
+[role="tooltip"].TooltipContent,
+[role="tooltip"].tooltip-content,
+div[role="tooltip"],
+.esri-view [role="tooltip"] {
+    background-color: var(--theme-bg-secondary) !important;
+    background: white !important;
+    opacity: 1 !important;
+    border: 1px solid #e5e7eb !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    color: #374151 !important;
+    border-radius: 6px !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Target any nested elements that might be causing transparency */
+[role="tooltip"] * {
+    background-color: var(--theme-bg-secondary) !important;
+    background: white !important;
+    opacity: 1 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Override any shadcn specific styling */
+.esri-view .shadcn-tooltip,
+.shadcn-tooltip[role="tooltip"],
+[data-radix-tooltip-content],
+.tooltip-content[role="tooltip"] {
+    background-color: var(--theme-bg-secondary) !important;
+    background: white !important;
+    opacity: 1 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Layer widget specific styling */
+.layer-control-card {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.layer-control-content {
+  padding: 0 1rem;
+}
+
+.layer-group {
+  border: none;
+}
+
+.layer-group-header {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.layer-item {
+  border: none;
+  padding-left: 0.5rem;
+}
+
+/* Remove chevron icons */
+.layer-group-header svg {
+  display: none;
+}
+
+/* Remove any unwanted borders from shadcn components */
+.layer-control-card > :not([hidden]) ~ :not([hidden]) {
+  border: none;
+}
+
+/* Report specific styling */
+.report-container {
+    background-color: white;
+    height: calc(100vh - 6rem); /* Adjust height to account for header */
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1; /* Ensure content is visible */
+  }
+  
+  .report-container:focus {
+    outline: none;
+  }
+  
+  /* Always show scrollbar */
+  .report-container::-webkit-scrollbar {
+    width: 8px;
+    background: white;
+  }
+  
+  .report-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .report-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  .report-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  /* Dialog specific styling */
+  .dialog-content {
+    background-color: var(--theme-bg-secondary) !important;
+    padding: 0 !important;
+    z-index: 1100 !important; /* Ensure dialog is above other elements */
+    max-height: 90vh !important;
+    overflow: hidden !important;
+  }
+  
+  /* Remove dialog header and description */
+  [id="report-dialog-description"],
+  [id="radix-:r21:"],
+  [id="radix-:r20:"] {
+    display: none;
+  }
+
+  .layer-control-content {
+    padding: 0 1rem;
+    padding-top: 20px;
+  }
+
+/* Legend text size adjustments */
+.esri-legend,
+.esri-legend__layer,
+.esri-legend__layer-caption,
+.esri-legend__layer-cell,
+.esri-legend__layer-table,
+.esri-legend__layer-body,
+.esri-legend__service,
+.esri-legend__message,
+.esri-legend--card__message,
+.esri-legend--card__section-header,
+.esri-legend .esri-widget__heading,
+.legend-container .esri-legend * {
+    font-size: 12px !important;
+}
+
+/* Layer List Legend text size adjustments */
+.esri-layer-list__item-panel .esri-legend,
+.esri-layer-list__item-panel .esri-legend__layer,
+.esri-layer-list__item-panel .esri-legend__layer-caption,
+.esri-layer-list__item-panel .esri-legend__layer-cell,
+.esri-layer-list__item-panel .esri-legend__layer-table,
+.esri-layer-list__item-panel .esri-legend__layer-body,
+.esri-layer-list__item-panel .esri-legend__service,
+.esri-layer-list__item-panel .esri-legend__message,
+.esri-layer-list__item-panel .esri-legend--card__message,
+.esri-layer-list__item-panel .esri-legend--card__section-header,
+.esri-layer-list__item-panel .esri-legend .esri-widget__heading,
+.esri-layer-list__item-panel .esri-legend__layer-row,
+.esri-layer-list__item-panel .esri-legend__layer-cell--info {
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+}
+
+/* Adjust legend symbol sizes */
+.esri-layer-list__item-panel .esri-legend__symbol {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Adjust spacing in legend */
+.esri-layer-list__item-panel .esri-legend__layer {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-table {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-cell {
+    padding: 2px 4px !important;
+}
+
+/* Layer List Info Panel Legend Styles */
+.esri-layer-list__item-actions-menu-item--legend .esri-legend,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-caption,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-cell,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-table,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-body,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__service,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__message,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend--card__message,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend--card__section-header,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend .esri-widget__heading,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-row,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-cell--info,
+.esri-layer-list__item-actions-menu .esri-legend,
+.esri-layer-list__item-actions-menu .esri-legend *,
+.esri-layer-list__item-actions .esri-legend,
+.esri-layer-list__item-actions .esri-legend * {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+}
+
+/* Adjust the legend symbol sizes */
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__symbol,
+.esri-layer-list__item-actions-menu .esri-legend__symbol,
+.esri-layer-list__item-actions .esri-legend__symbol {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* Adjust spacing */
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer,
+.esri-layer-list__item-actions-menu .esri-legend__layer,
+.esri-layer-list__item-actions .esri-legend__layer {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+    padding: 0 !important;
+}
+
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-table,
+.esri-layer-list__item-actions-menu .esri-legend__layer-table,
+.esri-layer-list__item-actions .esri-legend__layer-table {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-cell,
+.esri-layer-list__item-actions-menu .esri-legend__layer-cell,
+.esri-layer-list__item-actions .esri-legend__layer-cell {
+    padding: 2px 4px !important;
+}
+
+/* End of file */
+
+/* Fix cursor and hover effects for all layer-related elements */
+.esri-layer-list__item,
+.esri-layer-list__item-container,
+.esri-layer-list__item-title,
+.esri-layer-list__item-toggle,
+.esri-layer-list__item-actions-menu,
+.esri-layer-list__item-actions-menu-item,
+.layer-group,
+.layer-group-header,
+.layer-group h3,
+.layer-item {
+    cursor: pointer !important;
+    transition: background-color 0.2s ease-in-out !important;
+}
+
+/* Add hover effects with !important flags */
+.esri-layer-list__item:hover,
+.esri-layer-list__item-container:hover,
+.layer-group-header:hover,
+.layer-group h3:hover,
+.layer-item:hover,
+.esri-layer-list__item-actions-menu:hover,
+.esri-layer-list__item-toggle:hover {
+    background-color: #f3f4f6 !important;
+    cursor: pointer !important;
+}
+
+.esri-layer-list *[role="button"],
+.esri-layer-list *[role="menuitem"],
+.esri-layer-list__item,
+.esri-layer-list__item-container,
+.esri-layer-list__item-title {
+  cursor: pointer !important;
+}
+
+.esri-layer-list *[role="button"]:hover,
+.esri-layer-list *[role="menuitem"]:hover,
+.esri-layer-list__item:hover,
+.esri-layer-list__item-container:hover,
+.esri-layer-list__item-title:hover {
+  background-color: #f0f0f0 !important;
+}
+
+/* Legend Panel - Show by Default */
+.esri-layer-list__item-panel {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  margin: 0.5rem 0 !important;
+  padding: 0.25rem !important;
+  background-color: var(--calcite-ui-foreground-1) !important;
+  border-radius: 0.25rem !important;
+}
+
+/* Ensure legend is visible in actions menu */
+.esri-layer-list__item-actions-menu-item--legend .esri-legend {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  margin: 0.5rem 0 !important;
+  padding: 0.25rem !important;
+}
+
+/* Ensure legend symbols are visible */
+.esri-layer-list__item-panel .esri-legend__symbol,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__symbol {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 2px !important;
+}
+
+/* Ensure legend text is visible */
+.esri-layer-list__item-panel .esri-legend__layer-cell--info,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-cell--info {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  padding: 2px 4px !important;
+}
+
+/* Ensure proper spacing and layout */
+.esri-layer-list__item-panel .esri-legend__layer,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer {
+  margin: 4px 0 !important;
+  padding: 0 !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-table,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-table {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-body,
+.esri-layer-list__item-actions-menu-item--legend .esri-legend__layer-body {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Legend Content Visibility */
+.esri-layer-list__item-panel .esri-legend,
+.esri-layer-list__item-panel .esri-legend__service,
+.esri-layer-list__item-panel .esri-legend__layer,
+.esri-layer-list__item-panel .esri-legend__layer-table,
+.esri-layer-list__item-panel .esri-legend__layer-body,
+.esri-layer-list__item-panel .esri-legend__layer-row,
+.esri-layer-list__item-panel .esri-legend__layer-cell {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 4px !important;
+    background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Legend Symbol Styles */
+.esri-layer-list__item-panel .esri-legend__symbol {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 4px !important;
+}
+
+/* Legend Text Styles */
+.esri-layer-list__item-panel .esri-legend__layer-cell--info {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    color: var(--theme-text-primary) !important;
+    padding: 2px 4px !important;
+}
+
+/* Legend Layout */
+.esri-layer-list__item-panel .esri-legend__layer-table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 2px !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-body {
+    display: table-row-group !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-row {
+    display: table-row !important;
+}
+
+.esri-layer-list__item-panel .esri-legend__layer-cell {
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
+
+/* Hide "no legend" messages */
+.esri-legend__message,
+.esri-legend--card__message,
+.esri-legend--card__section-header,
+.esri-legend .esri-widget__heading {
+    display: none !important;
+}
+
+/* Ensure legend container is visible */
+.esri-layer-list__item-panel {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 8px 0 !important;
+    padding: 8px !important;
+    background-color: var(--theme-bg-secondary) !important;
+    border-radius: 4px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+/* ========================================
+   COMPREHENSIVE DARK THEME SUPPORT
+   ======================================== */
+
+/* ESRI Widget Dark Theme Support */
+.widget-container .esri-widget,
+.widget-container .esri-widget__content,
+.widget-container .esri-widget__panel,
+.widget-container .esri-menu,
+.widget-container .esri-list,
+.widget-container .esri-bookmarks,
+.widget-container .esri-layer-list,
+.widget-container .esri-search,
+.widget-container .esri-print {
+    background-color: transparent !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border-primary) !important;
+}
+
+/* ESRI Input Elements */
+.widget-container .esri-input,
+.widget-container .esri-search__input,
+.widget-container .esri-select,
+.widget-container .esri-text-input {
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border-primary) !important;
+}
+
+.widget-container .esri-input:focus,
+.widget-container .esri-search__input:focus,
+.widget-container .esri-select:focus,
+.widget-container .esri-text-input:focus {
+    border-color: var(--theme-accent) !important;
+    box-shadow: 0 0 0 2px var(--theme-accent-shadow) !important;
+}
+
+/* ESRI Buttons */
+.widget-container .esri-button,
+.widget-container .esri-menu__list-item,
+.widget-container .esri-layer-list__item,
+.widget-container .esri-bookmarks__bookmark {
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border-primary) !important;
+}
+
+.widget-container .esri-button:hover,
+.widget-container .esri-menu__list-item:hover,
+.widget-container .esri-layer-list__item:hover,
+.widget-container .esri-bookmarks__bookmark:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+    color: var(--theme-text-primary) !important;
+}
+
+/* ESRI Icons */
+.widget-container .esri-icon,
+.widget-container .esri-widget__icon,
+.widget-container .esri-search__clear-button,
+.widget-container .esri-search__submit-button {
+    color: var(--theme-text-secondary) !important;
+}
+
+.widget-container .esri-icon:hover,
+.widget-container .esri-widget__icon:hover {
+    color: var(--theme-text-primary) !important;
+}
+
+
+/* ESRI Slider and Range Input Styling */
+.widget-container .esri-slider__thumb,
+.widget-container .esri-layer-list__item-slider .esri-slider__thumb,
+.widget-container input[type="range"]::-webkit-slider-thumb,
+.widget-container .calcite-slider::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important;
+    background: #33a852 !important;
+    border: 2px solid #33a852 !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.widget-container .esri-slider__thumb:hover,
+.widget-container input[type="range"]::-webkit-slider-thumb:hover,
+.widget-container .calcite-slider::-webkit-slider-thumb:hover {
+    background: #2c8f47 !important;
+    border-color: #2c8f47 !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 2px 8px rgba(51, 168, 82, 0.4) !important;
+}
+
+.widget-container input[type="range"]::-moz-range-thumb {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50% !important;
+    background: #33a852 !important;
+    border: 2px solid #33a852 !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.widget-container .esri-slider__track,
+.widget-container input[type="range"] {
+    background: #e5e7eb !important;
+    height: 4px !important;
+    border-radius: 2px !important;
+}
+
+.widget-container .esri-slider__track-fill {
+    background: #33a852 !important;
+}
+
+/* Mode switching fix - ensure widgets update when theme changes */
+.widget-container * {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Dark Mode Specific Overrides */
+[data-theme="dark"] .widget-container,
+[data-theme="dark"] .esri-widget,
+[data-theme="dark"] .esri-widget__content {
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+}
+
+[data-theme="dark"] .esri-layer-list__item,
+[data-theme="dark"] .esri-bookmarks__bookmark,
+[data-theme="dark"] .esri-search__suggestion-item {
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+}
+
+[data-theme="dark"] .esri-layer-list__item:hover,
+[data-theme="dark"] .esri-bookmarks__bookmark:hover,
+[data-theme="dark"] .esri-search__suggestion-item:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+}
+
+[data-theme="dark"] .esri-search__input,
+[data-theme="dark"] .esri-input,
+[data-theme="dark"] .esri-select {
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* Light Mode Specific Overrides */
+[data-theme="light"] .widget-container,
+/* [data-theme="light"] .esri-widget, */
+[data-theme="light"] .esri-widget__content {
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+    /* border-color: var(--theme-border) !important; */
+}
+
+[data-theme="light"] .esri-layer-list__item,
+[data-theme="light"] .esri-bookmarks__bookmark,
+[data-theme="light"] .esri-search__suggestion-item {
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+}
+
+[data-theme="light"] .esri-layer-list__item:hover,
+[data-theme="light"] .esri-bookmarks__bookmark:hover,
+[data-theme="light"] .esri-search__suggestion-item:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+}
+
+[data-theme="light"] .esri-search__input,
+[data-theme="light"] .esri-input,
+[data-theme="light"] .esri-select {
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* Force theme updates on widget containers */
+.widget-container[data-widget-type] {
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* Ensure all nested widget elements follow theme */
+.widget-container *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not(polygon) {
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* Force ESRI widget content to use theme colors */
+.widget-container .esri-widget *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not(polygon),
+.widget-container .esri-search *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not(polygon),
+.widget-container .esri-layer-list *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not(polygon),
+.widget-container .esri-bookmarks *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not(polygon),
+.widget-container .esri-print *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not(polygon) {
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* Specific bookmark widget theme overrides */
+.widget-container .esri-bookmarks .esri-bookmarks__bookmark {
+    background-color: var(--theme-bg-secondary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+}
+
+.widget-container .esri-bookmarks .esri-bookmarks__bookmark:hover {
+    background-color: var(--theme-bg-tertiary) !important;
+    border-color: var(--theme-accent-primary) !important;
+}
+
+.widget-container .esri-bookmarks .esri-bookmarks__bookmark-button,
+.widget-container .esri-bookmarks .esri-bookmarks__bookmark-name {
+    color: var(--theme-text-primary) !important;
+    background-color: transparent !important;
+}
+
+/* Theme transition support for all widget elements */
+.widget-container,
+.esri-widget {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Smooth transitions for theme changes */
+.theme-transition,
+.theme-transitioning {
+    transition: all 0.3s ease !important;
+}
+
+/* Remove forced transitions from all elements to prevent performance issues */
+.widget-container *,
+.esri-widget * {
+    /* Inherit transitions only when needed */
+    transition: inherit;
+}
+
+/* Widget headers should always use theme colors */
+.widget-container::before {
+    background-color: var(--theme-bg-primary) !important;
+    color: var(--theme-text-primary) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* Hide auto-generated header for sample areas panel */
+.widget-container.sample-areas-panel::before {
+    display: none !important;
+}
+
+/* Sample Areas Panel Title Styling */
+.sample-areas-panel .esri-widget__heading {
+    display: block !important; /* Override the global display: none */
+    font-size: 16px !important; /* Make it larger */
+    color: #33a852 !important; /* Green color */
+    font-weight: 600 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    flex: 1 !important;
+}
+
+/* Sample Areas Panel Dark Mode Support */
+[data-theme="dark"] .sample-areas-panel .esri-widget__heading {
+    color: #33a852 !important; /* Keep the green color in dark mode */
+}
+
+/* Widget height constraints to prevent overlap with map controls */
+.esri-widget,
+.esri-widget--panel,
+.widget-container {
+  max-height: calc(100vh - 120px) !important;
+  overflow-y: auto !important;
+}
+
+/* LayerController specific scrolling fixes */
+.layer-controller {
+  height: 100% !important;
+  max-height: calc(100vh - 120px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.layer-controller > div {
+  padding-bottom: 20px !important; /* Add extra padding at bottom */
+}
+
+/* Specific widget height constraints */
+.esri-layer-list,
+.esri-search,
+.esri-bookmarks,
+.esri-print {
+  max-height: calc(100vh - 120px) !important;
+  overflow-y: auto !important;
+}
+
+/* Widget container specific height constraints */
+.widget-container[data-widget-type="layerList"],
+.widget-container[data-widget-type="search"],  
+.widget-container[data-widget-type="bookmarks"],
+.widget-container[data-widget-type="print"] {
+  max-height: calc(100vh - 120px) !important;
+  overflow-y: auto !important;
+}
+
+/* Force height constraints on any widget in top-left position */
+.esri-ui-top-left > *,
+.esri-ui-top-left .esri-widget,
+.esri-ui-top-left .widget-container {
+  max-height: calc(100vh - 120px) !important;
+  overflow-y: auto !important;
+}
+
+/* Print widget export button - override blue brand color to green */
+.esri-print__export-button,
+.esri-print calcite-button.esri-print__export-button,
+calcite-button.esri-print__export-button,
+.esri-print [kind="brand"],
+.esri-print calcite-button[kind="brand"] {
+  --calcite-color-brand: #21c55d !important;
+  --calcite-color-brand-hover: #16a34a !important;
+  --calcite-color-brand-press: #15803d !important;
+  background-color: #21c55d !important;
+  border-color: #21c55d !important;
+  color: white !important;
+}
+
+.esri-print__export-button:hover,
+.esri-print calcite-button.esri-print__export-button:hover,
+calcite-button.esri-print__export-button:hover,
+.esri-print [kind="brand"]:hover,
+.esri-print calcite-button[kind="brand"]:hover {
+  background-color: #16a34a !important;
+  border-color: #16a34a !important;
+}
+
+.esri-print__export-button:active,
+.esri-print calcite-button.esri-print__export-button:active,
+calcite-button.esri-print__export-button:active,
+.esri-print [kind="brand"]:active,
+.esri-print calcite-button[kind="brand"]:active {
+  background-color: #15803d !important;
+  border-color: #15803d !important;
+}
+
+/* More aggressive targeting for print widget buttons */
+.esri-print .esri-print__export-button,
+.esri-print button[class*="export"],
+.esri-print calcite-button {
+  background-color: #21c55d !important;
+  border-color: #21c55d !important;
+  color: white !important;
+}
+
+.esri-print .esri-print__export-button:hover,
+.esri-print button[class*="export"]:hover,
+.esri-print calcite-button:hover {
+  background-color: #16a34a !important;
+  border-color: #16a34a !important;
+}

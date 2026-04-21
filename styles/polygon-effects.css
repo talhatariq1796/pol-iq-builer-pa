@@ -1,0 +1,195 @@
+/* Enhanced Polygon Effects for Choropleth and Cluster Visualizations */
+
+.enhanced-polygon {
+  transition: all 0.3s ease-in-out;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Gradient Fill Effects */
+.gradient-polygon {
+  background: linear-gradient(45deg, var(--polygon-primary), var(--polygon-secondary));
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.radial-polygon {
+  background: radial-gradient(circle at center, var(--polygon-primary), var(--polygon-secondary));
+  opacity: 0.75;
+}
+
+/* Border Animation Effects */
+.glow-border {
+  stroke-width: 2px;
+  animation: borderGlow 3s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 3px currentColor);
+}
+
+.subtle-border {
+  stroke-width: 1.5px;
+  animation: subtlePulse 4s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes borderGlow {
+  0% {
+    stroke-width: 2px;
+    filter: drop-shadow(0 0 3px currentColor);
+    opacity: 0.8;
+  }
+  100% {
+    stroke-width: 3px;
+    filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 12px currentColor);
+    opacity: 1;
+  }
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 0.9;
+    stroke-width: 1.5px;
+  }
+  50% {
+    opacity: 1;
+    stroke-width: 2px;
+  }
+}
+
+/* Shadow Effects */
+.shadow-polygon {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.enhanced-shadow {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2)) 
+          drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15))
+          drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
+}
+
+/* Texture Patterns */
+.crosshatch-texture {
+  background-image: 
+    linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.1) 45%, rgba(255, 255, 255, 0.1) 55%, transparent 55%),
+    linear-gradient(-45deg, transparent 45%, rgba(255, 255, 255, 0.1) 45%, rgba(255, 255, 255, 0.1) 55%, transparent 55%);
+  background-size: 8px 8px;
+}
+
+.dots-texture {
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+.lines-texture {
+  background-image: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  background-size: 4px 4px;
+}
+
+/* Hover Enhancements */
+.enhanced-polygon:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 12px var(--polygon-glow, currentColor));
+  opacity: 1;
+  z-index: 100;
+  transition: all 0.2s ease-out;
+}
+
+.glow-border:hover {
+  animation-duration: 1s;
+  stroke-width: 4px;
+  filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 16px currentColor);
+}
+
+/* High-Value Area Effects */
+.high-value-polygon {
+  background: linear-gradient(135deg, var(--polygon-primary), var(--polygon-secondary), var(--polygon-tertiary));
+  filter: drop-shadow(0 0 8px var(--polygon-glow)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  animation: highValueShimmer 4s ease-in-out infinite;
+}
+
+@keyframes highValueShimmer {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px var(--polygon-glow)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px var(--polygon-glow)) drop-shadow(0 6px 16px rgba(0, 0, 0, 0.2));
+  }
+}
+
+/* Premium Area Effects */
+.premium-polygon {
+  background: linear-gradient(45deg, var(--polygon-primary), var(--polygon-secondary));
+  filter: drop-shadow(0 0 12px var(--polygon-glow)) 
+          drop-shadow(0 0 24px var(--polygon-glow))
+          drop-shadow(0 6px 16px rgba(0, 0, 0, 0.2));
+  animation: premiumGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes premiumGlow {
+  0% {
+    filter: drop-shadow(0 0 12px var(--polygon-glow)) 
+            drop-shadow(0 0 24px var(--polygon-glow))
+            drop-shadow(0 6px 16px rgba(0, 0, 0, 0.2));
+    transform: scale(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 16px var(--polygon-glow)) 
+            drop-shadow(0 0 32px var(--polygon-glow))
+            drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+    transform: scale(1.01);
+  }
+}
+
+/* Color Scheme Variables */
+.polygon-red {
+  --polygon-primary: rgba(255, 107, 107, 0.8);
+  --polygon-secondary: rgba(255, 107, 107, 0.4);
+  --polygon-tertiary: rgba(255, 107, 107, 0.2);
+  --polygon-glow: rgba(255, 107, 107, 0.6);
+}
+
+.polygon-orange {
+  --polygon-primary: rgba(255, 140, 0, 0.8);
+  --polygon-secondary: rgba(255, 140, 0, 0.4);
+  --polygon-tertiary: rgba(255, 140, 0, 0.2);
+  --polygon-glow: rgba(255, 140, 0, 0.6);
+}
+
+.polygon-gold {
+  --polygon-primary: rgba(255, 215, 0, 0.8);
+  --polygon-secondary: rgba(255, 215, 0, 0.4);
+  --polygon-tertiary: rgba(255, 215, 0, 0.2);
+  --polygon-glow: rgba(255, 215, 0, 0.6);
+}
+
+.polygon-green {
+  --polygon-primary: rgba(144, 238, 144, 0.8);
+  --polygon-secondary: rgba(144, 238, 144, 0.4);
+  --polygon-tertiary: rgba(144, 238, 144, 0.2);
+  --polygon-glow: rgba(144, 238, 144, 0.6);
+}
+
+.polygon-spring {
+  --polygon-primary: rgba(0, 255, 127, 0.8);
+  --polygon-secondary: rgba(0, 255, 127, 0.4);
+  --polygon-tertiary: rgba(0, 255, 127, 0.2);
+  --polygon-glow: rgba(0, 255, 127, 0.6);
+}
+
+/* Cluster-specific polygon styles */
+.cluster-polygon {
+  stroke-dasharray: 5, 5;
+  animation: dashMove 2s linear infinite;
+}
+
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+
+/* Performance optimizations */
+.enhanced-polygon,
+.gradient-polygon,
+.radial-polygon {
+  will-change: transform, filter, opacity;
+  transform: translateZ(0); /* Enable hardware acceleration */
+} 

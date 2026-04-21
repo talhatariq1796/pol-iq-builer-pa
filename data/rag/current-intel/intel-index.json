@@ -1,0 +1,229 @@
+{
+  "_metadata": {
+    "description": "Index of current political intelligence for RAG retrieval",
+    "version": "1.0",
+    "last_updated": "2024-12-01",
+    "update_frequency": "weekly",
+    "notes": "Documents are manually curated. Expired items are excluded from retrieval."
+  },
+  "sources": [
+    {
+      "id": "mi-sos",
+      "name": "Michigan Secretary of State",
+      "type": "official",
+      "url": "https://mvic.sos.state.mi.us/",
+      "reliability": "high",
+      "bias_rating": "neutral",
+      "update_frequency": "as-needed"
+    },
+    {
+      "id": "ingham-clerk",
+      "name": "Ingham County Clerk",
+      "type": "official",
+      "url": "https://clerk.ingham.org/",
+      "reliability": "high",
+      "bias_rating": "neutral",
+      "update_frequency": "as-needed"
+    },
+    {
+      "id": "mlive",
+      "name": "MLive Politics",
+      "type": "news",
+      "url": "https://www.mlive.com/politics/",
+      "reliability": "high",
+      "bias_rating": "center-left",
+      "update_frequency": "daily"
+    },
+    {
+      "id": "michigan-advance",
+      "name": "Michigan Advance",
+      "type": "news",
+      "url": "https://michiganadvance.com/",
+      "reliability": "high",
+      "bias_rating": "left",
+      "update_frequency": "daily"
+    },
+    {
+      "id": "lansing-state-journal",
+      "name": "Lansing State Journal",
+      "type": "news",
+      "url": "https://www.lansingstatejournal.com/",
+      "reliability": "high",
+      "bias_rating": "center",
+      "update_frequency": "daily"
+    },
+    {
+      "id": "detroit-free-press",
+      "name": "Detroit Free Press",
+      "type": "news",
+      "url": "https://www.freep.com/",
+      "reliability": "high",
+      "bias_rating": "center",
+      "update_frequency": "daily"
+    },
+    {
+      "id": "wkar",
+      "name": "WKAR Public Media",
+      "type": "news",
+      "url": "https://www.wkar.org/",
+      "reliability": "high",
+      "bias_rating": "center",
+      "update_frequency": "daily"
+    },
+    {
+      "id": "marist-poll",
+      "name": "Marist Poll",
+      "type": "pollster",
+      "url": "https://maristpoll.marist.edu/",
+      "reliability": "high",
+      "bias_rating": "center",
+      "update_frequency": "monthly"
+    },
+    {
+      "id": "glengariff",
+      "name": "Glengariff Group",
+      "type": "pollster",
+      "url": "https://www.glengariff.com/",
+      "reliability": "high",
+      "bias_rating": "center",
+      "update_frequency": "monthly"
+    },
+    {
+      "id": "epic-mra",
+      "name": "EPIC-MRA",
+      "type": "pollster",
+      "url": "https://www.epicmra.com/",
+      "reliability": "high",
+      "bias_rating": "center",
+      "update_frequency": "monthly"
+    }
+  ],
+  "documents": [
+    {
+      "id": "official-2024-mi-turnout",
+      "path": "data/rag/current-intel/official/2024-11-mi-sos-turnout-report.md",
+      "type": "official",
+      "title": "Michigan 2024 Election Turnout Report",
+      "source": "Michigan Secretary of State",
+      "published": "2024-11-15",
+      "expires": "2025-06-01",
+      "relevance": ["turnout", "statewide", "voting-methods"],
+      "jurisdictions": [],
+      "keywords": ["turnout", "record", "early voting", "absentee", "proposal 2"],
+      "priority": 1
+    },
+    {
+      "id": "poll-2024-10-marist-generic",
+      "path": "data/rag/current-intel/polls/2024-10-marist-michigan-generic.md",
+      "type": "poll",
+      "title": "Marist Michigan Generic Ballot Poll - October 2024",
+      "source": "Marist Poll",
+      "published": "2024-10-31",
+      "expires": "2025-03-01",
+      "relevance": ["partisan-lean", "statewide", "congressional"],
+      "jurisdictions": [],
+      "keywords": ["poll", "generic ballot", "democratic", "republican", "congress"],
+      "priority": 2
+    },
+    {
+      "id": "news-2024-11-house-flip",
+      "path": "data/rag/current-intel/news/2024-11-mi-house-flips-republican.md",
+      "type": "news",
+      "title": "Republicans Flip Michigan House, Breaking Democratic Trifecta",
+      "source": "Detroit News / NBC News",
+      "published": "2024-11-06",
+      "expires": "2025-06-01",
+      "relevance": ["state-legislature", "partisan-lean", "statewide"],
+      "jurisdictions": [],
+      "keywords": ["state house", "legislature", "republican", "democratic", "trifecta", "flip"],
+      "priority": 1
+    },
+    {
+      "id": "news-2024-10-msu-early-voting",
+      "path": "data/rag/current-intel/news/2024-10-msu-early-voting-campus.md",
+      "type": "news",
+      "title": "MSU Campus Early Voting Center Draws Strong Student Turnout",
+      "source": "WKAR Public Media",
+      "published": "2024-10-24",
+      "expires": "2025-04-01",
+      "relevance": ["turnout", "student-vote", "early-voting"],
+      "jurisdictions": ["East Lansing"],
+      "keywords": ["msu", "michigan state", "student", "early voting", "campus", "youth vote"],
+      "priority": 2
+    },
+    {
+      "id": "analysis-2024-11-ingham-results",
+      "path": "data/rag/current-intel/analysis/2024-11-ingham-county-results-analysis.md",
+      "type": "analysis",
+      "title": "Ingham County 2024 Election Results Analysis",
+      "source": "Platform Analysis",
+      "published": "2024-11-10",
+      "expires": "2025-06-01",
+      "relevance": ["ingham-county", "partisan-lean", "turnout", "local"],
+      "jurisdictions": ["Ingham County", "Lansing", "East Lansing", "Meridian Township"],
+      "keywords": ["ingham", "lansing", "results", "harris", "trump", "2024"],
+      "priority": 1
+    },
+    {
+      "id": "analysis-2024-11-ticket-splitting",
+      "path": "data/rag/current-intel/analysis/2024-11-ticket-splitting-michigan.md",
+      "type": "analysis",
+      "title": "Ticket-Splitting in Michigan 2024: Trump Voters Who Backed Slotkin",
+      "source": "NBC News / Election Analysts",
+      "published": "2024-11-08",
+      "expires": "2025-06-01",
+      "relevance": ["partisan-lean", "swing-potential", "persuasion", "statewide"],
+      "jurisdictions": [],
+      "keywords": ["ticket splitting", "slotkin", "trump", "senate", "persuadable", "swing voters"],
+      "priority": 2
+    },
+    {
+      "id": "upcoming-2026-mi-senate",
+      "path": "data/rag/current-intel/upcoming/2026-mi-senate-race.md",
+      "type": "upcoming",
+      "title": "Michigan 2026 U.S. Senate Race Overview",
+      "source": "Multiple sources (Ballotpedia, Michigan Advance, ABC News)",
+      "published": "2024-12-01",
+      "expires": "2026-12-01",
+      "relevance": ["2026", "senate", "statewide", "candidates"],
+      "jurisdictions": [],
+      "keywords": ["senate", "2026", "peters", "slotkin", "rogers", "stevens", "mcmorrow", "el-sayed", "midterm", "candidates"],
+      "priority": 1
+    },
+    {
+      "id": "upcoming-2026-mi-governor",
+      "path": "data/rag/current-intel/upcoming/2026-mi-governor-race.md",
+      "type": "upcoming",
+      "title": "Michigan 2026 Governor Race - Open Seat",
+      "source": "Multiple sources",
+      "published": "2024-12-01",
+      "expires": "2026-12-01",
+      "relevance": ["2026", "governor", "statewide", "candidates", "whitmer"],
+      "jurisdictions": [],
+      "keywords": ["governor", "2026", "whitmer", "term limit", "open seat", "midterm", "candidates"],
+      "priority": 1
+    }
+  ],
+  "citation_keys": {
+    "[POLL]": {
+      "description": "Recent polling data with methodology",
+      "color_scheme": "violet"
+    },
+    "[NEWS]": {
+      "description": "News reporting from Michigan sources",
+      "color_scheme": "cyan"
+    },
+    "[ANALYSIS]": {
+      "description": "Expert political analysis and forecasts",
+      "color_scheme": "orange"
+    },
+    "[OFFICIAL]": {
+      "description": "Official government source",
+      "color_scheme": "emerald"
+    },
+    "[UPCOMING]": {
+      "description": "Upcoming elections and candidate information",
+      "color_scheme": "amber"
+    }
+  }
+}

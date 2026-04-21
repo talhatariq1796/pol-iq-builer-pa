@@ -1,0 +1,64 @@
+{
+  "layerMappings": {},
+  "fieldMappings": {},
+  "synonyms": {},
+  "weights": {},
+  "customConcepts": [],
+  "connections": [
+    {
+      "id": "mapping_1750249064736",
+      "conceptId": "concept_population",
+      "targetId": "group_1750248468343",
+      "targetType": "group",
+      "strength": 0.8,
+      "confidence": 0.85,
+      "reasoning": "Manual mapping created by user",
+      "isActive": true,
+      "createdAt": "2025-06-18T12:17:44.736Z"
+    },
+    {
+      "id": "mapping_1750249075872",
+      "conceptId": "concept_population",
+      "targetId": "group_1750248679950",
+      "targetType": "group",
+      "strength": 0.8,
+      "confidence": 0.85,
+      "reasoning": "Manual mapping created by user",
+      "isActive": true,
+      "createdAt": "2025-06-18T12:17:55.872Z"
+    },
+    {
+      "id": "mapping_1750249083107",
+      "conceptId": "concept_income",
+      "targetId": "group_1750248738136",
+      "targetType": "group",
+      "strength": 0.8,
+      "confidence": 0.85,
+      "reasoning": "Manual mapping created by user",
+      "isActive": true,
+      "createdAt": "2025-06-18T12:18:03.107Z"
+    },
+    {
+      "id": "mapping_1750249120714",
+      "conceptId": "concept_1750249107098",
+      "targetId": "group_1750248790804",
+      "targetType": "group",
+      "strength": 0.8,
+      "confidence": 0.85,
+      "reasoning": "Manual mapping created by user",
+      "isActive": true,
+      "createdAt": "2025-06-18T12:18:40.714Z"
+    },
+    {
+      "id": "mapping_1750249139414",
+      "conceptId": "concept_1750249135152",
+      "targetId": "group_1750248894157",
+      "targetType": "group",
+      "strength": 0.8,
+      "confidence": 0.85,
+      "reasoning": "Manual mapping created by user",
+      "isActive": true,
+      "createdAt": "2025-06-18T12:18:59.414Z"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "framework": "nextjs",
+  "functions": {
+    "app/api/**/*.{js,ts}": {
+      "maxDuration": 30
+    },
+    "app/api/cma-pdf/route.{js,ts}": {
+      "maxDuration": 60,
+      "memory": 3008
+    },
+    "pages/api/**/*.{js,ts}": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "NODE_OPTIONS": "--max-old-space-size=4096"
+  },
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "headers": [
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/data/blob-urls.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=300, stale-while-revalidate=600"
+        }
+      ]
+    }
+  ]
+} 

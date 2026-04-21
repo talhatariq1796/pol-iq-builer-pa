@@ -1,0 +1,89 @@
+/* Firefly Effects for Map Visualizations */
+
+.firefly-marker {
+  filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 12px currentColor);
+  mix-blend-mode: screen;
+  animation: fireflyPulse 2s ease-in-out infinite alternate;
+}
+
+.firefly-marker-high {
+  filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 16px currentColor) drop-shadow(0 0 24px currentColor);
+  mix-blend-mode: screen;
+  animation: fireflyPulse 1.5s ease-in-out infinite alternate;
+}
+
+.firefly-marker-premium {
+  filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor) drop-shadow(0 0 30px currentColor);
+  mix-blend-mode: screen;
+  animation: fireflyPulseIntense 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes fireflyPulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fireflyPulseIntense {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor) drop-shadow(0 0 30px currentColor);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 12px currentColor) drop-shadow(0 0 24px currentColor) drop-shadow(0 0 36px currentColor);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px currentColor) drop-shadow(0 0 30px currentColor) drop-shadow(0 0 45px currentColor);
+  }
+}
+
+/* Firefly color variants */
+.firefly-red {
+  color: rgba(255, 107, 107, 0.9);
+}
+
+.firefly-orange {
+  color: rgba(255, 140, 0, 0.9);
+}
+
+.firefly-gold {
+  color: rgba(255, 215, 0, 0.95);
+}
+
+.firefly-green {
+  color: rgba(144, 238, 144, 0.9);
+}
+
+.firefly-spring {
+  color: rgba(0, 255, 127, 0.95);
+}
+
+/* Blending effects for overlapping markers */
+.firefly-container {
+  mix-blend-mode: screen;
+}
+
+.firefly-overlay {
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.3;
+}
+
+/* Hover effects */
+.firefly-marker:hover {
+  animation-duration: 0.8s;
+  filter: drop-shadow(0 0 12px currentColor) drop-shadow(0 0 24px currentColor) drop-shadow(0 0 36px currentColor);
+  transform: scale(1.15);
+  z-index: 1000;
+} 

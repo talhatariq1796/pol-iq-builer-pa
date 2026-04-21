@@ -1,0 +1,1036 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { NextResponse } from 'next/server';
+import { Anthropic } from '@anthropic-ai/sdk';
+import { layers, LayerConfig } from '@/config/layers';
+import { handleUpload, type HandleUploadBody } from '@vercel/blob/client';
+// import { Readable } from 'stream'; // Might not be needed if using ReadableStream directly
+// Remove the problematic import
+// import { streamToBuffer } from '@vercel/blob/utils';
+import type { AnalysisResponse, ProcessedLayerResult } from '@/types/geospatial-chat';
+import { NextRequest } from 'next/server';
+
+// --- Interface Definitions ---
+
+interface FeatureProperties {
+  [key: string]: any;
+}
+
+// Note: FeatureObject is less relevant now as we primarily handle FeatureProperties lists
+interface GeometryData {
+    type: string;
+    coordinates: number[] | number[][] | number[][][];
+}
+
+interface FeatureObject {
+  id?: string;
+  type?: string;
+  properties: FeatureProperties;
+  attributes?: FeatureProperties; // Kept for potential legacy compatibility, but focus is on properties
+  geometry?: GeometryData;
+}
+
+// Represents the structure within the blob *after* optimization
+interface OptimizedLayerData {
+  layerId: string;
+  features: FeatureProperties[]; // Array of attribute objects
+  layerName?: string; // Optional, might be added by frontend
+  layerType?: string; // Optional
+  // Other potential metadata from optimization...
+}
+
+// Represents the overall structure uploaded to the blob
+interface UploadDataType {
+  features: OptimizedLayerData[]; // Array of optimized layer data
+  totalFeatures: number;
+  timestamp: string;
+  isComplete: boolean;
+  query?: string;
+  context?: any;
+}
+
+// Type for intermediate processing step
+interface ProcessedLayer extends OptimizedLayerData {
+    statistics?: LayerStatistics | null; // Optional stats if calculated
+    topFeatures?: TopFeature[]; // Optional top features if calculated
+}
+
+// Other interfaces (LayerStatistics, TopFeature, RequestBody, CorrelationMetadata, etc.) remain largely the same as before
+// ... (keep existing interface definitions for LayerStatistics, TopFeature, RequestBody, CorrelationMetadata, etc.) ...
+interface LayerStatistics {
+  count: number;
+  min: number;
+  max: number;
+  mean: number;
+  median: number;
+  stdDev: number;
+  quartiles: {
+    q1: number;
+    q3: number;
+  };
+}
+
+interface TopFeature {
+  zipCode: string;
+  description: string | null;
+  value: number;
+}
+
+interface RequestBody {
+  messages: Array<{
+    role: string;
+    content: string;
+  }>;
+  metadata: any; // Keep metadata field
+  blobUrl?: string;
+}
+
+interface CorrelationMetadata {
+  pearson: number;
+  spearman: number;
+  kendall: number;
+  pValue: number;
+  spatialStats: {
+    moransI: number;
+    getisOrdG: number;
+    hotspots: number;
+    coldspots: number;
+    outliers: number;
+  };
+}
+
+
+// --- Configuration ---
+export const runtime = 'edge';
+export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
+export const fetchCache = 'force-no-store';
+export const revalidate = 0;
+
+// --- Initialize Anthropic Client ---
+const anthropicApiKey = process.env.ANTHROPIC_API_KEY;
+if (!anthropicApiKey) {
+  console.error('[Claude] ERROR: ANTHROPIC_API_KEY environment variable is missing or empty');
+}
+console.log('[Claude] API Key available:', !!anthropicApiKey, typeof anthropicApiKey === 'string' ? `Length: ${anthropicApiKey.length}` : 'Invalid type');
+
+const anthropic = new Anthropic({
+  apiKey: anthropicApiKey || '',
+});
+
+// --- System Prompt ---
+const systemPrompt = `You are an expert geospatial marketing analyst specializing in ZIP code level consumer insights. Your task is to analyze and explain geographic patterns that help marketing, sales, and sponsorship professionals make data-driven decisions.
+
+When analyzing data:
+1. Focus on actionable business insights relevant to marketers and sales professionals
+2. Highlight geographic patterns and clusters that reveal market opportunities
+3. Identify high-value ZIP codes for targeted campaigns
+4. Compare demographic and consumer behavior patterns across regions
+5. Connect findings to practical marketing and advertising strategies
+6. Use clear, business-oriented language (avoid technical jargon)
+7. Support conclusions with specific examples from the data
+
+Critical rules:
+- NEVER explain your analysis process or methodology
+- NEVER mention database fields, column names, or numeric IDs
+- NEVER use uncertain language like "likely" or "probably" when stating facts
+- NEVER show raw data or database records
+- NEVER start responses with phrases like "To analyze..." or "I will sort..."
+- NEVER append "+" to any numeric values
+- NEVER modify, round, or adjust the numeric values provided
+- NEVER discuss data outside the provided dataset (stay focused on available fields)
+- NEVER use overly technical terms - write for marketing professionals
+- Always state findings directly and confidently
+- Always format currency values with dollar signs and commas
+- Always format percentage values with % symbol`;
+
+// Add logger after the prompt is defined
+console.log('[Claude DEBUG] 🔍 Constructed system prompt with length:', systemPrompt.length);
+
+// --- Helper Functions ---
+
+// Checks if a layer is demographic based on config
+function isDemographicLayer(layerId: string): boolean {
+  const layerConfig = layers[layerId];
+  return layerConfig?.description?.toLowerCase().includes('population') ||
+          layerConfig?.description?.toLowerCase().includes('demographic') ||
+          layerConfig?.metadata?.tags?.includes('demographics') ||
+          false;
+}
+
+// **MODIFIED** Gets relevant fields based on available attributes and query
+function getRelevantFields(attributes: FeatureProperties, query: string): string[] {
+  const availableFields = Object.keys(attributes);
+  
+  // Log available fields to help debug
+  console.log('[getRelevantFields] Query:', query);
+  console.log('[getRelevantFields] Available fields:', availableFields);
+  
+  const queryLower = query.toLowerCase();
+  
+  // For brand-related queries
+  if (queryLower.includes('nike') || queryLower.includes('adidas') || queryLower.includes('brand') || 
+      queryLower.includes('lululemon') || queryLower.includes('alo') || queryLower.includes('jordan') ||
+      queryLower.includes('shoes')) {
+    const brandFields = availableFields.filter(f => 
+      (f.toLowerCase().includes('bought') && 
+      (f.toLowerCase().includes('shoes') || f.toLowerCase().includes('athletic'))) ||
+      f.toLowerCase().includes('nike') || 
+      f.toLowerCase().includes('adidas') || 
+      f.toLowerCase().includes('alo') ||
+      f.toLowerCase().includes('jordan') ||
+      f.toLowerCase().includes('lululemon')
+    );
+    
+    if (brandFields.length > 0) {
+      console.log('[getRelevantFields] Found brand fields:', brandFields);
+      return brandFields;
+    }
+  }
+  
+  // For sports fan related queries
+  if (queryLower.includes('fan') || queryLower.includes('sports') || 
+      queryLower.includes('nba') || queryLower.includes('nfl') || 
+      queryLower.includes('mlb') || queryLower.includes('nhl') ||
+      queryLower.includes('soccer') || queryLower.includes('exercise')) {
+    const sportsFields = availableFields.filter(f => 
+      f.toLowerCase().includes('fan') || 
+      f.toLowerCase().includes('sports') ||
+      f.toLowerCase().includes('participated') ||
+      f.toLowerCase().includes('exercise') ||
+      f.toLowerCase().includes('gym')
+    );
+    
+    if (sportsFields.length > 0) {
+      console.log('[getRelevantFields] Found sports fields:', sportsFields);
+      return sportsFields;
+    }
+  }
+  
+  // For income/wealth related queries
+  if (queryLower.includes('income') || queryLower.includes('wealth') || 
+      queryLower.includes('affluent') || queryLower.includes('rich') ||
+      queryLower.includes('disposable')) {
+    const incomeFields = availableFields.filter(f => 
+      f.toLowerCase().includes('income') || 
+      f.toLowerCase().includes('wealth') || 
+      f.toLowerCase().includes('disposable')
+    );
+    
+    if (incomeFields.length > 0) {
+      console.log('[getRelevantFields] Found income fields:', incomeFields);
+      return incomeFields;
+    }
+  }
+  
+  // For demographic queries
+  if (queryLower.includes('demographic') || queryLower.includes('population') || 
+      queryLower.includes('diversity')) {
+    const demographicFields = availableFields.filter(f => 
+      f.toLowerCase().includes('population') || 
+      f.toLowerCase().includes('diversity') ||
+      f.toLowerCase().includes('household') ||
+      f.toLowerCase().includes('age')
+    );
+    
+    if (demographicFields.length > 0) {
+      console.log('[getRelevantFields] Found demographic fields:', demographicFields);
+      return demographicFields;
+    }
+  }
+  
+  // Prioritize based on broader query categories
+  if (queryLower.includes('population') || queryLower.includes('demographic')) {
+    const popFields = availableFields.filter(f => f.toLowerCase().includes('population') || f.toLowerCase().includes('total'));
+    if (popFields.length > 0) {
+      console.log('[getRelevantFields] Found population fields:', popFields);
+      return popFields;
+    }
+  }
+  if (queryLower.includes('income') || queryLower.includes('economic')) {
+    const econFields = availableFields.filter(f => f.toLowerCase().includes('income') || f.toLowerCase().includes('economic'));
+    if (econFields.length > 0) {
+      console.log('[getRelevantFields] Found economic fields:', econFields);
+      return econFields;
+    }
+  }
+  if (queryLower.includes('age')) {
+    const ageFields = availableFields.filter(f => f.toLowerCase().includes('age'));
+    if (ageFields.length > 0) {
+      console.log('[getRelevantFields] Found age fields:', ageFields);
+      return ageFields;
+    }
+  }
+  
+  // Find numeric fields available in the attributes (excluding OBJECTID)
+  const numericFields = availableFields.filter(f => 
+    f.toUpperCase() !== 'OBJECTID' && 
+    typeof attributes[f] === 'number' && 
+    !isNaN(attributes[f])
+  );
+  
+  if (numericFields.length > 0) {
+    console.log('[getRelevantFields] Found numeric fields:', numericFields);
+    return numericFields;
+  }
+  
+  // MODIFIED: As a last resort, return all fields that have non-empty values
+  // This ensures we always have some relevant fields rather than none
+  const nonEmptyFields = availableFields.filter(f => 
+    attributes[f] !== null && 
+    attributes[f] !== undefined && 
+    attributes[f] !== "" &&
+    f.toUpperCase() !== 'OBJECTID'
+  );
+  
+  console.log('[getRelevantFields] No specific matches found. Using all non-empty fields:', nonEmptyFields);
+  return nonEmptyFields;
+}
+
+// Formats field value based on layer config (if available)
+const formatFieldValue = (value: any, layerConfig: LayerConfig | undefined): string => {
+  if (typeof value === 'number') {
+    if (layerConfig?.metadata?.valueType === 'count') {
+      return Math.round(value).toLocaleString();
+    } else if (layerConfig?.fields?.some(f => f.label?.includes('$'))) {
+      return `$${value.toLocaleString()}`;
+    } else {
+      return value.toLocaleString(); // Default numeric format
+    }
+  }
+  return String(value);
+};
+
+// **MODIFIED** Sorts a list of attribute objects by a field value
+function sortAttributesByField(attributeList: FeatureProperties[], field: string): FeatureProperties[] {
+  return [...attributeList].sort((a, b) => {
+    const valueA = Number(a[field]);
+    const valueB = Number(b[field]);
+
+    if (isNaN(valueA) && !isNaN(valueB)) return 1;
+    if (!isNaN(valueA) && isNaN(valueB)) return -1;
+    if (isNaN(valueA) && isNaN(valueB)) return 0;
+    
+    return valueB - valueA; // Descending order
+  });
+}
+
+// **MODIFIED** Gets location name from an attribute object
+function getLocationName(attributes: FeatureProperties): string {
+  // Look inside properties if it exists, otherwise use attributes directly
+  const propsToCheck = attributes.properties || attributes;
+
+  // First try name fields in this specific order of priority
+  const nameFields = [
+    'name', 'NAME', 'FEDNAME', 'CSDNAME', 'ZIP', 'ZIPCODE', 'ZIP_CODE', 
+    'POSTAL', 'FSA', 'CFSAUID', 'ID', 'DESCRIPTION', 'AREA', 'CITY', 
+    'MUNICIPALITY', 'REGION', 'DISTRICT', 'HOOD', 'NEIGHBORHOOD'
+  ]; 
+  
+  for (const field of nameFields) {
+    if (propsToCheck[field] && propsToCheck[field].toString().trim()) {
+      return String(propsToCheck[field]).trim();
+    }
+  }
+  
+  // Then look for any field that contains these name-related terms
+  const nameContainFields = Object.keys(propsToCheck).filter(key => 
+    key.toLowerCase().includes('name') || 
+    key.toLowerCase().includes('city') ||
+    key.toLowerCase().includes('district') ||
+    key.toLowerCase().includes('area') ||
+    key.toLowerCase().includes('hood') ||
+    key.toLowerCase().includes('zone')
+  );
+  
+  for (const field of nameContainFields) {
+    if (propsToCheck[field] && propsToCheck[field].toString().trim()) {
+      return String(propsToCheck[field]).trim();
+    }
+  }
+  
+  // If we still don't have a name, try ZIP code or ID
+  const zipOrId = getZIPCode(attributes);
+  if (zipOrId) {
+    return `Location ${zipOrId}`;
+  }
+  
+  // Fallback to any string value
+  for (const [key, value] of Object.entries(propsToCheck)) {
+    if (typeof value === 'string' && value.trim()) {
+      if (!['OBJECTID', 'FEDUID', 'CSDUID', 'PRUID'].includes(key.toUpperCase())) {
+        return value.trim();
+      }
+    }
+  }
+  
+  // Ultimate fallback - use OBJECTID or any ID
+  for (const idField of ['OBJECTID', 'OID', 'FID', 'ID']) {
+    if (propsToCheck[idField]) {
+      return `Area ${propsToCheck[idField]}`;
+    }
+  }
+  
+  return 'Unknown Location';
+}
+
+// **MODIFIED** Gets ZIP/FSA code from an attribute object
+function getZIPCode(attributes: FeatureProperties): string {
+  // Look inside properties if it exists, otherwise use attributes directly
+  const propsToCheck = attributes.properties || attributes;
+
+  // Try ZIP-specific fields first
+  const zipFields = ['ZIP', 'ZIPCODE', 'ZIP_CODE', 'POSTAL', 'FSA', 'POSTCODE', 'POSTAL_CODE'];
+  for (const field of zipFields) {
+    const zip = propsToCheck[field];
+    if (zip && zip.toString().trim()) {
+      return zip.toString().trim();
+    }
+  }
+
+  // Try ID fields next
+  const idFields = ['CFSAUID', 'ID', 'CSDUID', 'FEDUID', 'OBJECTID']; 
+  for (const field of idFields) {
+    if (propsToCheck[field]) {
+      return propsToCheck[field].toString().trim();
+    }
+  }
+
+  // Look for any field that contains 'zip', 'code', or 'postal'
+  const possibleZipFields = Object.keys(propsToCheck).filter(key =>
+    key.toLowerCase().includes('zip') ||
+    key.toLowerCase().includes('code') ||
+    key.toLowerCase().includes('postal')
+  );
+  
+  for (const field of possibleZipFields) {
+    const val = propsToCheck[field];
+    if (val && val.toString().trim()) {
+      return val.toString().trim();
+    }
+  }
+
+  return 'ID-' + (propsToCheck.OBJECTID || Math.floor(Math.random() * 10000));
+}
+
+// Correlation calculation functions (calculateCorrelation, calculatePearson, etc.)
+// These likely need adaptation if the input structure `LayerFeatures[]` changes.
+// Assuming they might be called later with appropriately structured data or are unused for now.
+// --- Keep existing correlation functions: calculateCorrelation, calculatePearson, calculateSpearman, calculateKendall, calculatePValue, calculateSpatialStats, rankValues, tDistributionCDF, betaRegularized, logGamma, betaContinuedFraction, calculateMoransI, calculateGetisOrdG ---
+// ... (paste existing correlation helper functions here if they are still used elsewhere) ...
+// NOTE: If correlation is needed, these functions will need refactoring
+// to accept the { layerId, features: FeatureProperties[] } structure.
+
+
+// Helper function to convert ReadableStream to Buffer
+async function streamToBufferHelper(stream: ReadableStream<Uint8Array>): Promise<Buffer> {
+    const reader = stream.getReader();
+    const chunks: Uint8Array[] = [];
+    
+    // Replace constant condition with proper loop
+    let reading = true;
+    while (reading) {
+        const { done, value } = await reader.read();
+        if (done) {
+            reading = false;
+        } else if (value) {
+            chunks.push(value);
+        }
+    }
+    
+    // Rest of the function remains the same
+    let totalLength = 0;
+    chunks.forEach(chunk => {
+        totalLength += chunk.length;
+    });
+    const result = new Uint8Array(totalLength);
+    let offset = 0;
+    chunks.forEach(chunk => {
+        result.set(chunk, offset);
+        offset += chunk.length;
+    });
+    return Buffer.from(result); // Keep Buffer for now, will decode later
+}
+
+// --- POST Request Handler ---
+export async function POST(req: NextRequest) {
+    const body = await req.json();
+    const { messages, metadata, blobUrl } = body;
+
+    console.log('[Claude DEBUG] 🔍 Received POST request');
+    console.log('[Claude DEBUG] 🔍 Request metadata:', JSON.stringify(metadata));
+    console.log('[Claude DEBUG] 🔍 Blob URL provided:', !!blobUrl);
+    console.log('[Claude DEBUG] 🔍 Messages count:', messages?.length || 0);
+
+    // Add error message for missing data
+    let dataNotFoundMessage = `I don't have sufficient data to answer this question based on the available dataset...`;
+
+    if (!blobUrl) {
+        console.error('[Claude DEBUG] ❌ Blob URL is missing from request');
+        return NextResponse.json({ error: 'Blob URL is missing' }, { status: 400 });
+    }
+
+    try {
+        // Get the last user query from messages
+        const userQuery = messages[messages.length - 1]?.content || '';
+        if (!userQuery) {
+            console.error('[Claude DEBUG] ❌ User query is missing from messages');
+            return NextResponse.json({ error: 'User query is missing from messages' }, { status: 400 });
+        }
+
+        // Fetch blob data
+        console.log('[Claude DEBUG] 🔍 Fetching data from blob:', blobUrl.substring(0, 50) + '...');
+        const blobResponse = await fetch(blobUrl);
+
+        console.log('[Claude DEBUG] 🔍 Blob fetch response status:', blobResponse.status, blobResponse.statusText);
+        if (!blobResponse.ok) {
+            console.error(`[Claude DEBUG] ❌ Failed to fetch blob data: ${blobResponse.status} ${blobResponse.statusText}`);
+            return NextResponse.json({ content: dataNotFoundMessage });
+        }
+
+        // Get blob data as stream
+        const blobStream = blobResponse.body;
+        if (!blobStream) {
+            console.error('[Claude] No stream in blob response');
+            return NextResponse.json({ content: dataNotFoundMessage });
+        }
+
+        // Convert stream to buffer using helper function
+        const blobBuffer = await streamToBufferHelper(blobStream);
+        
+        // Parse data from buffer
+        const uploadData = JSON.parse(blobBuffer.toString()) as UploadDataType;
+        
+        if (!uploadData || !uploadData.features || uploadData.features.length === 0) {
+            console.error('[Claude] No valid feature data in blob');
+            return NextResponse.json({ content: dataNotFoundMessage });
+        }
+
+        console.log('[Claude DEBUG] 🔍 Successfully parsed blob data with structure:', {
+            hasFeatures: !!uploadData?.features,
+            featureCount: uploadData?.features?.length || 0,
+            totalFeatures: uploadData?.totalFeatures || 0,
+            isComplete: uploadData?.isComplete || false
+        });
+
+        // Add more detailed logging about the features data structure
+        const firstFeatureSet = uploadData.features[0];
+        const hasThematicValue = firstFeatureSet?.features?.some(f => 
+          f.properties && f.properties.thematic_value !== undefined
+        );
+
+        console.log('[Claude] Feature data quality check:', {
+          hasFeatureSets: uploadData.features.length > 0,
+          firstSetFeatureCount: firstFeatureSet?.features?.length || 0,
+          hasThematicValue,
+          rendererField: uploadData.context?.rendererField || 'unknown',
+          fieldsInFirstFeature: firstFeatureSet?.features?.[0]?.properties 
+            ? Object.keys(firstFeatureSet.features[0].properties).slice(0, 10) 
+            : []
+        });
+
+        // If thematic_value is missing, add warning to the log
+        if (!hasThematicValue) {
+          console.warn('[Claude] WARNING: thematic_value field missing from features. This may affect AI analysis quality.');
+        }
+
+        // Debug blob data structure - specifically check for thematic_value
+        try {
+            if (uploadData.features.length > 0 && uploadData.features[0].features.length > 0) {
+                const sampleFeature = uploadData.features[0].features[0];
+                const props = sampleFeature.properties || {};
+                console.log('[Claude DEBUG] Sample feature structure:', {
+                    hasProperties: !!sampleFeature.properties,
+                    propertyKeys: Object.keys(props),
+                    hasThematicValue: props.hasOwnProperty('thematic_value'),
+                    thematicValueType: props.thematic_value !== undefined ? typeof props.thematic_value : 'undefined',
+                    thematicValue: props.thematic_value,
+                    rendererField: uploadData.context?.rendererField,
+                    hasRendererField: uploadData.context?.rendererField ? 
+                        props.hasOwnProperty(uploadData.context.rendererField) : false
+                });
+
+                // Check more samples for thematic_value
+                let thematicValueCount = 0;
+                let totalChecked = 0;
+                
+                // Check up to 10 features across layers
+                for (const layer of uploadData.features) {
+                    for (let i = 0; i < Math.min(10, layer.features.length); i++) {
+                        totalChecked++;
+                        const feature = layer.features[i];
+                        if (feature.properties && feature.properties.thematic_value !== undefined) {
+                            thematicValueCount++;
+                        }
+                    }
+                }
+                
+                console.log(`[Claude DEBUG] Thematic value check: ${thematicValueCount} of ${totalChecked} checked features have thematic_value`);
+            } else {
+                console.warn('[Claude DEBUG] No features available to check structure');
+            }
+        } catch (e) {
+            console.error('[Claude DEBUG] Error checking blob data structure:', e);
+        }
+
+        // Process layers data for AI analysis
+        const processedLayersData: ProcessedLayer[] = [];
+        
+        // Process each layer
+        for (const layerData of uploadData.features) {
+            // Skip layers with no features
+            if (!layerData.features || layerData.features.length === 0) {
+                console.log(`[Claude] Skipping empty layer: ${layerData.layerId}`);
+                continue;
+            }
+
+            // Log layer info
+            console.log(`[Claude] Processing layer ${layerData.layerId} with ${layerData.features.length} features`);
+            
+            // Process layer data
+            const processedLayer: ProcessedLayer = {
+                layerId: layerData.layerId,
+                layerName: layerData.layerName || layers[layerData.layerId]?.name || layerData.layerId,
+                layerType: layerData.layerType || 'feature',
+                features: layerData.features
+            };
+            
+            // Add to processed layers
+            processedLayersData.push(processedLayer);
+        }
+
+        // Exit if no valid layers
+        if (processedLayersData.length === 0) {
+            console.error('[Claude] No valid layers found in blob data');
+            return NextResponse.json({ content: dataNotFoundMessage });
+        }
+
+        // Determine primary layer and perform analysis
+        const primaryLayerData = processedLayersData[0]; // Use first layer as primary
+        
+        // Get feature attributes from primary layer
+        const featureAttributes = primaryLayerData.features;
+        if (!featureAttributes || featureAttributes.length === 0) {
+            console.error('[Claude] No feature attributes in primary layer');
+            return NextResponse.json({ content: dataNotFoundMessage });
+        }
+
+        // --- Basic statistics generation ---
+        const fieldStats: Record<string, any> = {};
+        const categoricalStats: Record<string, Record<string, number>> = {};
+        const numericFields = new Set<string>();
+        const categoricalFields = new Set<string>();
+        const booleanFields = new Set<string>();
+
+        // Sample the first attribute to get fields
+        const sampleAttr = featureAttributes[0];
+        
+        // If the sample doesn't have properties, use the whole object
+        const properties = sampleAttr.properties || sampleAttr;
+        
+        // Skip processing if no valid properties
+        if (!properties) {
+            console.error('[Claude] No valid properties in sample attribute');
+            return NextResponse.json({ content: dataNotFoundMessage });
+        }
+
+        // OPTIONAL: Identify potential fields for filtering
+        // ... (field identification)
+
+        // Process all fields from the sample attribute
+        Object.keys(properties).forEach(fieldName => {
+            // Skip special fields and empty values
+            if (fieldName === 'FID' || fieldName === 'OBJECTID' || fieldName === 'id' || 
+                fieldName === 'identifierField' || fieldName === 'error' || 
+                properties[fieldName] === null || properties[fieldName] === undefined) {
+                return;
+            }
+
+            // Get the field value
+            const value = properties[fieldName];
+            
+            // Categorize fields
+            if (typeof value === 'number') {
+                numericFields.add(fieldName);
+                
+                // Initialize field stats
+                fieldStats[fieldName] = {
+                    count: 0,
+                    min: Infinity,
+                    max: -Infinity,
+                    sum: 0,
+                    values: [] // To calculate median and quartiles
+                };
+            } else if (typeof value === 'string') {
+                // Text fields with numeric content
+                const numValue = parseFloat(value);
+                if (!isNaN(numValue)) {
+                    numericFields.add(fieldName);
+                    
+                    // Initialize field stats for numeric string fields
+                    fieldStats[fieldName] = {
+                        count: 0,
+                        min: Infinity,
+                        max: -Infinity,
+                        sum: 0,
+                        values: [] // To calculate median and quartiles
+                    };
+                } else {
+                    categoricalFields.add(fieldName);
+                    categoricalStats[fieldName] = {};
+                }
+            } else if (typeof value === 'boolean') {
+                booleanFields.add(fieldName);
+                categoricalStats[fieldName] = {
+                    'true': 0,
+                    'false': 0
+                };
+            }
+        });
+
+        // Special handling: Ensure thematic_value field is always tracked for statistics if present
+        if (properties.hasOwnProperty('thematic_value') && !numericFields.has('thematic_value')) {
+            const value = properties['thematic_value'];
+            if (value !== null && value !== undefined && !isNaN(value)) {
+                numericFields.add('thematic_value');
+                fieldStats['thematic_value'] = {
+                    count: 0,
+                    min: Infinity,
+                    max: -Infinity,
+                    sum: 0,
+                    values: []
+                };
+                console.log('[Claude] Adding thematic_value to numeric fields for statistics');
+            }
+        }
+
+        // Also ensure the renderer field is tracked 
+        // Access renderer field from context or metadata
+        const rendererField = uploadData.context?.rendererField || 
+                             metadata?.primaryField || 
+                             'thematic_value'; // Default to thematic_value as fallback
+        
+        if (rendererField && properties.hasOwnProperty(rendererField) && !numericFields.has(rendererField)) {
+            const value = properties[rendererField];
+            if (value !== null && value !== undefined && !isNaN(value)) {
+                numericFields.add(rendererField);
+                fieldStats[rendererField] = {
+                    count: 0,
+                    min: Infinity,
+                    max: -Infinity,
+                    sum: 0,
+                    values: []
+                };
+                console.log(`[Claude] Adding renderer field ${rendererField} to numeric fields for statistics`);
+            }
+        }
+
+        // Process all attributes
+        featureAttributes.forEach(attr => {
+            // Get properties from attributes
+            const props = attr.properties || attr;
+            
+            // Skip if no properties
+            if (!props) return;
+            
+            // Process numeric fields
+            numericFields.forEach(field => {
+                const value = props[field];
+                if (value === null || value === undefined) return;
+                
+                // Parse numeric value from string if needed
+                let numValue = typeof value === 'number' ? value : parseFloat(value);
+                if (isNaN(numValue)) return;
+                
+                // Update field stats
+                fieldStats[field].count++;
+                fieldStats[field].min = Math.min(fieldStats[field].min, numValue);
+                fieldStats[field].max = Math.max(fieldStats[field].max, numValue);
+                fieldStats[field].sum += numValue;
+                fieldStats[field].values.push(numValue);
+            });
+            
+            // Process categorical fields
+            categoricalFields.forEach(field => {
+                const value = props[field];
+                if (value === null || value === undefined) return;
+                
+                // Convert to string if needed
+                const strValue = String(value);
+                
+                // Update categorical stats
+                if (!categoricalStats[field][strValue]) {
+                    categoricalStats[field][strValue] = 0;
+                }
+                categoricalStats[field][strValue]++;
+            });
+            
+            // Process boolean fields
+            booleanFields.forEach(field => {
+                const value = props[field];
+                if (value === null || value === undefined) return;
+                
+                // Update boolean stats
+                categoricalStats[field][String(!!value)]++;
+            });
+        });
+
+        // Calculate additional statistics for numeric fields
+        numericFields.forEach(field => {
+            const stats = fieldStats[field];
+            if (stats.count === 0) {
+                delete fieldStats[field];
+                return;
+            }
+            
+            // Calculate mean
+            stats.mean = stats.sum / stats.count;
+            
+            // Sort values for median and quartiles
+            stats.values.sort((a: number, b: number) => a - b);
+            
+            // Calculate median
+            const middle = Math.floor(stats.values.length / 2);
+            stats.median = stats.values.length % 2 === 0
+                ? (stats.values[middle - 1] + stats.values[middle]) / 2
+                : stats.values[middle];
+            
+            // Calculate quartiles
+            const quarter = Math.floor(stats.values.length / 4);
+            stats.quartiles = {
+                q1: stats.values[quarter],
+                q3: stats.values[3 * quarter]
+            };
+            
+            // Calculate standard deviation
+            stats.stdDev = Math.sqrt(
+                stats.values.reduce((sum: number, val: number) => 
+                    sum + Math.pow(val - stats.mean, 2), 0) / stats.count
+            );
+            
+            // Remove values array to reduce size
+            delete stats.values;
+        });
+
+        // Construct the analysis prompt
+        const analysisPrompt = `Question: ${userQuery}\n\nAvailable Data Overview:\n${processedLayersData.map(layerData => {
+            // Get the layer name
+            const name = layerData.layerName || layers[layerData.layerId]?.name || layerData.layerId;
+            // Get feature count
+            const featureCount = layerData.features.length;
+            return `- ${name}: ${featureCount} records`;
+        }).join('\n')}
+
+Statistical Summary:
+${numericFields.size > 0 ?
+            `Numeric Fields Analysis:\n${Object.entries(fieldStats).map(([field, stats]) =>
+                `- ${field}: Range from ${formatFieldValue((stats as any).min, layers[primaryLayerData.layerId])} to ${formatFieldValue((stats as any).max, layers[primaryLayerData.layerId])}, Average: ${formatFieldValue((stats as any).mean, layers[primaryLayerData.layerId])}`
+).join('\n')}` : ''}`;
+
+      // Log the final analysis prompt length
+      console.log(`[Claude] Analysis prompt length: ${analysisPrompt.length} chars`);
+      console.log(`[Claude] Analysis prompt first 200 chars: ${analysisPrompt.substring(0, 200)}...`)
+
+      // --- Construct the final userMessage based on analysis type ---
+      let userMessage = '';
+
+      // --- RESTRUCTURED: Prioritize Correlation Check --- 
+      if (metadata?.analysisType === 'correlation' && metadata?.primaryField && metadata?.comparisonField) {
+        // For correlation analysis
+        const primaryField = metadata.primaryField;
+        const comparisonField = metadata.comparisonField;
+        const primaryFieldName = primaryField.replace(/_/g, ' ');
+        const comparisonFieldName = comparisonField.replace(/_/g, ' ');
+        
+        userMessage = `Based on the ZIP code level data, analyze the correlation between ${primaryFieldName} and ${comparisonFieldName}. Provide actionable marketing insights relevant to the business question: "${userQuery}".
+
+${analysisPrompt}
+
+Focus your analysis on:
+1. Describing the relationship between ${primaryFieldName} and ${comparisonFieldName}
+2. Identifying key ZIP codes where both values are high
+3. Recommending specific marketing strategies based on this correlation
+4. Explaining geographic patterns relevant to campaign planning
+
+Your response should provide concrete recommendations for marketers on how to use this correlation to:
+- Target the most promising geographic areas
+- Create messaging that leverages the relationship between these factors
+- Optimize marketing spend based on these insights`;
+      } else {
+        // Extract highest and lowest values for the primary field
+        // This assumes the primaryField is set in metadata or can be inferred
+        const primaryField = metadata?.primaryField || 
+                           Object.keys(fieldStats).find(f => f.toLowerCase().includes('value')) || 
+                           Object.keys(fieldStats)[0];
+        
+        if (!primaryField || !fieldStats[primaryField]) {
+          console.warn('[Claude] Primary field not found or has no stats:', primaryField);
+          return NextResponse.json({ 
+            content: dataNotFoundMessage
+          });
+        }
+        
+        // --- Extract location with highest value ---
+        let highestValue = -Infinity;
+        let highestFeature = null;
+        
+        for (const feature of featureAttributes) {
+          const props = feature.properties || feature;
+          if (!props) continue;
+          
+          const value = props[primaryField];
+          if (value === null || value === undefined) continue;
+          
+          const numValue = typeof value === 'number' ? value : parseFloat(value);
+          if (isNaN(numValue)) continue;
+          
+          if (numValue > highestValue) {
+            highestValue = numValue;
+            highestFeature = props;
+          }
+        }
+        
+        // Get location name from highest feature
+        const highestLocationName = highestFeature 
+          ? getLocationName(highestFeature)
+          : "Unknown location";
+        
+        // Format the highest value
+        const highestFormattedValue = highestFeature 
+          ? formatFieldValue(highestValue, layers[primaryLayerData.layerId])
+          : "N/A";
+        
+        console.log('[Claude] Highest value info:', {
+          location: highestLocationName,
+          value: highestFormattedValue,
+          field: primaryField
+        });
+        // --- End Extract Highest/Lowest --- 
+
+        // Get primary layer name 
+        const primaryLayerName = primaryLayerData.layerName || 
+                              layers[primaryLayerData.layerId]?.name || 
+                              primaryLayerData.layerId;
+        
+        // Format the field name to be more human-readable
+        const primaryFieldName = primaryField.replace(/_/g, ' ');
+
+        // Construct the user message using the extracted high/low info
+        userMessage = `Based on the ZIP code level data, analyze the distribution and patterns for ${primaryLayerName} (${primaryFieldName}). Provide actionable marketing insights relevant to the business question: "${userQuery}".
+
+${analysisPrompt}
+
+Focus your analysis on:
+1. Identifying high-value ZIP codes for ${primaryFieldName} - especially highlight ${highestLocationName} (${highestFormattedValue}) and other top-performing areas.
+2. Describing geographic concentrations that would be valuable for targeted marketing.
+3. Providing specific, actionable recommendations for marketers based on this data.
+4. Comparing different ZIP code areas and what this means for campaign planning.
+
+Connect your insights directly to marketing applications such as:
+- Where to focus advertising dollars
+- Target demographics for campaigns
+- Potential sponsorship or partnership opportunities
+- Retail location strategy
+- Digital marketing geo-targeting recommendations
+
+IMPORTANT: Focus on business implications rather than just data description. Address the marketer's question directly with practical recommendations.`;
+      }
+
+      // --- Call Anthropic API ---
+      console.log('[Claude DEBUG] 🔍 About to call Anthropic API with:');
+      console.log('[Claude DEBUG] 🔍 - Model:', 'claude-3-5-sonnet-20240620');
+      
+      // Enhance the system prompt to emphasize thematic_value importance
+      let finalSystemPrompt = `You are an AI geospatial data analyst assistant specializing in ZIP code level consumer insights. Your task is to analyze and explain geographic patterns that help marketing, sales, and sponsorship professionals make data-driven decisions.
+
+Important data structure information:`;
+
+      // Add stronger emphasis on thematic_value if it exists
+      if (hasThematicValue) {
+        finalSystemPrompt += `
+- The data contains a critical field called "thematic_value" which is the normalized numeric value used for visualization on the map
+- When analyzing numeric patterns, ALWAYS use "thematic_value" for your analysis to ensure consistency with the map visualization
+- The map's colors are directly based on the "thematic_value" field, so your insights must reference this field`;
+      } else {
+        // Fallback guidance if thematic_value is missing
+        finalSystemPrompt += `
+- Look for the field "${uploadData.context?.rendererField || 'value'}" which is used for visualization on the map
+- For numeric analysis, focus on fields that contain meaningful numeric values`;
+      }
+
+      // Add field statistics to the prompt if available
+      if (fieldStats['thematic_value']) {
+        finalSystemPrompt += `
+- The thematic_value range is from ${fieldStats['thematic_value'].min} to ${fieldStats['thematic_value'].max}`;
+      }
+
+      finalSystemPrompt += `
+
+Your task is to analyze geographic patterns in this data and provide clear insights relevant to the user's query. Be specific and actionable in your recommendations.`;
+
+      console.log('[Claude DEBUG] 🔍 Constructed system prompt with length:', finalSystemPrompt.length);
+      console.log('[Claude DEBUG] 🔍 - System prompt length:', finalSystemPrompt.length);
+      console.log('[Claude DEBUG] 🔍 - User message length:', userMessage.length);
+
+      try {
+        const response = await anthropic.messages.create({
+          model: 'claude-3-5-sonnet-20240620',
+          max_tokens: 4000,
+          temperature: 0.7,
+          system: finalSystemPrompt,
+          messages: [
+            {
+              role: 'user',
+              content: userMessage,
+            },
+          ],
+        });
+
+        console.log('[Claude DEBUG] 🔍 Received response from Anthropic API');
+        console.log('[Claude DEBUG] 🔍 Response has content blocks:', response.content?.length || 0);
+        
+        const responseContent = response.content?.find(block => block.type === 'text')?.text || 'No text content received from AI.';
+
+        if (!responseContent || responseContent === 'No text content received from AI.') {
+          console.error('[Claude] No valid text content in response:', response.content);
+        }
+
+        console.log('[Claude DEBUG] 🔍 Returning final response with content length:', responseContent.length);
+
+        // --- Return response ---
+        const analysisResponse: AnalysisResponse = {
+          content: responseContent,
+          // Optionally include stats if needed by frontend, but they are not part of AnalysisResponse type
+          // fieldStats: fieldStats,
+          // categoricalStats: categoricalStats
+        };
+
+        return NextResponse.json(analysisResponse);
+      } catch (apiError) {
+        console.error('[Claude DEBUG] ❌ API call error:', apiError);
+        throw apiError; // Re-throw to be caught by the outer try/catch
+      }
+
+    } catch (error) {
+      console.error('[Claude DEBUG] ❌ ERROR in POST handler:', error);
+      console.error('[Claude DEBUG] ❌ Error type:', error instanceof Error ? error.constructor.name : typeof error);
+      console.error('[Claude DEBUG] ❌ Error message:', error instanceof Error ? error.message : String(error));
+      if (error instanceof Error && error.stack) {
+          console.error('[Claude DEBUG] ❌ Stack trace:', error.stack);
+      }
+      
+      return NextResponse.json({
+        content: `I'm sorry, but I encountered an error while analyzing the data. Error details: ${error instanceof Error ? error.message : 'Unknown error'}`
+      });
+    }
+}
+
+// --- OPTIONS Handler ---
+export async function OPTIONS(request: Request) {
+  return NextResponse.json({}, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
+}

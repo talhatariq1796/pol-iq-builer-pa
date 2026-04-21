@@ -1,0 +1,143 @@
+{
+  "_metadata": {
+    "description": "Index of documents available for RAG retrieval",
+    "version": "1.0",
+    "created": "2025-12-01",
+    "note": "These documents are curated for user-facing responses. Do not include internal development docs."
+  },
+  "documents": [
+    {
+      "id": "methodology",
+      "title": "Political Analysis Methodology",
+      "path": "data/rag/methodology-summary.md",
+      "category": "methodology",
+      "description": "Explains how political scores are calculated and what they mean",
+      "keywords": [
+        "methodology", "how", "calculated", "formula", "score",
+        "partisan lean", "swing potential", "gotv", "persuasion",
+        "weighted", "interpolation", "targeting strategy",
+        "limitations", "accuracy", "margin of error"
+      ],
+      "use_when": [
+        "User asks how scores are calculated",
+        "User asks what a metric means",
+        "User questions accuracy or methodology",
+        "User asks about limitations"
+      ]
+    },
+    {
+      "id": "data-sources",
+      "title": "Data Sources",
+      "path": "data/rag/data-sources.md",
+      "category": "sources",
+      "description": "Lists all data sources with URLs and update frequencies",
+      "keywords": [
+        "source", "data", "where", "from", "census", "clerk",
+        "election results", "demographics", "esri", "arcgis",
+        "updated", "vintage", "fresh", "current", "accuracy"
+      ],
+      "use_when": [
+        "User asks where data comes from",
+        "User asks about data freshness or updates",
+        "User wants to verify a source",
+        "User asks about data quality"
+      ]
+    },
+    {
+      "id": "ingham-context",
+      "title": "Ingham County Political Context",
+      "path": "data/rag/ingham-county-context.md",
+      "category": "context",
+      "description": "Background on Ingham County geography, demographics, and political landscape",
+      "keywords": [
+        "ingham", "lansing", "east lansing", "msu", "michigan state",
+        "meridian", "delhi", "township", "county", "capital",
+        "population", "demographics", "history", "context", "background",
+        "urban", "suburban", "rural", "student", "government"
+      ],
+      "use_when": [
+        "User asks about a specific jurisdiction",
+        "User needs geographic context",
+        "User asks about local political history",
+        "User is new and needs orientation"
+      ]
+    },
+    {
+      "id": "glossary",
+      "title": "Political Analysis Glossary",
+      "path": "data/rag/glossary.md",
+      "category": "reference",
+      "description": "Definitions of all metrics, terms, and abbreviations",
+      "keywords": [
+        "definition", "what is", "meaning", "explain", "term",
+        "glossary", "abbreviation", "acronym",
+        "precinct", "jurisdiction", "block group", "margin", "turnout",
+        "gotv", "cvap", "vap", "acs", "interpolation"
+      ],
+      "use_when": [
+        "User asks what a term means",
+        "User seems confused by terminology",
+        "User asks for definitions",
+        "Explaining a metric for the first time"
+      ]
+    }
+  ],
+  "data_files": [
+    {
+      "id": "election_results",
+      "citation_key": "[ELECTIONS]",
+      "description": "Precinct-level election results for 2020, 2022, 2024",
+      "source": "Ingham County Clerk",
+      "use_for": "Vote totals, margins, turnout percentages"
+    },
+    {
+      "id": "political_scores",
+      "citation_key": "[SCORES]",
+      "description": "Partisan lean and swing potential for each precinct",
+      "source": "Calculated from election results",
+      "use_for": "Competitiveness, partisan patterns"
+    },
+    {
+      "id": "targeting_scores",
+      "citation_key": "[TARGETING]",
+      "description": "GOTV Priority and Persuasion Opportunity scores",
+      "source": "Calculated from demographics and election results",
+      "use_for": "Campaign targeting recommendations"
+    },
+    {
+      "id": "demographics",
+      "citation_key": "[DEMOGRAPHICS]",
+      "description": "Population, age, income, education by precinct",
+      "source": "U.S. Census Bureau ACS via Esri Business Analyst",
+      "use_for": "Demographic breakdowns, voter profiles"
+    },
+    {
+      "id": "political_attitudes",
+      "citation_key": "[PSYCHOGRAPHICS]",
+      "description": "Party affiliation estimates, political outlook, civic engagement",
+      "source": "GfK MRI Survey via Esri Business Analyst",
+      "use_for": "Political attitudes, persuadability indicators"
+    },
+    {
+      "id": "tapestry",
+      "citation_key": "[TAPESTRY]",
+      "description": "Esri Tapestry lifestyle segmentation (67 segments)",
+      "source": "Esri proprietary model using Census, MRI, Experian, BLS data",
+      "use_for": "Lifestyle segmentation, voter profiles"
+    },
+    {
+      "id": "campaign_finance",
+      "citation_key": "[FEC]",
+      "description": "Individual campaign contributions by ZIP code",
+      "source": "Federal Election Commission API",
+      "use_for": "Donor concentration, fundraising analysis, prospect identification"
+    },
+    {
+      "id": "media_consumption",
+      "citation_key": "[MEDIA]",
+      "description": "TV, radio, digital, and social media consumption patterns",
+      "source": "GfK MRI Survey + Nielsen via Esri Business Analyst",
+      "use_for": "Media targeting, advertising recommendations"
+    }
+  ]
+}

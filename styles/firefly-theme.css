@@ -1,0 +1,1518 @@
+/* ===== FIREFLY THEME SYSTEM ===== */
+/* Complete CSS implementation with Dark & Light Mode support */
+
+/* 
+ * PROFESSIONAL COLOR SCHEME (Updated Phase 6.0)
+ * ============================================
+ * Based on Standard Color Scheme: 
+ * - Red (#D6191C) for lowest values/errors
+ * - Orange (#FCAD61) for mid-low values/warnings
+ * - Light Green (#A6D96A) for mid-high values
+ * - Green (#1A9641) for highest values
+ * - Primary Green (#33a852) for UI accents and branding
+ * 
+ * Professional and subtle styling with reduced glow effects.
+ * Maintains excellent visibility in both light and dark modes.
+ * Optimized for data visualization and business applications.
+ */
+
+:root {
+  /* Dark Mode Colors - Based on Standard Color Scheme */
+  --firefly-1: #D6191C;   /* Red (lowest values) - standard scheme */
+  --firefly-2: #dc2626;   /* Red variant */
+  --firefly-3: #ef4444;   /* Red lighter */
+  --firefly-4: #f87171;   /* Red very light */
+  --firefly-5: #fca5a5;   /* Red pale */
+  --firefly-6: #fed7d7;   /* Red very pale */
+  --firefly-7: #FFC085;   /* Orange lighter */
+  --firefly-8: #FCAD61;   /* Orange - standard scheme */
+  --firefly-9: #f59e0b;   /* Orange variant */
+  --firefly-10: #fbbf24;  /* Orange light */
+  --firefly-11: #fde047;  /* Yellow light */
+  --firefly-12: #C0EB75;  /* Light Green lighter */
+  --firefly-13: #A6D96A;  /* Light Green - standard scheme */
+  --firefly-14: #33a852;  /* Primary Green - exact color requested */
+  --firefly-15: #1A9641;  /* Green (highest values) - standard scheme */
+  --firefly-16: #15803d;  /* Green darker */
+  --firefly-17: #166534;  /* Green very dark */
+  --firefly-18: #FCAD61;  /* Orange for warnings */
+  --firefly-19: #D6191C;  /* Red for errors */
+  --firefly-20: #1A9641;  /* Green for success */
+  --firefly-neutral: #ffffff;
+
+  /* Light Mode Colors - Professional versions of standard scheme */
+  --firefly-light-1: #B91C1C;   /* Red darker for light mode */
+  --firefly-light-2: #dc2626;   /* Red variant */
+  --firefly-light-3: #ef4444;   /* Red lighter */
+  --firefly-light-4: #f87171;   /* Red very light */
+  --firefly-light-5: #fca5a5;   /* Red pale */
+  --firefly-light-6: #fed7d7;   /* Red very pale */
+  --firefly-light-7: #EA8441;   /* Orange darker for light mode */
+  --firefly-light-8: #E09142;   /* Orange - muted for light mode */
+  --firefly-light-9: #f59e0b;   /* Orange variant */
+  --firefly-light-10: #fbbf24;  /* Orange light */
+  --firefly-light-11: #fde047;  /* Yellow light */
+  --firefly-light-12: #84C95A;  /* Light Green - muted for light mode */
+  --firefly-light-13: #7CB05A;  /* Light Green darker */
+  --firefly-light-14: #2E8B47;  /* Primary Green - darker for light mode */
+  --firefly-light-15: #16713E;  /* Green - darker for light mode */
+  --firefly-light-16: #15803d;  /* Green darker */
+  --firefly-light-17: #166534;  /* Green very dark */
+  --firefly-light-18: #E09142;  /* Orange for warnings */
+  --firefly-light-19: #B91C1C;  /* Red for errors */
+  --firefly-light-20: #16713E;  /* Green for success */
+  --firefly-light-neutral: #4b5563;
+
+  /* Theme Variables - Default to Dark Mode */
+  --theme-bg-primary: #1a1a1a;
+  --theme-bg-secondary: #2a2a2a;
+  --theme-bg-tertiary: #333333;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #cccccc;
+  --theme-text-muted: #999999;
+  --theme-border: #444444;
+  --theme-accent-primary: var(--firefly-14);    /* Primary Green #33a852 */
+  --theme-accent-secondary: var(--firefly-15);  /* Green (highest values) */
+  --theme-warning: var(--firefly-18);           /* Orange */
+  --theme-error: var(--firefly-19);             /* Red */
+  --theme-success: var(--firefly-20);           /* Green for success */
+  
+  /* Map Basemap */
+  --theme-basemap: "dark-gray-vector";
+}
+
+/* Light Mode Theme Variables */
+[data-theme="light"] {
+  --theme-bg-primary: #f8f8f8;
+  --theme-bg-secondary: #f0f0f0;
+  --theme-bg-tertiary: #ffffff;
+  --theme-text-primary: #333333;
+  --theme-text-secondary: #666666;
+  --theme-text-muted: #999999;
+  --theme-border: #e0e0e0;
+  --theme-accent-primary: var(--firefly-light-14);    /* Primary Green - darker for light mode */
+  --theme-accent-secondary: var(--firefly-light-15);  /* Green - darker for light mode */
+  --theme-warning: var(--firefly-light-18);           /* Orange for warnings */
+  --theme-error: var(--firefly-light-19);             /* Red for errors */
+  --theme-success: var(--firefly-light-20);           /* Green for success */
+  
+  /* Map Basemap */
+  --theme-basemap: "gray-vector";
+}
+
+/* ===== BASE THEME STYLES ===== */
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ===== PHASE 6: ADVANCED FEATURES ===== */
+
+/* 6.1 - Smooth Theme Transitions */
+body, 
+.theme-popup-container,
+.theme-legend-container,
+.theme-dialog-content,
+.theme-sidebar {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Faster transitions for interactive elements */
+button, a, input, textarea, select,
+.theme-button-primary,
+.theme-button-secondary,
+.theme-popup-button,
+.theme-tab-active,
+.theme-tab-inactive {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 6.2 - Professional Subtle Effects */
+@keyframes subtle-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(51, 168, 82, 0.1),
+                0 0 8px rgba(51, 168, 82, 0.08),
+                inset 0 0 2px rgba(255, 255, 255, 0.03);
+  }
+  50% {
+    box-shadow: 0 0 6px rgba(51, 168, 82, 0.15),
+                0 0 10px rgba(51, 168, 82, 0.12),
+                inset 0 0 3px rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Subtle effect on primary buttons - no animation by default */
+.theme-button-primary:hover {
+  box-shadow: 0 0 4px rgba(51, 168, 82, 0.2),
+              0 2px 8px rgba(51, 168, 82, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Very subtle hover effect for specific elements */
+.firefly-glow-on-hover:hover {
+  box-shadow: 0 0 3px rgba(51, 168, 82, 0.1),
+              0 1px 4px rgba(51, 168, 82, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Minimal glow for links and minor elements */
+.firefly-glow-subtle:hover {
+  text-shadow: 0 0 2px rgba(51, 168, 82, 0.15);
+  transition: text-shadow 0.2s ease;
+}
+
+/* Subtle effect for active elements - animation only on user request */
+.firefly-glow {
+  box-shadow: 0 0 4px rgba(51, 168, 82, 0.15),
+              0 0 8px rgba(51, 168, 82, 0.1);
+}
+
+/* Professional focus states */
+.theme-input:focus,
+.theme-textarea:focus,
+.theme-select:focus {
+  box-shadow: 0 0 0 2px var(--theme-accent-primary),
+              0 0 4px rgba(51, 168, 82, 0.1) !important;
+}
+
+/* 6.3 - Subtle Animations */
+@keyframes firefly-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes firefly-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply fade-in to popups and dialogs */
+.theme-popup-container,
+.theme-dialog-content {
+  animation: firefly-fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Apply slide-in to legend items */
+.theme-legend-item {
+  animation: firefly-slide-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button press effect */
+.theme-button-primary:active,
+.theme-button-secondary:active,
+.theme-popup-button:active {
+  transform: scale(0.98);
+}
+
+/* 6.4 - Accessibility Features */
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .firefly-glow,
+  .theme-button-primary:hover {
+    animation: none !important;
+  }
+  
+  .theme-skeleton {
+    animation: none !important;
+    background: var(--theme-bg-tertiary) !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --theme-accent-primary: #00ff00;
+    --theme-accent-secondary: #ff8800;
+    --theme-border: #ffffff;
+  }
+  
+  [data-theme="light"] {
+    --theme-accent-primary: #008800;
+    --theme-accent-secondary: #cc6600;
+    --theme-border: #000000;
+  }
+  
+  .theme-button-primary,
+  .theme-popup-button {
+    border: 2px solid var(--theme-text-primary) !important;
+  }
+  
+  .theme-input,
+  .theme-textarea,
+  .theme-select {
+    border-width: 2px !important;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.theme-button-primary:focus-visible,
+.theme-button-secondary:focus-visible,
+.theme-popup-button:focus-visible,
+.theme-tab-active:focus-visible,
+.theme-tab-inactive:focus-visible,
+.theme-link:focus-visible {
+  outline: 3px solid var(--theme-accent-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+body {
+  background-color: var(--theme-bg-primary);
+  color: var(--theme-text-primary);
+}
+
+/* ===== FIREFLY POINT STYLES ===== */
+
+.firefly-point {
+  position: relative;
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.firefly-point-standard {
+  background: radial-gradient(circle, currentColor 0%, currentColor 50%, transparent 80%);
+  box-shadow: 
+    0 0 4px currentColor,
+    0 0 8px rgba(0, 0, 0, 0.2),
+    inset 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.firefly-point-shimmer {
+  background: radial-gradient(circle, currentColor 0%, currentColor 40%, transparent 70%);
+  box-shadow: 
+    0 0 3px currentColor,
+    0 0 6px currentColor,
+    0 0 12px rgba(0, 0, 0, 0.1),
+    inset 0 0 8px rgba(255, 255, 255, 0.2);
+  animation: subtle-twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes subtle-twinkle {
+  0% {
+    box-shadow: 
+      0 0 3px currentColor,
+      0 0 6px currentColor,
+      0 0 12px rgba(0, 0, 0, 0.1),
+      inset 0 0 8px rgba(255, 255, 255, 0.2);
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    box-shadow: 
+      0 0 4px currentColor,
+      0 0 8px currentColor,
+      0 0 16px rgba(0, 0, 0, 0.15),
+      inset 0 0 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Point Sizes */
+.firefly-point-xs { width: 4px; height: 4px; }
+.firefly-point-sm { width: 8px; height: 8px; }
+.firefly-point-md { width: 12px; height: 12px; }
+.firefly-point-lg { width: 20px; height: 20px; }
+.firefly-point-xl { width: 32px; height: 32px; }
+
+/* ===== FIREFLY POLYGON STYLES ===== */
+
+.firefly-polygon {
+  position: relative;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.firefly-polygon-standard {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid currentColor;
+  box-shadow: 
+    0 0 3px currentColor,
+    0 0 6px rgba(0, 0, 0, 0.1),
+    inset 0 0 4px rgba(255, 255, 255, 0.03);
+}
+
+.firefly-polygon-inner {
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  border: 1px solid currentColor;
+  box-shadow: 
+    inset 0 0 15px currentColor,
+    inset 0 0 30px currentColor;
+}
+
+/* ===== FIREFLY LINE STYLES ===== */
+
+.firefly-line {
+  position: relative;
+  height: 2px;
+  background: currentColor;
+  box-shadow: 
+    0 0 2px currentColor,
+    0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== LIGHT MODE ADAPTATIONS ===== */
+
+[data-theme="light"] .firefly-point-standard {
+  background: radial-gradient(circle, currentColor 0%, currentColor 50%, rgba(255,255,255,0.9) 80%, transparent 100%);
+  box-shadow: 
+    0 0 3px rgba(0,0,0,0.2),
+    0 0 6px currentColor,
+    0 0 8px rgba(0,0,0,0.1),
+    inset 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 8px rgba(255,255,255,0.4);
+  border: 1px solid rgba(0,0,0,0.15);
+}
+
+[data-theme="light"] .firefly-polygon-standard {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid currentColor;
+  box-shadow: 
+    0 0 3px rgba(0,0,0,0.15),
+    0 0 6px currentColor,
+    inset 0 0 4px rgba(255,255,255,0.4),
+    inset 0 0 8px rgba(0,0,0,0.05);
+}
+
+[data-theme="light"] .firefly-line {
+  height: 2px;
+  box-shadow: 
+    0 0 2px rgba(0,0,0,0.2),
+    0 0 4px currentColor,
+    0 0 6px rgba(0,0,0,0.1);
+  border-radius: 1px;
+}
+
+/* ===== COLOR CLASSES ===== */
+
+/* Primary Theme Colors */
+.firefly-accent-primary { color: var(--theme-accent-primary); }
+.firefly-accent-secondary { color: var(--theme-accent-secondary); }
+.firefly-warning { color: var(--theme-warning); }
+.firefly-error { color: var(--theme-error); }
+.firefly-success { color: var(--theme-success); }
+
+/* Full Palette - Dark Mode */
+.firefly-color-1 { color: var(--firefly-1); }
+.firefly-color-2 { color: var(--firefly-2); }
+.firefly-color-3 { color: var(--firefly-3); }
+.firefly-color-4 { color: var(--firefly-4); }
+.firefly-color-5 { color: var(--firefly-5); }
+.firefly-color-6 { color: var(--firefly-6); }
+.firefly-color-7 { color: var(--firefly-7); }
+.firefly-color-8 { color: var(--firefly-8); }
+.firefly-color-9 { color: var(--firefly-9); }
+.firefly-color-10 { color: var(--firefly-10); }
+.firefly-color-11 { color: var(--firefly-11); }
+.firefly-color-12 { color: var(--firefly-12); }
+.firefly-color-13 { color: var(--firefly-13); }
+.firefly-color-14 { color: var(--firefly-14); }
+.firefly-color-15 { color: var(--firefly-15); }
+.firefly-color-16 { color: var(--firefly-16); }
+.firefly-color-17 { color: var(--firefly-17); }
+.firefly-color-18 { color: var(--firefly-18); }
+.firefly-color-19 { color: var(--firefly-19); }
+.firefly-color-20 { color: var(--firefly-20); }
+
+/* Full Palette - Light Mode */
+[data-theme="light"] .firefly-color-1 { color: var(--firefly-light-1); }
+[data-theme="light"] .firefly-color-2 { color: var(--firefly-light-2); }
+[data-theme="light"] .firefly-color-3 { color: var(--firefly-light-3); }
+[data-theme="light"] .firefly-color-4 { color: var(--firefly-light-4); }
+[data-theme="light"] .firefly-color-5 { color: var(--firefly-light-5); }
+[data-theme="light"] .firefly-color-6 { color: var(--firefly-light-6); }
+[data-theme="light"] .firefly-color-7 { color: var(--firefly-light-7); }
+[data-theme="light"] .firefly-color-8 { color: var(--firefly-light-8); }
+[data-theme="light"] .firefly-color-9 { color: var(--firefly-light-9); }
+[data-theme="light"] .firefly-color-10 { color: var(--firefly-light-10); }
+[data-theme="light"] .firefly-color-11 { color: var(--firefly-light-11); }
+[data-theme="light"] .firefly-color-12 { color: var(--firefly-light-12); }
+[data-theme="light"] .firefly-color-13 { color: var(--firefly-light-13); }
+[data-theme="light"] .firefly-color-14 { color: var(--firefly-light-14); }
+[data-theme="light"] .firefly-color-15 { color: var(--firefly-light-15); }
+[data-theme="light"] .firefly-color-16 { color: var(--firefly-light-16); }
+[data-theme="light"] .firefly-color-17 { color: var(--firefly-light-17); }
+[data-theme="light"] .firefly-color-18 { color: var(--firefly-light-18); }
+[data-theme="light"] .firefly-color-19 { color: var(--firefly-light-19); }
+[data-theme="light"] .firefly-color-20 { color: var(--firefly-light-20); }
+
+/* ===== UI COMPONENT THEME STYLES ===== */
+
+/* Buttons */
+.theme-button {
+  background-color: var(--theme-bg-tertiary);
+  color: var(--theme-text-primary);
+  border: 1px solid var(--theme-border);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.theme-button:hover {
+  background-color: var(--theme-accent-primary);
+  box-shadow: 0 0 4px rgba(51, 168, 82, 0.2);
+}
+
+.theme-button-primary {
+  background-color: var(--theme-accent-primary);
+  color: var(--theme-bg-primary);
+  box-shadow: 0 0 4px rgba(51, 168, 82, 0.15);
+}
+
+/* Inputs */
+.theme-input {
+  background-color: var(--theme-bg-tertiary);
+  color: var(--theme-text-primary);
+  border: 1px solid var(--theme-border);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.theme-input:focus {
+  outline: none;
+  border-color: var(--theme-accent-primary);
+  box-shadow: 0 0 3px rgba(51, 168, 82, 0.2);
+}
+
+/* Cards/Panels */
+.theme-card {
+  background-color: var(--theme-bg-secondary);
+  border: 1px solid var(--theme-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Sidebars */
+.theme-sidebar {
+  background-color: var(--theme-bg-secondary);
+  border-right: 1px solid var(--theme-border);
+}
+
+/* Tabs */
+.theme-tab {
+  background-color: var(--theme-bg-secondary);
+  color: var(--theme-text-secondary);
+  border-bottom: 2px solid transparent;
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.theme-tab-active {
+  color: var(--theme-accent-primary);
+  border-bottom-color: var(--theme-accent-primary);
+  box-shadow: 0 0 4px rgba(51, 168, 82, 0.2);
+}
+
+.theme-tab:hover:not(.theme-tab-active) {
+  color: var(--theme-text-primary);
+  background-color: var(--theme-bg-tertiary);
+}
+
+/* Dialogs */
+.theme-dialog {
+  background-color: var(--theme-bg-primary);
+  border: 1px solid var(--theme-border);
+  border-radius: 12px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 8px rgba(51, 168, 82, 0.1);
+}
+
+[data-theme="light"] .theme-dialog {
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.15),
+    0 0 6px rgba(46, 139, 71, 0.1);
+}
+
+/* ===== ACCESSIBILITY & PERFORMANCE ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .firefly-point-shimmer {
+    animation: none;
+  }
+  
+  * {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .firefly-point, .firefly-polygon {
+    filter: contrast(1.5) brightness(1.2);
+  }
+}
+
+/* Mobile Optimizations - Enhanced for Phase 6 */
+@media (max-width: 768px) {
+  /* Disable complex animations on mobile */
+  .firefly-point-shimmer,
+  .firefly-glow,
+  .theme-button-primary:hover {
+    animation: none;
+  }
+  
+  /* Simplify shadows for performance */
+  .firefly-point-standard {
+    box-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor;
+  }
+  
+  /* Reduce glow effects */
+  .theme-popup-container,
+  .theme-legend-container {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  /* Faster transitions on mobile */
+  * {
+    transition-duration: 0.2s !important;
+  }
+  
+  /* Optimize touch targets */
+  .theme-button-primary,
+  .theme-button-secondary,
+  .theme-popup-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Performance optimizations for low-powered devices */
+@media (max-width: 768px) and (hover: none) {
+  /* Remove hover effects on touch devices */
+  .theme-button-primary:hover,
+  .theme-button-secondary:hover,
+  .theme-tab-inactive:hover {
+    animation: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Optimize for slow connections */
+@media (prefers-reduced-data: reduce) {
+  .firefly-point-shimmer,
+  .firefly-glow {
+    animation: none !important;
+  }
+}
+
+/* Hardware Acceleration */
+.firefly-point, .firefly-polygon {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Phase 6 - Enhanced Map Element Animations */
+@keyframes firefly-map-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Animate map points on hover */
+.firefly-point:hover {
+  animation: firefly-map-pulse 1s ease-in-out infinite;
+  cursor: pointer;
+}
+
+/* Glow effect for active map elements */
+.firefly-polygon-active {
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.3));
+  animation: firefly-glow-pulse 2s ease-in-out infinite;
+}
+
+/* Smooth transitions for map element state changes */
+.firefly-point,
+.firefly-polygon,
+.firefly-line {
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+}
+
+/* ===== TAB SYSTEM ===== */
+.theme-tab-active {
+  color: var(--theme-accent-primary) !important;
+  border-bottom: 2px solid var(--theme-accent-primary) !important;
+  background-color: var(--theme-bg-tertiary) !important;
+}
+
+.theme-tab-inactive {
+  color: var(--theme-text-secondary) !important;
+  background-color: transparent !important;
+}
+
+.theme-tab-inactive:hover {
+  color: var(--theme-text-primary) !important;
+  border-bottom: 1px solid var(--theme-border) !important;
+  background-color: var(--theme-bg-tertiary) !important;
+}
+
+/* ===== DIALOG SYSTEM ===== */
+.theme-dialog-overlay {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="light"] .theme-dialog-overlay {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.theme-dialog-content {
+  background-color: var(--theme-bg-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+.theme-dialog-close {
+  color: var(--theme-text-secondary) !important;
+  background-color: transparent !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 4px !important;
+}
+
+.theme-dialog-close:hover {
+  color: var(--theme-text-primary) !important;
+  background-color: var(--theme-bg-tertiary) !important;
+}
+
+.theme-dialog-title {
+  color: var(--theme-text-primary) !important;
+}
+
+.theme-dialog-description {
+  color: var(--theme-text-secondary) !important;
+}
+
+/* ===== PHASE 4: TEXT AND TYPOGRAPHY ===== */
+
+/* Button System */
+.theme-button-primary {
+  background-color: var(--theme-accent-primary) !important;
+  color: var(--theme-bg-primary) !important;
+  border: 1px solid var(--theme-accent-primary) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.375rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-button-primary:hover {
+  background-color: var(--theme-accent-secondary) !important;
+  border-color: var(--theme-accent-secondary) !important;
+  box-shadow: 0 0 10px var(--theme-accent-primary) !important;
+}
+
+.theme-button-secondary {
+  background-color: transparent !important;
+  color: var(--theme-accent-primary) !important;
+  border: 1px solid var(--theme-accent-primary) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.375rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-button-secondary:hover {
+  background-color: var(--theme-bg-tertiary) !important;
+  box-shadow: 0 0 8px var(--theme-accent-primary) !important;
+}
+
+.theme-button-danger {
+  background-color: var(--firefly-1) !important;
+  color: white !important;
+  border: 1px solid var(--firefly-1) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.375rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-button-danger:hover {
+  background-color: var(--firefly-2) !important;
+  border-color: var(--firefly-2) !important;
+  box-shadow: 0 0 10px var(--firefly-1) !important;
+}
+
+/* Form Elements */
+.theme-input {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.375rem !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-input:focus {
+  border-color: var(--theme-accent-primary) !important;
+  box-shadow: 0 0 5px var(--theme-accent-primary) !important;
+  outline: none !important;
+}
+
+.theme-textarea {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.375rem !important;
+  padding: 0.75rem !important;
+  font-size: 0.875rem !important;
+  resize: vertical !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-textarea:focus {
+  border-color: var(--theme-accent-primary) !important;
+  box-shadow: 0 0 5px var(--theme-accent-primary) !important;
+  outline: none !important;
+}
+
+.theme-select {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.375rem !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-select:focus {
+  border-color: var(--theme-accent-primary) !important;
+  box-shadow: 0 0 5px var(--theme-accent-primary) !important;
+  outline: none !important;
+}
+
+/* Links and Interactive Text */
+.theme-link {
+  color: var(--theme-accent-primary) !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.theme-link:hover {
+  color: var(--theme-accent-secondary) !important;
+  text-shadow: 0 0 5px var(--theme-accent-primary) !important;
+}
+
+/* Code Blocks */
+.theme-code {
+  background-color: var(--theme-bg-tertiary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.25rem !important;
+  padding: 0.25rem 0.5rem !important;
+  font-family: 'Courier New', monospace !important;
+  font-size: 0.875rem !important;
+}
+
+.theme-pre {
+  background-color: var(--theme-bg-tertiary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.375rem !important;
+  padding: 1rem !important;
+  font-family: 'Courier New', monospace !important;
+  font-size: 0.875rem !important;
+  overflow-x: auto !important;
+}
+
+/* Text Hierarchy */
+.theme-heading-1 {
+  color: var(--theme-text-primary) !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+}
+
+.theme-heading-2 {
+  color: var(--theme-text-primary) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.theme-heading-3 {
+  color: var(--theme-text-primary) !important;
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.theme-body-text {
+  color: var(--theme-text-primary) !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+.theme-body-text-secondary {
+  color: var(--theme-text-secondary) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+.theme-caption {
+  color: var(--theme-text-muted) !important;
+  font-size: 0.75rem !important;
+  line-height: 1.4 !important;
+}
+
+/* Focus States for Accessibility */
+.theme-focus-ring {
+  outline: 2px solid var(--theme-accent-primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* Disabled States */
+.theme-disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* ===== PHASE 5: MAP COMPONENTS ===== */
+
+/* Map Widgets and Controls */
+.theme-map-widget {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.375rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.theme-map-widget:hover {
+  background-color: var(--theme-bg-tertiary) !important;
+  box-shadow: 0 0 10px var(--theme-accent-primary) !important;
+}
+
+.theme-zoom-widget {
+  background-color: var(--theme-bg-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+}
+
+.theme-compass-widget {
+  background-color: var(--theme-bg-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+}
+
+/* Custom Map Popups */
+.theme-popup-container {
+  background-color: var(--theme-bg-primary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  max-width: 400px !important;
+  padding: 1rem !important;
+}
+
+.theme-popup-title {
+  color: var(--theme-text-primary) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+  border-bottom: 1px solid var(--theme-border) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.theme-popup-content {
+  color: var(--theme-text-secondary) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+.theme-popup-chart {
+  margin: 0.75rem 0 !important;
+}
+
+.theme-popup-chart-bar {
+  height: 20px !important;
+  background: linear-gradient(90deg, var(--theme-accent-primary), var(--theme-accent-secondary)) !important;
+  border-radius: 0.25rem !important;
+  margin: 0.25rem 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.theme-popup-chart-bar:hover {
+  box-shadow: 0 0 8px var(--theme-accent-primary) !important;
+  transform: scale(1.02) !important;
+}
+
+.theme-popup-actions {
+  display: flex !important;
+  gap: 0.5rem !important;
+  margin-top: 1rem !important;
+  padding-top: 0.75rem !important;
+  border-top: 1px solid var(--theme-border) !important;
+}
+
+.theme-popup-button {
+  background-color: var(--theme-accent-primary) !important;
+  color: var(--theme-bg-primary) !important;
+  border: none !important;
+  border-radius: 0.25rem !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-popup-button:hover {
+  background-color: var(--theme-accent-secondary) !important;
+  box-shadow: 0 0 8px var(--theme-accent-primary) !important;
+}
+
+.theme-popup-close {
+  position: absolute !important;
+  top: 0.5rem !important;
+  right: 0.5rem !important;
+  background-color: transparent !important;
+  color: var(--theme-text-secondary) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.theme-popup-close:hover {
+  background-color: var(--theme-bg-tertiary) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+/* Legend System */
+.theme-legend-container {
+  background-color: var(--theme-bg-primary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.375rem !important;
+  padding: 1rem !important;
+  margin: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.theme-legend-title {
+  color: var(--theme-text-primary) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 1px solid var(--theme-border) !important;
+}
+
+.theme-legend-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin: 0.5rem 0 !important;
+  padding: 0.25rem !important;
+  border-radius: 0.25rem !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.theme-legend-item:hover {
+  background-color: var(--theme-bg-tertiary) !important;
+}
+
+.theme-legend-symbol {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 2px !important;
+  border: 1px solid var(--theme-border) !important;
+  flex-shrink: 0 !important;
+}
+
+.theme-legend-label {
+  color: var(--theme-text-primary) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.4 !important;
+}
+
+.theme-legend-value {
+  color: var(--theme-text-secondary) !important;
+  font-size: 0.75rem !important;
+  margin-left: auto !important;
+}
+
+/* Loading and Progress States */
+.theme-loading-spinner {
+  border: 2px solid var(--theme-bg-tertiary) !important;
+  border-top: 2px solid var(--theme-accent-primary) !important;
+  border-radius: 50% !important;
+  animation: firefly-spin 1s linear infinite !important;
+}
+
+@keyframes firefly-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.theme-progress-bar {
+  background-color: var(--theme-bg-tertiary) !important;
+  border-radius: 0.25rem !important;
+  overflow: hidden !important;
+  height: 8px !important;
+}
+
+.theme-progress-fill {
+  background: linear-gradient(90deg, var(--theme-accent-primary), var(--theme-accent-secondary)) !important;
+  height: 100% !important;
+  transition: width 0.3s ease !important;
+  box-shadow: 0 0 8px var(--theme-accent-primary) !important;
+}
+
+.theme-skeleton {
+  background: linear-gradient(90deg, var(--theme-bg-tertiary), var(--theme-bg-secondary), var(--theme-bg-tertiary)) !important;
+  background-size: 200% 100% !important;
+  animation: firefly-shimmer 2s ease-in-out infinite !important;
+  border-radius: 0.25rem !important;
+}
+
+@keyframes firefly-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Error States */
+.theme-error-container {
+  background-color: rgba(255, 0, 64, 0.1) !important;
+  border: 1px solid var(--firefly-1) !important;
+  color: var(--firefly-1) !important;
+  border-radius: 0.375rem !important;
+  padding: 1rem !important;
+  margin: 0.5rem 0 !important;
+}
+
+.theme-error-title {
+  color: var(--firefly-1) !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.theme-error-message {
+  color: var(--theme-text-primary) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+.theme-retry-button {
+  background-color: var(--firefly-1) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0.25rem !important;
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  margin-top: 0.75rem !important;
+}
+
+.theme-retry-button:hover {
+  background-color: var(--firefly-2) !important;
+  box-shadow: 0 0 10px var(--firefly-1) !important;
+}
+
+/* Alert and Destructive Theme Classes */
+.theme-bg-destructive-subtle {
+  background-color: rgba(255, 0, 64, 0.1) !important;
+}
+
+.theme-text-destructive {
+  color: var(--firefly-1) !important;
+}
+
+.theme-border-destructive {
+  border-color: var(--firefly-1) !important;
+}
+
+/* Dialog Theme Classes */
+.theme-dialog {
+  background-color: var(--theme-bg-primary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+}
+
+/* Tooltip Theme Classes */
+.theme-tooltip {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.375rem !important;
+  padding: 0.5rem !important;
+  font-size: 0.875rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Step Header Theme Classes */
+.theme-step-header {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.375rem !important;
+  padding: 1rem !important;
+}
+
+/* Draw Tools Theme Classes */
+.theme-draw-button {
+  background-color: var(--theme-bg-tertiary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.25rem !important;
+  padding: 0.5rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-draw-button:hover {
+  background-color: var(--theme-accent-primary) !important;
+  color: var(--theme-bg-primary) !important;
+  box-shadow: 0 0 8px var(--theme-accent-primary) !important;
+}
+
+.theme-draw-button.active {
+  background-color: var(--theme-accent-primary) !important;
+  color: var(--theme-bg-primary) !important;
+  box-shadow: 0 0 12px var(--theme-accent-primary) !important;
+}
+
+/* Map Graphics and Layer Animations */
+.firefly-map-graphic {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+}
+
+.firefly-map-graphic:hover {
+  transform: scale(1.1) !important;
+  filter: drop-shadow(0 0 8px var(--theme-accent-primary)) !important;
+  z-index: 1000 !important;
+}
+
+.firefly-map-graphic:active {
+  transform: scale(1.05) !important;
+  filter: drop-shadow(0 0 12px var(--theme-accent-primary)) !important;
+}
+
+.firefly-map-layer-highlight {
+  animation: firefly-pulse 2s ease-in-out infinite !important;
+  filter: drop-shadow(0 0 6px var(--theme-accent-primary)) !important;
+}
+
+@keyframes firefly-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.firefly-map-point {
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.firefly-map-point:hover {
+  animation: firefly-point-glow 1s ease-in-out infinite alternate !important;
+}
+
+@keyframes firefly-point-glow {
+  0% {
+    filter: drop-shadow(0 0 4px var(--theme-accent-primary));
+  }
+  100% {
+    filter: drop-shadow(0 0 12px var(--theme-accent-primary));
+  }
+}
+
+.firefly-map-polygon {
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.firefly-map-polygon:hover {
+  filter: drop-shadow(0 0 8px var(--theme-accent-primary)) brightness(1.1) !important;
+  stroke-width: 3 !important;
+}
+
+.firefly-map-selected {
+  animation: firefly-selected-glow 1.5s ease-in-out infinite !important;
+}
+
+@keyframes firefly-selected-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px var(--theme-accent-primary));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px var(--theme-accent-primary));
+  }
+}
+/* Success Theme Classes */
+.theme-bg-success-light {
+  background-color: #dcfce7 !important;
+}
+
+.theme-text-success {
+  color: #15803d !important;
+}
+
+[data-theme="dark"] .theme-bg-success-light {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+}
+
+[data-theme="dark"] .theme-text-success {
+  color: #4ade80 !important;
+}
+
+/* ===== ANALYSIS CARDS ===== */
+
+/* Default analysis card styling */
+.theme-analysis-card {
+  background-color: var(--theme-bg-tertiary) !important;
+  border: 1px solid var(--theme-border) !important;
+  color: var(--theme-text-primary) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-analysis-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  background-color: var(--theme-bg-secondary) !important;
+}
+
+/* Selected analysis card styling */
+.theme-analysis-card-selected {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+  border: 2px solid var(--theme-accent-primary) !important;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2) !important;
+}
+
+[data-theme="dark"] .theme-analysis-card-selected {
+  background-color: rgba(34, 197, 94, 0.15) !important;
+  border: 2px solid var(--theme-accent-primary) !important;
+}
+
+/* Disabled analysis card styling */
+.theme-analysis-card-disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  background-color: var(--theme-bg-secondary) !important;
+  border: 1px solid var(--theme-border) !important;
+}
+
+/* ===== QUERY INPUT DARK MODE ===== */
+
+/* Ensure textarea and input elements use theme styling */
+textarea, input[type="text"], input[type="search"] {
+  background-color: var(--theme-bg-tertiary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="search"]:focus {
+  border-color: var(--theme-accent-primary) !important;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2) !important;
+  outline: none !important;
+}
+
+textarea::placeholder, input::placeholder {
+  color: var(--theme-text-muted) !important;
+}
+
+/* ===== DIALOG ELEMENTS ===== */
+
+/* Dialog content override to ensure proper theming */
+.theme-dialog-content,
+[role="dialog"],
+.dialog-content {
+  background-color: var(--theme-bg-primary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+}
+
+/* Dialog headers and titles */
+.dialog-header,
+.theme-dialog-header {
+  border-bottom: 1px solid var(--theme-border) !important;
+}
+
+.dialog-title,
+.theme-dialog-title {
+  color: var(--theme-text-primary) !important;
+}
+
+.dialog-description,
+.theme-dialog-description {
+  color: var(--theme-text-secondary) !important;
+}
+
+/* ===== LOADING STATES ===== */
+
+/* Loading indicators and processing states */
+.theme-loading-container {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+}
+
+.theme-processing-indicator {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text-secondary) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem !important;
+}
+
+/* Chat message containers */
+.theme-message-container {
+  background-color: var(--theme-bg-secondary) !important;
+  color: var(--theme-text-primary) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.theme-message-container:hover {
+  background-color: var(--theme-bg-tertiary) !important;
+}
+
+/* User message styling */
+.theme-message-user {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-accent-primary) !important;
+}
+
+[data-theme="dark"] .theme-message-user {
+  background-color: rgba(34, 197, 94, 0.15) !important;
+}
+
+/* Force green styling for FSA/ZIP links - override any blue colors */
+button[class*="text-[#33a852]"],
+.inline.text-\[#33a852\],
+button[title*="Zoom to"],
+button[title*="Click to zoom"],
+button.bg-green-100,
+.bg-green-100,
+.inline-flex.items-center.bg-green-100.text-green-800 {
+  color: #33a852 !important;
+  background-color: #dcfce7 !important;
+  border: 1px solid #bbf7d0 !important;
+}
+
+/* Additional override for any blue links in chat messages */
+.theme-message-container a,
+.theme-message-container button {
+  color: #33a852 !important;
+}
+
+/* Ensure user messages use green background */
+.theme-message-container.theme-message-user {
+  background-color: rgba(34, 197, 94, 0.1) !important;
+  border-color: #22c55e !important;
+}
+
+/* ===== MAP ZOOM CONTROLS ===== */
+
+/* Zoom control positioning and base styles */
+.custom-zoom-control {
+  position: absolute !important;
+  bottom: 20px !important;
+  left: 84px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  z-index: 1000 !important;
+}
+
+/* Zoom button theming */
+.custom-zoom-control button {
+  background-color: var(--theme-bg-primary) !important;
+  color: var(--theme-text-primary) !important;
+  border: 1px solid var(--theme-border) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.15s ease !important;
+}
+
+.custom-zoom-control button:hover {
+  background-color: var(--theme-bg-tertiary) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+}
+
+.custom-zoom-control button:focus {
+  border-color: var(--theme-accent-primary) !important;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2) !important;
+}
+
+.custom-zoom-control button:active {
+  background-color: var(--theme-bg-secondary) !important;
+  transform: translateY(0px) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Dark mode specific adjustments for zoom controls */
+[data-theme="dark"] .custom-zoom-control button {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .custom-zoom-control button:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
