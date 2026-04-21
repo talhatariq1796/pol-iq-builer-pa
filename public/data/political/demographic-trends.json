@@ -1,0 +1,540 @@
+{
+  "metadata": {
+    "vintages": [
+      "2013",
+      "2018",
+      "2023"
+    ],
+    "generated": "2025-12-13T13:33:54.739Z",
+    "source": "Sample data for development (based on Ingham County patterns)",
+    "geography": "Precincts in Ingham County, MI",
+    "methodology": "Simulated data with realistic demographic trends"
+  },
+  "precincts": {
+    "East Lansing City, Precinct 1": {
+      "2013": {
+        "population": 2862,
+        "median_age": 23.2,
+        "median_income": 32276,
+        "college_pct": 0.571,
+        "white_pct": 0.668,
+        "black_pct": 0.224,
+        "hispanic_pct": 0.065,
+        "owner_pct": 0.209,
+        "renter_pct": 0.791
+      },
+      "2018": {
+        "population": 2931,
+        "median_age": 24.6,
+        "median_income": 35799,
+        "college_pct": 0.615,
+        "white_pct": 0.648,
+        "black_pct": 0.229,
+        "hispanic_pct": 0.07,
+        "owner_pct": 0.194,
+        "renter_pct": 0.806
+      },
+      "2023": {
+        "population": 2997,
+        "median_age": 25.8,
+        "median_income": 38797,
+        "college_pct": 0.64,
+        "white_pct": 0.633,
+        "black_pct": 0.234,
+        "hispanic_pct": 0.075,
+        "owner_pct": 0.179,
+        "renter_pct": 0.821
+      }
+    },
+    "East Lansing City, Precinct 2": {
+      "2013": {
+        "population": 3513,
+        "median_age": 20.3,
+        "median_income": 22512,
+        "college_pct": 0.498,
+        "white_pct": 0.596,
+        "black_pct": 0.234,
+        "hispanic_pct": 0.047,
+        "owner_pct": 0.197,
+        "renter_pct": 0.803
+      },
+      "2018": {
+        "population": 3561,
+        "median_age": 20.7,
+        "median_income": 27609,
+        "college_pct": 0.561,
+        "white_pct": 0.578,
+        "black_pct": 0.239,
+        "hispanic_pct": 0.052,
+        "owner_pct": 0.182,
+        "renter_pct": 0.818
+      },
+      "2023": {
+        "population": 3669,
+        "median_age": 22.1,
+        "median_income": 29662,
+        "college_pct": 0.593,
+        "white_pct": 0.563,
+        "black_pct": 0.244,
+        "hispanic_pct": 0.057,
+        "owner_pct": 0.167,
+        "renter_pct": 0.833
+      }
+    },
+    "East Lansing City, Precinct 3": {
+      "2013": {
+        "population": 3366,
+        "median_age": 20.4,
+        "median_income": 30996,
+        "college_pct": 0.493,
+        "white_pct": 0.767,
+        "black_pct": 0.173,
+        "hispanic_pct": 0.079,
+        "owner_pct": 0.213,
+        "renter_pct": 0.787
+      },
+      "2018": {
+        "population": 3473,
+        "median_age": 22.8,
+        "median_income": 35820,
+        "college_pct": 0.548,
+        "white_pct": 0.746,
+        "black_pct": 0.178,
+        "hispanic_pct": 0.084,
+        "owner_pct": 0.198,
+        "renter_pct": 0.802
+      },
+      "2023": {
+        "population": 3611,
+        "median_age": 23.4,
+        "median_income": 40512,
+        "college_pct": 0.579,
+        "white_pct": 0.731,
+        "black_pct": 0.183,
+        "hispanic_pct": 0.089,
+        "owner_pct": 0.183,
+        "renter_pct": 0.817
+      }
+    },
+    "Lansing City, Ward 1, Precinct 1": {
+      "2013": {
+        "population": 3395,
+        "median_age": 35,
+        "median_income": 53224,
+        "college_pct": 0.259,
+        "white_pct": 0.703,
+        "black_pct": 0.142,
+        "hispanic_pct": 0.08,
+        "owner_pct": 0.689,
+        "renter_pct": 0.311
+      },
+      "2018": {
+        "population": 3488,
+        "median_age": 36.6,
+        "median_income": 56125,
+        "college_pct": 0.302,
+        "white_pct": 0.687,
+        "black_pct": 0.147,
+        "hispanic_pct": 0.085,
+        "owner_pct": 0.674,
+        "renter_pct": 0.326
+      },
+      "2023": {
+        "population": 3532,
+        "median_age": 37.3,
+        "median_income": 63351,
+        "college_pct": 0.323,
+        "white_pct": 0.672,
+        "black_pct": 0.152,
+        "hispanic_pct": 0.09,
+        "owner_pct": 0.659,
+        "renter_pct": 0.341
+      }
+    },
+    "Lansing City, Ward 1, Precinct 2": {
+      "2013": {
+        "population": 3203,
+        "median_age": 42.2,
+        "median_income": 42701,
+        "college_pct": 0.313,
+        "white_pct": 0.749,
+        "black_pct": 0.25,
+        "hispanic_pct": 0.058,
+        "owner_pct": 0.715,
+        "renter_pct": 0.285
+      },
+      "2018": {
+        "population": 3202,
+        "median_age": 43.5,
+        "median_income": 47932,
+        "college_pct": 0.333,
+        "white_pct": 0.716,
+        "black_pct": 0.255,
+        "hispanic_pct": 0.063,
+        "owner_pct": 0.7,
+        "renter_pct": 0.3
+      },
+      "2023": {
+        "population": 3323,
+        "median_age": 44.9,
+        "median_income": 53168,
+        "college_pct": 0.383,
+        "white_pct": 0.701,
+        "black_pct": 0.26,
+        "hispanic_pct": 0.068,
+        "owner_pct": 0.685,
+        "renter_pct": 0.315
+      }
+    },
+    "Lansing City, Ward 2, Precinct 1": {
+      "2013": {
+        "population": 3853,
+        "median_age": 39.5,
+        "median_income": 38630,
+        "college_pct": 0.224,
+        "white_pct": 0.717,
+        "black_pct": 0.229,
+        "hispanic_pct": 0.067,
+        "owner_pct": 0.631,
+        "renter_pct": 0.369
+      },
+      "2018": {
+        "population": 3922,
+        "median_age": 39.8,
+        "median_income": 41637,
+        "college_pct": 0.271,
+        "white_pct": 0.696,
+        "black_pct": 0.234,
+        "hispanic_pct": 0.072,
+        "owner_pct": 0.616,
+        "renter_pct": 0.384
+      },
+      "2023": {
+        "population": 3974,
+        "median_age": 41.1,
+        "median_income": 45503,
+        "college_pct": 0.307,
+        "white_pct": 0.681,
+        "black_pct": 0.239,
+        "hispanic_pct": 0.077,
+        "owner_pct": 0.601,
+        "renter_pct": 0.399
+      }
+    },
+    "Meridian Township, Precinct 1": {
+      "2013": {
+        "population": 4716,
+        "median_age": 41.5,
+        "median_income": 68713,
+        "college_pct": 0.511,
+        "white_pct": 0.936,
+        "black_pct": 0.063,
+        "hispanic_pct": 0.065,
+        "owner_pct": 0.837,
+        "renter_pct": 0.163
+      },
+      "2018": {
+        "population": 4764,
+        "median_age": 42.1,
+        "median_income": 77328,
+        "college_pct": 0.528,
+        "white_pct": 0.911,
+        "black_pct": 0.068,
+        "hispanic_pct": 0.07,
+        "owner_pct": 0.822,
+        "renter_pct": 0.178
+      },
+      "2023": {
+        "population": 4923,
+        "median_age": 42.7,
+        "median_income": 83556,
+        "college_pct": 0.576,
+        "white_pct": 0.896,
+        "black_pct": 0.073,
+        "hispanic_pct": 0.075,
+        "owner_pct": 0.807,
+        "renter_pct": 0.193
+      }
+    },
+    "Meridian Township, Precinct 2": {
+      "2013": {
+        "population": 3740,
+        "median_age": 38.2,
+        "median_income": 79336,
+        "college_pct": 0.456,
+        "white_pct": 0.911,
+        "black_pct": 0.033,
+        "hispanic_pct": 0.083,
+        "owner_pct": 0.759,
+        "renter_pct": 0.241
+      },
+      "2018": {
+        "population": 3837,
+        "median_age": 39.7,
+        "median_income": 85162,
+        "college_pct": 0.497,
+        "white_pct": 0.896,
+        "black_pct": 0.038,
+        "hispanic_pct": 0.088,
+        "owner_pct": 0.744,
+        "renter_pct": 0.256
+      },
+      "2023": {
+        "population": 3886,
+        "median_age": 40.9,
+        "median_income": 93852,
+        "college_pct": 0.52,
+        "white_pct": 0.881,
+        "black_pct": 0.043,
+        "hispanic_pct": 0.093,
+        "owner_pct": 0.729,
+        "renter_pct": 0.271
+      }
+    },
+    "Delhi Township, Precinct 1": {
+      "2013": {
+        "population": 4162,
+        "median_age": 41,
+        "median_income": 40416,
+        "college_pct": 0.208,
+        "white_pct": 0.823,
+        "black_pct": 0.031,
+        "hispanic_pct": 0.075,
+        "owner_pct": 0.61,
+        "renter_pct": 0.39
+      },
+      "2018": {
+        "population": 4323,
+        "median_age": 41.9,
+        "median_income": 45094,
+        "college_pct": 0.228,
+        "white_pct": 0.802,
+        "black_pct": 0.036,
+        "hispanic_pct": 0.08,
+        "owner_pct": 0.595,
+        "renter_pct": 0.405
+      },
+      "2023": {
+        "population": 4470,
+        "median_age": 42.6,
+        "median_income": 48167,
+        "college_pct": 0.269,
+        "white_pct": 0.787,
+        "black_pct": 0.041,
+        "hispanic_pct": 0.085,
+        "owner_pct": 0.58,
+        "renter_pct": 0.42
+      }
+    },
+    "Delhi Township, Precinct 2": {
+      "2013": {
+        "population": 3559,
+        "median_age": 39.1,
+        "median_income": 40098,
+        "college_pct": 0.199,
+        "white_pct": 0.907,
+        "black_pct": 0.038,
+        "hispanic_pct": 0.064,
+        "owner_pct": 0.646,
+        "renter_pct": 0.354
+      },
+      "2018": {
+        "population": 3649,
+        "median_age": 40.9,
+        "median_income": 47117,
+        "college_pct": 0.251,
+        "white_pct": 0.888,
+        "black_pct": 0.043,
+        "hispanic_pct": 0.069,
+        "owner_pct": 0.631,
+        "renter_pct": 0.369
+      },
+      "2023": {
+        "population": 3799,
+        "median_age": 41.8,
+        "median_income": 50716,
+        "college_pct": 0.284,
+        "white_pct": 0.873,
+        "black_pct": 0.048,
+        "hispanic_pct": 0.074,
+        "owner_pct": 0.616,
+        "renter_pct": 0.384
+      }
+    },
+    "Lansing Township, Precinct 1": {
+      "2013": {
+        "population": 3764,
+        "median_age": 39.6,
+        "median_income": 46271,
+        "college_pct": 0.271,
+        "white_pct": 0.855,
+        "black_pct": 0.026,
+        "hispanic_pct": 0.058,
+        "owner_pct": 0.666,
+        "renter_pct": 0.334
+      },
+      "2018": {
+        "population": 3919,
+        "median_age": 40.2,
+        "median_income": 53831,
+        "college_pct": 0.314,
+        "white_pct": 0.823,
+        "black_pct": 0.031,
+        "hispanic_pct": 0.063,
+        "owner_pct": 0.651,
+        "renter_pct": 0.349
+      },
+      "2023": {
+        "population": 4023,
+        "median_age": 41.7,
+        "median_income": 58218,
+        "college_pct": 0.35,
+        "white_pct": 0.808,
+        "black_pct": 0.036,
+        "hispanic_pct": 0.068,
+        "owner_pct": 0.636,
+        "renter_pct": 0.364
+      }
+    },
+    "Mason City, Precinct 1": {
+      "2013": {
+        "population": 3870,
+        "median_age": 35.6,
+        "median_income": 43396,
+        "college_pct": 0.307,
+        "white_pct": 0.904,
+        "black_pct": 0.022,
+        "hispanic_pct": 0.078,
+        "owner_pct": 0.622,
+        "renter_pct": 0.378
+      },
+      "2018": {
+        "population": 4085,
+        "median_age": 35.3,
+        "median_income": 48488,
+        "college_pct": 0.362,
+        "white_pct": 0.869,
+        "black_pct": 0.027,
+        "hispanic_pct": 0.083,
+        "owner_pct": 0.607,
+        "renter_pct": 0.393
+      },
+      "2023": {
+        "population": 4146,
+        "median_age": 36.6,
+        "median_income": 53570,
+        "college_pct": 0.392,
+        "white_pct": 0.854,
+        "black_pct": 0.032,
+        "hispanic_pct": 0.088,
+        "owner_pct": 0.592,
+        "renter_pct": 0.408
+      }
+    },
+    "Williamston City, Precinct 1": {
+      "2013": {
+        "population": 4982,
+        "median_age": 40.7,
+        "median_income": 43673,
+        "college_pct": 0.345,
+        "white_pct": 0.82,
+        "black_pct": 0.023,
+        "hispanic_pct": 0.088,
+        "owner_pct": 0.543,
+        "renter_pct": 0.457
+      },
+      "2018": {
+        "population": 5041,
+        "median_age": 42.4,
+        "median_income": 51008,
+        "college_pct": 0.371,
+        "white_pct": 0.788,
+        "black_pct": 0.028,
+        "hispanic_pct": 0.093,
+        "owner_pct": 0.528,
+        "renter_pct": 0.472
+      },
+      "2023": {
+        "population": 5200,
+        "median_age": 43.6,
+        "median_income": 54509,
+        "college_pct": 0.396,
+        "white_pct": 0.773,
+        "black_pct": 0.033,
+        "hispanic_pct": 0.098,
+        "owner_pct": 0.513,
+        "renter_pct": 0.487
+      }
+    },
+    "Okemos (Meridian Twp), Precinct 3": {
+      "2013": {
+        "population": 3308,
+        "median_age": 37,
+        "median_income": 80473,
+        "college_pct": 0.39,
+        "white_pct": 0.913,
+        "black_pct": 0.066,
+        "hispanic_pct": 0.062,
+        "owner_pct": 0.783,
+        "renter_pct": 0.217
+      },
+      "2018": {
+        "population": 3427,
+        "median_age": 39.1,
+        "median_income": 86114,
+        "college_pct": 0.422,
+        "white_pct": 0.878,
+        "black_pct": 0.071,
+        "hispanic_pct": 0.067,
+        "owner_pct": 0.768,
+        "renter_pct": 0.232
+      },
+      "2023": {
+        "population": 3537,
+        "median_age": 39.8,
+        "median_income": 96015,
+        "college_pct": 0.456,
+        "white_pct": 0.863,
+        "black_pct": 0.076,
+        "hispanic_pct": 0.072,
+        "owner_pct": 0.753,
+        "renter_pct": 0.247
+      }
+    },
+    "Haslett (Meridian Twp), Precinct 4": {
+      "2013": {
+        "population": 4443,
+        "median_age": 42.8,
+        "median_income": 80775,
+        "college_pct": 0.461,
+        "white_pct": 0.887,
+        "black_pct": 0.028,
+        "hispanic_pct": 0.056,
+        "owner_pct": 0.771,
+        "renter_pct": 0.229
+      },
+      "2018": {
+        "population": 4625,
+        "median_age": 43.4,
+        "median_income": 88142,
+        "college_pct": 0.511,
+        "white_pct": 0.862,
+        "black_pct": 0.033,
+        "hispanic_pct": 0.061,
+        "owner_pct": 0.756,
+        "renter_pct": 0.244
+      },
+      "2023": {
+        "population": 4684,
+        "median_age": 44.7,
+        "median_income": 96264,
+        "college_pct": 0.543,
+        "white_pct": 0.847,
+        "black_pct": 0.038,
+        "hispanic_pct": 0.066,
+        "owner_pct": 0.741,
+        "renter_pct": 0.259
+      }
+    }
+  }
+}

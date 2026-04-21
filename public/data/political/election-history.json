@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "elections": [
+      { "year": 2020, "type": "general", "date": "2020-11-03" },
+      { "year": 2022, "type": "general", "date": "2022-11-08" },
+      { "year": 2024, "type": "general", "date": "2024-11-05" }
+    ]
+  },
+  "precinctHistory": {
+    "el-pct-1": {
+      "2020": { "turnout": 0.78, "demVoteShare": 0.72, "repVoteShare": 0.26, "margin": 46 },
+      "2022": { "turnout": 0.52, "demVoteShare": 0.68, "repVoteShare": 0.30, "margin": 38 },
+      "2024": { "turnout": 0.74, "demVoteShare": 0.70, "repVoteShare": 0.28, "margin": 42 }
+    },
+    "el-pct-2": {
+      "2020": { "turnout": 0.75, "demVoteShare": 0.74, "repVoteShare": 0.24, "margin": 50 },
+      "2022": { "turnout": 0.48, "demVoteShare": 0.70, "repVoteShare": 0.28, "margin": 42 },
+      "2024": { "turnout": 0.72, "demVoteShare": 0.71, "repVoteShare": 0.27, "margin": 44 }
+    },
+    "el-pct-3": {
+      "2020": { "turnout": 0.72, "demVoteShare": 0.68, "repVoteShare": 0.30, "margin": 38 },
+      "2022": { "turnout": 0.45, "demVoteShare": 0.62, "repVoteShare": 0.36, "margin": 26 },
+      "2024": { "turnout": 0.68, "demVoteShare": 0.65, "repVoteShare": 0.33, "margin": 32 }
+    },
+    "el-pct-4": {
+      "2020": { "turnout": 0.76, "demVoteShare": 0.71, "repVoteShare": 0.27, "margin": 44 },
+      "2022": { "turnout": 0.50, "demVoteShare": 0.67, "repVoteShare": 0.31, "margin": 36 },
+      "2024": { "turnout": 0.73, "demVoteShare": 0.69, "repVoteShare": 0.29, "margin": 40 }
+    },
+    "el-pct-5": {
+      "2020": { "turnout": 0.74, "demVoteShare": 0.73, "repVoteShare": 0.25, "margin": 48 },
+      "2022": { "turnout": 0.49, "demVoteShare": 0.69, "repVoteShare": 0.29, "margin": 40 },
+      "2024": { "turnout": 0.71, "demVoteShare": 0.70, "repVoteShare": 0.28, "margin": 42 }
+    },
+    "el-pct-6": {
+      "2020": { "turnout": 0.77, "demVoteShare": 0.70, "repVoteShare": 0.28, "margin": 42 },
+      "2022": { "turnout": 0.51, "demVoteShare": 0.66, "repVoteShare": 0.32, "margin": 34 },
+      "2024": { "turnout": 0.74, "demVoteShare": 0.68, "repVoteShare": 0.30, "margin": 38 }
+    },
+    "el-pct-7": {
+      "2020": { "turnout": 0.73, "demVoteShare": 0.69, "repVoteShare": 0.29, "margin": 40 },
+      "2022": { "turnout": 0.47, "demVoteShare": 0.65, "repVoteShare": 0.33, "margin": 32 },
+      "2024": { "turnout": 0.70, "demVoteShare": 0.67, "repVoteShare": 0.31, "margin": 36 }
+    },
+    "el-pct-8": {
+      "2020": { "turnout": 0.75, "demVoteShare": 0.72, "repVoteShare": 0.26, "margin": 46 },
+      "2022": { "turnout": 0.49, "demVoteShare": 0.68, "repVoteShare": 0.30, "margin": 38 },
+      "2024": { "turnout": 0.72, "demVoteShare": 0.70, "repVoteShare": 0.28, "margin": 42 }
+    },
+    "lan-pct-1": {
+      "2020": { "turnout": 0.65, "demVoteShare": 0.58, "repVoteShare": 0.40, "margin": 18 },
+      "2022": { "turnout": 0.42, "demVoteShare": 0.55, "repVoteShare": 0.43, "margin": 12 },
+      "2024": { "turnout": 0.62, "demVoteShare": 0.56, "repVoteShare": 0.42, "margin": 14 }
+    },
+    "lan-pct-2": {
+      "2020": { "turnout": 0.63, "demVoteShare": 0.60, "repVoteShare": 0.38, "margin": 22 },
+      "2022": { "turnout": 0.40, "demVoteShare": 0.57, "repVoteShare": 0.41, "margin": 16 },
+      "2024": { "turnout": 0.60, "demVoteShare": 0.58, "repVoteShare": 0.40, "margin": 18 }
+    },
+    "lan-pct-3": {
+      "2020": { "turnout": 0.61, "demVoteShare": 0.62, "repVoteShare": 0.36, "margin": 26 },
+      "2022": { "turnout": 0.38, "demVoteShare": 0.59, "repVoteShare": 0.39, "margin": 20 },
+      "2024": { "turnout": 0.58, "demVoteShare": 0.60, "repVoteShare": 0.38, "margin": 22 }
+    },
+    "lan-pct-4": {
+      "2020": { "turnout": 0.59, "demVoteShare": 0.56, "repVoteShare": 0.42, "margin": 14 },
+      "2022": { "turnout": 0.36, "demVoteShare": 0.53, "repVoteShare": 0.45, "margin": 8 },
+      "2024": { "turnout": 0.56, "demVoteShare": 0.54, "repVoteShare": 0.44, "margin": 10 }
+    },
+    "lan-pct-5": {
+      "2020": { "turnout": 0.62, "demVoteShare": 0.54, "repVoteShare": 0.44, "margin": 10 },
+      "2022": { "turnout": 0.39, "demVoteShare": 0.51, "repVoteShare": 0.47, "margin": 4 },
+      "2024": { "turnout": 0.59, "demVoteShare": 0.52, "repVoteShare": 0.46, "margin": 6 }
+    },
+    "lan-pct-6": {
+      "2020": { "turnout": 0.60, "demVoteShare": 0.52, "repVoteShare": 0.46, "margin": 6 },
+      "2022": { "turnout": 0.37, "demVoteShare": 0.49, "repVoteShare": 0.49, "margin": 0 },
+      "2024": { "turnout": 0.57, "demVoteShare": 0.50, "repVoteShare": 0.48, "margin": 2 }
+    },
+    "lan-pct-7": {
+      "2020": { "turnout": 0.58, "demVoteShare": 0.48, "repVoteShare": 0.50, "margin": -2 },
+      "2022": { "turnout": 0.38, "demVoteShare": 0.45, "repVoteShare": 0.53, "margin": -8 },
+      "2024": { "turnout": 0.55, "demVoteShare": 0.52, "repVoteShare": 0.46, "margin": 6 }
+    },
+    "lan-pct-8": {
+      "2020": { "turnout": 0.64, "demVoteShare": 0.57, "repVoteShare": 0.41, "margin": 16 },
+      "2022": { "turnout": 0.41, "demVoteShare": 0.54, "repVoteShare": 0.44, "margin": 10 },
+      "2024": { "turnout": 0.61, "demVoteShare": 0.55, "repVoteShare": 0.43, "margin": 12 }
+    },
+    "lan-pct-9": {
+      "2020": { "turnout": 0.62, "demVoteShare": 0.59, "repVoteShare": 0.39, "margin": 20 },
+      "2022": { "turnout": 0.39, "demVoteShare": 0.56, "repVoteShare": 0.42, "margin": 14 },
+      "2024": { "turnout": 0.59, "demVoteShare": 0.57, "repVoteShare": 0.41, "margin": 16 }
+    },
+    "lan-pct-10": {
+      "2020": { "turnout": 0.61, "demVoteShare": 0.53, "repVoteShare": 0.45, "margin": 8 },
+      "2022": { "turnout": 0.38, "demVoteShare": 0.50, "repVoteShare": 0.48, "margin": 2 },
+      "2024": { "turnout": 0.58, "demVoteShare": 0.51, "repVoteShare": 0.47, "margin": 4 }
+    },
+    "lan-pct-11": {
+      "2020": { "turnout": 0.60, "demVoteShare": 0.55, "repVoteShare": 0.43, "margin": 12 },
+      "2022": { "turnout": 0.37, "demVoteShare": 0.52, "repVoteShare": 0.46, "margin": 6 },
+      "2024": { "turnout": 0.57, "demVoteShare": 0.53, "repVoteShare": 0.45, "margin": 8 }
+    },
+    "lan-pct-12": {
+      "2020": { "turnout": 0.59, "demVoteShare": 0.50, "repVoteShare": 0.48, "margin": 2 },
+      "2022": { "turnout": 0.36, "demVoteShare": 0.47, "repVoteShare": 0.51, "margin": -4 },
+      "2024": { "turnout": 0.56, "demVoteShare": 0.49, "repVoteShare": 0.49, "margin": 0 }
+    },
+    "mer-pct-1": {
+      "2020": { "turnout": 0.82, "demVoteShare": 0.55, "repVoteShare": 0.43, "margin": 12 },
+      "2022": { "turnout": 0.58, "demVoteShare": 0.52, "repVoteShare": 0.46, "margin": 6 },
+      "2024": { "turnout": 0.78, "demVoteShare": 0.54, "repVoteShare": 0.44, "margin": 10 }
+    },
+    "mer-pct-2": {
+      "2020": { "turnout": 0.80, "demVoteShare": 0.48, "repVoteShare": 0.50, "margin": -2 },
+      "2022": { "turnout": 0.55, "demVoteShare": 0.46, "repVoteShare": 0.52, "margin": -6 },
+      "2024": { "turnout": 0.76, "demVoteShare": 0.51, "repVoteShare": 0.47, "margin": 4 }
+    },
+    "mer-pct-3": {
+      "2020": { "turnout": 0.83, "demVoteShare": 0.56, "repVoteShare": 0.42, "margin": 14 },
+      "2022": { "turnout": 0.59, "demVoteShare": 0.53, "repVoteShare": 0.45, "margin": 8 },
+      "2024": { "turnout": 0.79, "demVoteShare": 0.55, "repVoteShare": 0.43, "margin": 12 }
+    },
+    "mer-pct-4": {
+      "2020": { "turnout": 0.81, "demVoteShare": 0.52, "repVoteShare": 0.46, "margin": 6 },
+      "2022": { "turnout": 0.57, "demVoteShare": 0.50, "repVoteShare": 0.48, "margin": 2 },
+      "2024": { "turnout": 0.77, "demVoteShare": 0.53, "repVoteShare": 0.45, "margin": 8 }
+    },
+    "mer-pct-5": {
+      "2020": { "turnout": 0.84, "demVoteShare": 0.54, "repVoteShare": 0.44, "margin": 10 },
+      "2022": { "turnout": 0.60, "demVoteShare": 0.51, "repVoteShare": 0.47, "margin": 4 },
+      "2024": { "turnout": 0.80, "demVoteShare": 0.53, "repVoteShare": 0.45, "margin": 8 }
+    },
+    "mer-pct-6": {
+      "2020": { "turnout": 0.82, "demVoteShare": 0.50, "repVoteShare": 0.48, "margin": 2 },
+      "2022": { "turnout": 0.58, "demVoteShare": 0.48, "repVoteShare": 0.50, "margin": -2 },
+      "2024": { "turnout": 0.78, "demVoteShare": 0.52, "repVoteShare": 0.46, "margin": 6 }
+    },
+    "mer-pct-7": {
+      "2020": { "turnout": 0.81, "demVoteShare": 0.51, "repVoteShare": 0.47, "margin": 4 },
+      "2022": { "turnout": 0.57, "demVoteShare": 0.49, "repVoteShare": 0.49, "margin": 0 },
+      "2024": { "turnout": 0.77, "demVoteShare": 0.52, "repVoteShare": 0.46, "margin": 6 }
+    },
+    "mer-pct-8": {
+      "2020": { "turnout": 0.83, "demVoteShare": 0.53, "repVoteShare": 0.45, "margin": 8 },
+      "2022": { "turnout": 0.59, "demVoteShare": 0.50, "repVoteShare": 0.48, "margin": 2 },
+      "2024": { "turnout": 0.79, "demVoteShare": 0.54, "repVoteShare": 0.44, "margin": 10 }
+    },
+    "del-pct-1": {
+      "2020": { "turnout": 0.70, "demVoteShare": 0.45, "repVoteShare": 0.53, "margin": -8 },
+      "2022": { "turnout": 0.48, "demVoteShare": 0.42, "repVoteShare": 0.56, "margin": -14 },
+      "2024": { "turnout": 0.68, "demVoteShare": 0.48, "repVoteShare": 0.50, "margin": -2 }
+    },
+    "del-pct-2": {
+      "2020": { "turnout": 0.72, "demVoteShare": 0.47, "repVoteShare": 0.51, "margin": -4 },
+      "2022": { "turnout": 0.50, "demVoteShare": 0.44, "repVoteShare": 0.54, "margin": -10 },
+      "2024": { "turnout": 0.70, "demVoteShare": 0.49, "repVoteShare": 0.49, "margin": 0 }
+    },
+    "del-pct-3": {
+      "2020": { "turnout": 0.69, "demVoteShare": 0.44, "repVoteShare": 0.54, "margin": -10 },
+      "2022": { "turnout": 0.47, "demVoteShare": 0.41, "repVoteShare": 0.57, "margin": -16 },
+      "2024": { "turnout": 0.67, "demVoteShare": 0.47, "repVoteShare": 0.51, "margin": -4 }
+    },
+    "del-pct-4": {
+      "2020": { "turnout": 0.71, "demVoteShare": 0.46, "repVoteShare": 0.52, "margin": -6 },
+      "2022": { "turnout": 0.49, "demVoteShare": 0.43, "repVoteShare": 0.55, "margin": -12 },
+      "2024": { "turnout": 0.69, "demVoteShare": 0.48, "repVoteShare": 0.50, "margin": -2 }
+    },
+    "del-pct-5": {
+      "2020": { "turnout": 0.70, "demVoteShare": 0.48, "repVoteShare": 0.50, "margin": -2 },
+      "2022": { "turnout": 0.48, "demVoteShare": 0.45, "repVoteShare": 0.53, "margin": -8 },
+      "2024": { "turnout": 0.68, "demVoteShare": 0.50, "repVoteShare": 0.48, "margin": 2 }
+    },
+    "del-pct-6": {
+      "2020": { "turnout": 0.73, "demVoteShare": 0.49, "repVoteShare": 0.49, "margin": 0 },
+      "2022": { "turnout": 0.51, "demVoteShare": 0.46, "repVoteShare": 0.52, "margin": -6 },
+      "2024": { "turnout": 0.71, "demVoteShare": 0.51, "repVoteShare": 0.47, "margin": 4 }
+    },
+    "del-pct-7": {
+      "2020": { "turnout": 0.71, "demVoteShare": 0.46, "repVoteShare": 0.52, "margin": -6 },
+      "2022": { "turnout": 0.49, "demVoteShare": 0.43, "repVoteShare": 0.55, "margin": -12 },
+      "2024": { "turnout": 0.69, "demVoteShare": 0.49, "repVoteShare": 0.49, "margin": 0 }
+    },
+    "wil-pct-1": {
+      "2020": { "turnout": 0.68, "demVoteShare": 0.42, "repVoteShare": 0.56, "margin": -14 },
+      "2022": { "turnout": 0.46, "demVoteShare": 0.39, "repVoteShare": 0.59, "margin": -20 },
+      "2024": { "turnout": 0.66, "demVoteShare": 0.45, "repVoteShare": 0.53, "margin": -8 }
+    },
+    "wil-pct-2": {
+      "2020": { "turnout": 0.67, "demVoteShare": 0.40, "repVoteShare": 0.58, "margin": -18 },
+      "2022": { "turnout": 0.45, "demVoteShare": 0.37, "repVoteShare": 0.61, "margin": -24 },
+      "2024": { "turnout": 0.65, "demVoteShare": 0.43, "repVoteShare": 0.55, "margin": -12 }
+    },
+    "wil-pct-3": {
+      "2020": { "turnout": 0.69, "demVoteShare": 0.44, "repVoteShare": 0.54, "margin": -10 },
+      "2022": { "turnout": 0.47, "demVoteShare": 0.41, "repVoteShare": 0.57, "margin": -16 },
+      "2024": { "turnout": 0.67, "demVoteShare": 0.46, "repVoteShare": 0.52, "margin": -6 }
+    },
+    "wil-pct-4": {
+      "2020": { "turnout": 0.66, "demVoteShare": 0.41, "repVoteShare": 0.57, "margin": -16 },
+      "2022": { "turnout": 0.44, "demVoteShare": 0.38, "repVoteShare": 0.60, "margin": -22 },
+      "2024": { "turnout": 0.64, "demVoteShare": 0.44, "repVoteShare": 0.54, "margin": -10 }
+    },
+    "wil-pct-5": {
+      "2020": { "turnout": 0.68, "demVoteShare": 0.43, "repVoteShare": 0.55, "margin": -12 },
+      "2022": { "turnout": 0.46, "demVoteShare": 0.40, "repVoteShare": 0.58, "margin": -18 },
+      "2024": { "turnout": 0.66, "demVoteShare": 0.46, "repVoteShare": 0.52, "margin": -6 }
+    }
+  }
+}

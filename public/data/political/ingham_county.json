@@ -1,0 +1,35 @@
+{
+  "counties": [
+    {
+      "id": "ingham",
+      "name": "Ingham County",
+      "fips": "26065",
+      "seatCity": "Mason",
+      "population": 284900,
+      "precinctCount": 77,
+      "municipalityCount": 21,
+      "partisanLean": 22.5,
+      "swingPotential": 28,
+      "gotvPriority": 70,
+      "persuasionOpportunity": 42,
+      "avgTurnout": 62.5,
+      "competitiveness": "safe_d",
+      "lastPresidentialMargin": 28.4,
+      "lastPresidentialYear": 2024,
+      "dominantStrategy": "base_mobilization",
+      "keyDemographics": {
+        "medianAge": 32.5,
+        "medianIncome": 58200,
+        "bachelorsPct": 42.5,
+        "density": "suburban"
+      },
+      "majorCities": ["Lansing", "East Lansing", "Mason", "Williamston"],
+      "universities": ["Michigan State University", "Lansing Community College"]
+    }
+  ],
+  "metadata": {
+    "source": "U.S. Census Bureau, ACS 2022",
+    "lastUpdated": "2024-11-15",
+    "coverage": "Ingham County, MI"
+  }
+}
