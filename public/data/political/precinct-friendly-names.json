@@ -1,0 +1,162 @@
+{
+  "el-pct-1": {
+    "friendlyName": "MSU North Campus",
+    "landmarks": ["Spartan Stadium", "IM Sports Circle"]
+  },
+  "el-pct-2": {
+    "friendlyName": "MSU South Campus",
+    "landmarks": ["The Rock", "Beaumont Tower"]
+  },
+  "el-pct-3": {
+    "friendlyName": "Downtown East Lansing",
+    "landmarks": ["Grand River Ave", "MSU Union"]
+  },
+  "el-pct-4": {
+    "friendlyName": "Bailey Neighborhood",
+    "landmarks": ["Bailey Community Center"]
+  },
+  "el-pct-5": {
+    "friendlyName": "Glencairn",
+    "landmarks": ["Hannah Community Center"]
+  },
+  "el-pct-6": {
+    "friendlyName": "Pinecrest",
+    "landmarks": ["Pinecrest Elementary"]
+  },
+  "el-pct-7": {
+    "friendlyName": "Marble Elementary Area",
+    "landmarks": ["Marble Elementary School"]
+  },
+  "el-pct-8": {
+    "friendlyName": "Whitehills",
+    "landmarks": ["Whitehills Elementary"]
+  },
+  "lan-pct-1": {
+    "friendlyName": "Downtown Lansing",
+    "landmarks": ["State Capitol", "Lansing Center"]
+  },
+  "lan-pct-2": {
+    "friendlyName": "REO Town",
+    "landmarks": ["REO Town Marketplace", "Riverwalk"]
+  },
+  "lan-pct-3": {
+    "friendlyName": "Old Town",
+    "landmarks": ["Turner-Dodge House", "Old Town Commercial District"]
+  },
+  "lan-pct-4": {
+    "friendlyName": "Eastside",
+    "landmarks": ["Frandor Shopping Center"]
+  },
+  "lan-pct-5": {
+    "friendlyName": "Colonial Village",
+    "landmarks": ["Colonial Village Shopping Center"]
+  },
+  "lan-pct-6": {
+    "friendlyName": "Westside",
+    "landmarks": ["Lansing Mall Area"]
+  },
+  "lan-pct-7": {
+    "friendlyName": "South Lansing",
+    "landmarks": ["South Washington Ave"]
+  },
+  "lan-pct-8": {
+    "friendlyName": "Groesbeck",
+    "landmarks": ["Groesbeck Golf Course"]
+  },
+  "lan-pct-9": {
+    "friendlyName": "Potter Park",
+    "landmarks": ["Potter Park Zoo"]
+  },
+  "lan-pct-10": {
+    "friendlyName": "Moores Park",
+    "landmarks": ["Moores Park"]
+  },
+  "lan-pct-11": {
+    "friendlyName": "Churchill Downs",
+    "landmarks": ["Churchill Downs neighborhood"]
+  },
+  "lan-pct-12": {
+    "friendlyName": "Waverly",
+    "landmarks": ["Waverly Road corridor"]
+  },
+  "mer-pct-1": {
+    "friendlyName": "Okemos Downtown",
+    "landmarks": ["Meridian Mall", "Okemos High School"]
+  },
+  "mer-pct-2": {
+    "friendlyName": "Haslett",
+    "landmarks": ["Lake Lansing", "Haslett High School"]
+  },
+  "mer-pct-3": {
+    "friendlyName": "Marsh Road",
+    "landmarks": ["Marsh Road corridor"]
+  },
+  "mer-pct-4": {
+    "friendlyName": "Cornell Woods",
+    "landmarks": ["Cornell Woods neighborhood"]
+  },
+  "mer-pct-5": {
+    "friendlyName": "Glencairn Woods",
+    "landmarks": ["Glencairn neighborhood"]
+  },
+  "mer-pct-6": {
+    "friendlyName": "Central Park",
+    "landmarks": ["Central Park"]
+  },
+  "mer-pct-7": {
+    "friendlyName": "Timber Ridge",
+    "landmarks": ["Timber Ridge neighborhood"]
+  },
+  "mer-pct-8": {
+    "friendlyName": "Hamilton Farms",
+    "landmarks": ["Hamilton Road corridor"]
+  },
+  "del-pct-1": {
+    "friendlyName": "Holt Downtown",
+    "landmarks": ["Holt High School", "Delhi Park"]
+  },
+  "del-pct-2": {
+    "friendlyName": "South Holt",
+    "landmarks": ["South Cedar corridor"]
+  },
+  "del-pct-3": {
+    "friendlyName": "Delhi Center",
+    "landmarks": ["Delhi Township offices"]
+  },
+  "del-pct-4": {
+    "friendlyName": "Grovenburg",
+    "landmarks": ["Grovenburg Road area"]
+  },
+  "del-pct-5": {
+    "friendlyName": "College Road",
+    "landmarks": ["College Road corridor"]
+  },
+  "del-pct-6": {
+    "friendlyName": "Willoughby",
+    "landmarks": ["Willoughby Road area"]
+  },
+  "del-pct-7": {
+    "friendlyName": "Aurelius Road",
+    "landmarks": ["Aurelius Road corridor"]
+  },
+  "wil-pct-1": {
+    "friendlyName": "Downtown Williamston",
+    "landmarks": ["Grand River Ave", "Williamston Theatre"]
+  },
+  "wil-pct-2": {
+    "friendlyName": "Williamston North",
+    "landmarks": ["Williamston High School"]
+  },
+  "wil-pct-3": {
+    "friendlyName": "Williamston West",
+    "landmarks": ["Discovery Elementary"]
+  },
+  "wil-pct-4": {
+    "friendlyName": "Williamston South",
+    "landmarks": ["Williamston Middle School"]
+  },
+  "wil-pct-5": {
+    "friendlyName": "Williamston East",
+    "landmarks": ["Red Cedar River area"]
+  }
+}

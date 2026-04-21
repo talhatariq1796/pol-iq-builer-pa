@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "description": "ZIP code to precinct mapping for Ingham County, MI",
+    "source": "Derived from jurisdiction boundaries and USPS ZIP code areas",
+    "created": "2025-12-12",
+    "county": "Ingham",
+    "state": "MI",
+    "notes": "Mapping based on jurisdiction containment. Some ZIPs span multiple jurisdictions."
+  },
+  "zipToPrecincts": {
+    "48823": {
+      "zipCode": "48823",
+      "name": "East Lansing",
+      "primaryJurisdiction": "East Lansing",
+      "precincts": ["el-pct-1", "el-pct-2", "el-pct-3", "el-pct-4", "el-pct-5"],
+      "coverage": "primary"
+    },
+    "48824": {
+      "zipCode": "48824",
+      "name": "MSU Campus",
+      "primaryJurisdiction": "East Lansing",
+      "precincts": ["el-pct-6", "el-pct-7", "el-pct-8"],
+      "coverage": "primary"
+    },
+    "48825": {
+      "zipCode": "48825",
+      "name": "East Lansing PO",
+      "primaryJurisdiction": "East Lansing",
+      "precincts": ["el-pct-1", "el-pct-2"],
+      "coverage": "partial"
+    },
+    "48906": {
+      "zipCode": "48906",
+      "name": "Lansing North",
+      "primaryJurisdiction": "Lansing",
+      "precincts": ["lan-pct-1", "lan-pct-2", "lan-pct-3"],
+      "coverage": "primary"
+    },
+    "48910": {
+      "zipCode": "48910",
+      "name": "Lansing South",
+      "primaryJurisdiction": "Lansing",
+      "precincts": ["lan-pct-4", "lan-pct-5", "lan-pct-6"],
+      "coverage": "primary"
+    },
+    "48911": {
+      "zipCode": "48911",
+      "name": "Lansing SW",
+      "primaryJurisdiction": "Lansing",
+      "precincts": ["lan-pct-7", "lan-pct-8", "lan-pct-9", "del-pct-1", "del-pct-2"],
+      "coverage": "split",
+      "secondaryJurisdiction": "Delhi Township"
+    },
+    "48912": {
+      "zipCode": "48912",
+      "name": "Lansing East",
+      "primaryJurisdiction": "Lansing",
+      "precincts": ["lan-pct-10", "lan-pct-11", "lan-pct-12"],
+      "coverage": "primary"
+    },
+    "48915": {
+      "zipCode": "48915",
+      "name": "Lansing Central",
+      "primaryJurisdiction": "Lansing",
+      "precincts": ["lan-pct-1", "lan-pct-4", "lan-pct-10"],
+      "coverage": "partial"
+    },
+    "48917": {
+      "zipCode": "48917",
+      "name": "Lansing West",
+      "primaryJurisdiction": "Lansing",
+      "precincts": ["lan-pct-2", "lan-pct-3", "del-pct-3", "del-pct-4"],
+      "coverage": "split",
+      "secondaryJurisdiction": "Delhi Township"
+    },
+    "48933": {
+      "zipCode": "48933",
+      "name": "Lansing Downtown",
+      "primaryJurisdiction": "Lansing",
+      "precincts": ["lan-pct-1", "lan-pct-10", "lan-pct-11"],
+      "coverage": "partial"
+    },
+    "48840": {
+      "zipCode": "48840",
+      "name": "Haslett",
+      "primaryJurisdiction": "Meridian Township",
+      "precincts": ["mer-pct-1", "mer-pct-2", "mer-pct-3"],
+      "coverage": "primary"
+    },
+    "48842": {
+      "zipCode": "48842",
+      "name": "Holt",
+      "primaryJurisdiction": "Delhi Township",
+      "precincts": ["del-pct-5", "del-pct-6", "del-pct-7"],
+      "coverage": "primary"
+    },
+    "48854": {
+      "zipCode": "48854",
+      "name": "Mason",
+      "primaryJurisdiction": "Delhi Township",
+      "precincts": ["del-pct-6", "del-pct-7"],
+      "coverage": "partial",
+      "notes": "Mason city is separate but shares some precincts with Delhi Twp"
+    },
+    "48864": {
+      "zipCode": "48864",
+      "name": "Okemos",
+      "primaryJurisdiction": "Meridian Township",
+      "precincts": ["mer-pct-4", "mer-pct-5", "mer-pct-6", "mer-pct-7", "mer-pct-8"],
+      "coverage": "primary"
+    },
+    "48895": {
+      "zipCode": "48895",
+      "name": "Williamston",
+      "primaryJurisdiction": "Williamston",
+      "precincts": ["wil-pct-1", "wil-pct-2", "wil-pct-3", "wil-pct-4", "wil-pct-5"],
+      "coverage": "primary"
+    }
+  },
+  "precinctToZips": {
+    "el-pct-1": ["48823", "48825"],
+    "el-pct-2": ["48823", "48825"],
+    "el-pct-3": ["48823"],
+    "el-pct-4": ["48823"],
+    "el-pct-5": ["48823"],
+    "el-pct-6": ["48824"],
+    "el-pct-7": ["48824"],
+    "el-pct-8": ["48824"],
+    "lan-pct-1": ["48906", "48915", "48933"],
+    "lan-pct-2": ["48906", "48917"],
+    "lan-pct-3": ["48906", "48917"],
+    "lan-pct-4": ["48910", "48915"],
+    "lan-pct-5": ["48910"],
+    "lan-pct-6": ["48910"],
+    "lan-pct-7": ["48911"],
+    "lan-pct-8": ["48911"],
+    "lan-pct-9": ["48911"],
+    "lan-pct-10": ["48912", "48915", "48933"],
+    "lan-pct-11": ["48912", "48933"],
+    "lan-pct-12": ["48912"],
+    "mer-pct-1": ["48840"],
+    "mer-pct-2": ["48840"],
+    "mer-pct-3": ["48840"],
+    "mer-pct-4": ["48864"],
+    "mer-pct-5": ["48864"],
+    "mer-pct-6": ["48864"],
+    "mer-pct-7": ["48864"],
+    "mer-pct-8": ["48864"],
+    "del-pct-1": ["48911"],
+    "del-pct-2": ["48911"],
+    "del-pct-3": ["48917"],
+    "del-pct-4": ["48917"],
+    "del-pct-5": ["48842"],
+    "del-pct-6": ["48842", "48854"],
+    "del-pct-7": ["48842", "48854"],
+    "wil-pct-1": ["48895"],
+    "wil-pct-2": ["48895"],
+    "wil-pct-3": ["48895"],
+    "wil-pct-4": ["48895"],
+    "wil-pct-5": ["48895"]
+  },
+  "jurisdictionZips": {
+    "East Lansing": ["48823", "48824", "48825"],
+    "Lansing": ["48906", "48910", "48911", "48912", "48915", "48917", "48933"],
+    "Meridian Township": ["48840", "48864"],
+    "Delhi Township": ["48842", "48854", "48911", "48917"],
+    "Williamston": ["48895"]
+  }
+}

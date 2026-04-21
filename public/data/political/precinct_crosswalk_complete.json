@@ -1,0 +1,2182 @@
+{
+  "metadata": {
+    "county": "Ingham County",
+    "state": "Michigan",
+    "generated": "2025-12-11T21:59:10.578Z",
+    "precinctCount": 103,
+    "dataSource": "Michigan SOS Precinct Boundaries (2024), Census TIGER/Line Districts (2022)",
+    "methodology": "Spatial intersection using precinct centroid point-in-polygon against district boundaries",
+    "districtCoverage": {
+      "congressional": 103,
+      "stateSenate": 100,
+      "stateHouse": 103,
+      "municipalities": 103,
+      "schoolDistricts": 103
+    }
+  },
+  "precincts": {
+    "Alaiedon Township, Precinct 1": {
+      "precinctId": "WP-065-00800-00001",
+      "precinctName": "Alaiedon Township, Precinct 1",
+      "precinctNameAlt": [
+        "Alaiedon Twp 1"
+      ],
+      "jurisdiction": "Alaiedon",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "alaiedon",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1205,
+      "activeVoters": 1085,
+      "centroid": [
+        -84.42900163173515,
+        42.669602253574425
+      ]
+    },
+    "Aurelius Township, Precinct 1": {
+      "precinctId": "WP-065-04240-00001",
+      "precinctName": "Aurelius Township, Precinct 1",
+      "precinctNameAlt": [
+        "Aurelius Twp 1"
+      ],
+      "jurisdiction": "Aurelius",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "aurelius",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "mason-public-schools-ingham",
+      "registeredVoters": 2077,
+      "activeVoters": 1879,
+      "centroid": [
+        -84.51269347389113,
+        42.54618944248901
+      ]
+    },
+    "Aurelius Township, Precinct 2": {
+      "precinctId": "WP-065-04240-00002",
+      "precinctName": "Aurelius Township, Precinct 2",
+      "precinctNameAlt": [
+        "Aurelius Twp 2"
+      ],
+      "jurisdiction": "Aurelius",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "aurelius",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "eaton-rapids-public-schools",
+      "registeredVoters": 1464,
+      "activeVoters": 1339,
+      "centroid": [
+        -84.57634554971304,
+        42.55624456241787
+      ]
+    },
+    "Bunker Hill Township, Precinct 1": {
+      "precinctId": "WP-065-11640-00001",
+      "precinctName": "Bunker Hill Township, Precinct 1",
+      "precinctNameAlt": [
+        "Bunker Hill Twp 1"
+      ],
+      "jurisdiction": "Bunker Hill",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "bunker-hill",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "leslie-public-schools",
+      "registeredVoters": 1648,
+      "activeVoters": 1453,
+      "centroid": [
+        -84.30895954064877,
+        42.46880534946669
+      ]
+    },
+    "Delhi Charter Township, Precinct 9": {
+      "precinctId": "WP-065-21420-00009",
+      "precinctName": "Delhi Charter Township, Precinct 9",
+      "precinctNameAlt": [
+        "Delhi Twp 9"
+      ],
+      "jurisdiction": "Delhi",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "holt-public-schools",
+      "registeredVoters": 2409,
+      "activeVoters": 2120,
+      "centroid": [
+        -84.50584047259105,
+        42.672252165787675
+      ]
+    },
+    "Delhi Charter Township, Precinct 7": {
+      "precinctId": "WP-065-21420-00007",
+      "precinctName": "Delhi Charter Township, Precinct 7",
+      "precinctNameAlt": [
+        "Delhi Twp 7"
+      ],
+      "jurisdiction": "Delhi",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "holt-public-schools",
+      "registeredVoters": 2263,
+      "activeVoters": 1995,
+      "centroid": [
+        -84.52716004191889,
+        42.65404964209028
+      ]
+    },
+    "Delhi Charter Township, Precinct 2": {
+      "precinctId": "WP-065-21420-00002",
+      "precinctName": "Delhi Charter Township, Precinct 2",
+      "precinctNameAlt": [
+        "Delhi Twp 2"
+      ],
+      "jurisdiction": "Delhi",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "holt-public-schools",
+      "registeredVoters": 2318,
+      "activeVoters": 2122,
+      "centroid": [
+        -84.56537737353008,
+        42.650169371436014
+      ]
+    },
+    "Delhi Charter Township, Precinct 1": {
+      "precinctId": "WP-065-21420-00001",
+      "precinctName": "Delhi Charter Township, Precinct 1",
+      "precinctNameAlt": [
+        "Delhi Twp 1"
+      ],
+      "jurisdiction": "Delhi",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "holt-public-schools",
+      "registeredVoters": 3031,
+      "activeVoters": 2760,
+      "centroid": [
+        -84.58414230500603,
+        42.634112137733375
+      ]
+    },
+    "Delhi Charter Township, Precinct 8": {
+      "precinctId": "WP-065-21420-00008",
+      "precinctName": "Delhi Charter Township, Precinct 8",
+      "precinctNameAlt": [
+        "Delhi Twp 8"
+      ],
+      "jurisdiction": "Delhi",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "holt-public-schools",
+      "registeredVoters": 2501,
+      "activeVoters": 2141,
+      "centroid": [
+        -84.50027862924519,
+        42.65097459896395
+      ]
+    },
+    "Delhi Charter Township, Precinct 5": {
+      "precinctId": "WP-065-21420-00005",
+      "precinctName": "Delhi Charter Township, Precinct 5",
+      "precinctNameAlt": [
+        "Delhi Twp 5"
+      ],
+      "jurisdiction": "Delhi",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "holt-public-schools",
+      "registeredVoters": 3109,
+      "activeVoters": 2731,
+      "centroid": [
+        -84.51016529580868,
+        42.63382265204073
+      ]
+    },
+    "Delhi Charter Township, Precinct 4": {
+      "precinctId": "WP-065-21420-00004",
+      "precinctName": "Delhi Charter Township, Precinct 4",
+      "precinctNameAlt": [
+        "Delhi Twp 4"
+      ],
+      "jurisdiction": "Delhi",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "mason-public-schools-ingham",
+      "registeredVoters": 2299,
+      "activeVoters": 2043,
+      "centroid": [
+        -84.53187288247487,
+        42.61731063061822
+      ]
+    },
+    "City of East Lansing, Precinct 1": {
+      "precinctId": "WP-065-24120-00001",
+      "precinctName": "City of East Lansing, Precinct 1",
+      "precinctNameAlt": [
+        "East Lansing 1"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 482,
+      "activeVoters": 223,
+      "centroid": [
+        -84.49838078107214,
+        42.73215447956433
+      ]
+    },
+    "City of East Lansing, Precinct 3": {
+      "precinctId": "WP-065-24120-00003",
+      "precinctName": "City of East Lansing, Precinct 3",
+      "precinctNameAlt": [
+        "East Lansing 3"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 2043,
+      "activeVoters": 1512,
+      "centroid": [
+        -84.49268431023427,
+        42.74138973761266
+      ]
+    },
+    "City of East Lansing, Precinct 4": {
+      "precinctId": "WP-065-24120-00004",
+      "precinctName": "City of East Lansing, Precinct 4",
+      "precinctNameAlt": [
+        "East Lansing 4"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 2222,
+      "activeVoters": 1889,
+      "centroid": [
+        -84.4987924296892,
+        42.748378505114765
+      ]
+    },
+    "City of East Lansing, Precinct 6": {
+      "precinctId": "WP-065-24120-00006",
+      "precinctName": "City of East Lansing, Precinct 6",
+      "precinctNameAlt": [
+        "East Lansing 6"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 1205,
+      "activeVoters": 963,
+      "centroid": [
+        -84.48863013812087,
+        42.749190660408736
+      ]
+    },
+    "City of East Lansing, Precinct 7": {
+      "precinctId": "WP-065-24120-00007",
+      "precinctName": "City of East Lansing, Precinct 7",
+      "precinctNameAlt": [
+        "East Lansing 7"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 1649,
+      "activeVoters": 1413,
+      "centroid": [
+        -84.47392879615106,
+        42.75164720833456
+      ]
+    },
+    "City of East Lansing, Precinct 8": {
+      "precinctId": "WP-065-24120-00008",
+      "precinctName": "City of East Lansing, Precinct 8",
+      "precinctNameAlt": [
+        "East Lansing 8"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 975,
+      "activeVoters": 754,
+      "centroid": [
+        -84.47331979664148,
+        42.74381496611689
+      ]
+    },
+    "City of East Lansing, Precinct 9": {
+      "precinctId": "WP-065-24120-00009",
+      "precinctName": "City of East Lansing, Precinct 9",
+      "precinctNameAlt": [
+        "East Lansing 9"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 1861,
+      "activeVoters": 1231,
+      "centroid": [
+        -84.47435182815018,
+        42.73777527949414
+      ]
+    },
+    "City of East Lansing, Precinct 10": {
+      "precinctId": "WP-065-24120-00010",
+      "precinctName": "City of East Lansing, Precinct 10",
+      "precinctNameAlt": [
+        "East Lansing 10"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 953,
+      "activeVoters": 621,
+      "centroid": [
+        -84.46790107103783,
+        42.735261142752755
+      ]
+    },
+    "City of East Lansing, Precinct 12": {
+      "precinctId": "WP-065-24120-00012",
+      "precinctName": "City of East Lansing, Precinct 12",
+      "precinctNameAlt": [
+        "East Lansing 12"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 572,
+      "activeVoters": 153,
+      "centroid": [
+        -84.48359251129882,
+        42.729792024672
+      ]
+    },
+    "City of East Lansing, Precinct 13": {
+      "precinctId": "WP-065-24120-00013",
+      "precinctName": "City of East Lansing, Precinct 13",
+      "precinctNameAlt": [
+        "East Lansing 13"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 847,
+      "activeVoters": 476,
+      "centroid": [
+        -84.46694708274103,
+        42.72833923923937
+      ]
+    },
+    "City of East Lansing, Precinct 15": {
+      "precinctId": "WP-065-24120-00015",
+      "precinctName": "City of East Lansing, Precinct 15",
+      "precinctNameAlt": [
+        "East Lansing 15"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 662,
+      "activeVoters": 427,
+      "centroid": [
+        -84.48630994184359,
+        42.72119815998066
+      ]
+    },
+    "Ingham Township, Precinct 1": {
+      "precinctId": "WP-065-40640-00001",
+      "precinctName": "Ingham Township, Precinct 1",
+      "precinctNameAlt": [
+        "Ingham Twp 1"
+      ],
+      "jurisdiction": "Ingham",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "ingham",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "dansville-schools",
+      "registeredVoters": 2093,
+      "activeVoters": 1882,
+      "centroid": [
+        -84.30865390065436,
+        42.54667658627911
+      ]
+    },
+    "City of Lansing, Ward 1, Precinct 8": {
+      "precinctId": "WP-065-46000-01008",
+      "precinctName": "City of Lansing, Ward 1, Precinct 8",
+      "precinctNameAlt": [
+        "Lansing 1-8"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-1",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3736,
+      "activeVoters": 3000,
+      "centroid": [
+        -84.52892152059874,
+        42.73442343905657
+      ]
+    },
+    "City of Lansing, Ward 1, Precinct 9": {
+      "precinctId": "WP-065-46000-01009",
+      "precinctName": "City of Lansing, Ward 1, Precinct 9",
+      "precinctNameAlt": [
+        "Lansing 1-9"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-1",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2281,
+      "activeVoters": 1696,
+      "centroid": [
+        -84.53533639342261,
+        42.72000456002204
+      ]
+    },
+    "City of Lansing, Ward 1, Precinct 10": {
+      "precinctId": "WP-065-46000-01010",
+      "precinctName": "City of Lansing, Ward 1, Precinct 10",
+      "precinctNameAlt": [
+        "Lansing 1-10"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-1",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2102,
+      "activeVoters": 1668,
+      "centroid": [
+        -84.5474302270046,
+        42.71616805325568
+      ]
+    },
+    "City of Lansing, Ward 2, Precinct 12": {
+      "precinctId": "WP-065-46000-02012",
+      "precinctName": "City of Lansing, Ward 2, Precinct 12",
+      "precinctNameAlt": [
+        "Lansing 2-12"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-2",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3389,
+      "activeVoters": 2853,
+      "centroid": [
+        -84.54956475878265,
+        42.70007304985193
+      ]
+    },
+    "City of Lansing, Ward 2, Precinct 13": {
+      "precinctId": "WP-065-46000-02013",
+      "precinctName": "City of Lansing, Ward 2, Precinct 13",
+      "precinctNameAlt": [
+        "Lansing 2-13"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-2",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3371,
+      "activeVoters": 2729,
+      "centroid": [
+        -84.55692691732106,
+        42.68929074806348
+      ]
+    },
+    "City of Lansing, Ward 2, Precinct 14": {
+      "precinctId": "WP-065-46000-02014",
+      "precinctName": "City of Lansing, Ward 2, Precinct 14",
+      "precinctNameAlt": [
+        "Lansing 2-14"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-2",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 1500,
+      "activeVoters": 1255,
+      "centroid": [
+        -84.52779916515922,
+        42.71184226850899
+      ]
+    },
+    "City of Lansing, Ward 2, Precinct 16": {
+      "precinctId": "WP-065-46000-02016",
+      "precinctName": "City of Lansing, Ward 2, Precinct 16",
+      "precinctNameAlt": [
+        "Lansing 2-16"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-2",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3033,
+      "activeVoters": 2201,
+      "centroid": [
+        -84.52055409224432,
+        42.69176798602542
+      ]
+    },
+    "City of Lansing, Ward 2, Precinct 15": {
+      "precinctId": "WP-065-46000-02015",
+      "precinctName": "City of Lansing, Ward 2, Precinct 15",
+      "precinctNameAlt": [
+        "Lansing 2-15"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-2",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 1473,
+      "activeVoters": 1252,
+      "centroid": [
+        -84.53983658237549,
+        42.68900736508399
+      ]
+    },
+    "City of Lansing, Ward 2, Precinct 18": {
+      "precinctId": "WP-065-46000-02018",
+      "precinctName": "City of Lansing, Ward 2, Precinct 18",
+      "precinctNameAlt": [
+        "Lansing 2-18"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": "ward-2",
+      "schoolDistrict": "holt-public-schools",
+      "registeredVoters": 4299,
+      "activeVoters": 3541,
+      "centroid": [
+        -84.49325140051923,
+        42.67382207673319
+      ]
+    },
+    "City of Lansing, Ward 2, Precinct 20": {
+      "precinctId": "WP-065-46000-02020",
+      "precinctName": "City of Lansing, Ward 2, Precinct 20",
+      "precinctNameAlt": [
+        "Lansing 2-20"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-2",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3932,
+      "activeVoters": 3099,
+      "centroid": [
+        -84.54536728663102,
+        42.66027414992978
+      ]
+    },
+    "City of Lansing, Ward 3, Precinct 30": {
+      "precinctId": "WP-065-46000-03030",
+      "precinctName": "City of Lansing, Ward 3, Precinct 30",
+      "precinctNameAlt": [
+        "Lansing 3-30"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-3",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3300,
+      "activeVoters": 2643,
+      "centroid": [
+        -84.57365093636139,
+        42.667705005980466
+      ]
+    },
+    "City of Lansing, Ward 3, Precinct 25": {
+      "precinctId": "WP-065-46000-03025",
+      "precinctName": "City of Lansing, Ward 3, Precinct 25",
+      "precinctNameAlt": [
+        "Lansing 3-25"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-3",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2629,
+      "activeVoters": 2122,
+      "centroid": [
+        -84.57508343882071,
+        42.69554590650579
+      ]
+    },
+    "City of Lansing, Ward 3, Precinct 27": {
+      "precinctId": "WP-065-46000-03027",
+      "precinctName": "City of Lansing, Ward 3, Precinct 27",
+      "precinctNameAlt": [
+        "Lansing 3-27"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-3",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2573,
+      "activeVoters": 2114,
+      "centroid": [
+        -84.59819817179142,
+        42.69052244828843
+      ]
+    },
+    "City of Lansing, Ward 4, Precinct 32": {
+      "precinctId": "WP-065-46000-04032",
+      "precinctName": "City of Lansing, Ward 4, Precinct 32",
+      "precinctNameAlt": [
+        "Lansing 4-32"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-4",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3536,
+      "activeVoters": 3131,
+      "centroid": [
+        -84.58016029837067,
+        42.71202624152309
+      ]
+    },
+    "City of Lansing, Ward 4, Precinct 37": {
+      "precinctId": "WP-065-46000-04037",
+      "precinctName": "City of Lansing, Ward 4, Precinct 37",
+      "precinctNameAlt": [
+        "Lansing 4-37"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-4",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2674,
+      "activeVoters": 2033,
+      "centroid": [
+        -84.56126084536753,
+        42.74501339573561
+      ]
+    },
+    "City of Lansing, Ward 4, Precinct 36": {
+      "precinctId": "WP-065-46000-04036",
+      "precinctName": "City of Lansing, Ward 4, Precinct 36",
+      "precinctNameAlt": [
+        "Lansing 4-36"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-4",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3879,
+      "activeVoters": 2749,
+      "centroid": [
+        -84.55772667884352,
+        42.73030745916998
+      ]
+    },
+    "Leroy Township, Precinct 1": {
+      "precinctId": "WP-065-47080-00001",
+      "precinctName": "Leroy Township, Precinct 1",
+      "precinctNameAlt": [
+        "Leroy Twp 1"
+      ],
+      "jurisdiction": "Leroy",
+      "congressional": "mi-07",
+      "stateSenate": null,
+      "stateHouse": "mi-house-73",
+      "municipality": "leroy",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "williamston-community-schools",
+      "registeredVoters": 2984,
+      "activeVoters": 2766,
+      "centroid": [
+        -84.20964831910244,
+        42.655829088518786
+      ]
+    },
+    "City of Leslie, Precinct 1": {
+      "precinctId": "WP-065-47180-00001",
+      "precinctName": "City of Leslie, Precinct 1",
+      "precinctNameAlt": [
+        "Leslie 1"
+      ],
+      "jurisdiction": "Leslie",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "leslie",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "leslie-public-schools",
+      "registeredVoters": 1510,
+      "activeVoters": 1283,
+      "centroid": [
+        -84.43412213635935,
+        42.45172313494299
+      ]
+    },
+    "Leslie Township, Precinct 1": {
+      "precinctId": "WP-065-47200-00001",
+      "precinctName": "Leslie Township, Precinct 1",
+      "precinctNameAlt": [
+        "Leslie Twp 1"
+      ],
+      "jurisdiction": "Leslie",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "leslie",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "leslie-public-schools",
+      "registeredVoters": 1932,
+      "activeVoters": 1714,
+      "centroid": [
+        -84.42530198919626,
+        42.46313291088128
+      ]
+    },
+    "City of Mason, Precinct 1": {
+      "precinctId": "WP-065-52180-00001",
+      "precinctName": "City of Mason, Precinct 1",
+      "precinctNameAlt": [
+        "Mason 1"
+      ],
+      "jurisdiction": "Mason",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "mason",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "mason-public-schools-ingham",
+      "registeredVoters": 2489,
+      "activeVoters": 2292,
+      "centroid": [
+        -84.42831998774673,
+        42.572810932169006
+      ]
+    },
+    "City of Mason, Precinct 2": {
+      "precinctId": "WP-065-52180-00002",
+      "precinctName": "City of Mason, Precinct 2",
+      "precinctNameAlt": [
+        "Mason 2"
+      ],
+      "jurisdiction": "Mason",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "mason",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "mason-public-schools-ingham",
+      "registeredVoters": 3877,
+      "activeVoters": 3432,
+      "centroid": [
+        -84.45398401913572,
+        42.582681871328575
+      ]
+    },
+    "Meridian Township, Precinct 1": {
+      "precinctId": "WP-065-53140-00001",
+      "precinctName": "Meridian Township, Precinct 1",
+      "precinctNameAlt": [
+        "Meridian Twp 1"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "haslett-public-schools",
+      "registeredVoters": 1733,
+      "activeVoters": 1614,
+      "centroid": [
+        -84.37558641671997,
+        42.746496341669314
+      ]
+    },
+    "Meridian Township, Precinct 2": {
+      "precinctId": "WP-065-53140-00002",
+      "precinctName": "Meridian Township, Precinct 2",
+      "precinctNameAlt": [
+        "Meridian Twp 2"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "haslett-public-schools",
+      "registeredVoters": 1790,
+      "activeVoters": 1505,
+      "centroid": [
+        -84.40445652957918,
+        42.73973384337017
+      ]
+    },
+    "Meridian Township, Precinct 5": {
+      "precinctId": "WP-065-53140-00005",
+      "precinctName": "Meridian Township, Precinct 5",
+      "precinctNameAlt": [
+        "Meridian Twp 5"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "haslett-public-schools",
+      "registeredVoters": 2612,
+      "activeVoters": 2266,
+      "centroid": [
+        -84.38930228730838,
+        42.7588508476317
+      ]
+    },
+    "Meridian Township, Precinct 6": {
+      "precinctId": "WP-065-53140-00006",
+      "precinctName": "Meridian Township, Precinct 6",
+      "precinctNameAlt": [
+        "Meridian Twp 6"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1498,
+      "activeVoters": 1291,
+      "centroid": [
+        -84.39215827562445,
+        42.72356637792404
+      ]
+    },
+    "Meridian Township, Precinct 7": {
+      "precinctId": "WP-065-53140-00007",
+      "precinctName": "Meridian Township, Precinct 7",
+      "precinctNameAlt": [
+        "Meridian Twp 7"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1589,
+      "activeVoters": 1377,
+      "centroid": [
+        -84.38271446403296,
+        42.70220420904739
+      ]
+    },
+    "Meridian Township, Precinct 8": {
+      "precinctId": "WP-065-53140-00008",
+      "precinctName": "Meridian Township, Precinct 8",
+      "precinctNameAlt": [
+        "Meridian Twp 8"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 2166,
+      "activeVoters": 1888,
+      "centroid": [
+        -84.40345504738664,
+        42.71095707738204
+      ]
+    },
+    "Meridian Township, Precinct 9": {
+      "precinctId": "WP-065-53140-00009",
+      "precinctName": "Meridian Township, Precinct 9",
+      "precinctNameAlt": [
+        "Meridian Twp 9"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1629,
+      "activeVoters": 1391,
+      "centroid": [
+        -84.42013623727514,
+        42.71184668756912
+      ]
+    },
+    "Meridian Township, Precinct 10": {
+      "precinctId": "WP-065-53140-00010",
+      "precinctName": "Meridian Township, Precinct 10",
+      "precinctNameAlt": [
+        "Meridian Twp 10"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1610,
+      "activeVoters": 1449,
+      "centroid": [
+        -84.42992982313655,
+        42.73112324639362
+      ]
+    },
+    "Meridian Township, Precinct 12": {
+      "precinctId": "WP-065-53140-00012",
+      "precinctName": "Meridian Township, Precinct 12",
+      "precinctNameAlt": [
+        "Meridian Twp 12"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 871,
+      "activeVoters": 770,
+      "centroid": [
+        -84.4515576081655,
+        42.73236909206802
+      ]
+    },
+    "Meridian Township, Precinct 13": {
+      "precinctId": "WP-065-53140-00013",
+      "precinctName": "Meridian Township, Precinct 13",
+      "precinctNameAlt": [
+        "Meridian Twp 13"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1452,
+      "activeVoters": 1243,
+      "centroid": [
+        -84.42975883315233,
+        42.707905888705646
+      ]
+    },
+    "Meridian Township, Precinct 14": {
+      "precinctId": "WP-065-53140-00014",
+      "precinctName": "Meridian Township, Precinct 14",
+      "precinctNameAlt": [
+        "Meridian Twp 14"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1716,
+      "activeVoters": 1500,
+      "centroid": [
+        -84.41334960961001,
+        42.68897696112594
+      ]
+    },
+    "Meridian Township, Precinct 15": {
+      "precinctId": "WP-065-53140-00015",
+      "precinctName": "Meridian Township, Precinct 15",
+      "precinctNameAlt": [
+        "Meridian Twp 15"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1576,
+      "activeVoters": 1376,
+      "centroid": [
+        -84.42285575718583,
+        42.69574449430833
+      ]
+    },
+    "Meridian Township, Precinct 18": {
+      "precinctId": "WP-065-53140-00018",
+      "precinctName": "Meridian Township, Precinct 18",
+      "precinctNameAlt": [
+        "Meridian Twp 18"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 1780,
+      "activeVoters": 1467,
+      "centroid": [
+        -84.4701599563189,
+        42.75919269968259
+      ]
+    },
+    "Meridian Township, Precinct 19": {
+      "precinctId": "WP-065-53140-00019",
+      "precinctName": "Meridian Township, Precinct 19",
+      "precinctNameAlt": [
+        "Meridian Twp 19"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 2185,
+      "activeVoters": 1955,
+      "centroid": [
+        -84.45120101351294,
+        42.756409250126424
+      ]
+    },
+    "White Oak Township, Precinct 1": {
+      "precinctId": "WP-065-86900-00001",
+      "precinctName": "White Oak Township, Precinct 1",
+      "precinctNameAlt": [
+        "White Oak Twp 1"
+      ],
+      "jurisdiction": "White Oak",
+      "congressional": "mi-07",
+      "stateSenate": null,
+      "stateHouse": "mi-house-73",
+      "municipality": "white-oak",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "dansville-schools",
+      "registeredVoters": 1025,
+      "activeVoters": 924,
+      "centroid": [
+        -84.19330885921555,
+        42.550574167210975
+      ]
+    },
+    "Meridian Township, Precinct 22": {
+      "precinctId": "WP-065-53140-00022",
+      "precinctName": "Meridian Township, Precinct 22",
+      "precinctNameAlt": [
+        "Meridian Township 00022 "
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 436,
+      "activeVoters": 402,
+      "centroid": [
+        -84.37477510907456,
+        42.69515076483549
+      ]
+    },
+    "Meridian Township, Precinct 16": {
+      "precinctId": "WP-065-53140-00016",
+      "precinctName": "Meridian Township, Precinct 16",
+      "precinctNameAlt": [
+        "Meridian Twp 16"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1365,
+      "activeVoters": 1095,
+      "centroid": [
+        -84.44139029496101,
+        42.69473162882252
+      ]
+    },
+    "Meridian Township, Precinct 21": {
+      "precinctId": "WP-065-53140-00021",
+      "precinctName": "Meridian Township, Precinct 21",
+      "precinctNameAlt": [
+        "Meridian Township 00021 "
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 242,
+      "activeVoters": 203,
+      "centroid": [
+        -84.43968842894138,
+        42.720963489357096
+      ]
+    },
+    "Meridian Township, Precinct 3": {
+      "precinctId": "WP-065-53140-00003",
+      "precinctName": "Meridian Township, Precinct 3",
+      "precinctNameAlt": [
+        "Meridian Twp 3"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "haslett-public-schools",
+      "registeredVoters": 2677,
+      "activeVoters": 2392,
+      "centroid": [
+        -84.42702334889194,
+        42.74952391608522
+      ]
+    },
+    "Meridian Township, Precinct 20": {
+      "precinctId": "WP-065-53140-00020",
+      "precinctName": "Meridian Township, Precinct 20",
+      "precinctNameAlt": [
+        "Meridian Twp 20"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 224,
+      "activeVoters": 159,
+      "centroid": [
+        -84.45611331063402,
+        42.725561098056644
+      ]
+    },
+    "Williamstown Township, Precinct 1": {
+      "precinctId": "WP-065-87440-00001",
+      "precinctName": "Williamstown Township, Precinct 1",
+      "precinctNameAlt": [
+        "Williamstown Twp 1"
+      ],
+      "jurisdiction": "Williamstown",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "williamstown",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "williamston-community-schools",
+      "registeredVoters": 2331,
+      "activeVoters": 2090,
+      "centroid": [
+        -84.30328169014516,
+        42.69691064572444
+      ]
+    },
+    "City of Lansing, Ward 1, Precinct 2": {
+      "precinctId": "WP-065-46000-01002",
+      "precinctName": "City of Lansing, Ward 1, Precinct 2",
+      "precinctNameAlt": [
+        "Lansing 1-2"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-1",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2781,
+      "activeVoters": 2102,
+      "centroid": [
+        -84.54630463654247,
+        42.74116834524918
+      ]
+    },
+    "City of Lansing, Ward 4, Precinct 38": {
+      "precinctId": "WP-065-46000-04038",
+      "precinctName": "City of Lansing, Ward 4, Precinct 38",
+      "precinctNameAlt": [
+        "Lansing 4-38"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-4",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3137,
+      "activeVoters": 2463,
+      "centroid": [
+        -84.5707051498564,
+        42.74931966561868
+      ]
+    },
+    "City of Lansing, Ward 4, Precinct 35": {
+      "precinctId": "WP-065-46000-04035",
+      "precinctName": "City of Lansing, Ward 4, Precinct 35",
+      "precinctNameAlt": [
+        "Lansing 4-35"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-4",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3135,
+      "activeVoters": 2621,
+      "centroid": [
+        -84.57779331832994,
+        42.7285283118229
+      ]
+    },
+    "City of Lansing, Ward 4, Precinct 34": {
+      "precinctId": "WP-065-46000-04034",
+      "precinctName": "City of Lansing, Ward 4, Precinct 34",
+      "precinctNameAlt": [
+        "Lansing 4-34"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-4",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3425,
+      "activeVoters": 2842,
+      "centroid": [
+        -84.55780587599476,
+        42.70924306690661
+      ]
+    },
+    "City of Lansing, Ward 3, Precinct 26": {
+      "precinctId": "WP-065-46000-03026",
+      "precinctName": "City of Lansing, Ward 3, Precinct 26",
+      "precinctNameAlt": [
+        "Lansign 3-26"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-3",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2081,
+      "activeVoters": 1603,
+      "centroid": [
+        -84.5879844553852,
+        42.69198225815393
+      ]
+    },
+    "Delhi Charter Township, Precinct 6": {
+      "precinctId": "WP-065-21420-00006",
+      "precinctName": "Delhi Charter Township, Precinct 6",
+      "precinctNameAlt": [
+        "Delhi Twp 6"
+      ],
+      "jurisdiction": "Delhi",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "holt-public-schools",
+      "registeredVoters": 2305,
+      "activeVoters": 2045,
+      "centroid": [
+        -84.5258922576337,
+        42.646648224487016
+      ]
+    },
+    "Delhi Charter Township, Precinct 3": {
+      "precinctId": "WP-065-21420-00003",
+      "precinctName": "Delhi Charter Township, Precinct 3",
+      "precinctNameAlt": [
+        "Delhi Twp 3"
+      ],
+      "jurisdiction": "Delhi",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "delhi",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "holt-public-schools",
+      "registeredVoters": 2934,
+      "activeVoters": 2680,
+      "centroid": [
+        -84.53558031977752,
+        42.62894508056421
+      ]
+    },
+    "City of Lansing, Ward 2, Precinct 17": {
+      "precinctId": "WP-065-46000-02017",
+      "precinctName": "City of Lansing, Ward 2, Precinct 17",
+      "precinctNameAlt": [
+        "Lansing 2-17"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-2",
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 2062,
+      "activeVoters": 1699,
+      "centroid": [
+        -84.4876354949954,
+        42.69770453111672
+      ]
+    },
+    "Alaiedon Township, Precinct 2": {
+      "precinctId": "WP-065-00800-00002",
+      "precinctName": "Alaiedon Township, Precinct 2",
+      "precinctNameAlt": [
+        "Alaiedon Twp 2"
+      ],
+      "jurisdiction": "Alaiedon",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "alaiedon",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "mason-public-schools-ingham",
+      "registeredVoters": 1307,
+      "activeVoters": 1203,
+      "centroid": [
+        -84.44247649441094,
+        42.61178802992129
+      ]
+    },
+    "City of East Lansing, Precinct 2": {
+      "precinctId": "WP-065-24120-00002",
+      "precinctName": "City of East Lansing, Precinct 2",
+      "precinctNameAlt": [
+        "East Lansing 2"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 1332,
+      "activeVoters": 994,
+      "centroid": [
+        -84.49400507237857,
+        42.73621017473022
+      ]
+    },
+    "City of East Lansing, Precinct 5": {
+      "precinctId": "WP-065-24120-00005",
+      "precinctName": "City of East Lansing, Precinct 5",
+      "precinctNameAlt": [
+        "East Lansing 5"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 2464,
+      "activeVoters": 1821,
+      "centroid": [
+        -84.49380014864317,
+        42.76170342853954
+      ]
+    },
+    "City of East Lansing, Precinct 11": {
+      "precinctId": "WP-065-24120-00011",
+      "precinctName": "City of East Lansing, Precinct 11",
+      "precinctNameAlt": [
+        "East Lansing 11"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 2301,
+      "activeVoters": 2017,
+      "centroid": [
+        -84.45107295482613,
+        42.74438986494042
+      ]
+    },
+    "City of East Lansing, Precinct 14": {
+      "precinctId": "WP-065-24120-00014",
+      "precinctName": "City of East Lansing, Precinct 14",
+      "precinctNameAlt": [
+        "East Lansing 14"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 362,
+      "activeVoters": 217,
+      "centroid": [
+        -84.47062748831934,
+        42.72182146805586
+      ]
+    },
+    "City of East Lansing, Precinct 16": {
+      "precinctId": "WP-065-24120-00016",
+      "precinctName": "City of East Lansing, Precinct 16",
+      "precinctNameAlt": [
+        "East Lansing 16"
+      ],
+      "jurisdiction": "East Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "east-lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "east-lansing-school-district",
+      "registeredVoters": 1006,
+      "activeVoters": 627,
+      "centroid": [
+        -84.49858199721423,
+        42.721996151459734
+      ]
+    },
+    "City of Lansing, Ward 1, Precinct 1": {
+      "precinctId": "WP-065-46000-01001",
+      "precinctName": "City of Lansing, Ward 1, Precinct 1",
+      "precinctNameAlt": [
+        "Lansing 1-1"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-1",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3285,
+      "activeVoters": 2698,
+      "centroid": [
+        -84.55242123505766,
+        42.75932537873459
+      ]
+    },
+    "City of Lansing, Ward 1, Precinct 3": {
+      "precinctId": "WP-065-46000-01003",
+      "precinctName": "City of Lansing, Ward 1, Precinct 3",
+      "precinctNameAlt": [
+        "Lansing 1-3"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-1",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 1494,
+      "activeVoters": 1340,
+      "centroid": [
+        -84.51763753660038,
+        42.75286768819095
+      ]
+    },
+    "City of Lansing, Ward 1, Precinct 5": {
+      "precinctId": "WP-065-46000-01005",
+      "precinctName": "City of Lansing, Ward 1, Precinct 5",
+      "precinctNameAlt": [
+        "Lansing 1-5"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-1",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3569,
+      "activeVoters": 2809,
+      "centroid": [
+        -84.50906623118969,
+        42.73320019849728
+      ]
+    },
+    "City of Lansing, Ward 3, Precinct 28": {
+      "precinctId": "WP-065-46000-03028",
+      "precinctName": "City of Lansing, Ward 3, Precinct 28",
+      "precinctNameAlt": [
+        "Lansing 3-28"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-3",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3477,
+      "activeVoters": 2810,
+      "centroid": [
+        -84.58484747539538,
+        42.67491865448648
+      ]
+    },
+    "City of Lansing, Ward 3, Precinct 23": {
+      "precinctId": "WP-065-46000-03023",
+      "precinctName": "City of Lansing, Ward 3, Precinct 23",
+      "precinctNameAlt": [
+        "Lansing 3-23"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-3",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 1703,
+      "activeVoters": 1479,
+      "centroid": [
+        -84.59442774757532,
+        42.70838627023529
+      ]
+    },
+    "City of Lansing, Ward 4, Precinct 39": {
+      "precinctId": "WP-065-46000-04039",
+      "precinctName": "City of Lansing, Ward 4, Precinct 39",
+      "precinctNameAlt": [
+        "Lansing 4-39"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-4",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2018,
+      "activeVoters": 1804,
+      "centroid": [
+        -84.58591887550232,
+        42.75748409287943
+      ]
+    },
+    "City of Lansing, Ward 4, Precinct 40": {
+      "precinctId": "WP-065-46000-04040",
+      "precinctName": "City of Lansing, Ward 4, Precinct 40",
+      "precinctNameAlt": [
+        "Lansing 4-40"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-4",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2321,
+      "activeVoters": 1940,
+      "centroid": [
+        -84.57935367504908,
+        42.77234007637975
+      ]
+    },
+    "Lansing Township, Precinct 3": {
+      "precinctId": "WP-065-46020-00003",
+      "precinctName": "Lansing Township, Precinct 3",
+      "precinctNameAlt": [
+        "Lansing Twp 3"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "waverly-community-schools",
+      "registeredVoters": 1803,
+      "activeVoters": 1432,
+      "centroid": [
+        -84.59354890246914,
+        42.721640417319115
+      ]
+    },
+    "Lansing Township, Precinct 4": {
+      "precinctId": "WP-065-46020-00004",
+      "precinctName": "Lansing Township, Precinct 4",
+      "precinctNameAlt": [
+        "Lansing Twp 4"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "waverly-community-schools",
+      "registeredVoters": 1397,
+      "activeVoters": 1157,
+      "centroid": [
+        -84.59265649839615,
+        42.74001604304232
+      ]
+    },
+    "Lansing Township, Precinct 6": {
+      "precinctId": "WP-065-46020-00006",
+      "precinctName": "Lansing Township, Precinct 6",
+      "precinctNameAlt": [
+        "Lansing Twp 6"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "waverly-community-schools",
+      "registeredVoters": 1361,
+      "activeVoters": 1160,
+      "centroid": [
+        -84.59346897765977,
+        42.74815267244569
+      ]
+    },
+    "Locke Township, Precinct 1": {
+      "precinctId": "WP-065-49040-00001",
+      "precinctName": "Locke Township, Precinct 1",
+      "precinctNameAlt": [
+        "Locke Twp 1"
+      ],
+      "jurisdiction": "Locke",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "locke",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "webberville-community-schools",
+      "registeredVoters": 1567,
+      "activeVoters": 1424,
+      "centroid": [
+        -84.20825045165238,
+        42.723778697716725
+      ]
+    },
+    "Meridian Township, Precinct 11": {
+      "precinctId": "WP-065-53140-00011",
+      "precinctName": "Meridian Township, Precinct 11",
+      "precinctNameAlt": [
+        "Meridian Twp 11"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 1182,
+      "activeVoters": 949,
+      "centroid": [
+        -84.44887354082326,
+        42.72022655612865
+      ]
+    },
+    "Meridian Township, Precinct 17": {
+      "precinctId": "WP-065-53140-00017",
+      "precinctName": "Meridian Township, Precinct 17",
+      "precinctNameAlt": [
+        "Meridian Twp 17"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "okemos-public-schools",
+      "registeredVoters": 2070,
+      "activeVoters": 1828,
+      "centroid": [
+        -84.45158118011013,
+        42.696770403103734
+      ]
+    },
+    "Onondaga Township, Precinct 1": {
+      "precinctId": "WP-065-60800-00001",
+      "precinctName": "Onondaga Township, Precinct 1",
+      "precinctNameAlt": [
+        "Onondaga Twp 1"
+      ],
+      "jurisdiction": "Onondaga",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "onondaga",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "leslie-public-schools",
+      "registeredVoters": 2480,
+      "activeVoters": 2198,
+      "centroid": [
+        -84.54936698559973,
+        42.46647923045093
+      ]
+    },
+    "Stockbridge Township, Precinct 1": {
+      "precinctId": "WP-065-76580-00001",
+      "precinctName": "Stockbridge Township, Precinct 1",
+      "precinctNameAlt": [
+        "Stockbridge Twp 1"
+      ],
+      "jurisdiction": "Stockbridge",
+      "congressional": "mi-07",
+      "stateSenate": null,
+      "stateHouse": "mi-house-73",
+      "municipality": "stockbridge",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "stockbridge-community-schools",
+      "registeredVoters": 3209,
+      "activeVoters": 2845,
+      "centroid": [
+        -84.19721908658731,
+        42.466514232602556
+      ]
+    },
+    "Vevay Township, Precinct 1": {
+      "precinctId": "WP-065-82220-00001",
+      "precinctName": "Vevay Township, Precinct 1",
+      "precinctNameAlt": [
+        "Vevay Twp 1"
+      ],
+      "jurisdiction": "Vevay",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-73",
+      "municipality": "mason",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "mason-public-schools-ingham",
+      "registeredVoters": 3119,
+      "activeVoters": 2796,
+      "centroid": [
+        -84.4329583367672,
+        42.56038523680293
+      ]
+    },
+    "Wheatfield Township, Precinct 1": {
+      "precinctId": "WP-065-86520-00001",
+      "precinctName": "Wheatfield Township, Precinct 1",
+      "precinctNameAlt": [
+        "Wheatfield Twp 1"
+      ],
+      "jurisdiction": "Wheatfield",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "wheatfield",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "williamston-community-schools",
+      "registeredVoters": 1381,
+      "activeVoters": 1275,
+      "centroid": [
+        -84.29949959271639,
+        42.66146272970413
+      ]
+    },
+    "City of Williamston, Precinct 1": {
+      "precinctId": "WP-065-87420-00001",
+      "precinctName": "City of Williamston, Precinct 1",
+      "precinctNameAlt": [
+        "Williamston 1"
+      ],
+      "jurisdiction": "Williamston",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "williamston",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "williamston-community-schools",
+      "registeredVoters": 3156,
+      "activeVoters": 2879,
+      "centroid": [
+        -84.2842778024002,
+        42.6871526861218
+      ]
+    },
+    "Williamstown Township, Precinct 2": {
+      "precinctId": "WP-065-87440-00002",
+      "precinctName": "Williamstown Township, Precinct 2",
+      "precinctNameAlt": [
+        "Williamstown Twp 2"
+      ],
+      "jurisdiction": "Williamstown",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "williamstown",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "williamston-community-schools",
+      "registeredVoters": 2267,
+      "activeVoters": 2054,
+      "centroid": [
+        -84.30148254726511,
+        42.724331541973136
+      ]
+    },
+    "Meridian Township, Precinct 4": {
+      "precinctId": "WP-065-53140-00004",
+      "precinctName": "Meridian Township, Precinct 4",
+      "precinctNameAlt": [
+        "Meridian Twp 4"
+      ],
+      "jurisdiction": "Meridian",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-75",
+      "municipality": "meridian",
+      "municipalityType": "township",
+      "cityWard": null,
+      "schoolDistrict": "haslett-public-schools",
+      "registeredVoters": 1356,
+      "activeVoters": 1191,
+      "centroid": [
+        -84.42637568357478,
+        42.76011867108271
+      ]
+    },
+    "City of Lansing, Ward 1, Precinct 4": {
+      "precinctId": "WP-065-46000-01004",
+      "precinctName": "City of Lansing, Ward 1, Precinct 4",
+      "precinctNameAlt": [
+        "Lansing 1-4"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-1",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 3055,
+      "activeVoters": 2361,
+      "centroid": [
+        -84.53554907127166,
+        42.74843635105072
+      ]
+    },
+    "City of Lansing, Ward 3, Precinct 24": {
+      "precinctId": "WP-065-46000-03024",
+      "precinctName": "City of Lansing, Ward 3, Precinct 24",
+      "precinctNameAlt": [
+        "Lansing 3-24"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-21",
+      "stateHouse": "mi-house-74",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": "ward-3",
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 2226,
+      "activeVoters": 1896,
+      "centroid": [
+        -84.59420505355453,
+        42.70275912295039
+      ]
+    },
+    "Lansing Township, Precinct 1": {
+      "precinctId": "WP-065-46020-00001",
+      "precinctName": "Lansing Township, Precinct 1",
+      "precinctNameAlt": [
+        "Lansing Twp 1"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-73",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 1127,
+      "activeVoters": 795,
+      "centroid": [
+        -84.51002650678052,
+        42.72903002901698
+      ]
+    },
+    "Lansing Township, Precinct 2": {
+      "precinctId": "WP-065-46020-00002",
+      "precinctName": "Lansing Township, Precinct 2",
+      "precinctNameAlt": [
+        "Lansing Twp 2"
+      ],
+      "jurisdiction": "Lansing",
+      "congressional": "mi-07",
+      "stateSenate": "mi-senate-28",
+      "stateHouse": "mi-house-77",
+      "municipality": "lansing",
+      "municipalityType": "city",
+      "cityWard": null,
+      "schoolDistrict": "lansing-public-school-district",
+      "registeredVoters": 1334,
+      "activeVoters": 1171,
+      "centroid": [
+        -84.51967764869673,
+        42.754068103236186
+      ]
+    }
+  }
+}
