@@ -1,0 +1,605 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "el-pct-1",
+        "PRECINCT_NAME": "East Lansing Precinct 1",
+        "JURISDICTION_NAME": "East Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.48, 42.74], [-84.47, 42.74], [-84.47, 42.73], [-84.48, 42.73], [-84.48, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "el-pct-2",
+        "PRECINCT_NAME": "East Lansing Precinct 2",
+        "JURISDICTION_NAME": "East Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.47, 42.74], [-84.46, 42.74], [-84.46, 42.73], [-84.47, 42.73], [-84.47, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "el-pct-3",
+        "PRECINCT_NAME": "East Lansing Precinct 3",
+        "JURISDICTION_NAME": "East Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.48, 42.75], [-84.47, 42.75], [-84.47, 42.74], [-84.48, 42.74], [-84.48, 42.75]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "el-pct-4",
+        "PRECINCT_NAME": "East Lansing Precinct 4",
+        "JURISDICTION_NAME": "East Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.47, 42.75], [-84.46, 42.75], [-84.46, 42.74], [-84.47, 42.74], [-84.47, 42.75]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "el-pct-5",
+        "PRECINCT_NAME": "East Lansing Precinct 5",
+        "JURISDICTION_NAME": "East Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.46, 42.74], [-84.45, 42.74], [-84.45, 42.73], [-84.46, 42.73], [-84.46, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "el-pct-6",
+        "PRECINCT_NAME": "East Lansing Precinct 6",
+        "JURISDICTION_NAME": "East Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.46, 42.75], [-84.45, 42.75], [-84.45, 42.74], [-84.46, 42.74], [-84.46, 42.75]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "el-pct-7",
+        "PRECINCT_NAME": "East Lansing Precinct 7",
+        "JURISDICTION_NAME": "East Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.48, 42.73], [-84.47, 42.73], [-84.47, 42.72], [-84.48, 42.72], [-84.48, 42.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "el-pct-8",
+        "PRECINCT_NAME": "East Lansing Precinct 8",
+        "JURISDICTION_NAME": "East Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.47, 42.73], [-84.46, 42.73], [-84.46, 42.72], [-84.47, 42.72], [-84.47, 42.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-1",
+        "PRECINCT_NAME": "Lansing Precinct 1",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.56, 42.73], [-84.55, 42.73], [-84.55, 42.72], [-84.56, 42.72], [-84.56, 42.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-2",
+        "PRECINCT_NAME": "Lansing Precinct 2",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.55, 42.73], [-84.54, 42.73], [-84.54, 42.72], [-84.55, 42.72], [-84.55, 42.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-3",
+        "PRECINCT_NAME": "Lansing Precinct 3",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.54, 42.73], [-84.53, 42.73], [-84.53, 42.72], [-84.54, 42.72], [-84.54, 42.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-4",
+        "PRECINCT_NAME": "Lansing Precinct 4",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.53, 42.73], [-84.52, 42.73], [-84.52, 42.72], [-84.53, 42.72], [-84.53, 42.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-5",
+        "PRECINCT_NAME": "Lansing Precinct 5",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.56, 42.74], [-84.55, 42.74], [-84.55, 42.73], [-84.56, 42.73], [-84.56, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-6",
+        "PRECINCT_NAME": "Lansing Precinct 6",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.55, 42.74], [-84.54, 42.74], [-84.54, 42.73], [-84.55, 42.73], [-84.55, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-7",
+        "PRECINCT_NAME": "Lansing Precinct 7",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.54, 42.74], [-84.53, 42.74], [-84.53, 42.73], [-84.54, 42.73], [-84.54, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-8",
+        "PRECINCT_NAME": "Lansing Precinct 8",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.53, 42.74], [-84.52, 42.74], [-84.52, 42.73], [-84.53, 42.73], [-84.53, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-9",
+        "PRECINCT_NAME": "Lansing Precinct 9",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.56, 42.72], [-84.55, 42.72], [-84.55, 42.71], [-84.56, 42.71], [-84.56, 42.72]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-10",
+        "PRECINCT_NAME": "Lansing Precinct 10",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.55, 42.72], [-84.54, 42.72], [-84.54, 42.71], [-84.55, 42.71], [-84.55, 42.72]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-11",
+        "PRECINCT_NAME": "Lansing Precinct 11",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.54, 42.72], [-84.53, 42.72], [-84.53, 42.71], [-84.54, 42.71], [-84.54, 42.72]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "lan-pct-12",
+        "PRECINCT_NAME": "Lansing Precinct 12",
+        "JURISDICTION_NAME": "Lansing",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.53, 42.72], [-84.52, 42.72], [-84.52, 42.71], [-84.53, 42.71], [-84.53, 42.72]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "mer-pct-1",
+        "PRECINCT_NAME": "Meridian Township Precinct 1",
+        "JURISDICTION_NAME": "Meridian Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.45, 42.73], [-84.44, 42.73], [-84.44, 42.72], [-84.45, 42.72], [-84.45, 42.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "mer-pct-2",
+        "PRECINCT_NAME": "Meridian Township Precinct 2",
+        "JURISDICTION_NAME": "Meridian Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.44, 42.73], [-84.43, 42.73], [-84.43, 42.72], [-84.44, 42.72], [-84.44, 42.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "mer-pct-3",
+        "PRECINCT_NAME": "Meridian Township Precinct 3",
+        "JURISDICTION_NAME": "Meridian Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.45, 42.74], [-84.44, 42.74], [-84.44, 42.73], [-84.45, 42.73], [-84.45, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "mer-pct-4",
+        "PRECINCT_NAME": "Meridian Township Precinct 4",
+        "JURISDICTION_NAME": "Meridian Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.44, 42.74], [-84.43, 42.74], [-84.43, 42.73], [-84.44, 42.73], [-84.44, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "mer-pct-5",
+        "PRECINCT_NAME": "Meridian Township Precinct 5",
+        "JURISDICTION_NAME": "Meridian Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.45, 42.75], [-84.44, 42.75], [-84.44, 42.74], [-84.45, 42.74], [-84.45, 42.75]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "mer-pct-6",
+        "PRECINCT_NAME": "Meridian Township Precinct 6",
+        "JURISDICTION_NAME": "Meridian Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.44, 42.75], [-84.43, 42.75], [-84.43, 42.74], [-84.44, 42.74], [-84.44, 42.75]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "mer-pct-7",
+        "PRECINCT_NAME": "Meridian Township Precinct 7",
+        "JURISDICTION_NAME": "Meridian Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.43, 42.73], [-84.42, 42.73], [-84.42, 42.72], [-84.43, 42.72], [-84.43, 42.73]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "mer-pct-8",
+        "PRECINCT_NAME": "Meridian Township Precinct 8",
+        "JURISDICTION_NAME": "Meridian Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.43, 42.74], [-84.42, 42.74], [-84.42, 42.73], [-84.43, 42.73], [-84.43, 42.74]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "del-pct-1",
+        "PRECINCT_NAME": "Delhi Township Precinct 1",
+        "JURISDICTION_NAME": "Delhi Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.60, 42.71], [-84.59, 42.71], [-84.59, 42.70], [-84.60, 42.70], [-84.60, 42.71]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "del-pct-2",
+        "PRECINCT_NAME": "Delhi Township Precinct 2",
+        "JURISDICTION_NAME": "Delhi Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.59, 42.71], [-84.58, 42.71], [-84.58, 42.70], [-84.59, 42.70], [-84.59, 42.71]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "del-pct-3",
+        "PRECINCT_NAME": "Delhi Township Precinct 3",
+        "JURISDICTION_NAME": "Delhi Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.60, 42.72], [-84.59, 42.72], [-84.59, 42.71], [-84.60, 42.71], [-84.60, 42.72]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "del-pct-4",
+        "PRECINCT_NAME": "Delhi Township Precinct 4",
+        "JURISDICTION_NAME": "Delhi Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.59, 42.72], [-84.58, 42.72], [-84.58, 42.71], [-84.59, 42.71], [-84.59, 42.72]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "del-pct-5",
+        "PRECINCT_NAME": "Delhi Township Precinct 5",
+        "JURISDICTION_NAME": "Delhi Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.58, 42.71], [-84.57, 42.71], [-84.57, 42.70], [-84.58, 42.70], [-84.58, 42.71]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "del-pct-6",
+        "PRECINCT_NAME": "Delhi Township Precinct 6",
+        "JURISDICTION_NAME": "Delhi Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.58, 42.72], [-84.57, 42.72], [-84.57, 42.71], [-84.58, 42.71], [-84.58, 42.72]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "del-pct-7",
+        "PRECINCT_NAME": "Delhi Township Precinct 7",
+        "JURISDICTION_NAME": "Delhi Township",
+        "JURISDICTION_TYPE": "township"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.60, 42.70], [-84.59, 42.70], [-84.59, 42.69], [-84.60, 42.69], [-84.60, 42.70]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "wil-pct-1",
+        "PRECINCT_NAME": "Williamston Precinct 1",
+        "JURISDICTION_NAME": "Williamston",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.28, 42.69], [-84.27, 42.69], [-84.27, 42.68], [-84.28, 42.68], [-84.28, 42.69]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "wil-pct-2",
+        "PRECINCT_NAME": "Williamston Precinct 2",
+        "JURISDICTION_NAME": "Williamston",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.27, 42.69], [-84.26, 42.69], [-84.26, 42.68], [-84.27, 42.68], [-84.27, 42.69]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "wil-pct-3",
+        "PRECINCT_NAME": "Williamston Precinct 3",
+        "JURISDICTION_NAME": "Williamston",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.28, 42.70], [-84.27, 42.70], [-84.27, 42.69], [-84.28, 42.69], [-84.28, 42.70]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "wil-pct-4",
+        "PRECINCT_NAME": "Williamston Precinct 4",
+        "JURISDICTION_NAME": "Williamston",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.27, 42.70], [-84.26, 42.70], [-84.26, 42.69], [-84.27, 42.69], [-84.27, 42.70]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PRECINCT_ID": "wil-pct-5",
+        "PRECINCT_NAME": "Williamston Precinct 5",
+        "JURISDICTION_NAME": "Williamston",
+        "JURISDICTION_TYPE": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-84.26, 42.69], [-84.25, 42.69], [-84.25, 42.68], [-84.26, 42.68], [-84.26, 42.69]
+        ]]
+      }
+    }
+  ]
+}

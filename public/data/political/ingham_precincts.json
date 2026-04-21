@@ -1,0 +1,5134 @@
+{
+  "metadata": {
+    "county": "Ingham",
+    "state": "MI",
+    "created": "2025-12-01",
+    "precinctCount": 40,
+    "dataYear": 2024,
+    "description": "Sample precinct-level political and demographic data for Ingham County, Michigan",
+    "sources": [
+      "Ingham County Clerk (election results)",
+      "ArcGIS Business Analyst (demographics)",
+      "US Census Bureau (population estimates)"
+    ]
+  },
+  "jurisdictions": [
+    {
+      "id": "east-lansing",
+      "name": "East Lansing",
+      "type": "city",
+      "precinctIds": [
+        "el-pct-1",
+        "el-pct-2",
+        "el-pct-3",
+        "el-pct-4",
+        "el-pct-5",
+        "el-pct-6",
+        "el-pct-7",
+        "el-pct-8"
+      ]
+    },
+    {
+      "id": "lansing",
+      "name": "Lansing",
+      "type": "city",
+      "precinctIds": [
+        "lan-pct-1",
+        "lan-pct-2",
+        "lan-pct-3",
+        "lan-pct-4",
+        "lan-pct-5",
+        "lan-pct-6",
+        "lan-pct-7",
+        "lan-pct-8",
+        "lan-pct-9",
+        "lan-pct-10",
+        "lan-pct-11",
+        "lan-pct-12"
+      ]
+    },
+    {
+      "id": "meridian-township",
+      "name": "Meridian Township",
+      "type": "township",
+      "precinctIds": [
+        "mer-pct-1",
+        "mer-pct-2",
+        "mer-pct-3",
+        "mer-pct-4",
+        "mer-pct-5",
+        "mer-pct-6",
+        "mer-pct-7",
+        "mer-pct-8"
+      ]
+    },
+    {
+      "id": "delhi-township",
+      "name": "Delhi Township",
+      "type": "township",
+      "precinctIds": [
+        "del-pct-1",
+        "del-pct-2",
+        "del-pct-3",
+        "del-pct-4",
+        "del-pct-5",
+        "del-pct-6",
+        "del-pct-7"
+      ]
+    },
+    {
+      "id": "williamston",
+      "name": "Williamston",
+      "type": "city",
+      "precinctIds": [
+        "wil-pct-1",
+        "wil-pct-2",
+        "wil-pct-3",
+        "wil-pct-4",
+        "wil-pct-5"
+      ]
+    }
+  ],
+  "precincts": {
+    "el-pct-1": {
+      "id": "el-pct-1",
+      "name": "East Lansing Precinct 1",
+      "jurisdiction": "East Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 3200,
+        "population18up": 2800,
+        "medianAge": 24.2,
+        "medianHHI": 32000,
+        "collegePct": 68.5,
+        "homeownerPct": 18.2,
+        "diversityIndex": 42,
+        "populationDensity": 4500
+      },
+      "political": {
+        "demAffiliationPct": 52.3,
+        "repAffiliationPct": 18.7,
+        "independentPct": 29.0,
+        "liberalPct": 48.2,
+        "moderatePct": 32.1,
+        "conservativePct": 19.7
+      },
+      "electoral": {
+        "partisanLean": 38,
+        "swingPotential": 15,
+        "competitiveness": "safe_d",
+        "avgTurnout": 52.3,
+        "turnoutDropoff": 18.5
+      },
+      "targeting": {
+        "gotvPriority": 72,
+        "persuasionOpportunity": 28,
+        "combinedScore": 65,
+        "strategy": "Base Mobilization"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 68.2,
+          "repPct": 29.8,
+          "margin": 38.4,
+          "turnout": 58.1,
+          "ballotsCast": 1628
+        },
+        "2022": {
+          "demPct": 71.5,
+          "repPct": 26.2,
+          "margin": 45.3,
+          "turnout": 48.9,
+          "ballotsCast": 1370
+        },
+        "2020": {
+          "demPct": 70.1,
+          "repPct": 27.9,
+          "margin": 42.2,
+          "turnout": 62.4,
+          "ballotsCast": 1748
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 28.5,
+        "foxNewsmaxPct": 12.3,
+        "nprPct": 22.1,
+        "socialMediaPct": 78.2,
+        "politicalDonorPct": 4.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "14B",
+          "name": "College Towns",
+          "lifeMode": "Next Wave",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Climate Change",
+              "Social Justice"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "Digital News"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Climate Change",
+            "Social Justice"
+          ],
+          "mediaChannels": [
+            "Social Media",
+            "Streaming",
+            "Digital News"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "el-pct-2": {
+      "id": "el-pct-2",
+      "name": "East Lansing Precinct 2",
+      "jurisdiction": "East Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2950,
+        "population18up": 2650,
+        "medianAge": 21.8,
+        "medianHHI": 28500,
+        "collegePct": 74.2,
+        "homeownerPct": 12.5,
+        "diversityIndex": 48,
+        "populationDensity": 5200
+      },
+      "political": {
+        "demAffiliationPct": 55.8,
+        "repAffiliationPct": 15.2,
+        "independentPct": 29.0,
+        "liberalPct": 52.1,
+        "moderatePct": 30.5,
+        "conservativePct": 17.4
+      },
+      "electoral": {
+        "partisanLean": 42,
+        "swingPotential": 12,
+        "competitiveness": "safe_d",
+        "avgTurnout": 48.7,
+        "turnoutDropoff": 22.3
+      },
+      "targeting": {
+        "gotvPriority": 78,
+        "persuasionOpportunity": 22,
+        "combinedScore": 68,
+        "strategy": "Youth Mobilization"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 72.3,
+          "repPct": 25.8,
+          "margin": 46.5,
+          "turnout": 54.2,
+          "ballotsCast": 1437
+        },
+        "2022": {
+          "demPct": 74.1,
+          "repPct": 23.5,
+          "margin": 50.6,
+          "turnout": 42.8,
+          "ballotsCast": 1134
+        },
+        "2020": {
+          "demPct": 73.5,
+          "repPct": 24.2,
+          "margin": 49.3,
+          "turnout": 59.2,
+          "ballotsCast": 1570
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 31.2,
+        "foxNewsmaxPct": 9.8,
+        "nprPct": 24.5,
+        "socialMediaPct": 82.5,
+        "politicalDonorPct": 3.1
+      },
+      "tapestry": {
+        "primary": {
+          "code": "14B",
+          "name": "College Towns",
+          "lifeMode": "Next Wave",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Climate Change",
+              "Social Justice"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "Digital News"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Climate Change",
+            "Social Justice"
+          ],
+          "mediaChannels": [
+            "Social Media",
+            "Streaming",
+            "Digital News"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "el-pct-3": {
+      "id": "el-pct-3",
+      "name": "East Lansing Precinct 3",
+      "jurisdiction": "East Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 3450,
+        "population18up": 2900,
+        "medianAge": 26.5,
+        "medianHHI": 38200,
+        "collegePct": 62.3,
+        "homeownerPct": 25.8,
+        "diversityIndex": 38,
+        "populationDensity": 3800
+      },
+      "political": {
+        "demAffiliationPct": 49.5,
+        "repAffiliationPct": 22.3,
+        "independentPct": 28.2,
+        "liberalPct": 44.8,
+        "moderatePct": 34.2,
+        "conservativePct": 21.0
+      },
+      "electoral": {
+        "partisanLean": 32,
+        "swingPotential": 18,
+        "competitiveness": "safe_d",
+        "avgTurnout": 56.8,
+        "turnoutDropoff": 15.2
+      },
+      "targeting": {
+        "gotvPriority": 65,
+        "persuasionOpportunity": 35,
+        "combinedScore": 58,
+        "strategy": "Mixed Approach"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 65.7,
+          "repPct": 32.1,
+          "margin": 33.6,
+          "turnout": 62.5,
+          "ballotsCast": 1812
+        },
+        "2022": {
+          "demPct": 67.2,
+          "repPct": 30.8,
+          "margin": 36.4,
+          "turnout": 52.3,
+          "ballotsCast": 1517
+        },
+        "2020": {
+          "demPct": 66.8,
+          "repPct": 31.2,
+          "margin": 35.6,
+          "turnout": 65.7,
+          "ballotsCast": 1907
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 26.8,
+        "foxNewsmaxPct": 14.5,
+        "nprPct": 19.7,
+        "socialMediaPct": 74.2,
+        "politicalDonorPct": 5.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "3A",
+          "name": "Laptops and Lattes",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Environment",
+              "Technology Policy",
+              "Civil Rights"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "NPR",
+              "Social Media"
+            ],
+            "persuadability": "Very Low",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "14B",
+          "name": "College Towns",
+          "lifeMode": "Next Wave",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Climate Change",
+              "Social Justice"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "Digital News"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Strong D",
+          "issuesFocus": [
+            "Environment",
+            "Technology Policy",
+            "Civil Rights"
+          ],
+          "mediaChannels": [
+            "Digital News",
+            "NPR",
+            "Social Media"
+          ],
+          "persuadability": "Very Low",
+          "turnoutLikelihood": "High"
+        }
+      }
+    },
+    "el-pct-4": {
+      "id": "el-pct-4",
+      "name": "East Lansing Precinct 4",
+      "jurisdiction": "East Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2800,
+        "population18up": 2500,
+        "medianAge": 23.1,
+        "medianHHI": 29800,
+        "collegePct": 71.5,
+        "homeownerPct": 14.2,
+        "diversityIndex": 52,
+        "populationDensity": 4900
+      },
+      "political": {
+        "demAffiliationPct": 54.2,
+        "repAffiliationPct": 16.8,
+        "independentPct": 29.0,
+        "liberalPct": 50.5,
+        "moderatePct": 31.2,
+        "conservativePct": 18.3
+      },
+      "electoral": {
+        "partisanLean": 40,
+        "swingPotential": 14,
+        "competitiveness": "safe_d",
+        "avgTurnout": 50.5,
+        "turnoutDropoff": 20.1
+      },
+      "targeting": {
+        "gotvPriority": 75,
+        "persuasionOpportunity": 25,
+        "combinedScore": 66,
+        "strategy": "Base Mobilization"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 70.5,
+          "repPct": 27.8,
+          "margin": 42.7,
+          "turnout": 56.2,
+          "ballotsCast": 1406
+        },
+        "2022": {
+          "demPct": 72.8,
+          "repPct": 25.2,
+          "margin": 47.6,
+          "turnout": 45.5,
+          "ballotsCast": 1138
+        },
+        "2020": {
+          "demPct": 71.2,
+          "repPct": 26.8,
+          "margin": 44.4,
+          "turnout": 60.8,
+          "ballotsCast": 1520
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 29.8,
+        "foxNewsmaxPct": 11.2,
+        "nprPct": 23.5,
+        "socialMediaPct": 80.8,
+        "politicalDonorPct": 3.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "14B",
+          "name": "College Towns",
+          "lifeMode": "Next Wave",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Climate Change",
+              "Social Justice"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "Digital News"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Climate Change",
+            "Social Justice"
+          ],
+          "mediaChannels": [
+            "Social Media",
+            "Streaming",
+            "Digital News"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "el-pct-5": {
+      "id": "el-pct-5",
+      "name": "East Lansing Precinct 5",
+      "jurisdiction": "East Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 3100,
+        "population18up": 2700,
+        "medianAge": 25.8,
+        "medianHHI": 35500,
+        "collegePct": 65.8,
+        "homeownerPct": 22.5,
+        "diversityIndex": 45,
+        "populationDensity": 4200
+      },
+      "political": {
+        "demAffiliationPct": 51.2,
+        "repAffiliationPct": 19.5,
+        "independentPct": 29.3,
+        "liberalPct": 47.2,
+        "moderatePct": 33.5,
+        "conservativePct": 19.3
+      },
+      "electoral": {
+        "partisanLean": 35,
+        "swingPotential": 16,
+        "competitiveness": "safe_d",
+        "avgTurnout": 54.2,
+        "turnoutDropoff": 17.5
+      },
+      "targeting": {
+        "gotvPriority": 68,
+        "persuasionOpportunity": 32,
+        "combinedScore": 62,
+        "strategy": "Mixed Approach"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 67.8,
+          "repPct": 30.5,
+          "margin": 37.3,
+          "turnout": 59.8,
+          "ballotsCast": 1615
+        },
+        "2022": {
+          "demPct": 69.5,
+          "repPct": 28.8,
+          "margin": 40.7,
+          "turnout": 49.2,
+          "ballotsCast": 1328
+        },
+        "2020": {
+          "demPct": 68.2,
+          "repPct": 30.1,
+          "margin": 38.1,
+          "turnout": 63.5,
+          "ballotsCast": 1715
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 27.5,
+        "foxNewsmaxPct": 13.2,
+        "nprPct": 20.8,
+        "socialMediaPct": 76.5,
+        "politicalDonorPct": 4.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "14B",
+          "name": "College Towns",
+          "lifeMode": "Next Wave",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Climate Change",
+              "Social Justice"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "Digital News"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Climate Change",
+            "Social Justice"
+          ],
+          "mediaChannels": [
+            "Social Media",
+            "Streaming",
+            "Digital News"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "el-pct-6": {
+      "id": "el-pct-6",
+      "name": "East Lansing Precinct 6",
+      "jurisdiction": "East Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 3350,
+        "population18up": 2850,
+        "medianAge": 27.2,
+        "medianHHI": 42500,
+        "collegePct": 58.2,
+        "homeownerPct": 32.8,
+        "diversityIndex": 35,
+        "populationDensity": 3500
+      },
+      "political": {
+        "demAffiliationPct": 47.8,
+        "repAffiliationPct": 24.5,
+        "independentPct": 27.7,
+        "liberalPct": 42.5,
+        "moderatePct": 36.8,
+        "conservativePct": 20.7
+      },
+      "electoral": {
+        "partisanLean": 28,
+        "swingPotential": 22,
+        "competitiveness": "likely_d",
+        "avgTurnout": 61.5,
+        "turnoutDropoff": 12.8
+      },
+      "targeting": {
+        "gotvPriority": 58,
+        "persuasionOpportunity": 42,
+        "combinedScore": 55,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 63.2,
+          "repPct": 34.8,
+          "margin": 28.4,
+          "turnout": 67.2,
+          "ballotsCast": 1915
+        },
+        "2022": {
+          "demPct": 64.5,
+          "repPct": 33.8,
+          "margin": 30.7,
+          "turnout": 57.5,
+          "ballotsCast": 1639
+        },
+        "2020": {
+          "demPct": 63.8,
+          "repPct": 34.5,
+          "margin": 29.3,
+          "turnout": 69.8,
+          "ballotsCast": 1990
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 24.5,
+        "foxNewsmaxPct": 16.8,
+        "nprPct": 18.2,
+        "socialMediaPct": 68.5,
+        "politicalDonorPct": 7.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "3A",
+          "name": "Laptops and Lattes",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Environment",
+              "Technology Policy",
+              "Civil Rights"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "NPR",
+              "Social Media"
+            ],
+            "persuadability": "Very Low",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "14B",
+          "name": "College Towns",
+          "lifeMode": "Next Wave",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Climate Change",
+              "Social Justice"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "Digital News"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Strong D",
+          "issuesFocus": [
+            "Environment",
+            "Technology Policy",
+            "Civil Rights"
+          ],
+          "mediaChannels": [
+            "Digital News",
+            "NPR",
+            "Social Media"
+          ],
+          "persuadability": "Very Low",
+          "turnoutLikelihood": "High"
+        }
+      }
+    },
+    "el-pct-7": {
+      "id": "el-pct-7",
+      "name": "East Lansing Precinct 7",
+      "jurisdiction": "East Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2900,
+        "population18up": 2600,
+        "medianAge": 24.5,
+        "medianHHI": 31200,
+        "collegePct": 69.8,
+        "homeownerPct": 16.5,
+        "diversityIndex": 46,
+        "populationDensity": 4700
+      },
+      "political": {
+        "demAffiliationPct": 53.5,
+        "repAffiliationPct": 17.2,
+        "independentPct": 29.3,
+        "liberalPct": 49.8,
+        "moderatePct": 31.5,
+        "conservativePct": 18.7
+      },
+      "electoral": {
+        "partisanLean": 39,
+        "swingPotential": 13,
+        "competitiveness": "safe_d",
+        "avgTurnout": 51.8,
+        "turnoutDropoff": 19.2
+      },
+      "targeting": {
+        "gotvPriority": 74,
+        "persuasionOpportunity": 26,
+        "combinedScore": 67,
+        "strategy": "Base Mobilization"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 69.8,
+          "repPct": 28.5,
+          "margin": 41.3,
+          "turnout": 57.5,
+          "ballotsCast": 1495
+        },
+        "2022": {
+          "demPct": 71.2,
+          "repPct": 26.8,
+          "margin": 44.4,
+          "turnout": 46.8,
+          "ballotsCast": 1217
+        },
+        "2020": {
+          "demPct": 70.5,
+          "repPct": 27.5,
+          "margin": 43.0,
+          "turnout": 61.2,
+          "ballotsCast": 1592
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 28.8,
+        "foxNewsmaxPct": 11.8,
+        "nprPct": 22.8,
+        "socialMediaPct": 79.5,
+        "politicalDonorPct": 4.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "14B",
+          "name": "College Towns",
+          "lifeMode": "Next Wave",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Climate Change",
+              "Social Justice"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "Digital News"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Climate Change",
+            "Social Justice"
+          ],
+          "mediaChannels": [
+            "Social Media",
+            "Streaming",
+            "Digital News"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "el-pct-8": {
+      "id": "el-pct-8",
+      "name": "East Lansing Precinct 8",
+      "jurisdiction": "East Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 3250,
+        "population18up": 2800,
+        "medianAge": 26.8,
+        "medianHHI": 39800,
+        "collegePct": 61.5,
+        "homeownerPct": 28.5,
+        "diversityIndex": 40,
+        "populationDensity": 3900
+      },
+      "political": {
+        "demAffiliationPct": 50.2,
+        "repAffiliationPct": 21.8,
+        "independentPct": 28.0,
+        "liberalPct": 45.8,
+        "moderatePct": 35.2,
+        "conservativePct": 19.0
+      },
+      "electoral": {
+        "partisanLean": 33,
+        "swingPotential": 19,
+        "competitiveness": "safe_d",
+        "avgTurnout": 58.5,
+        "turnoutDropoff": 14.5
+      },
+      "targeting": {
+        "gotvPriority": 63,
+        "persuasionOpportunity": 37,
+        "combinedScore": 60,
+        "strategy": "Mixed Approach"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 66.2,
+          "repPct": 31.8,
+          "margin": 34.4,
+          "turnout": 64.2,
+          "ballotsCast": 1798
+        },
+        "2022": {
+          "demPct": 68.5,
+          "repPct": 29.5,
+          "margin": 39.0,
+          "turnout": 53.8,
+          "ballotsCast": 1506
+        },
+        "2020": {
+          "demPct": 67.2,
+          "repPct": 30.8,
+          "margin": 36.4,
+          "turnout": 67.5,
+          "ballotsCast": 1890
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 26.2,
+        "foxNewsmaxPct": 15.2,
+        "nprPct": 19.5,
+        "socialMediaPct": 72.8,
+        "politicalDonorPct": 6.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "3A",
+          "name": "Laptops and Lattes",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Environment",
+              "Technology Policy",
+              "Civil Rights"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "NPR",
+              "Social Media"
+            ],
+            "persuadability": "Very Low",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "14B",
+          "name": "College Towns",
+          "lifeMode": "Next Wave",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Climate Change",
+              "Social Justice"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "Digital News"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Strong D",
+          "issuesFocus": [
+            "Environment",
+            "Technology Policy",
+            "Civil Rights"
+          ],
+          "mediaChannels": [
+            "Digital News",
+            "NPR",
+            "Social Media"
+          ],
+          "persuadability": "Very Low",
+          "turnoutLikelihood": "High"
+        }
+      }
+    },
+    "lan-pct-1": {
+      "id": "lan-pct-1",
+      "name": "Lansing Precinct 1",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2850,
+        "population18up": 2200,
+        "medianAge": 32.5,
+        "medianHHI": 38500,
+        "collegePct": 28.5,
+        "homeownerPct": 42.8,
+        "diversityIndex": 58,
+        "populationDensity": 3200
+      },
+      "political": {
+        "demAffiliationPct": 48.5,
+        "repAffiliationPct": 28.2,
+        "independentPct": 23.3,
+        "liberalPct": 42.8,
+        "moderatePct": 38.5,
+        "conservativePct": 18.7
+      },
+      "electoral": {
+        "partisanLean": 22,
+        "swingPotential": 28,
+        "competitiveness": "likely_d",
+        "avgTurnout": 58.2,
+        "turnoutDropoff": 14.5
+      },
+      "targeting": {
+        "gotvPriority": 54,
+        "persuasionOpportunity": 46,
+        "combinedScore": 52,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 60.5,
+          "repPct": 37.8,
+          "margin": 22.7,
+          "turnout": 63.8,
+          "ballotsCast": 1404
+        },
+        "2022": {
+          "demPct": 62.2,
+          "repPct": 36.5,
+          "margin": 25.7,
+          "turnout": 54.2,
+          "ballotsCast": 1192
+        },
+        "2020": {
+          "demPct": 61.8,
+          "repPct": 36.8,
+          "margin": 25.0,
+          "turnout": 66.5,
+          "ballotsCast": 1463
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 22.5,
+        "foxNewsmaxPct": 18.8,
+        "nprPct": 14.2,
+        "socialMediaPct": 62.5,
+        "politicalDonorPct": 4.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "5D",
+          "name": "Rustbelt Traditions",
+          "lifeMode": "Traditional Living",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Jobs",
+              "Manufacturing",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Radio"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "11B",
+          "name": "Young and Restless",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Jobs",
+              "Student Debt",
+              "Affordable Housing"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "YouTube"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Jobs",
+            "Manufacturing",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Radio"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "lan-pct-2": {
+      "id": "lan-pct-2",
+      "name": "Lansing Precinct 2",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 3150,
+        "population18up": 2450,
+        "medianAge": 28.8,
+        "medianHHI": 32800,
+        "collegePct": 32.5,
+        "homeownerPct": 35.2,
+        "diversityIndex": 65,
+        "populationDensity": 3800
+      },
+      "political": {
+        "demAffiliationPct": 52.8,
+        "repAffiliationPct": 24.5,
+        "independentPct": 22.7,
+        "liberalPct": 46.5,
+        "moderatePct": 36.8,
+        "conservativePct": 16.7
+      },
+      "electoral": {
+        "partisanLean": 28,
+        "swingPotential": 24,
+        "competitiveness": "likely_d",
+        "avgTurnout": 54.8,
+        "turnoutDropoff": 16.8
+      },
+      "targeting": {
+        "gotvPriority": 62,
+        "persuasionOpportunity": 38,
+        "combinedScore": 58,
+        "strategy": "Mixed Approach"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 64.2,
+          "repPct": 34.5,
+          "margin": 29.7,
+          "turnout": 60.2,
+          "ballotsCast": 1475
+        },
+        "2022": {
+          "demPct": 65.8,
+          "repPct": 32.8,
+          "margin": 33.0,
+          "turnout": 50.8,
+          "ballotsCast": 1244
+        },
+        "2020": {
+          "demPct": 65.2,
+          "repPct": 33.2,
+          "margin": 32.0,
+          "turnout": 63.5,
+          "ballotsCast": 1556
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 24.8,
+        "foxNewsmaxPct": 16.5,
+        "nprPct": 15.8,
+        "socialMediaPct": 68.2,
+        "politicalDonorPct": 3.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "11C",
+          "name": "City Commons",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Economic Security",
+              "Healthcare",
+              "Education"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Social Media",
+              "Radio"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low-Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Strong D",
+          "issuesFocus": [
+            "Affordable Housing",
+            "Public Transit",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Digital News",
+            "Social Media",
+            "Podcasts"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "lan-pct-3": {
+      "id": "lan-pct-3",
+      "name": "Lansing Precinct 3",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2650,
+        "population18up": 2100,
+        "medianAge": 35.2,
+        "medianHHI": 42500,
+        "collegePct": 38.5,
+        "homeownerPct": 52.8,
+        "diversityIndex": 48,
+        "populationDensity": 2800
+      },
+      "political": {
+        "demAffiliationPct": 45.2,
+        "repAffiliationPct": 32.5,
+        "independentPct": 22.3,
+        "liberalPct": 38.5,
+        "moderatePct": 42.8,
+        "conservativePct": 18.7
+      },
+      "electoral": {
+        "partisanLean": 16,
+        "swingPotential": 35,
+        "competitiveness": "lean_d",
+        "avgTurnout": 64.5,
+        "turnoutDropoff": 10.2
+      },
+      "targeting": {
+        "gotvPriority": 48,
+        "persuasionOpportunity": 52,
+        "combinedScore": 48,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 57.8,
+          "repPct": 40.5,
+          "margin": 17.3,
+          "turnout": 70.2,
+          "ballotsCast": 1474
+        },
+        "2022": {
+          "demPct": 58.5,
+          "repPct": 40.2,
+          "margin": 18.3,
+          "turnout": 60.5,
+          "ballotsCast": 1271
+        },
+        "2020": {
+          "demPct": 58.2,
+          "repPct": 40.8,
+          "margin": 17.4,
+          "turnout": 72.8,
+          "ballotsCast": 1529
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 20.5,
+        "foxNewsmaxPct": 22.8,
+        "nprPct": 13.2,
+        "socialMediaPct": 58.5,
+        "politicalDonorPct": 6.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "5D",
+          "name": "Rustbelt Traditions",
+          "lifeMode": "Traditional Living",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Jobs",
+              "Manufacturing",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Radio"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "11B",
+          "name": "Young and Restless",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Jobs",
+              "Student Debt",
+              "Affordable Housing"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "YouTube"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Jobs",
+            "Manufacturing",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Radio"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "lan-pct-4": {
+      "id": "lan-pct-4",
+      "name": "Lansing Precinct 4",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2950,
+        "population18up": 2300,
+        "medianAge": 30.5,
+        "medianHHI": 36200,
+        "collegePct": 30.8,
+        "homeownerPct": 38.5,
+        "diversityIndex": 62,
+        "populationDensity": 3500
+      },
+      "political": {
+        "demAffiliationPct": 50.5,
+        "repAffiliationPct": 26.8,
+        "independentPct": 22.7,
+        "liberalPct": 44.2,
+        "moderatePct": 38.5,
+        "conservativePct": 17.3
+      },
+      "electoral": {
+        "partisanLean": 25,
+        "swingPotential": 26,
+        "competitiveness": "likely_d",
+        "avgTurnout": 56.8,
+        "turnoutDropoff": 15.5
+      },
+      "targeting": {
+        "gotvPriority": 58,
+        "persuasionOpportunity": 42,
+        "combinedScore": 55,
+        "strategy": "Mixed Approach"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 62.5,
+          "repPct": 36.2,
+          "margin": 26.3,
+          "turnout": 62.5,
+          "ballotsCast": 1438
+        },
+        "2022": {
+          "demPct": 63.8,
+          "repPct": 35.2,
+          "margin": 28.6,
+          "turnout": 52.8,
+          "ballotsCast": 1214
+        },
+        "2020": {
+          "demPct": 63.2,
+          "repPct": 35.5,
+          "margin": 27.7,
+          "turnout": 65.2,
+          "ballotsCast": 1500
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 23.2,
+        "foxNewsmaxPct": 17.8,
+        "nprPct": 14.8,
+        "socialMediaPct": 65.2,
+        "politicalDonorPct": 4.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "11C",
+          "name": "City Commons",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Economic Security",
+              "Healthcare",
+              "Education"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Social Media",
+              "Radio"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low-Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Strong D",
+          "issuesFocus": [
+            "Affordable Housing",
+            "Public Transit",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Digital News",
+            "Social Media",
+            "Podcasts"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "lan-pct-5": {
+      "id": "lan-pct-5",
+      "name": "Lansing Precinct 5",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 3050,
+        "population18up": 2350,
+        "medianAge": 29.2,
+        "medianHHI": 34500,
+        "collegePct": 28.2,
+        "homeownerPct": 32.8,
+        "diversityIndex": 68,
+        "populationDensity": 4100
+      },
+      "political": {
+        "demAffiliationPct": 54.2,
+        "repAffiliationPct": 23.5,
+        "independentPct": 22.3,
+        "liberalPct": 48.5,
+        "moderatePct": 35.8,
+        "conservativePct": 15.7
+      },
+      "electoral": {
+        "partisanLean": 31,
+        "swingPotential": 21,
+        "competitiveness": "safe_d",
+        "avgTurnout": 53.2,
+        "turnoutDropoff": 17.8
+      },
+      "targeting": {
+        "gotvPriority": 66,
+        "persuasionOpportunity": 34,
+        "combinedScore": 61,
+        "strategy": "Base Mobilization"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 65.8,
+          "repPct": 32.8,
+          "margin": 33.0,
+          "turnout": 58.5,
+          "ballotsCast": 1375
+        },
+        "2022": {
+          "demPct": 67.2,
+          "repPct": 31.5,
+          "margin": 35.7,
+          "turnout": 48.8,
+          "ballotsCast": 1147
+        },
+        "2020": {
+          "demPct": 66.5,
+          "repPct": 32.2,
+          "margin": 34.3,
+          "turnout": 62.5,
+          "ballotsCast": 1469
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 25.5,
+        "foxNewsmaxPct": 15.2,
+        "nprPct": 16.2,
+        "socialMediaPct": 70.5,
+        "politicalDonorPct": 3.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "11C",
+          "name": "City Commons",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Economic Security",
+              "Healthcare",
+              "Education"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Social Media",
+              "Radio"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low-Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Strong D",
+          "issuesFocus": [
+            "Affordable Housing",
+            "Public Transit",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Digital News",
+            "Social Media",
+            "Podcasts"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "lan-pct-6": {
+      "id": "lan-pct-6",
+      "name": "Lansing Precinct 6",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2750,
+        "population18up": 2150,
+        "medianAge": 33.8,
+        "medianHHI": 40200,
+        "collegePct": 35.5,
+        "homeownerPct": 48.2,
+        "diversityIndex": 52,
+        "populationDensity": 3000
+      },
+      "political": {
+        "demAffiliationPct": 46.8,
+        "repAffiliationPct": 30.5,
+        "independentPct": 22.7,
+        "liberalPct": 40.5,
+        "moderatePct": 41.2,
+        "conservativePct": 18.3
+      },
+      "electoral": {
+        "partisanLean": 19,
+        "swingPotential": 32,
+        "competitiveness": "lean_d",
+        "avgTurnout": 62.8,
+        "turnoutDropoff": 11.5
+      },
+      "targeting": {
+        "gotvPriority": 51,
+        "persuasionOpportunity": 49,
+        "combinedScore": 50,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 59.2,
+          "repPct": 39.5,
+          "margin": 19.7,
+          "turnout": 68.5,
+          "ballotsCast": 1473
+        },
+        "2022": {
+          "demPct": 60.5,
+          "repPct": 38.2,
+          "margin": 22.3,
+          "turnout": 58.8,
+          "ballotsCast": 1264
+        },
+        "2020": {
+          "demPct": 59.8,
+          "repPct": 38.8,
+          "margin": 21.0,
+          "turnout": 71.2,
+          "ballotsCast": 1531
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 21.2,
+        "foxNewsmaxPct": 21.5,
+        "nprPct": 13.8,
+        "socialMediaPct": 60.2,
+        "politicalDonorPct": 5.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "5D",
+          "name": "Rustbelt Traditions",
+          "lifeMode": "Traditional Living",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Jobs",
+              "Manufacturing",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Radio"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "11B",
+          "name": "Young and Restless",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Jobs",
+              "Student Debt",
+              "Affordable Housing"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "YouTube"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Jobs",
+            "Manufacturing",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Radio"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "lan-pct-7": {
+      "id": "lan-pct-7",
+      "name": "Lansing Precinct 7",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 3200,
+        "population18up": 2500,
+        "medianAge": 31.2,
+        "medianHHI": 37800,
+        "collegePct": 32.8,
+        "homeownerPct": 41.5,
+        "diversityIndex": 60,
+        "populationDensity": 3600
+      },
+      "political": {
+        "demAffiliationPct": 49.8,
+        "repAffiliationPct": 27.5,
+        "independentPct": 22.7,
+        "liberalPct": 43.5,
+        "moderatePct": 39.2,
+        "conservativePct": 17.3
+      },
+      "electoral": {
+        "partisanLean": 24,
+        "swingPotential": 27,
+        "competitiveness": "likely_d",
+        "avgTurnout": 57.5,
+        "turnoutDropoff": 14.8
+      },
+      "targeting": {
+        "gotvPriority": 56,
+        "persuasionOpportunity": 44,
+        "combinedScore": 54,
+        "strategy": "Mixed Approach"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 61.8,
+          "repPct": 36.8,
+          "margin": 25.0,
+          "turnout": 63.2,
+          "ballotsCast": 1580
+        },
+        "2022": {
+          "demPct": 62.5,
+          "repPct": 36.2,
+          "margin": 26.3,
+          "turnout": 53.5,
+          "ballotsCast": 1338
+        },
+        "2020": {
+          "demPct": 62.2,
+          "repPct": 36.5,
+          "margin": 25.7,
+          "turnout": 66.8,
+          "ballotsCast": 1670
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 22.8,
+        "foxNewsmaxPct": 19.2,
+        "nprPct": 14.5,
+        "socialMediaPct": 64.8,
+        "politicalDonorPct": 4.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "5D",
+          "name": "Rustbelt Traditions",
+          "lifeMode": "Traditional Living",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Jobs",
+              "Manufacturing",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Radio"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "11B",
+          "name": "Young and Restless",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Jobs",
+              "Student Debt",
+              "Affordable Housing"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "YouTube"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Jobs",
+            "Manufacturing",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Radio"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "lan-pct-8": {
+      "id": "lan-pct-8",
+      "name": "Lansing Precinct 8",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2900,
+        "population18up": 2250,
+        "medianAge": 27.5,
+        "medianHHI": 31500,
+        "collegePct": 26.5,
+        "homeownerPct": 28.8,
+        "diversityIndex": 72,
+        "populationDensity": 4200
+      },
+      "political": {
+        "demAffiliationPct": 56.5,
+        "repAffiliationPct": 21.8,
+        "independentPct": 21.7,
+        "liberalPct": 50.2,
+        "moderatePct": 34.5,
+        "conservativePct": 15.3
+      },
+      "electoral": {
+        "partisanLean": 34,
+        "swingPotential": 19,
+        "competitiveness": "safe_d",
+        "avgTurnout": 51.2,
+        "turnoutDropoff": 18.8
+      },
+      "targeting": {
+        "gotvPriority": 70,
+        "persuasionOpportunity": 30,
+        "combinedScore": 63,
+        "strategy": "Base Mobilization"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 67.2,
+          "repPct": 31.5,
+          "margin": 35.7,
+          "turnout": 56.5,
+          "ballotsCast": 1271
+        },
+        "2022": {
+          "demPct": 68.8,
+          "repPct": 29.8,
+          "margin": 39.0,
+          "turnout": 46.8,
+          "ballotsCast": 1053
+        },
+        "2020": {
+          "demPct": 67.8,
+          "repPct": 30.8,
+          "margin": 37.0,
+          "turnout": 60.5,
+          "ballotsCast": 1361
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 26.5,
+        "foxNewsmaxPct": 14.2,
+        "nprPct": 17.2,
+        "socialMediaPct": 73.5,
+        "politicalDonorPct": 3.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "11C",
+          "name": "City Commons",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Economic Security",
+              "Healthcare",
+              "Education"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Social Media",
+              "Radio"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low-Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Strong D",
+          "issuesFocus": [
+            "Affordable Housing",
+            "Public Transit",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Digital News",
+            "Social Media",
+            "Podcasts"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "lan-pct-9": {
+      "id": "lan-pct-9",
+      "name": "Lansing Precinct 9",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2650,
+        "population18up": 2050,
+        "medianAge": 34.5,
+        "medianHHI": 44500,
+        "collegePct": 42.5,
+        "homeownerPct": 58.2,
+        "diversityIndex": 45,
+        "populationDensity": 2600
+      },
+      "political": {
+        "demAffiliationPct": 43.5,
+        "repAffiliationPct": 34.8,
+        "independentPct": 21.7,
+        "liberalPct": 36.8,
+        "moderatePct": 44.5,
+        "conservativePct": 18.7
+      },
+      "electoral": {
+        "partisanLean": 12,
+        "swingPotential": 38,
+        "competitiveness": "lean_d",
+        "avgTurnout": 67.2,
+        "turnoutDropoff": 9.5
+      },
+      "targeting": {
+        "gotvPriority": 44,
+        "persuasionOpportunity": 56,
+        "combinedScore": 46,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 55.8,
+          "repPct": 42.8,
+          "margin": 13.0,
+          "turnout": 72.5,
+          "ballotsCast": 1486
+        },
+        "2022": {
+          "demPct": 56.5,
+          "repPct": 42.2,
+          "margin": 14.3,
+          "turnout": 63.5,
+          "ballotsCast": 1302
+        },
+        "2020": {
+          "demPct": 56.2,
+          "repPct": 42.5,
+          "margin": 13.7,
+          "turnout": 75.8,
+          "ballotsCast": 1554
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 19.5,
+        "foxNewsmaxPct": 24.8,
+        "nprPct": 12.5,
+        "socialMediaPct": 55.2,
+        "politicalDonorPct": 7.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "5D",
+          "name": "Rustbelt Traditions",
+          "lifeMode": "Traditional Living",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Jobs",
+              "Manufacturing",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Radio"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "11B",
+          "name": "Young and Restless",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Jobs",
+              "Student Debt",
+              "Affordable Housing"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "YouTube"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Jobs",
+            "Manufacturing",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Radio"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "lan-pct-10": {
+      "id": "lan-pct-10",
+      "name": "Lansing Precinct 10",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 3100,
+        "population18up": 2400,
+        "medianAge": 30.8,
+        "medianHHI": 35800,
+        "collegePct": 29.5,
+        "homeownerPct": 36.8,
+        "diversityIndex": 64,
+        "populationDensity": 3700
+      },
+      "political": {
+        "demAffiliationPct": 51.8,
+        "repAffiliationPct": 25.5,
+        "independentPct": 22.7,
+        "liberalPct": 45.8,
+        "moderatePct": 37.5,
+        "conservativePct": 16.7
+      },
+      "electoral": {
+        "partisanLean": 27,
+        "swingPotential": 25,
+        "competitiveness": "likely_d",
+        "avgTurnout": 55.5,
+        "turnoutDropoff": 16.2
+      },
+      "targeting": {
+        "gotvPriority": 60,
+        "persuasionOpportunity": 40,
+        "combinedScore": 57,
+        "strategy": "Mixed Approach"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 63.5,
+          "repPct": 35.2,
+          "margin": 28.3,
+          "turnout": 61.2,
+          "ballotsCast": 1469
+        },
+        "2022": {
+          "demPct": 64.8,
+          "repPct": 33.8,
+          "margin": 31.0,
+          "turnout": 51.5,
+          "ballotsCast": 1236
+        },
+        "2020": {
+          "demPct": 64.2,
+          "repPct": 34.5,
+          "margin": 29.7,
+          "turnout": 64.8,
+          "ballotsCast": 1555
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 24.2,
+        "foxNewsmaxPct": 16.8,
+        "nprPct": 15.5,
+        "socialMediaPct": 67.8,
+        "politicalDonorPct": 4.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "3B",
+          "name": "Metro Renters",
+          "lifeMode": "Uptown Individuals",
+          "urbanization": "Principal Urban",
+          "politicalProfile": {
+            "partisanLean": "Strong D",
+            "issuesFocus": [
+              "Affordable Housing",
+              "Public Transit",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Social Media",
+              "Podcasts"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "11C",
+          "name": "City Commons",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Economic Security",
+              "Healthcare",
+              "Education"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Social Media",
+              "Radio"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low-Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Strong D",
+          "issuesFocus": [
+            "Affordable Housing",
+            "Public Transit",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Digital News",
+            "Social Media",
+            "Podcasts"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "lan-pct-11": {
+      "id": "lan-pct-11",
+      "name": "Lansing Precinct 11",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2800,
+        "population18up": 2200,
+        "medianAge": 36.2,
+        "medianHHI": 46500,
+        "collegePct": 45.8,
+        "homeownerPct": 62.5,
+        "diversityIndex": 42,
+        "populationDensity": 2500
+      },
+      "political": {
+        "demAffiliationPct": 41.8,
+        "repAffiliationPct": 36.5,
+        "independentPct": 21.7,
+        "liberalPct": 35.5,
+        "moderatePct": 46.8,
+        "conservativePct": 17.7
+      },
+      "electoral": {
+        "partisanLean": 8,
+        "swingPotential": 42,
+        "competitiveness": "toss_up",
+        "avgTurnout": 69.5,
+        "turnoutDropoff": 8.2
+      },
+      "targeting": {
+        "gotvPriority": 40,
+        "persuasionOpportunity": 60,
+        "combinedScore": 44,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 53.5,
+          "repPct": 45.2,
+          "margin": 8.3,
+          "turnout": 74.8,
+          "ballotsCast": 1646
+        },
+        "2022": {
+          "demPct": 54.2,
+          "repPct": 44.8,
+          "margin": 9.4,
+          "turnout": 66.2,
+          "ballotsCast": 1456
+        },
+        "2020": {
+          "demPct": 53.8,
+          "repPct": 45.0,
+          "margin": 8.8,
+          "turnout": 77.5,
+          "ballotsCast": 1705
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 18.2,
+        "foxNewsmaxPct": 26.5,
+        "nprPct": 11.8,
+        "socialMediaPct": 52.5,
+        "politicalDonorPct": 8.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "5D",
+          "name": "Rustbelt Traditions",
+          "lifeMode": "Traditional Living",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Jobs",
+              "Manufacturing",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Radio"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "11B",
+          "name": "Young and Restless",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Jobs",
+              "Student Debt",
+              "Affordable Housing"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "YouTube"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Jobs",
+            "Manufacturing",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Radio"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "lan-pct-12": {
+      "id": "lan-pct-12",
+      "name": "Lansing Precinct 12",
+      "jurisdiction": "Lansing",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 2950,
+        "population18up": 2300,
+        "medianAge": 32.8,
+        "medianHHI": 39500,
+        "collegePct": 36.8,
+        "homeownerPct": 45.5,
+        "diversityIndex": 56,
+        "populationDensity": 3100
+      },
+      "political": {
+        "demAffiliationPct": 47.5,
+        "repAffiliationPct": 29.8,
+        "independentPct": 22.7,
+        "liberalPct": 41.8,
+        "moderatePct": 40.5,
+        "conservativePct": 17.7
+      },
+      "electoral": {
+        "partisanLean": 20,
+        "swingPotential": 30,
+        "competitiveness": "likely_d",
+        "avgTurnout": 61.2,
+        "turnoutDropoff": 12.5
+      },
+      "targeting": {
+        "gotvPriority": 52,
+        "persuasionOpportunity": 48,
+        "combinedScore": 51,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 59.8,
+          "repPct": 38.8,
+          "margin": 21.0,
+          "turnout": 67.2,
+          "ballotsCast": 1546
+        },
+        "2022": {
+          "demPct": 60.5,
+          "repPct": 38.2,
+          "margin": 22.3,
+          "turnout": 57.2,
+          "ballotsCast": 1316
+        },
+        "2020": {
+          "demPct": 60.2,
+          "repPct": 38.5,
+          "margin": 21.7,
+          "turnout": 70.5,
+          "ballotsCast": 1622
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 21.5,
+        "foxNewsmaxPct": 20.8,
+        "nprPct": 13.5,
+        "socialMediaPct": 61.2,
+        "politicalDonorPct": 6.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "5D",
+          "name": "Rustbelt Traditions",
+          "lifeMode": "Traditional Living",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Jobs",
+              "Manufacturing",
+              "Healthcare"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Radio"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "secondary": {
+          "code": "11B",
+          "name": "Young and Restless",
+          "lifeMode": "Modest Income Homes",
+          "urbanization": "Metro Cities",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Jobs",
+              "Student Debt",
+              "Affordable Housing"
+            ],
+            "mediaChannels": [
+              "Social Media",
+              "Streaming",
+              "YouTube"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Low"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Jobs",
+            "Manufacturing",
+            "Healthcare"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Radio"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate"
+        }
+      }
+    },
+    "mer-pct-1": {
+      "id": "mer-pct-1",
+      "name": "Meridian Township Precinct 1",
+      "jurisdiction": "Meridian Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 3800,
+        "population18up": 3150,
+        "medianAge": 42.5,
+        "medianHHI": 95800,
+        "collegePct": 68.5,
+        "homeownerPct": 78.5,
+        "diversityIndex": 35,
+        "populationDensity": 1800
+      },
+      "political": {
+        "demAffiliationPct": 44.8,
+        "repAffiliationPct": 38.5,
+        "independentPct": 16.7,
+        "liberalPct": 38.5,
+        "moderatePct": 48.2,
+        "conservativePct": 13.3
+      },
+      "electoral": {
+        "partisanLean": 10,
+        "swingPotential": 45,
+        "competitiveness": "lean_d",
+        "avgTurnout": 78.5,
+        "turnoutDropoff": 6.8
+      },
+      "targeting": {
+        "gotvPriority": 42,
+        "persuasionOpportunity": 58,
+        "combinedScore": 48,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 54.8,
+          "repPct": 43.8,
+          "margin": 11.0,
+          "turnout": 82.5,
+          "ballotsCast": 2599
+        },
+        "2022": {
+          "demPct": 55.5,
+          "repPct": 43.2,
+          "margin": 12.3,
+          "turnout": 76.2,
+          "ballotsCast": 2400
+        },
+        "2020": {
+          "demPct": 55.2,
+          "repPct": 43.5,
+          "margin": 11.7,
+          "turnout": 84.8,
+          "ballotsCast": 2671
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 22.8,
+        "foxNewsmaxPct": 28.5,
+        "nprPct": 18.5,
+        "socialMediaPct": 58.5,
+        "politicalDonorPct": 12.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "1D",
+          "name": "Savvy Suburbanites",
+          "lifeMode": "High Society",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Taxes",
+              "Property Values"
+            ],
+            "mediaChannels": [
+              "Cable News",
+              "Digital News",
+              "NPR"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "secondary": {
+          "code": "2D",
+          "name": "Enterprising Professionals",
+          "lifeMode": "Upscale Avenues",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Business",
+              "Education",
+              "Technology"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Business Media",
+              "NPR"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Taxes",
+            "Property Values"
+          ],
+          "mediaChannels": [
+            "Cable News",
+            "Digital News",
+            "NPR"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "Very High"
+        }
+      }
+    },
+    "mer-pct-2": {
+      "id": "mer-pct-2",
+      "name": "Meridian Township Precinct 2",
+      "jurisdiction": "Meridian Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 3650,
+        "population18up": 3050,
+        "medianAge": 38.8,
+        "medianHHI": 88500,
+        "collegePct": 62.5,
+        "homeownerPct": 72.8,
+        "diversityIndex": 42,
+        "populationDensity": 1950
+      },
+      "political": {
+        "demAffiliationPct": 46.5,
+        "repAffiliationPct": 36.8,
+        "independentPct": 16.7,
+        "liberalPct": 40.5,
+        "moderatePct": 46.8,
+        "conservativePct": 12.7
+      },
+      "electoral": {
+        "partisanLean": 14,
+        "swingPotential": 42,
+        "competitiveness": "lean_d",
+        "avgTurnout": 76.2,
+        "turnoutDropoff": 7.5
+      },
+      "targeting": {
+        "gotvPriority": 45,
+        "persuasionOpportunity": 55,
+        "combinedScore": 50,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 56.8,
+          "repPct": 41.8,
+          "margin": 15.0,
+          "turnout": 80.5,
+          "ballotsCast": 2455
+        },
+        "2022": {
+          "demPct": 57.5,
+          "repPct": 41.2,
+          "margin": 16.3,
+          "turnout": 73.8,
+          "ballotsCast": 2251
+        },
+        "2020": {
+          "demPct": 57.2,
+          "repPct": 41.5,
+          "margin": 15.7,
+          "turnout": 82.8,
+          "ballotsCast": 2525
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 24.2,
+        "foxNewsmaxPct": 26.8,
+        "nprPct": 19.8,
+        "socialMediaPct": 61.2,
+        "politicalDonorPct": 11.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "1D",
+          "name": "Savvy Suburbanites",
+          "lifeMode": "High Society",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Taxes",
+              "Property Values"
+            ],
+            "mediaChannels": [
+              "Cable News",
+              "Digital News",
+              "NPR"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "secondary": {
+          "code": "2D",
+          "name": "Enterprising Professionals",
+          "lifeMode": "Upscale Avenues",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Business",
+              "Education",
+              "Technology"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Business Media",
+              "NPR"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Taxes",
+            "Property Values"
+          ],
+          "mediaChannels": [
+            "Cable News",
+            "Digital News",
+            "NPR"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "Very High"
+        }
+      }
+    },
+    "mer-pct-3": {
+      "id": "mer-pct-3",
+      "name": "Meridian Township Precinct 3",
+      "jurisdiction": "Meridian Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 3950,
+        "population18up": 3250,
+        "medianAge": 45.2,
+        "medianHHI": 105500,
+        "collegePct": 72.8,
+        "homeownerPct": 82.5,
+        "diversityIndex": 32,
+        "populationDensity": 1700
+      },
+      "political": {
+        "demAffiliationPct": 43.2,
+        "repAffiliationPct": 40.8,
+        "independentPct": 16.0,
+        "liberalPct": 36.5,
+        "moderatePct": 50.8,
+        "conservativePct": 12.7
+      },
+      "electoral": {
+        "partisanLean": 6,
+        "swingPotential": 48,
+        "competitiveness": "toss_up",
+        "avgTurnout": 81.5,
+        "turnoutDropoff": 5.8
+      },
+      "targeting": {
+        "gotvPriority": 38,
+        "persuasionOpportunity": 62,
+        "combinedScore": 45,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 52.8,
+          "repPct": 46.2,
+          "margin": 6.6,
+          "turnout": 85.2,
+          "ballotsCast": 2769
+        },
+        "2022": {
+          "demPct": 53.5,
+          "repPct": 45.8,
+          "margin": 7.7,
+          "turnout": 79.5,
+          "ballotsCast": 2584
+        },
+        "2020": {
+          "demPct": 53.2,
+          "repPct": 46.0,
+          "margin": 7.2,
+          "turnout": 87.8,
+          "ballotsCast": 2854
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 21.5,
+        "foxNewsmaxPct": 30.2,
+        "nprPct": 17.8,
+        "socialMediaPct": 55.8,
+        "politicalDonorPct": 14.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "1D",
+          "name": "Savvy Suburbanites",
+          "lifeMode": "High Society",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Taxes",
+              "Property Values"
+            ],
+            "mediaChannels": [
+              "Cable News",
+              "Digital News",
+              "NPR"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "secondary": {
+          "code": "2D",
+          "name": "Enterprising Professionals",
+          "lifeMode": "Upscale Avenues",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Business",
+              "Education",
+              "Technology"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Business Media",
+              "NPR"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Taxes",
+            "Property Values"
+          ],
+          "mediaChannels": [
+            "Cable News",
+            "Digital News",
+            "NPR"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "Very High"
+        }
+      }
+    },
+    "mer-pct-4": {
+      "id": "mer-pct-4",
+      "name": "Meridian Township Precinct 4",
+      "jurisdiction": "Meridian Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 3550,
+        "population18up": 2950,
+        "medianAge": 40.5,
+        "medianHHI": 92500,
+        "collegePct": 65.8,
+        "homeownerPct": 75.5,
+        "diversityIndex": 38,
+        "populationDensity": 1850
+      },
+      "political": {
+        "demAffiliationPct": 45.8,
+        "repAffiliationPct": 37.5,
+        "independentPct": 16.7,
+        "liberalPct": 39.8,
+        "moderatePct": 47.5,
+        "conservativePct": 12.7
+      },
+      "electoral": {
+        "partisanLean": 12,
+        "swingPotential": 43,
+        "competitiveness": "lean_d",
+        "avgTurnout": 77.8,
+        "turnoutDropoff": 7.2
+      },
+      "targeting": {
+        "gotvPriority": 43,
+        "persuasionOpportunity": 57,
+        "combinedScore": 49,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 55.8,
+          "repPct": 42.8,
+          "margin": 13.0,
+          "turnout": 81.5,
+          "ballotsCast": 2404
+        },
+        "2022": {
+          "demPct": 56.5,
+          "repPct": 42.2,
+          "margin": 14.3,
+          "turnout": 75.8,
+          "ballotsCast": 2236
+        },
+        "2020": {
+          "demPct": 56.2,
+          "repPct": 42.5,
+          "margin": 13.7,
+          "turnout": 83.8,
+          "ballotsCast": 2472
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 23.5,
+        "foxNewsmaxPct": 27.8,
+        "nprPct": 19.2,
+        "socialMediaPct": 59.8,
+        "politicalDonorPct": 12.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "1D",
+          "name": "Savvy Suburbanites",
+          "lifeMode": "High Society",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Taxes",
+              "Property Values"
+            ],
+            "mediaChannels": [
+              "Cable News",
+              "Digital News",
+              "NPR"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "secondary": {
+          "code": "2D",
+          "name": "Enterprising Professionals",
+          "lifeMode": "Upscale Avenues",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Business",
+              "Education",
+              "Technology"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Business Media",
+              "NPR"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Taxes",
+            "Property Values"
+          ],
+          "mediaChannels": [
+            "Cable News",
+            "Digital News",
+            "NPR"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "Very High"
+        }
+      }
+    },
+    "mer-pct-5": {
+      "id": "mer-pct-5",
+      "name": "Meridian Township Precinct 5",
+      "jurisdiction": "Meridian Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 3750,
+        "population18up": 3100,
+        "medianAge": 43.8,
+        "medianHHI": 98500,
+        "collegePct": 70.2,
+        "homeownerPct": 80.5,
+        "diversityIndex": 34,
+        "populationDensity": 1750
+      },
+      "political": {
+        "demAffiliationPct": 44.2,
+        "repAffiliationPct": 39.5,
+        "independentPct": 16.3,
+        "liberalPct": 37.8,
+        "moderatePct": 49.5,
+        "conservativePct": 12.7
+      },
+      "electoral": {
+        "partisanLean": 8,
+        "swingPotential": 46,
+        "competitiveness": "toss_up",
+        "avgTurnout": 79.8,
+        "turnoutDropoff": 6.5
+      },
+      "targeting": {
+        "gotvPriority": 40,
+        "persuasionOpportunity": 60,
+        "combinedScore": 46,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 53.8,
+          "repPct": 45.2,
+          "margin": 8.6,
+          "turnout": 83.5,
+          "ballotsCast": 2589
+        },
+        "2022": {
+          "demPct": 54.5,
+          "repPct": 44.8,
+          "margin": 9.7,
+          "turnout": 77.8,
+          "ballotsCast": 2412
+        },
+        "2020": {
+          "demPct": 54.2,
+          "repPct": 45.0,
+          "margin": 9.2,
+          "turnout": 86.2,
+          "ballotsCast": 2672
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 22.2,
+        "foxNewsmaxPct": 29.5,
+        "nprPct": 18.2,
+        "socialMediaPct": 57.2,
+        "politicalDonorPct": 13.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "1D",
+          "name": "Savvy Suburbanites",
+          "lifeMode": "High Society",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Taxes",
+              "Property Values"
+            ],
+            "mediaChannels": [
+              "Cable News",
+              "Digital News",
+              "NPR"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "secondary": {
+          "code": "2D",
+          "name": "Enterprising Professionals",
+          "lifeMode": "Upscale Avenues",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Business",
+              "Education",
+              "Technology"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Business Media",
+              "NPR"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Taxes",
+            "Property Values"
+          ],
+          "mediaChannels": [
+            "Cable News",
+            "Digital News",
+            "NPR"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "Very High"
+        }
+      }
+    },
+    "mer-pct-6": {
+      "id": "mer-pct-6",
+      "name": "Meridian Township Precinct 6",
+      "jurisdiction": "Meridian Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 3450,
+        "population18up": 2900,
+        "medianAge": 39.2,
+        "medianHHI": 85500,
+        "collegePct": 60.5,
+        "homeownerPct": 70.8,
+        "diversityIndex": 45,
+        "populationDensity": 2050
+      },
+      "political": {
+        "demAffiliationPct": 48.2,
+        "repAffiliationPct": 35.5,
+        "independentPct": 16.3,
+        "liberalPct": 42.5,
+        "moderatePct": 45.8,
+        "conservativePct": 11.7
+      },
+      "electoral": {
+        "partisanLean": 16,
+        "swingPotential": 40,
+        "competitiveness": "lean_d",
+        "avgTurnout": 75.5,
+        "turnoutDropoff": 7.8
+      },
+      "targeting": {
+        "gotvPriority": 47,
+        "persuasionOpportunity": 53,
+        "combinedScore": 52,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 57.8,
+          "repPct": 40.8,
+          "margin": 17.0,
+          "turnout": 79.5,
+          "ballotsCast": 2306
+        },
+        "2022": {
+          "demPct": 58.5,
+          "repPct": 40.2,
+          "margin": 18.3,
+          "turnout": 73.2,
+          "ballotsCast": 2123
+        },
+        "2020": {
+          "demPct": 58.2,
+          "repPct": 40.5,
+          "margin": 17.7,
+          "turnout": 81.8,
+          "ballotsCast": 2372
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 25.5,
+        "foxNewsmaxPct": 25.2,
+        "nprPct": 20.5,
+        "socialMediaPct": 63.5,
+        "politicalDonorPct": 10.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "1D",
+          "name": "Savvy Suburbanites",
+          "lifeMode": "High Society",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Taxes",
+              "Property Values"
+            ],
+            "mediaChannels": [
+              "Cable News",
+              "Digital News",
+              "NPR"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "secondary": {
+          "code": "2D",
+          "name": "Enterprising Professionals",
+          "lifeMode": "Upscale Avenues",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Business",
+              "Education",
+              "Technology"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Business Media",
+              "NPR"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Taxes",
+            "Property Values"
+          ],
+          "mediaChannels": [
+            "Cable News",
+            "Digital News",
+            "NPR"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "Very High"
+        }
+      }
+    },
+    "mer-pct-7": {
+      "id": "mer-pct-7",
+      "name": "Meridian Township Precinct 7",
+      "jurisdiction": "Meridian Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 3650,
+        "population18up": 3000,
+        "medianHHI": 91500,
+        "medianAge": 41.8,
+        "collegePct": 66.8,
+        "homeownerPct": 76.5,
+        "diversityIndex": 36,
+        "populationDensity": 1800
+      },
+      "political": {
+        "demAffiliationPct": 45.5,
+        "repAffiliationPct": 38.2,
+        "independentPct": 16.3,
+        "liberalPct": 39.5,
+        "moderatePct": 48.2,
+        "conservativePct": 12.3
+      },
+      "electoral": {
+        "partisanLean": 11,
+        "swingPotential": 44,
+        "competitiveness": "lean_d",
+        "avgTurnout": 78.2,
+        "turnoutDropoff": 6.8
+      },
+      "targeting": {
+        "gotvPriority": 41,
+        "persuasionOpportunity": 59,
+        "combinedScore": 47,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 55.2,
+          "repPct": 43.5,
+          "margin": 11.7,
+          "turnout": 81.8,
+          "ballotsCast": 2454
+        },
+        "2022": {
+          "demPct": 55.8,
+          "repPct": 43.2,
+          "margin": 12.6,
+          "turnout": 76.2,
+          "ballotsCast": 2286
+        },
+        "2020": {
+          "demPct": 55.5,
+          "repPct": 43.8,
+          "margin": 11.7,
+          "turnout": 84.5,
+          "ballotsCast": 2535
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 23.8,
+        "foxNewsmaxPct": 28.2,
+        "nprPct": 18.8,
+        "socialMediaPct": 58.8,
+        "politicalDonorPct": 12.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "1D",
+          "name": "Savvy Suburbanites",
+          "lifeMode": "High Society",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Taxes",
+              "Property Values"
+            ],
+            "mediaChannels": [
+              "Cable News",
+              "Digital News",
+              "NPR"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "secondary": {
+          "code": "2D",
+          "name": "Enterprising Professionals",
+          "lifeMode": "Upscale Avenues",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Business",
+              "Education",
+              "Technology"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Business Media",
+              "NPR"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Taxes",
+            "Property Values"
+          ],
+          "mediaChannels": [
+            "Cable News",
+            "Digital News",
+            "NPR"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "Very High"
+        }
+      }
+    },
+    "mer-pct-8": {
+      "id": "mer-pct-8",
+      "name": "Meridian Township Precinct 8",
+      "jurisdiction": "Meridian Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 3850,
+        "population18up": 3200,
+        "medianAge": 44.5,
+        "medianHHI": 102500,
+        "collegePct": 71.5,
+        "homeownerPct": 81.8,
+        "diversityIndex": 33,
+        "populationDensity": 1700
+      },
+      "political": {
+        "demAffiliationPct": 43.8,
+        "repAffiliationPct": 40.2,
+        "independentPct": 16.0,
+        "liberalPct": 37.2,
+        "moderatePct": 50.2,
+        "conservativePct": 12.6
+      },
+      "electoral": {
+        "partisanLean": 7,
+        "swingPotential": 47,
+        "competitiveness": "toss_up",
+        "avgTurnout": 80.8,
+        "turnoutDropoff": 6.2
+      },
+      "targeting": {
+        "gotvPriority": 39,
+        "persuasionOpportunity": 61,
+        "combinedScore": 45,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 53.2,
+          "repPct": 45.8,
+          "margin": 7.4,
+          "turnout": 84.5,
+          "ballotsCast": 2704
+        },
+        "2022": {
+          "demPct": 53.8,
+          "repPct": 45.5,
+          "margin": 8.3,
+          "turnout": 78.8,
+          "ballotsCast": 2522
+        },
+        "2020": {
+          "demPct": 53.5,
+          "repPct": 45.8,
+          "margin": 7.7,
+          "turnout": 87.2,
+          "ballotsCast": 2790
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 21.8,
+        "foxNewsmaxPct": 29.8,
+        "nprPct": 17.5,
+        "socialMediaPct": 56.5,
+        "politicalDonorPct": 13.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "1D",
+          "name": "Savvy Suburbanites",
+          "lifeMode": "High Society",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean D",
+            "issuesFocus": [
+              "Education",
+              "Taxes",
+              "Property Values"
+            ],
+            "mediaChannels": [
+              "Cable News",
+              "Digital News",
+              "NPR"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "secondary": {
+          "code": "2D",
+          "name": "Enterprising Professionals",
+          "lifeMode": "Upscale Avenues",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Business",
+              "Education",
+              "Technology"
+            ],
+            "mediaChannels": [
+              "Digital News",
+              "Business Media",
+              "NPR"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Very High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean D",
+          "issuesFocus": [
+            "Education",
+            "Taxes",
+            "Property Values"
+          ],
+          "mediaChannels": [
+            "Cable News",
+            "Digital News",
+            "NPR"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "Very High"
+        }
+      }
+    },
+    "del-pct-1": {
+      "id": "del-pct-1",
+      "name": "Delhi Township Precinct 1",
+      "jurisdiction": "Delhi Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 2850,
+        "population18up": 2250,
+        "medianAge": 38.5,
+        "medianHHI": 62500,
+        "collegePct": 42.5,
+        "homeownerPct": 68.5,
+        "diversityIndex": 28,
+        "populationDensity": 1200
+      },
+      "political": {
+        "demAffiliationPct": 42.5,
+        "repAffiliationPct": 40.8,
+        "independentPct": 16.7,
+        "liberalPct": 35.8,
+        "moderatePct": 45.5,
+        "conservativePct": 18.7
+      },
+      "electoral": {
+        "partisanLean": 3,
+        "swingPotential": 52,
+        "competitiveness": "toss_up",
+        "avgTurnout": 68.5,
+        "turnoutDropoff": 9.8
+      },
+      "targeting": {
+        "gotvPriority": 36,
+        "persuasionOpportunity": 64,
+        "combinedScore": 42,
+        "strategy": "Battleground"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 51.2,
+          "repPct": 47.8,
+          "margin": 3.4,
+          "turnout": 73.5,
+          "ballotsCast": 1654
+        },
+        "2022": {
+          "demPct": 51.8,
+          "repPct": 47.5,
+          "margin": 4.3,
+          "turnout": 65.2,
+          "ballotsCast": 1467
+        },
+        "2020": {
+          "demPct": 51.5,
+          "repPct": 47.8,
+          "margin": 3.7,
+          "turnout": 76.8,
+          "ballotsCast": 1728
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 18.5,
+        "foxNewsmaxPct": 32.5,
+        "nprPct": 12.8,
+        "socialMediaPct": 54.2,
+        "politicalDonorPct": 8.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "4B",
+          "name": "Home Improvement",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Schools",
+              "Local Taxes",
+              "Safety"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Cable News"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "4C",
+          "name": "Middleburg",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Taxes",
+              "Schools",
+              "Property Rights"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Fox News"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Schools",
+            "Local Taxes",
+            "Safety"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Cable News"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "del-pct-2": {
+      "id": "del-pct-2",
+      "name": "Delhi Township Precinct 2",
+      "jurisdiction": "Delhi Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 2950,
+        "population18up": 2350,
+        "medianAge": 36.8,
+        "medianHHI": 58500,
+        "collegePct": 38.5,
+        "homeownerPct": 64.8,
+        "diversityIndex": 32,
+        "populationDensity": 1350
+      },
+      "political": {
+        "demAffiliationPct": 44.8,
+        "repAffiliationPct": 38.5,
+        "independentPct": 16.7,
+        "liberalPct": 38.5,
+        "moderatePct": 43.8,
+        "conservativePct": 17.7
+      },
+      "electoral": {
+        "partisanLean": 8,
+        "swingPotential": 48,
+        "competitiveness": "toss_up",
+        "avgTurnout": 66.8,
+        "turnoutDropoff": 10.5
+      },
+      "targeting": {
+        "gotvPriority": 40,
+        "persuasionOpportunity": 60,
+        "combinedScore": 46,
+        "strategy": "Battleground"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 53.5,
+          "repPct": 45.2,
+          "margin": 8.3,
+          "turnout": 72.2,
+          "ballotsCast": 1697
+        },
+        "2022": {
+          "demPct": 54.2,
+          "repPct": 44.8,
+          "margin": 9.4,
+          "turnout": 63.2,
+          "ballotsCast": 1485
+        },
+        "2020": {
+          "demPct": 53.8,
+          "repPct": 45.0,
+          "margin": 8.8,
+          "turnout": 75.5,
+          "ballotsCast": 1774
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 20.2,
+        "foxNewsmaxPct": 30.5,
+        "nprPct": 13.8,
+        "socialMediaPct": 56.8,
+        "politicalDonorPct": 7.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "4B",
+          "name": "Home Improvement",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Schools",
+              "Local Taxes",
+              "Safety"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Cable News"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "4C",
+          "name": "Middleburg",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Taxes",
+              "Schools",
+              "Property Rights"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Fox News"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Schools",
+            "Local Taxes",
+            "Safety"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Cable News"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "del-pct-3": {
+      "id": "del-pct-3",
+      "name": "Delhi Township Precinct 3",
+      "jurisdiction": "Delhi Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 2750,
+        "population18up": 2150,
+        "medianAge": 40.2,
+        "medianHHI": 65500,
+        "collegePct": 45.8,
+        "homeownerPct": 72.5,
+        "diversityIndex": 25,
+        "populationDensity": 1150
+      },
+      "political": {
+        "demAffiliationPct": 40.5,
+        "repAffiliationPct": 42.8,
+        "independentPct": 16.7,
+        "liberalPct": 33.5,
+        "moderatePct": 47.8,
+        "conservativePct": 18.7
+      },
+      "electoral": {
+        "partisanLean": -2,
+        "swingPotential": 50,
+        "competitiveness": "toss_up",
+        "avgTurnout": 70.5,
+        "turnoutDropoff": 9.2
+      },
+      "targeting": {
+        "gotvPriority": 34,
+        "persuasionOpportunity": 66,
+        "combinedScore": 40,
+        "strategy": "Battleground"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 49.2,
+          "repPct": 49.8,
+          "margin": -0.6,
+          "turnout": 75.8,
+          "ballotsCast": 1630
+        },
+        "2022": {
+          "demPct": 49.8,
+          "repPct": 49.5,
+          "margin": 0.3,
+          "turnout": 67.2,
+          "ballotsCast": 1445
+        },
+        "2020": {
+          "demPct": 49.5,
+          "repPct": 49.8,
+          "margin": -0.3,
+          "turnout": 78.5,
+          "ballotsCast": 1688
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 17.2,
+        "foxNewsmaxPct": 34.8,
+        "nprPct": 12.2,
+        "socialMediaPct": 52.5,
+        "politicalDonorPct": 9.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "4A",
+          "name": "Soccer Moms",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Education",
+              "Safety",
+              "Family Values"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Cable News"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "4B",
+          "name": "Home Improvement",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Schools",
+              "Local Taxes",
+              "Safety"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Cable News"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean R",
+          "issuesFocus": [
+            "Education",
+            "Safety",
+            "Family Values"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Cable News"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "High"
+        }
+      }
+    },
+    "del-pct-4": {
+      "id": "del-pct-4",
+      "name": "Delhi Township Precinct 4",
+      "jurisdiction": "Delhi Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 2650,
+        "population18up": 2100,
+        "medianAge": 37.5,
+        "medianHHI": 60500,
+        "collegePct": 40.5,
+        "homeownerPct": 66.8,
+        "diversityIndex": 30,
+        "populationDensity": 1250
+      },
+      "political": {
+        "demAffiliationPct": 43.5,
+        "repAffiliationPct": 39.8,
+        "independentPct": 16.7,
+        "liberalPct": 37.2,
+        "moderatePct": 44.5,
+        "conservativePct": 18.3
+      },
+      "electoral": {
+        "partisanLean": 5,
+        "swingPotential": 51,
+        "competitiveness": "toss_up",
+        "avgTurnout": 67.8,
+        "turnoutDropoff": 10.2
+      },
+      "targeting": {
+        "gotvPriority": 38,
+        "persuasionOpportunity": 62,
+        "combinedScore": 44,
+        "strategy": "Battleground"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 52.2,
+          "repPct": 46.8,
+          "margin": 5.4,
+          "turnout": 73.2,
+          "ballotsCast": 1537
+        },
+        "2022": {
+          "demPct": 52.8,
+          "repPct": 46.5,
+          "margin": 6.3,
+          "turnout": 64.2,
+          "ballotsCast": 1348
+        },
+        "2020": {
+          "demPct": 52.5,
+          "repPct": 46.8,
+          "margin": 5.7,
+          "turnout": 76.2,
+          "ballotsCast": 1600
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 19.2,
+        "foxNewsmaxPct": 31.8,
+        "nprPct": 13.2,
+        "socialMediaPct": 55.5,
+        "politicalDonorPct": 8.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "4B",
+          "name": "Home Improvement",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Schools",
+              "Local Taxes",
+              "Safety"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Cable News"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "4C",
+          "name": "Middleburg",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Taxes",
+              "Schools",
+              "Property Rights"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Fox News"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Schools",
+            "Local Taxes",
+            "Safety"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Cable News"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "del-pct-5": {
+      "id": "del-pct-5",
+      "name": "Delhi Township Precinct 5",
+      "jurisdiction": "Delhi Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 3050,
+        "population18up": 2400,
+        "medianAge": 35.8,
+        "medianHHI": 56500,
+        "collegePct": 36.8,
+        "homeownerPct": 62.5,
+        "diversityIndex": 35,
+        "populationDensity": 1400
+      },
+      "political": {
+        "demAffiliationPct": 46.5,
+        "repAffiliationPct": 37.2,
+        "independentPct": 16.3,
+        "liberalPct": 40.2,
+        "moderatePct": 42.8,
+        "conservativePct": 17.0
+      },
+      "electoral": {
+        "partisanLean": 11,
+        "swingPotential": 46,
+        "competitiveness": "lean_d",
+        "avgTurnout": 65.2,
+        "turnoutDropoff": 11.2
+      },
+      "targeting": {
+        "gotvPriority": 43,
+        "persuasionOpportunity": 57,
+        "combinedScore": 48,
+        "strategy": "Battleground"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 55.2,
+          "repPct": 43.5,
+          "margin": 11.7,
+          "turnout": 70.8,
+          "ballotsCast": 1699
+        },
+        "2022": {
+          "demPct": 55.8,
+          "repPct": 43.2,
+          "margin": 12.6,
+          "turnout": 61.5,
+          "ballotsCast": 1476
+        },
+        "2020": {
+          "demPct": 55.5,
+          "repPct": 43.8,
+          "margin": 11.7,
+          "turnout": 73.5,
+          "ballotsCast": 1764
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 21.5,
+        "foxNewsmaxPct": 29.2,
+        "nprPct": 14.5,
+        "socialMediaPct": 58.8,
+        "politicalDonorPct": 7.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "4B",
+          "name": "Home Improvement",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Schools",
+              "Local Taxes",
+              "Safety"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Cable News"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "4C",
+          "name": "Middleburg",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Taxes",
+              "Schools",
+              "Property Rights"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Fox News"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Schools",
+            "Local Taxes",
+            "Safety"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Cable News"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "del-pct-6": {
+      "id": "del-pct-6",
+      "name": "Delhi Township Precinct 6",
+      "jurisdiction": "Delhi Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 2850,
+        "population18up": 2250,
+        "medianAge": 39.5,
+        "medianHHI": 63500,
+        "collegePct": 43.5,
+        "homeownerPct": 70.2,
+        "diversityIndex": 27,
+        "populationDensity": 1180
+      },
+      "political": {
+        "demAffiliationPct": 41.8,
+        "repAffiliationPct": 41.5,
+        "independentPct": 16.7,
+        "liberalPct": 34.8,
+        "moderatePct": 46.5,
+        "conservativePct": 18.7
+      },
+      "electoral": {
+        "partisanLean": 1,
+        "swingPotential": 53,
+        "competitiveness": "toss_up",
+        "avgTurnout": 69.5,
+        "turnoutDropoff": 9.5
+      },
+      "targeting": {
+        "gotvPriority": 35,
+        "persuasionOpportunity": 65,
+        "combinedScore": 41,
+        "strategy": "Battleground"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 50.5,
+          "repPct": 48.8,
+          "margin": 1.7,
+          "turnout": 74.5,
+          "ballotsCast": 1676
+        },
+        "2022": {
+          "demPct": 51.2,
+          "repPct": 48.2,
+          "margin": 3.0,
+          "turnout": 66.2,
+          "ballotsCast": 1490
+        },
+        "2020": {
+          "demPct": 50.8,
+          "repPct": 48.5,
+          "margin": 2.3,
+          "turnout": 77.8,
+          "ballotsCast": 1751
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 17.8,
+        "foxNewsmaxPct": 33.5,
+        "nprPct": 12.5,
+        "socialMediaPct": 53.2,
+        "politicalDonorPct": 8.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "4A",
+          "name": "Soccer Moms",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Education",
+              "Safety",
+              "Family Values"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Cable News"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "4B",
+          "name": "Home Improvement",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Schools",
+              "Local Taxes",
+              "Safety"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Cable News"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean R",
+          "issuesFocus": [
+            "Education",
+            "Safety",
+            "Family Values"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Cable News"
+          ],
+          "persuadability": "Moderate",
+          "turnoutLikelihood": "High"
+        }
+      }
+    },
+    "del-pct-7": {
+      "id": "del-pct-7",
+      "name": "Delhi Township Precinct 7",
+      "jurisdiction": "Delhi Township",
+      "jurisdictionType": "township",
+      "demographics": {
+        "totalPopulation": 2950,
+        "population18up": 2300,
+        "medianAge": 38.2,
+        "medianHHI": 61500,
+        "collegePct": 41.8,
+        "homeownerPct": 67.5,
+        "diversityIndex": 29,
+        "populationDensity": 1280
+      },
+      "political": {
+        "demAffiliationPct": 43.2,
+        "repAffiliationPct": 40.2,
+        "independentPct": 16.6,
+        "liberalPct": 36.5,
+        "moderatePct": 45.2,
+        "conservativePct": 18.3
+      },
+      "electoral": {
+        "partisanLean": 4,
+        "swingPotential": 51,
+        "competitiveness": "toss_up",
+        "avgTurnout": 68.2,
+        "turnoutDropoff": 10.0
+      },
+      "targeting": {
+        "gotvPriority": 37,
+        "persuasionOpportunity": 63,
+        "combinedScore": 43,
+        "strategy": "Battleground"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 51.8,
+          "repPct": 47.2,
+          "margin": 4.6,
+          "turnout": 73.8,
+          "ballotsCast": 1697
+        },
+        "2022": {
+          "demPct": 52.5,
+          "repPct": 46.8,
+          "margin": 5.7,
+          "turnout": 64.5,
+          "ballotsCast": 1484
+        },
+        "2020": {
+          "demPct": 52.2,
+          "repPct": 47.0,
+          "margin": 5.2,
+          "turnout": 77.2,
+          "ballotsCast": 1776
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 18.8,
+        "foxNewsmaxPct": 32.2,
+        "nprPct": 13.0,
+        "socialMediaPct": 54.8,
+        "politicalDonorPct": 8.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "4B",
+          "name": "Home Improvement",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Toss-up",
+            "issuesFocus": [
+              "Schools",
+              "Local Taxes",
+              "Safety"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Cable News"
+            ],
+            "persuadability": "High",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "secondary": {
+          "code": "4C",
+          "name": "Middleburg",
+          "lifeMode": "Family Landscapes",
+          "urbanization": "Urban Periphery",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Taxes",
+              "Schools",
+              "Property Rights"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Facebook",
+              "Fox News"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate-High"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Toss-up",
+          "issuesFocus": [
+            "Schools",
+            "Local Taxes",
+            "Safety"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Facebook",
+            "Cable News"
+          ],
+          "persuadability": "High",
+          "turnoutLikelihood": "Moderate-High"
+        }
+      }
+    },
+    "wil-pct-1": {
+      "id": "wil-pct-1",
+      "name": "Williamston Precinct 1",
+      "jurisdiction": "Williamston",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 1850,
+        "population18up": 1450,
+        "medianAge": 42.5,
+        "medianHHI": 58500,
+        "collegePct": 32.5,
+        "homeownerPct": 72.8,
+        "diversityIndex": 18,
+        "populationDensity": 850
+      },
+      "political": {
+        "demAffiliationPct": 38.5,
+        "repAffiliationPct": 44.8,
+        "independentPct": 16.7,
+        "liberalPct": 30.5,
+        "moderatePct": 46.8,
+        "conservativePct": 22.7
+      },
+      "electoral": {
+        "partisanLean": -8,
+        "swingPotential": 42,
+        "competitiveness": "lean_r",
+        "avgTurnout": 68.5,
+        "turnoutDropoff": 10.5
+      },
+      "targeting": {
+        "gotvPriority": 32,
+        "persuasionOpportunity": 68,
+        "combinedScore": 38,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 45.8,
+          "repPct": 52.8,
+          "margin": -7.0,
+          "turnout": 73.5,
+          "ballotsCast": 1066
+        },
+        "2022": {
+          "demPct": 46.5,
+          "repPct": 52.2,
+          "margin": -5.7,
+          "turnout": 65.2,
+          "ballotsCast": 945
+        },
+        "2020": {
+          "demPct": 46.2,
+          "repPct": 52.5,
+          "margin": -6.3,
+          "turnout": 76.8,
+          "ballotsCast": 1114
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 15.2,
+        "foxNewsmaxPct": 38.5,
+        "nprPct": 10.8,
+        "socialMediaPct": 48.5,
+        "politicalDonorPct": 6.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "12C",
+          "name": "Small Town Sincerity",
+          "lifeMode": "Senior Styles",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Healthcare",
+              "Social Security",
+              "Local Issues"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Newspaper"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "6B",
+          "name": "Heartland Communities",
+          "lifeMode": "GenXurban",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Jobs",
+              "Agriculture",
+              "Traditional Values"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Facebook"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean R",
+          "issuesFocus": [
+            "Healthcare",
+            "Social Security",
+            "Local Issues"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Radio",
+            "Newspaper"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "High"
+        }
+      }
+    },
+    "wil-pct-2": {
+      "id": "wil-pct-2",
+      "name": "Williamston Precinct 2",
+      "jurisdiction": "Williamston",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 1950,
+        "population18up": 1550,
+        "medianAge": 40.8,
+        "medianHHI": 62500,
+        "collegePct": 38.5,
+        "homeownerPct": 76.5,
+        "diversityIndex": 20,
+        "populationDensity": 900
+      },
+      "political": {
+        "demAffiliationPct": 40.5,
+        "repAffiliationPct": 42.8,
+        "independentPct": 16.7,
+        "liberalPct": 33.5,
+        "moderatePct": 45.8,
+        "conservativePct": 20.7
+      },
+      "electoral": {
+        "partisanLean": -3,
+        "swingPotential": 48,
+        "competitiveness": "toss_up",
+        "avgTurnout": 70.2,
+        "turnoutDropoff": 9.8
+      },
+      "targeting": {
+        "gotvPriority": 35,
+        "persuasionOpportunity": 65,
+        "combinedScore": 42,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 48.5,
+          "repPct": 50.2,
+          "margin": -1.7,
+          "turnout": 75.2,
+          "ballotsCast": 1166
+        },
+        "2022": {
+          "demPct": 49.2,
+          "repPct": 49.8,
+          "margin": -0.6,
+          "turnout": 66.8,
+          "ballotsCast": 1035
+        },
+        "2020": {
+          "demPct": 48.8,
+          "repPct": 50.2,
+          "margin": -1.4,
+          "turnout": 78.5,
+          "ballotsCast": 1217
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 16.8,
+        "foxNewsmaxPct": 36.5,
+        "nprPct": 11.5,
+        "socialMediaPct": 51.2,
+        "politicalDonorPct": 7.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "12C",
+          "name": "Small Town Sincerity",
+          "lifeMode": "Senior Styles",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Healthcare",
+              "Social Security",
+              "Local Issues"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Newspaper"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "6B",
+          "name": "Heartland Communities",
+          "lifeMode": "GenXurban",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Jobs",
+              "Agriculture",
+              "Traditional Values"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Facebook"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean R",
+          "issuesFocus": [
+            "Healthcare",
+            "Social Security",
+            "Local Issues"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Radio",
+            "Newspaper"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "High"
+        }
+      }
+    },
+    "wil-pct-3": {
+      "id": "wil-pct-3",
+      "name": "Williamston Precinct 3",
+      "jurisdiction": "Williamston",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 1750,
+        "population18up": 1400,
+        "medianAge": 44.5,
+        "medianHHI": 56500,
+        "collegePct": 30.5,
+        "homeownerPct": 70.5,
+        "diversityIndex": 16,
+        "populationDensity": 800
+      },
+      "political": {
+        "demAffiliationPct": 36.8,
+        "repAffiliationPct": 46.5,
+        "independentPct": 16.7,
+        "liberalPct": 28.5,
+        "moderatePct": 47.8,
+        "conservativePct": 23.7
+      },
+      "electoral": {
+        "partisanLean": -12,
+        "swingPotential": 38,
+        "competitiveness": "lean_r",
+        "avgTurnout": 66.8,
+        "turnoutDropoff": 11.2
+      },
+      "targeting": {
+        "gotvPriority": 28,
+        "persuasionOpportunity": 72,
+        "combinedScore": 35,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 43.5,
+          "repPct": 55.2,
+          "margin": -11.7,
+          "turnout": 71.8,
+          "ballotsCast": 1005
+        },
+        "2022": {
+          "demPct": 44.2,
+          "repPct": 54.8,
+          "margin": -10.6,
+          "turnout": 63.5,
+          "ballotsCast": 889
+        },
+        "2020": {
+          "demPct": 43.8,
+          "repPct": 55.0,
+          "margin": -11.2,
+          "turnout": 75.2,
+          "ballotsCast": 1053
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 13.8,
+        "foxNewsmaxPct": 40.5,
+        "nprPct": 9.8,
+        "socialMediaPct": 46.2,
+        "politicalDonorPct": 6.2
+      },
+      "tapestry": {
+        "primary": {
+          "code": "12C",
+          "name": "Small Town Sincerity",
+          "lifeMode": "Senior Styles",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Healthcare",
+              "Social Security",
+              "Local Issues"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Newspaper"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "6B",
+          "name": "Heartland Communities",
+          "lifeMode": "GenXurban",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Jobs",
+              "Agriculture",
+              "Traditional Values"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Facebook"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean R",
+          "issuesFocus": [
+            "Healthcare",
+            "Social Security",
+            "Local Issues"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Radio",
+            "Newspaper"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "High"
+        }
+      }
+    },
+    "wil-pct-4": {
+      "id": "wil-pct-4",
+      "name": "Williamston Precinct 4",
+      "jurisdiction": "Williamston",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 1650,
+        "population18up": 1300,
+        "medianAge": 46.2,
+        "medianHHI": 54500,
+        "collegePct": 28.5,
+        "homeownerPct": 68.5,
+        "diversityIndex": 15,
+        "populationDensity": 750
+      },
+      "political": {
+        "demAffiliationPct": 35.5,
+        "repAffiliationPct": 48.2,
+        "independentPct": 16.3,
+        "liberalPct": 27.2,
+        "moderatePct": 48.5,
+        "conservativePct": 24.3
+      },
+      "electoral": {
+        "partisanLean": -15,
+        "swingPotential": 35,
+        "competitiveness": "likely_r",
+        "avgTurnout": 65.2,
+        "turnoutDropoff": 11.8
+      },
+      "targeting": {
+        "gotvPriority": 25,
+        "persuasionOpportunity": 75,
+        "combinedScore": 32,
+        "strategy": "Low Priority"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 42.2,
+          "repPct": 56.8,
+          "margin": -14.6,
+          "turnout": 70.5,
+          "ballotsCast": 917
+        },
+        "2022": {
+          "demPct": 42.8,
+          "repPct": 56.5,
+          "margin": -13.7,
+          "turnout": 61.8,
+          "ballotsCast": 803
+        },
+        "2020": {
+          "demPct": 42.5,
+          "repPct": 56.8,
+          "margin": -14.3,
+          "turnout": 73.5,
+          "ballotsCast": 955
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 12.5,
+        "foxNewsmaxPct": 42.8,
+        "nprPct": 9.2,
+        "socialMediaPct": 44.5,
+        "politicalDonorPct": 5.8
+      },
+      "tapestry": {
+        "primary": {
+          "code": "12C",
+          "name": "Small Town Sincerity",
+          "lifeMode": "Senior Styles",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Healthcare",
+              "Social Security",
+              "Local Issues"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Newspaper"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "6B",
+          "name": "Heartland Communities",
+          "lifeMode": "GenXurban",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Jobs",
+              "Agriculture",
+              "Traditional Values"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Facebook"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean R",
+          "issuesFocus": [
+            "Healthcare",
+            "Social Security",
+            "Local Issues"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Radio",
+            "Newspaper"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "High"
+        }
+      }
+    },
+    "wil-pct-5": {
+      "id": "wil-pct-5",
+      "name": "Williamston Precinct 5",
+      "jurisdiction": "Williamston",
+      "jurisdictionType": "city",
+      "demographics": {
+        "totalPopulation": 1800,
+        "population18up": 1420,
+        "medianAge": 43.8,
+        "medianHHI": 57500,
+        "collegePct": 31.5,
+        "homeownerPct": 71.8,
+        "diversityIndex": 17,
+        "populationDensity": 820
+      },
+      "political": {
+        "demAffiliationPct": 37.5,
+        "repAffiliationPct": 45.8,
+        "independentPct": 16.7,
+        "liberalPct": 29.5,
+        "moderatePct": 47.2,
+        "conservativePct": 23.3
+      },
+      "electoral": {
+        "partisanLean": -10,
+        "swingPotential": 40,
+        "competitiveness": "lean_r",
+        "avgTurnout": 67.5,
+        "turnoutDropoff": 10.8
+      },
+      "targeting": {
+        "gotvPriority": 30,
+        "persuasionOpportunity": 70,
+        "combinedScore": 36,
+        "strategy": "Persuasion Focus"
+      },
+      "elections": {
+        "2024": {
+          "demPct": 44.8,
+          "repPct": 54.2,
+          "margin": -9.4,
+          "turnout": 72.5,
+          "ballotsCast": 1030
+        },
+        "2022": {
+          "demPct": 45.5,
+          "repPct": 53.8,
+          "margin": -8.3,
+          "turnout": 64.2,
+          "ballotsCast": 912
+        },
+        "2020": {
+          "demPct": 45.2,
+          "repPct": 54.0,
+          "margin": -8.8,
+          "turnout": 75.8,
+          "ballotsCast": 1076
+        }
+      },
+      "engagement": {
+        "cnnMsnbcPct": 14.5,
+        "foxNewsmaxPct": 39.5,
+        "nprPct": 10.2,
+        "socialMediaPct": 47.8,
+        "politicalDonorPct": 6.5
+      },
+      "tapestry": {
+        "primary": {
+          "code": "12C",
+          "name": "Small Town Sincerity",
+          "lifeMode": "Senior Styles",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Healthcare",
+              "Social Security",
+              "Local Issues"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Newspaper"
+            ],
+            "persuadability": "Low",
+            "turnoutLikelihood": "High"
+          }
+        },
+        "secondary": {
+          "code": "6B",
+          "name": "Heartland Communities",
+          "lifeMode": "GenXurban",
+          "urbanization": "Rural",
+          "politicalProfile": {
+            "partisanLean": "Lean R",
+            "issuesFocus": [
+              "Jobs",
+              "Agriculture",
+              "Traditional Values"
+            ],
+            "mediaChannels": [
+              "Local TV",
+              "Radio",
+              "Facebook"
+            ],
+            "persuadability": "Moderate",
+            "turnoutLikelihood": "Moderate"
+          }
+        },
+        "politicalProfile": {
+          "partisanLean": "Lean R",
+          "issuesFocus": [
+            "Healthcare",
+            "Social Security",
+            "Local Issues"
+          ],
+          "mediaChannels": [
+            "Local TV",
+            "Radio",
+            "Newspaper"
+          ],
+          "persuadability": "Low",
+          "turnoutLikelihood": "High"
+        }
+      }
+    }
+  }
+}

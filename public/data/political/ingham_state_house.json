@@ -1,0 +1,139 @@
+{
+  "districts": [
+    {
+      "id": "mi-house-73",
+      "name": "73rd District",
+      "representative": "Julie Brixie",
+      "party": "D",
+      "population": 91000,
+      "precinctCount": 27,
+      "partisanLean": 32.8,
+      "swingPotential": 28,
+      "gotvPriority": 72,
+      "persuasionOpportunity": 42,
+      "avgTurnout": 62.5,
+      "competitiveness": "safe_d",
+      "lastElectionMargin": 28.5,
+      "lastElectionYear": 2024,
+      "coverage": "MSU campus, Okemos, Mason, rural eastern townships",
+      "dominantStrategy": "base_mobilization",
+      "keyDemographics": {
+        "medianAge": 32.8,
+        "medianIncome": 45600,
+        "bachelorsPct": 42.2,
+        "density": "mixed"
+      }
+    },
+    {
+      "id": "mi-house-74",
+      "name": "74th District",
+      "representative": "Kara Hope",
+      "party": "D",
+      "population": 89850,
+      "precinctCount": 25,
+      "partisanLean": 24.8,
+      "swingPotential": 32,
+      "gotvPriority": 70,
+      "persuasionOpportunity": 48,
+      "avgTurnout": 60.2,
+      "competitiveness": "safe_d",
+      "lastElectionMargin": 22.5,
+      "lastElectionYear": 2024,
+      "coverage": "Holt, South Lansing, Delhi Township",
+      "dominantStrategy": "base_mobilization",
+      "keyDemographics": {
+        "medianAge": 35.2,
+        "medianIncome": 48200,
+        "bachelorsPct": 38.5,
+        "density": "suburban"
+      }
+    },
+    {
+      "id": "mi-house-75",
+      "name": "75th District",
+      "representative": "Penelope Tsernoglou",
+      "party": "D",
+      "population": 91580,
+      "precinctCount": 30,
+      "partisanLean": 22.5,
+      "swingPotential": 42,
+      "gotvPriority": 68,
+      "persuasionOpportunity": 55,
+      "avgTurnout": 66.8,
+      "competitiveness": "likely_d",
+      "lastElectionMargin": 18.2,
+      "lastElectionYear": 2024,
+      "coverage": "East Lansing, Meridian Township, Haslett",
+      "dominantStrategy": "balanced",
+      "keyDemographics": {
+        "medianAge": 38.5,
+        "medianIncome": 62400,
+        "bachelorsPct": 52.8,
+        "density": "suburban"
+      }
+    },
+    {
+      "id": "mi-house-76",
+      "name": "76th District",
+      "representative": "Angela Witwer",
+      "party": "D",
+      "population": 90000,
+      "precinctCount": 5,
+      "partisanLean": 6.8,
+      "swingPotential": 62,
+      "gotvPriority": 58,
+      "persuasionOpportunity": 68,
+      "avgTurnout": 64.2,
+      "competitiveness": "lean_d",
+      "lastElectionMargin": 6.8,
+      "lastElectionYear": 2024,
+      "coverage": "Western Ingham County (partial), most of Eaton County",
+      "dominantStrategy": "persuasion",
+      "keyDemographics": {
+        "medianAge": 42.2,
+        "medianIncome": 58200,
+        "bachelorsPct": 32.5,
+        "density": "mixed"
+      }
+    },
+    {
+      "id": "mi-house-77",
+      "name": "77th District",
+      "representative": "Emily Dievendorf",
+      "party": "D",
+      "population": 91205,
+      "precinctCount": 28,
+      "partisanLean": 35.2,
+      "swingPotential": 25,
+      "gotvPriority": 75,
+      "persuasionOpportunity": 40,
+      "avgTurnout": 65.8,
+      "competitiveness": "safe_d",
+      "lastElectionMargin": 31.2,
+      "lastElectionYear": 2024,
+      "coverage": "City of Lansing, Lansing Township",
+      "dominantStrategy": "base_mobilization",
+      "keyDemographics": {
+        "medianAge": 24.5,
+        "medianIncome": 42800,
+        "bachelorsPct": 68.5,
+        "density": "urban"
+      }
+    }
+  ],
+  "metadata": {
+    "county": "Ingham County",
+    "state": "Michigan",
+    "chamber": "House of Representatives",
+    "totalDistricts": 5,
+    "totalPopulation": 451700,
+    "avgTurnout": 63.9,
+    "overallPartisanLean": 25.4,
+    "competitiveDistricts": 1,
+    "dataSource": "Michigan SOS, Michigan Legislature, US Census 2020",
+    "lastElectionCycle": 2024,
+    "nextElectionCycle": 2026,
+    "lastUpdated": "2025-12-11",
+    "notes": "District boundaries reflect post-2020 redistricting. All representatives are from the 2024 election cycle. Note: District 76 only partially covers Ingham County."
+  }
+}

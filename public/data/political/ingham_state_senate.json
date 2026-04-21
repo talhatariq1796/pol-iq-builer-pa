@@ -1,0 +1,58 @@
+{
+  "districts": [
+    {
+      "id": "mi-senate-21",
+      "name": "21st District",
+      "senator": "Sarah Anthony",
+      "party": "D",
+      "population": 273500,
+      "precinctCount": 77,
+      "partisanLean": 22.5,
+      "swingPotential": 28,
+      "gotvPriority": 70,
+      "persuasionOpportunity": 42,
+      "avgTurnout": 62.5,
+      "competitiveness": "safe_d",
+      "lastElectionMargin": 20.0,
+      "lastElectionYear": 2022,
+      "coverage": "Most of Ingham County including Lansing, East Lansing, Mason, Okemos",
+      "dominantStrategy": "base_mobilization",
+      "keyDemographics": {
+        "medianAge": 32.5,
+        "medianIncome": 58200,
+        "bachelorsPct": 42.5,
+        "density": "suburban"
+      }
+    },
+    {
+      "id": "mi-senate-28",
+      "name": "28th District",
+      "senator": "Sam Singh",
+      "party": "D",
+      "population": 280000,
+      "precinctCount": 15,
+      "partisanLean": 18.0,
+      "swingPotential": 35,
+      "gotvPriority": 65,
+      "persuasionOpportunity": 50,
+      "avgTurnout": 64.0,
+      "competitiveness": "likely_d",
+      "lastElectionMargin": 15.0,
+      "lastElectionYear": 2022,
+      "coverage": "Northern Ingham County (Haslett area), parts of Clinton and Shiawassee counties",
+      "dominantStrategy": "balanced",
+      "keyDemographics": {
+        "medianAge": 36.0,
+        "medianIncome": 62000,
+        "bachelorsPct": 45.0,
+        "density": "suburban"
+      }
+    }
+  ],
+  "metadata": {
+    "source": "Michigan Secretary of State",
+    "lastUpdated": "2025-12-11",
+    "coverage": "Ingham County, MI",
+    "notes": "District 21 covers most of Ingham County. District 28 covers northern Ingham plus parts of neighboring counties."
+  }
+}
