@@ -1,0 +1,7 @@
+{
+  "geojsonManifest": "1",
+  "merge": [
+    "/data/political/pensylvania/block-groups/pa_block_groups.part000.geojson",
+    "/data/political/pensylvania/block-groups/pa_block_groups.part001.geojson"
+  ]
+}

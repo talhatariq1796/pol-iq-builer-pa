@@ -1,0 +1,6 @@
+{
+  "geojsonManifest": "1",
+  "merge": [
+    "/data/political/pensylvania/block-groups/tlgdb_a_42_pa_Block_Group_2020.part000.geojson"
+  ]
+}
