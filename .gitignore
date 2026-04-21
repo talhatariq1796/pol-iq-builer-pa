@@ -1,0 +1,63 @@
+# Dependencies
+node_modules/
+npm-cache
+.pnp
+.pnp.js
+
+# Environment and secrets (never commit keys)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+public/assets/
+
+# Next.js
+.next/
+out/
+
+# Build and cache
+build/
+dist/
+*.tsbuildinfo
+.cache/
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+jest-cache/
+
+# Logs and debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional local data (if you keep local copies)
+*.sql.backup
+*.dump
+
+# Misc
+.turbo
