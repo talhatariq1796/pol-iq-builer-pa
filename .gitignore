@@ -4,6 +4,9 @@ npm-cache
 .pnp
 .pnp.js
 
+public/data/political
+
+
 # Environment and secrets (never commit keys)
 .env
 .env.local

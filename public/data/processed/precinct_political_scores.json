@@ -1,0 +1,2107 @@
+{
+  "generated": "2025-12-11T23:23:26.230Z",
+  "methodology": {
+    "partisan_lean": {
+      "description": "Weighted average of DEM-REP margin across elections",
+      "scale": "-100 (Solid R) to +100 (Solid D)",
+      "election_weights": {
+        "2024-11-05": 0.5,
+        "2022-11-08": 0.3,
+        "2020-11-03": 0.2
+      },
+      "race_weights": {
+        "president": 1,
+        "governor": 0.9,
+        "us_senate": 0.85,
+        "us_house": 0.75,
+        "state_senate": 0.6,
+        "state_house": 0.5
+      }
+    },
+    "swing_potential": {
+      "description": "Margin volatility combining election-to-election swing and ticket splitting",
+      "scale": "0 (Stable) to 100 (Highly Volatile)",
+      "components": [
+        "Standard deviation of margins (40%)",
+        "Average swing between elections (40%)",
+        "Ticket splitting within elections (20%)"
+      ]
+    },
+    "classification": {
+      "competitiveness": [
+        "Safe D/R (>20pts)",
+        "Likely D/R (10-20pts)",
+        "Lean D/R (5-10pts)",
+        "Tossup (<5pts)"
+      ],
+      "volatility": [
+        "Stable (<20)",
+        "Moderate (20-40)",
+        "Swing (40-60)",
+        "Highly Volatile (>60)"
+      ]
+    }
+  },
+  "summary": {
+    "total_precincts": 120,
+    "precincts_with_lean": 120,
+    "precincts_with_swing": 111,
+    "lean_distribution": {
+      "safeD": 94,
+      "likelyD": 7,
+      "leanD": 2,
+      "tossup": 3,
+      "leanR": 1,
+      "likelyR": 4,
+      "safeR": 9
+    },
+    "swing_distribution": {
+      "stable": 70,
+      "moderate": 37,
+      "swing": 3,
+      "highlyVolatile": 1
+    }
+  },
+  "precincts": {
+    "Alaiedon Township, Precinct 1": {
+      "partisan_lean": -0.81,
+      "swing_potential": 15.62,
+      "turnout": {
+        "average": 78.25463934237901,
+        "presidential_avg": 81.65588640630777,
+        "midterm_avg": 71.45214521452145,
+        "dropoff": 10.203741191786321,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Tossup",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "Alaiedon Township, Precinct 2": {
+      "partisan_lean": -2.47,
+      "swing_potential": 17.86,
+      "turnout": {
+        "average": 75.8849851408852,
+        "presidential_avg": 78.67666564636261,
+        "midterm_avg": 70.30162412993039,
+        "dropoff": 8.37504151643222,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Tossup",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "Alaiedon Township, Precinct 3": {
+      "partisan_lean": -2.73,
+      "swing_potential": null,
+      "turnout": {
+        "average": 77.90834312573442,
+        "presidential_avg": 77.90834312573442,
+        "midterm_avg": null,
+        "dropoff": null,
+        "elections": 1
+      },
+      "classification": {
+        "competitiveness": "Tossup",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 1
+    },
+    "Aurelius Township, Precinct 1": {
+      "partisan_lean": -9.96,
+      "swing_potential": 18.05,
+      "turnout": {
+        "average": 77.18285006733949,
+        "presidential_avg": 81.34284513517223,
+        "midterm_avg": 68.862859931674,
+        "dropoff": 12.47998520349823,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Lean R",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "Aurelius Township, Precinct 2": {
+      "partisan_lean": -13.54,
+      "swing_potential": 24.24,
+      "turnout": {
+        "average": 74.9105829177792,
+        "presidential_avg": 79.11179828971225,
+        "midterm_avg": 66.50815217391305,
+        "dropoff": 12.603646115799208,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Likely R",
+        "volatility": "Moderate",
+        "targeting_priority": "Medium-High"
+      },
+      "elections_analyzed": 3
+    },
+    "Bunker Hill Township, Precinct 1": {
+      "partisan_lean": -28.27,
+      "swing_potential": 18.68,
+      "turnout": {
+        "average": 68.97342390804714,
+        "presidential_avg": 72.54074039607575,
+        "midterm_avg": 61.83879093198993,
+        "dropoff": 10.701949464085821,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe R",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Delhi Charter Township, Precinct 1": {
+      "partisan_lean": 17.55,
+      "swing_potential": 13.98,
+      "turnout": {
+        "average": 71.5951383742834,
+        "presidential_avg": 76.23925750993178,
+        "midterm_avg": 62.3069001029866,
+        "dropoff": 13.932357406945172,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Likely D",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "Delhi Charter Township, Precinct 2": {
+      "partisan_lean": 25.49,
+      "swing_potential": 16.81,
+      "turnout": {
+        "average": 73.9919363689603,
+        "presidential_avg": 75.49407739294661,
+        "midterm_avg": 70.98765432098766,
+        "dropoff": 4.506423071958949,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Delhi Charter Township, Precinct 3": {
+      "partisan_lean": 21.46,
+      "swing_potential": 16.43,
+      "turnout": {
+        "average": 77.3029000431972,
+        "presidential_avg": 80.75813422737463,
+        "midterm_avg": 70.39243167484233,
+        "dropoff": 10.365702552532298,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Delhi Charter Township, Precinct 4": {
+      "partisan_lean": 5.86,
+      "swing_potential": 14.23,
+      "turnout": {
+        "average": 70.24161439535914,
+        "presidential_avg": 75.40608971530945,
+        "midterm_avg": 59.91266375545852,
+        "dropoff": 15.493425959850931,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Lean D",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "Delhi Charter Township, Precinct 5": {
+      "partisan_lean": 26.98,
+      "swing_potential": 17.42,
+      "turnout": {
+        "average": 67.56317750153418,
+        "presidential_avg": 73.40408542992176,
+        "midterm_avg": 55.88136164475902,
+        "dropoff": 17.522723785162746,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Delhi Charter Township, Precinct 6": {
+      "partisan_lean": 20.26,
+      "swing_potential": 18.07,
+      "turnout": {
+        "average": 66.07163881689856,
+        "presidential_avg": 70.15183294520442,
+        "midterm_avg": 57.91125056028687,
+        "dropoff": 12.240582384917552,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Delhi Charter Township, Precinct 7": {
+      "partisan_lean": 32.52,
+      "swing_potential": 27.65,
+      "turnout": {
+        "average": 63.62072673412056,
+        "presidential_avg": 67.98142567165064,
+        "midterm_avg": 54.899328859060404,
+        "dropoff": 13.082096812590237,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Delhi Charter Township, Precinct 8": {
+      "partisan_lean": 22.76,
+      "swing_potential": 23.41,
+      "turnout": {
+        "average": 73.20570767021252,
+        "presidential_avg": 77.65415568478522,
+        "midterm_avg": 64.3088116410671,
+        "dropoff": 13.345344043718129,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Delhi Charter Township, Precinct 9": {
+      "partisan_lean": 20.37,
+      "swing_potential": 23,
+      "turnout": {
+        "average": 72.72742989136064,
+        "presidential_avg": 75.29249847494283,
+        "midterm_avg": 67.59729272419628,
+        "dropoff": 7.6952057507465526,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 1": {
+      "partisan_lean": 51.55,
+      "swing_potential": 38.91,
+      "turnout": {
+        "average": 45.90353138161453,
+        "presidential_avg": 44.29389356364987,
+        "midterm_avg": 49.122807017543856,
+        "dropoff": -4.828913453893989,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 2": {
+      "partisan_lean": 65.34,
+      "swing_potential": 20.88,
+      "turnout": {
+        "average": 63.811404254483854,
+        "presidential_avg": 65.16945346565183,
+        "midterm_avg": 61.095305832147936,
+        "dropoff": 4.074147633503891,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 3": {
+      "partisan_lean": 61.65,
+      "swing_potential": 20.99,
+      "turnout": {
+        "average": 66.50508119322444,
+        "presidential_avg": 69.53122487268828,
+        "midterm_avg": 60.45279383429673,
+        "dropoff": 9.078431038391557,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 4": {
+      "partisan_lean": 64.34,
+      "swing_potential": 11.48,
+      "turnout": {
+        "average": 66.67199980090128,
+        "presidential_avg": 70.83051052386273,
+        "midterm_avg": 58.35497835497836,
+        "dropoff": 12.47553216888437,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 5": {
+      "partisan_lean": 58.92,
+      "swing_potential": 13.9,
+      "turnout": {
+        "average": 62.98745865387705,
+        "presidential_avg": 66.49523950306381,
+        "midterm_avg": 55.97189695550351,
+        "dropoff": 10.523342547560304,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 6": {
+      "partisan_lean": 63.08,
+      "swing_potential": 14.74,
+      "turnout": {
+        "average": 63.12279738128358,
+        "presidential_avg": 66.80419607192536,
+        "midterm_avg": 55.76,
+        "dropoff": 11.044196071925363,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 7": {
+      "partisan_lean": 43.48,
+      "swing_potential": 23.44,
+      "turnout": {
+        "average": 72.71630198001456,
+        "presidential_avg": 75.89181282535637,
+        "midterm_avg": 66.36528028933093,
+        "dropoff": 9.526532536025442,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 8": {
+      "partisan_lean": 62.82,
+      "swing_potential": 14.38,
+      "turnout": {
+        "average": 63.17669725821466,
+        "presidential_avg": 67.60158434886046,
+        "midterm_avg": 54.32692307692307,
+        "dropoff": 13.274661271937383,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 9": {
+      "partisan_lean": 53.07,
+      "swing_potential": 32.97,
+      "turnout": {
+        "average": 57.59092340788255,
+        "presidential_avg": 59.85682212981869,
+        "midterm_avg": 53.05912596401028,
+        "dropoff": 6.797696165808411,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 10": {
+      "partisan_lean": 52.34,
+      "swing_potential": 20.71,
+      "turnout": {
+        "average": 50.58679154953253,
+        "presidential_avg": 53.832943229810596,
+        "midterm_avg": 44.09448818897638,
+        "dropoff": 9.738455040834218,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 11": {
+      "partisan_lean": 59.29,
+      "swing_potential": 8.19,
+      "turnout": {
+        "average": 68.00213232329502,
+        "presidential_avg": 71.50401017325422,
+        "midterm_avg": 60.99837662337663,
+        "dropoff": 10.505633549877587,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 12": {
+      "partisan_lean": 56.02,
+      "swing_potential": 44.79,
+      "turnout": {
+        "average": 46.13598151334971,
+        "presidential_avg": 43.10670062115149,
+        "midterm_avg": 52.194543297746144,
+        "dropoff": -9.087842676594654,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Swing",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 13": {
+      "partisan_lean": 55.25,
+      "swing_potential": 29.67,
+      "turnout": {
+        "average": 48.000524980504565,
+        "presidential_avg": 48.18761748607079,
+        "midterm_avg": 47.626339969372125,
+        "dropoff": 0.5612775166986665,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 14": {
+      "partisan_lean": 47.69,
+      "swing_potential": 40.47,
+      "turnout": {
+        "average": 46.16636102169074,
+        "presidential_avg": 45.58617519590246,
+        "midterm_avg": 47.32673267326732,
+        "dropoff": -1.7405574773648596,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Swing",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 15": {
+      "partisan_lean": 64,
+      "swing_potential": 39.7,
+      "turnout": {
+        "average": 44.51025028611235,
+        "presidential_avg": 45.174466338259435,
+        "midterm_avg": 43.18181818181818,
+        "dropoff": 1.9926481564412555,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of East Lansing, Precinct 16": {
+      "partisan_lean": 64.38,
+      "swing_potential": 9.81,
+      "turnout": {
+        "average": 52.043628926998586,
+        "presidential_avg": 54.7195076627096,
+        "midterm_avg": 46.69187145557656,
+        "dropoff": 8.027636207133042,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Ingham Township, Precinct 1": {
+      "partisan_lean": -22.94,
+      "swing_potential": 22.41,
+      "turnout": {
+        "average": 72.63496298800189,
+        "presidential_avg": 76.09530162485999,
+        "midterm_avg": 65.71428571428571,
+        "dropoff": 10.381015910574277,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe R",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 1, Precinct 1": {
+      "partisan_lean": 28.31,
+      "swing_potential": 17.1,
+      "turnout": {
+        "average": 52.18631117919259,
+        "presidential_avg": 56.91624627473583,
+        "midterm_avg": 42.72644098810613,
+        "dropoff": 14.189805286629706,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 1, Precinct 2": {
+      "partisan_lean": 56,
+      "swing_potential": 25.06,
+      "turnout": {
+        "average": 41.95196005219231,
+        "presidential_avg": 46.01589779818277,
+        "midterm_avg": 33.824084560211396,
+        "dropoff": 12.191813237971374,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 1, Precinct 3": {
+      "partisan_lean": 30.17,
+      "swing_potential": 10.06,
+      "turnout": {
+        "average": 80.11377540112856,
+        "presidential_avg": 83.02206872418279,
+        "midterm_avg": 74.29718875502009,
+        "dropoff": 8.7248799691627,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 1, Precinct 4": {
+      "partisan_lean": 49.82,
+      "swing_potential": 19.64,
+      "turnout": {
+        "average": 49.74999348891364,
+        "presidential_avg": 56.341408143818214,
+        "midterm_avg": 36.56716417910448,
+        "dropoff": 19.774243964713733,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 1, Precinct 5": {
+      "partisan_lean": 59.37,
+      "swing_potential": 4.37,
+      "turnout": {
+        "average": 60.361397048982475,
+        "presidential_avg": 61.56744119559353,
+        "midterm_avg": 57.94930875576036,
+        "dropoff": 3.6181324398331682,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 1, Precinct 6": {
+      "partisan_lean": 60.93,
+      "swing_potential": 25.83,
+      "turnout": {
+        "average": 48.124671662700095,
+        "presidential_avg": 48.54452054794521,
+        "midterm_avg": 47.70482277745497,
+        "dropoff": 0.8396977704902397,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "City of Lansing, Ward 1, Precinct 7": {
+      "partisan_lean": 58.49,
+      "swing_potential": 6.65,
+      "turnout": {
+        "average": 57.223574863024965,
+        "presidential_avg": 55.94470046082949,
+        "midterm_avg": 58.502449265220434,
+        "dropoff": -2.557748804390947,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "City of Lansing, Ward 1, Precinct 8": {
+      "partisan_lean": 55.81,
+      "swing_potential": 14.75,
+      "turnout": {
+        "average": 51.96284791850699,
+        "presidential_avg": 57.006908759057026,
+        "midterm_avg": 41.874726237406925,
+        "dropoff": 15.132182521650101,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 1, Precinct 9": {
+      "partisan_lean": 51.52,
+      "swing_potential": 9.38,
+      "turnout": {
+        "average": 43.44626388769088,
+        "presidential_avg": 48.21135387349436,
+        "midterm_avg": 33.91608391608392,
+        "dropoff": 14.29526995741044,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 1, Precinct 10": {
+      "partisan_lean": 52.9,
+      "swing_potential": 20.5,
+      "turnout": {
+        "average": 53.470778265074664,
+        "presidential_avg": 60.10034729179189,
+        "midterm_avg": 40.21164021164021,
+        "dropoff": 19.888707080151683,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 1, Precinct 45": {
+      "partisan_lean": 49.24,
+      "swing_potential": null,
+      "turnout": {
+        "average": 71.04945717732207,
+        "presidential_avg": 71.04945717732207,
+        "midterm_avg": null,
+        "dropoff": null,
+        "elections": 1
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 1
+    },
+    "City of Lansing, Ward 2, Precinct 11": {
+      "partisan_lean": 45.59,
+      "swing_potential": 14.99,
+      "turnout": {
+        "average": 49.27946827699788,
+        "presidential_avg": 58.750574184657786,
+        "midterm_avg": 39.80836236933798,
+        "dropoff": 18.94221181531981,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "City of Lansing, Ward 2, Precinct 12": {
+      "partisan_lean": 39.24,
+      "swing_potential": 15.01,
+      "turnout": {
+        "average": 63.08266980250716,
+        "presidential_avg": 66.86018560828336,
+        "midterm_avg": 55.527638190954775,
+        "dropoff": 11.332547417328584,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 2, Precinct 13": {
+      "partisan_lean": 40.31,
+      "swing_potential": 12.76,
+      "turnout": {
+        "average": 53.28429701040461,
+        "presidential_avg": 57.589593308313255,
+        "midterm_avg": 44.673704414587334,
+        "dropoff": 12.91588889372592,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 2, Precinct 14": {
+      "partisan_lean": 47.62,
+      "swing_potential": 31.92,
+      "turnout": {
+        "average": 68.38150184602516,
+        "presidential_avg": 71.13989202633215,
+        "midterm_avg": 62.864721485411145,
+        "dropoff": 8.275170540921003,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 2, Precinct 15": {
+      "partisan_lean": 36.87,
+      "swing_potential": 20.6,
+      "turnout": {
+        "average": 63.13700456252431,
+        "presidential_avg": 68.70135171913273,
+        "midterm_avg": 52.00831024930748,
+        "dropoff": 16.693041469825253,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 2, Precinct 16": {
+      "partisan_lean": 52.36,
+      "swing_potential": 21.92,
+      "turnout": {
+        "average": 47.45226381604343,
+        "presidential_avg": 53.32125286692228,
+        "midterm_avg": 35.714285714285715,
+        "dropoff": 17.606967152636564,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 2, Precinct 17": {
+      "partisan_lean": 46.98,
+      "swing_potential": 29.57,
+      "turnout": {
+        "average": 63.76188913262755,
+        "presidential_avg": 67.66140652396577,
+        "midterm_avg": 55.962854349951115,
+        "dropoff": 11.698552174014651,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 2, Precinct 18": {
+      "partisan_lean": 41.39,
+      "swing_potential": 14.94,
+      "turnout": {
+        "average": 47.95367264485797,
+        "presidential_avg": 52.066828344112665,
+        "midterm_avg": 39.727361246348586,
+        "dropoff": 12.339467097764079,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 2, Precinct 19": {
+      "partisan_lean": 40.36,
+      "swing_potential": 6.46,
+      "turnout": {
+        "average": 52.866948672463906,
+        "presidential_avg": 59.05325443786982,
+        "midterm_avg": 46.680642907058,
+        "dropoff": 12.372611530811817,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "City of Lansing, Ward 2, Precinct 20": {
+      "partisan_lean": 35.49,
+      "swing_potential": 19.12,
+      "turnout": {
+        "average": 47.74637174321791,
+        "presidential_avg": 52.81221816528557,
+        "midterm_avg": 37.61467889908257,
+        "dropoff": 15.197539266203002,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 2, Precinct 21": {
+      "partisan_lean": 46.75,
+      "swing_potential": null,
+      "turnout": {
+        "average": 69.29283341243475,
+        "presidential_avg": 69.29283341243475,
+        "midterm_avg": null,
+        "dropoff": null,
+        "elections": 1
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 1
+    },
+    "City of Lansing, Ward 3, Precinct 24": {
+      "partisan_lean": 47.88,
+      "swing_potential": 27.7,
+      "turnout": {
+        "average": 59.32897184486103,
+        "presidential_avg": 63.52175965408399,
+        "midterm_avg": 50.943396226415096,
+        "dropoff": 12.578363427668897,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 3, Precinct 25": {
+      "partisan_lean": 45.33,
+      "swing_potential": 17.65,
+      "turnout": {
+        "average": 52.478642314577144,
+        "presidential_avg": 57.27851183439428,
+        "midterm_avg": 42.87890327494288,
+        "dropoff": 14.399608559451401,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 3, Precinct 26": {
+      "partisan_lean": 46.06,
+      "swing_potential": 27.8,
+      "turnout": {
+        "average": 45.42149831507259,
+        "presidential_avg": 51.539327118626574,
+        "midterm_avg": 33.1858407079646,
+        "dropoff": 18.353486410661972,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 3, Precinct 27": {
+      "partisan_lean": 57.13,
+      "swing_potential": 25.72,
+      "turnout": {
+        "average": 51.13440102634927,
+        "presidential_avg": 54.59885363032438,
+        "midterm_avg": 44.205495818399044,
+        "dropoff": 10.393357811925334,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 3, Precinct 28": {
+      "partisan_lean": 45.34,
+      "swing_potential": 16.27,
+      "turnout": {
+        "average": 50.656259360904215,
+        "presidential_avg": 56.38472265269911,
+        "midterm_avg": 39.199332777314424,
+        "dropoff": 17.185389875384686,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 3, Precinct 29": {
+      "partisan_lean": 54.04,
+      "swing_potential": 44.86,
+      "turnout": {
+        "average": 51.99830936458259,
+        "presidential_avg": 60.97172441258463,
+        "midterm_avg": 43.02489431658055,
+        "dropoff": 17.946830096004078,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Swing",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "City of Lansing, Ward 3, Precinct 30": {
+      "partisan_lean": 46.55,
+      "swing_potential": 18.24,
+      "turnout": {
+        "average": 52.01174875141745,
+        "presidential_avg": 59.2246678006657,
+        "midterm_avg": 37.58591065292096,
+        "dropoff": 21.63875714774474,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 3, Precinct 31": {
+      "partisan_lean": 51.53,
+      "swing_potential": null,
+      "turnout": {
+        "average": 73.11004784688994,
+        "presidential_avg": 73.11004784688994,
+        "midterm_avg": null,
+        "dropoff": null,
+        "elections": 1
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 1
+    },
+    "City of Lansing, Ward 4, Precinct 32": {
+      "partisan_lean": 47.05,
+      "swing_potential": 19.55,
+      "turnout": {
+        "average": 71.2741364606277,
+        "presidential_avg": 75.70734324857926,
+        "midterm_avg": 62.40772288472459,
+        "dropoff": 13.299620363854672,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 4, Precinct 33": {
+      "partisan_lean": 49.04,
+      "swing_potential": 10.47,
+      "turnout": {
+        "average": 71.77334819522838,
+        "presidential_avg": 76.82255845942228,
+        "midterm_avg": 66.72413793103448,
+        "dropoff": 10.098420528387805,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "City of Lansing, Ward 4, Precinct 34": {
+      "partisan_lean": 48.16,
+      "swing_potential": 32.67,
+      "turnout": {
+        "average": 57.72437953177498,
+        "presidential_avg": 59.26552039617417,
+        "midterm_avg": 54.64209780297661,
+        "dropoff": 4.62342259319756,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 4, Precinct 35": {
+      "partisan_lean": 74.92,
+      "swing_potential": 15.42,
+      "turnout": {
+        "average": 57.12357937081398,
+        "presidential_avg": 57.729942699631806,
+        "midterm_avg": 55.91085271317829,
+        "dropoff": 1.8190899864535126,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 4, Precinct 36": {
+      "partisan_lean": 71.08,
+      "swing_potential": 12.95,
+      "turnout": {
+        "average": 48.75175786851924,
+        "presidential_avg": 55.263532096568895,
+        "midterm_avg": 35.728209412419936,
+        "dropoff": 19.53532268414896,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 4, Precinct 37": {
+      "partisan_lean": 61.9,
+      "swing_potential": 20.23,
+      "turnout": {
+        "average": 50.08242659162068,
+        "presidential_avg": 58.25686994165255,
+        "midterm_avg": 33.73353989155694,
+        "dropoff": 24.523330050095616,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 4, Precinct 38": {
+      "partisan_lean": 53.66,
+      "swing_potential": 12.12,
+      "turnout": {
+        "average": 49.484887646909975,
+        "presidential_avg": 53.98102605164574,
+        "midterm_avg": 40.49261083743843,
+        "dropoff": 13.488415214207315,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 4, Precinct 39": {
+      "partisan_lean": 48.17,
+      "swing_potential": 20.23,
+      "turnout": {
+        "average": 67.74786243520727,
+        "presidential_avg": 66.66183369285096,
+        "midterm_avg": 69.91991991991992,
+        "dropoff": -3.258086227068958,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 4, Precinct 40": {
+      "partisan_lean": 36.49,
+      "swing_potential": 17.34,
+      "turnout": {
+        "average": 51.08128161317209,
+        "presidential_avg": 53.72349860189475,
+        "midterm_avg": 45.79684763572679,
+        "dropoff": 7.926650966167955,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 4, Precinct 41": {
+      "partisan_lean": 40.59,
+      "swing_potential": null,
+      "turnout": {
+        "average": 79.01554404145078,
+        "presidential_avg": 79.01554404145078,
+        "midterm_avg": null,
+        "dropoff": null,
+        "elections": 1
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 1
+    },
+    "City of Lansing, Ward 4, Precinct 42": {
+      "partisan_lean": 30.83,
+      "swing_potential": null,
+      "turnout": {
+        "average": 63.067878140032064,
+        "presidential_avg": 63.067878140032064,
+        "midterm_avg": null,
+        "dropoff": null,
+        "elections": 1
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 1
+    },
+    "City of Lansing, Ward 4, Precinct 43": {
+      "partisan_lean": 44.22,
+      "swing_potential": null,
+      "turnout": {
+        "average": 60.36036036036037,
+        "presidential_avg": 60.36036036036037,
+        "midterm_avg": null,
+        "dropoff": null,
+        "elections": 1
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 1
+    },
+    "City of Lansing, Ward 4, Precinct 44": {
+      "partisan_lean": 48.1,
+      "swing_potential": null,
+      "turnout": {
+        "average": 71.24370956146657,
+        "presidential_avg": 71.24370956146657,
+        "midterm_avg": null,
+        "dropoff": null,
+        "elections": 1
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 1
+    },
+    "Lansing Township, Precinct 1": {
+      "partisan_lean": 52.23,
+      "swing_potential": 3.08,
+      "turnout": {
+        "average": 54.40637572399495,
+        "presidential_avg": 58.24383920436698,
+        "midterm_avg": 46.73144876325088,
+        "dropoff": 11.512390441116096,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Lansing Township, Precinct 2": {
+      "partisan_lean": 49.38,
+      "swing_potential": 8.22,
+      "turnout": {
+        "average": 71.74990293243746,
+        "presidential_avg": 75.08285293773584,
+        "midterm_avg": 65.08400292184075,
+        "dropoff": 9.998850015895087,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Lansing Township, Precinct 3": {
+      "partisan_lean": 33.95,
+      "swing_potential": 16.57,
+      "turnout": {
+        "average": 49.62152580196683,
+        "presidential_avg": 54.13553618335337,
+        "midterm_avg": 40.59350503919373,
+        "dropoff": 13.542031144159644,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Lansing Township, Precinct 4": {
+      "partisan_lean": 30.57,
+      "swing_potential": 15.66,
+      "turnout": {
+        "average": 59.78052742729334,
+        "presidential_avg": 64.61592647378566,
+        "midterm_avg": 50.1097293343087,
+        "dropoff": 14.50619713947696,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Lansing Township, Precinct 6": {
+      "partisan_lean": 43.21,
+      "swing_potential": 15.87,
+      "turnout": {
+        "average": 61.90890545632032,
+        "presidential_avg": 66.4405939568382,
+        "midterm_avg": 52.84552845528455,
+        "dropoff": 13.595065501553648,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Leroy Township, Precinct 1": {
+      "partisan_lean": -25.35,
+      "swing_potential": 21.3,
+      "turnout": {
+        "average": 68.9693190127872,
+        "presidential_avg": 73.25216919419817,
+        "midterm_avg": 60.40361864996521,
+        "dropoff": 12.848550544232964,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe R",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Leslie, Precinct 1": {
+      "partisan_lean": -11.32,
+      "swing_potential": 31.02,
+      "turnout": {
+        "average": 57.91126517102931,
+        "presidential_avg": 63.915012190874265,
+        "midterm_avg": 45.9037711313394,
+        "dropoff": 18.011241059534868,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Likely R",
+        "volatility": "Moderate",
+        "targeting_priority": "Medium-High"
+      },
+      "elections_analyzed": 3
+    },
+    "Leslie Township, Precinct 1": {
+      "partisan_lean": -21.6,
+      "swing_potential": 16.54,
+      "turnout": {
+        "average": 72.62314285722692,
+        "presidential_avg": 77.416903237828,
+        "midterm_avg": 63.03562209602478,
+        "dropoff": 14.381281141803214,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe R",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Locke Township, Precinct 1": {
+      "partisan_lean": -30.98,
+      "swing_potential": 19.32,
+      "turnout": {
+        "average": 77.36203498664801,
+        "presidential_avg": 81.65993559685514,
+        "midterm_avg": 68.76623376623377,
+        "dropoff": 12.893701830621367,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe R",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Mason, Precinct 1": {
+      "partisan_lean": 15.92,
+      "swing_potential": 23.41,
+      "turnout": {
+        "average": 76.92323822578403,
+        "presidential_avg": 80.50895247828308,
+        "midterm_avg": 69.75180972078594,
+        "dropoff": 10.757142757497135,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Likely D",
+        "volatility": "Moderate",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Mason, Precinct 2": {
+      "partisan_lean": 13.33,
+      "swing_potential": 29.91,
+      "turnout": {
+        "average": 68.36005099782666,
+        "presidential_avg": 73.77264509772965,
+        "midterm_avg": 57.53486279802069,
+        "dropoff": 16.23778229970896,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Likely D",
+        "volatility": "Moderate",
+        "targeting_priority": "Medium-High"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Mason, Precinct 3": {
+      "partisan_lean": 15.01,
+      "swing_potential": 15.91,
+      "turnout": {
+        "average": 68.2321504515548,
+        "presidential_avg": 74.11971830985915,
+        "midterm_avg": 62.34458259325044,
+        "dropoff": 11.775135716608709,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Likely D",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 2
+    },
+    "Meridian Township, Precinct 1": {
+      "partisan_lean": 35.88,
+      "swing_potential": 13.02,
+      "turnout": {
+        "average": 83.54008029414895,
+        "presidential_avg": 85.85372856547671,
+        "midterm_avg": 78.91278375149344,
+        "dropoff": 6.940944813983279,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 2": {
+      "partisan_lean": 43.28,
+      "swing_potential": 17.52,
+      "turnout": {
+        "average": 67.50998081174578,
+        "presidential_avg": 71.02781706742103,
+        "midterm_avg": 60.47430830039525,
+        "dropoff": 10.553508767025775,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 3": {
+      "partisan_lean": 39.25,
+      "swing_potential": 7.67,
+      "turnout": {
+        "average": 73.24181288097755,
+        "presidential_avg": 75.71258318766624,
+        "midterm_avg": 68.30027226760016,
+        "dropoff": 7.412310920066076,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 4": {
+      "partisan_lean": 23.39,
+      "swing_potential": 5.14,
+      "turnout": {
+        "average": 68.08422425478939,
+        "presidential_avg": 71.78381962864722,
+        "midterm_avg": 60.68503350707372,
+        "dropoff": 11.098786121573504,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 5": {
+      "partisan_lean": 36.75,
+      "swing_potential": 15.37,
+      "turnout": {
+        "average": 73.19999622235787,
+        "presidential_avg": 76.66911659059008,
+        "midterm_avg": 66.26175548589342,
+        "dropoff": 10.407361104696662,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 6": {
+      "partisan_lean": 37.76,
+      "swing_potential": 14.44,
+      "turnout": {
+        "average": 69.76751096266143,
+        "presidential_avg": 72.86179275978162,
+        "midterm_avg": 63.578947368421055,
+        "dropoff": 9.282845391360567,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 7": {
+      "partisan_lean": 43.8,
+      "swing_potential": 20.13,
+      "turnout": {
+        "average": 75.51304557625257,
+        "presidential_avg": 77.91800586437884,
+        "midterm_avg": 70.703125,
+        "dropoff": 7.214880864378841,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 8": {
+      "partisan_lean": 47.9,
+      "swing_potential": 14.7,
+      "turnout": {
+        "average": 72.44777659785989,
+        "presidential_avg": 75.39994585797282,
+        "midterm_avg": 66.54343807763401,
+        "dropoff": 8.856507780338816,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 9": {
+      "partisan_lean": 55.7,
+      "swing_potential": 12.1,
+      "turnout": {
+        "average": 73.68850851218355,
+        "presidential_avg": 75.9317652620409,
+        "midterm_avg": 69.20199501246883,
+        "dropoff": 6.72977024957207,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 10": {
+      "partisan_lean": 47.09,
+      "swing_potential": 15.75,
+      "turnout": {
+        "average": 77.78366530209279,
+        "presidential_avg": 79.91359319123441,
+        "midterm_avg": 73.52380952380952,
+        "dropoff": 6.389783667424894,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 11": {
+      "partisan_lean": 50.38,
+      "swing_potential": 16.42,
+      "turnout": {
+        "average": 70.35788512570855,
+        "presidential_avg": 71.33284758906035,
+        "midterm_avg": 68.40796019900498,
+        "dropoff": 2.9248873900553747,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 12": {
+      "partisan_lean": 57.19,
+      "swing_potential": 5.75,
+      "turnout": {
+        "average": 71.08951773853028,
+        "presidential_avg": 73.17702753716344,
+        "midterm_avg": 66.91449814126395,
+        "dropoff": 6.262529395899492,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 13": {
+      "partisan_lean": 47.27,
+      "swing_potential": 12.28,
+      "turnout": {
+        "average": 70.3030551231229,
+        "presidential_avg": 73.31927613077316,
+        "midterm_avg": 64.2706131078224,
+        "dropoff": 9.048663022950763,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 14": {
+      "partisan_lean": 38.33,
+      "swing_potential": 11.57,
+      "turnout": {
+        "average": 74.09400769900937,
+        "presidential_avg": 77.94405070690095,
+        "midterm_avg": 66.39392168322618,
+        "dropoff": 11.55012902367477,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 15": {
+      "partisan_lean": 51.08,
+      "swing_potential": 15.75,
+      "turnout": {
+        "average": 78.07618486930352,
+        "presidential_avg": 79.70191274053909,
+        "midterm_avg": 74.82472912683238,
+        "dropoff": 4.8771836137067055,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 17": {
+      "partisan_lean": 49.2,
+      "swing_potential": 25.54,
+      "turnout": {
+        "average": 75.29124547527759,
+        "presidential_avg": 77.77120556231398,
+        "midterm_avg": 70.33132530120481,
+        "dropoff": 7.439880261109167,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 18": {
+      "partisan_lean": 49.78,
+      "swing_potential": 11.2,
+      "turnout": {
+        "average": 59.428854431066945,
+        "presidential_avg": 64.5902090209021,
+        "midterm_avg": 49.10614525139665,
+        "dropoff": 15.484063769505447,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 19": {
+      "partisan_lean": 39.94,
+      "swing_potential": 7.93,
+      "turnout": {
+        "average": 76.18925121686578,
+        "presidential_avg": 79.14935790145007,
+        "midterm_avg": 70.26903784769722,
+        "dropoff": 8.880320053752854,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Meridian Township, Precinct 20": {
+      "partisan_lean": 53.09,
+      "swing_potential": 77.72,
+      "turnout": {
+        "average": 61.17253197366861,
+        "presidential_avg": 70.07911046050292,
+        "midterm_avg": 43.359375,
+        "dropoff": 26.719735460502918,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Highly Volatile",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "Onondaga Township, Precinct 1": {
+      "partisan_lean": -26.49,
+      "swing_potential": 20.42,
+      "turnout": {
+        "average": 68.01670505930927,
+        "presidential_avg": 72.25327335659877,
+        "midterm_avg": 59.54356846473029,
+        "dropoff": 12.709704891868476,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe R",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Stockbridge Township, Precinct 1": {
+      "partisan_lean": -22.27,
+      "swing_potential": 28.31,
+      "turnout": {
+        "average": 67.07096715073477,
+        "presidential_avg": 71.71889091748972,
+        "midterm_avg": 57.77511961722488,
+        "dropoff": 13.943771300264835,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe R",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "Stockbridge Township, Precinct 2": {
+      "partisan_lean": -27.61,
+      "swing_potential": 16.43,
+      "turnout": {
+        "average": 62.53012252450369,
+        "presidential_avg": 69.6113074204947,
+        "midterm_avg": 55.44893762851268,
+        "dropoff": 14.162369791982016,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe R",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "Vevay Township, Precinct 1": {
+      "partisan_lean": -10.5,
+      "swing_potential": 20.74,
+      "turnout": {
+        "average": 71.62884722951247,
+        "presidential_avg": 75.0370825625044,
+        "midterm_avg": 64.81237656352864,
+        "dropoff": 10.22470599897575,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Likely R",
+        "volatility": "Moderate",
+        "targeting_priority": "Medium-High"
+      },
+      "elections_analyzed": 3
+    },
+    "Wheatfield Township, Precinct 1": {
+      "partisan_lean": -12.09,
+      "swing_potential": 20.84,
+      "turnout": {
+        "average": 78.8256852104471,
+        "presidential_avg": 82.12336746581641,
+        "midterm_avg": 72.23032069970844,
+        "dropoff": 9.893046766107972,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Likely R",
+        "volatility": "Moderate",
+        "targeting_priority": "Medium-High"
+      },
+      "elections_analyzed": 3
+    },
+    "White Oak Township, Precinct 1": {
+      "partisan_lean": -38.01,
+      "swing_potential": 14.25,
+      "turnout": {
+        "average": 71.3421808622466,
+        "presidential_avg": 76.08280094572162,
+        "midterm_avg": 61.86094069529653,
+        "dropoff": 14.221860250425088,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Safe R",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Williamston, Precinct 1": {
+      "partisan_lean": 12.55,
+      "swing_potential": 14.75,
+      "turnout": {
+        "average": 73.06142563017718,
+        "presidential_avg": 76.23725803156185,
+        "midterm_avg": 66.70976082740788,
+        "dropoff": 9.527497204153974,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Likely D",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "Williamstown Township, Precinct 1": {
+      "partisan_lean": 5.92,
+      "swing_potential": 19.01,
+      "turnout": {
+        "average": 77.50648960072857,
+        "presidential_avg": 80.56058185871998,
+        "midterm_avg": 71.39830508474576,
+        "dropoff": 9.162276773974227,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Lean D",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "Williamstown Township, Precinct 2": {
+      "partisan_lean": 10.16,
+      "swing_potential": 14.4,
+      "turnout": {
+        "average": 80.00428716890751,
+        "presidential_avg": 82.80074439174422,
+        "midterm_avg": 74.41137272323411,
+        "dropoff": 8.389371668510108,
+        "elections": 3
+      },
+      "classification": {
+        "competitiveness": "Likely D",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 3
+    },
+    "City of Lansing, Ward 3, Precinct 23": {
+      "partisan_lean": 52.66,
+      "swing_potential": 9.79,
+      "turnout": {
+        "average": 64.10685885851272,
+        "presidential_avg": 69.95956094742924,
+        "midterm_avg": 58.2541567695962,
+        "dropoff": 11.705404177833039,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "City of Lansing, Ward 4, Precinct 31": {
+      "partisan_lean": 47.97,
+      "swing_potential": null,
+      "turnout": {
+        "average": 45.528870720490545,
+        "presidential_avg": null,
+        "midterm_avg": 45.528870720490545,
+        "dropoff": null,
+        "elections": 1
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 1
+    },
+    "Meridian Township, Precinct 16": {
+      "partisan_lean": 50.52,
+      "swing_potential": 15.29,
+      "turnout": {
+        "average": 63.09927033276281,
+        "presidential_avg": 67.40056818181817,
+        "midterm_avg": 58.79797248370746,
+        "dropoff": 8.602595698110711,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Stable",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "Meridian Township, Precinct 21": {
+      "partisan_lean": 41.3,
+      "swing_potential": 20.22,
+      "turnout": {
+        "average": 68.80837306511658,
+        "presidential_avg": 74.5019920318725,
+        "midterm_avg": 63.114754098360656,
+        "dropoff": 11.387237933511848,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Safe D",
+        "volatility": "Moderate",
+        "targeting_priority": "Low"
+      },
+      "elections_analyzed": 2
+    },
+    "Meridian Township, Precinct 22": {
+      "partisan_lean": 12.32,
+      "swing_potential": 0.91,
+      "turnout": {
+        "average": 79.58620613999003,
+        "presidential_avg": 83.75870069605568,
+        "midterm_avg": 75.41371158392435,
+        "dropoff": 8.34498911213133,
+        "elections": 2
+      },
+      "classification": {
+        "competitiveness": "Likely D",
+        "volatility": "Stable",
+        "targeting_priority": "Medium"
+      },
+      "elections_analyzed": 2
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "political/precincts/ingham_county_2024": "",
+  "political/elections/ingham_results": "",
+  "political/targeting/precinct_scores": "",
+  "political/demographics/precinct_ba": "",
+  "political/h3/aggregates": "",
+  "political/h3/aggregates_geojson": "",
+  "political/h3/pa_aggregates": "",
+  "political/h3/pa_aggregates_geojson": "",
+  "political/crosswalk/precinct_blockgroup": "",
+  "political/targeting/political_scores": "",
+  "political/models/registry": "",
+  "political/validation/report": "",
+  "political/mappings/ba_typescript": "",
+  "property_single_family_active": "",
+  "property_single_family_sold": "",
+  "property_condos_active": "",
+  "property_condos_sold": "",
+  "property_revenue_active": "",
+  "property_revenue_sold": ""
+}

@@ -1,0 +1,4934 @@
+{
+  "generatedAt": "2025-12-03T14:30:51.523Z",
+  "sourceFile": "donor-profiles.json (estimated distribution)",
+  "dateRange": {
+    "earliest": "2021-01",
+    "latest": "2025-10"
+  },
+  "monthlyTotals": [
+    {
+      "month": "2021-01",
+      "totalAmount": 497,
+      "contributionCount": 23,
+      "donorCount": 1,
+      "avgContribution": 22,
+      "demAmount": 497,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 23,
+      "repContributions": 0,
+      "newDonorCount": 1,
+      "returningDonorCount": 0
+    },
+    {
+      "month": "2021-02",
+      "totalAmount": 502,
+      "contributionCount": 23,
+      "donorCount": 1,
+      "avgContribution": 22,
+      "demAmount": 502,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 23,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 1
+    },
+    {
+      "month": "2021-03",
+      "totalAmount": 506,
+      "contributionCount": 23,
+      "donorCount": 1,
+      "avgContribution": 22,
+      "demAmount": 506,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 23,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 1
+    },
+    {
+      "month": "2021-04",
+      "totalAmount": 785,
+      "contributionCount": 56,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 785,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 56,
+      "repContributions": 0,
+      "newDonorCount": 1,
+      "returningDonorCount": 1
+    },
+    {
+      "month": "2021-05",
+      "totalAmount": 792,
+      "contributionCount": 56,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 792,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 56,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2021-06",
+      "totalAmount": 799,
+      "contributionCount": 57,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 799,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 57,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2021-07",
+      "totalAmount": 806,
+      "contributionCount": 57,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 806,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 57,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2021-08",
+      "totalAmount": 813,
+      "contributionCount": 57,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 813,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 57,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2021-09",
+      "totalAmount": 820,
+      "contributionCount": 59,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 820,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 59,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2021-10",
+      "totalAmount": 827,
+      "contributionCount": 59,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 827,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 59,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2021-11",
+      "totalAmount": 834,
+      "contributionCount": 59,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 834,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 59,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2021-12",
+      "totalAmount": 841,
+      "contributionCount": 60,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 841,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 60,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-01",
+      "totalAmount": 848,
+      "contributionCount": 60,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 848,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 60,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-02",
+      "totalAmount": 856,
+      "contributionCount": 61,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 856,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 61,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-03",
+      "totalAmount": 863,
+      "contributionCount": 62,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 863,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 62,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-04",
+      "totalAmount": 870,
+      "contributionCount": 62,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 870,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 62,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-05",
+      "totalAmount": 877,
+      "contributionCount": 62,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 877,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 62,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-06",
+      "totalAmount": 884,
+      "contributionCount": 62,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 884,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 62,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-07",
+      "totalAmount": 891,
+      "contributionCount": 64,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 891,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 64,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-08",
+      "totalAmount": 898,
+      "contributionCount": 64,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 898,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 64,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-09",
+      "totalAmount": 905,
+      "contributionCount": 64,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 905,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 64,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-10",
+      "totalAmount": 912,
+      "contributionCount": 65,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 912,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 65,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-11",
+      "totalAmount": 919,
+      "contributionCount": 65,
+      "donorCount": 2,
+      "avgContribution": 14,
+      "demAmount": 919,
+      "repAmount": 0,
+      "otherAmount": 0,
+      "demContributions": 65,
+      "repContributions": 0,
+      "newDonorCount": 0,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2022-12",
+      "totalAmount": 4101,
+      "contributionCount": 71,
+      "donorCount": 5,
+      "avgContribution": 58,
+      "demAmount": 2085,
+      "repAmount": 137,
+      "otherAmount": 1879,
+      "demContributions": 36,
+      "repContributions": 2,
+      "newDonorCount": 3,
+      "returningDonorCount": 2
+    },
+    {
+      "month": "2023-01",
+      "totalAmount": 101157,
+      "contributionCount": 1273,
+      "donorCount": 229,
+      "avgContribution": 79,
+      "demAmount": 50051,
+      "repAmount": 18959,
+      "otherAmount": 32148,
+      "demContributions": 630,
+      "repContributions": 239,
+      "newDonorCount": 225,
+      "returningDonorCount": 4
+    },
+    {
+      "month": "2023-02",
+      "totalAmount": 223616,
+      "contributionCount": 1693,
+      "donorCount": 493,
+      "avgContribution": 132,
+      "demAmount": 113720,
+      "repAmount": 28549,
+      "otherAmount": 81348,
+      "demContributions": 861,
+      "repContributions": 216,
+      "newDonorCount": 281,
+      "returningDonorCount": 212
+    },
+    {
+      "month": "2023-03",
+      "totalAmount": 254613,
+      "contributionCount": 1941,
+      "donorCount": 653,
+      "avgContribution": 131,
+      "demAmount": 136583,
+      "repAmount": 37923,
+      "otherAmount": 80106,
+      "demContributions": 1041,
+      "repContributions": 289,
+      "newDonorCount": 199,
+      "returningDonorCount": 454
+    },
+    {
+      "month": "2023-04",
+      "totalAmount": 344630,
+      "contributionCount": 2081,
+      "donorCount": 757,
+      "avgContribution": 166,
+      "demAmount": 168437,
+      "repAmount": 46154,
+      "otherAmount": 130039,
+      "demContributions": 1017,
+      "repContributions": 279,
+      "newDonorCount": 147,
+      "returningDonorCount": 610
+    },
+    {
+      "month": "2023-05",
+      "totalAmount": 390868,
+      "contributionCount": 2251,
+      "donorCount": 869,
+      "avgContribution": 174,
+      "demAmount": 200780,
+      "repAmount": 49071,
+      "otherAmount": 141017,
+      "demContributions": 1156,
+      "repContributions": 283,
+      "newDonorCount": 154,
+      "returningDonorCount": 715
+    },
+    {
+      "month": "2023-06",
+      "totalAmount": 417567,
+      "contributionCount": 2302,
+      "donorCount": 903,
+      "avgContribution": 181,
+      "demAmount": 202600,
+      "repAmount": 54439,
+      "otherAmount": 160528,
+      "demContributions": 1117,
+      "repContributions": 300,
+      "newDonorCount": 199,
+      "returningDonorCount": 704
+    },
+    {
+      "month": "2023-07",
+      "totalAmount": 569938,
+      "contributionCount": 3251,
+      "donorCount": 1509,
+      "avgContribution": 175,
+      "demAmount": 312188,
+      "repAmount": 60997,
+      "otherAmount": 196752,
+      "demContributions": 1781,
+      "repContributions": 348,
+      "newDonorCount": 552,
+      "returningDonorCount": 957
+    },
+    {
+      "month": "2023-08",
+      "totalAmount": 638045,
+      "contributionCount": 3519,
+      "donorCount": 1694,
+      "avgContribution": 181,
+      "demAmount": 352337,
+      "repAmount": 68804,
+      "otherAmount": 216904,
+      "demContributions": 1943,
+      "repContributions": 379,
+      "newDonorCount": 281,
+      "returningDonorCount": 1413
+    },
+    {
+      "month": "2023-09",
+      "totalAmount": 626764,
+      "contributionCount": 2908,
+      "donorCount": 1328,
+      "avgContribution": 216,
+      "demAmount": 303711,
+      "repAmount": 117609,
+      "otherAmount": 205444,
+      "demContributions": 1409,
+      "repContributions": 546,
+      "newDonorCount": 292,
+      "returningDonorCount": 1036
+    },
+    {
+      "month": "2023-10",
+      "totalAmount": 738514,
+      "contributionCount": 3896,
+      "donorCount": 1987,
+      "avgContribution": 190,
+      "demAmount": 397885,
+      "repAmount": 108841,
+      "otherAmount": 231788,
+      "demContributions": 2099,
+      "repContributions": 574,
+      "newDonorCount": 214,
+      "returningDonorCount": 1773
+    },
+    {
+      "month": "2023-11",
+      "totalAmount": 635117,
+      "contributionCount": 2986,
+      "donorCount": 1373,
+      "avgContribution": 213,
+      "demAmount": 310271,
+      "repAmount": 100794,
+      "otherAmount": 224052,
+      "demContributions": 1459,
+      "repContributions": 474,
+      "newDonorCount": 205,
+      "returningDonorCount": 1168
+    },
+    {
+      "month": "2023-12",
+      "totalAmount": 852769,
+      "contributionCount": 4259,
+      "donorCount": 2191,
+      "avgContribution": 200,
+      "demAmount": 444192,
+      "repAmount": 123132,
+      "otherAmount": 285444,
+      "demContributions": 2218,
+      "repContributions": 615,
+      "newDonorCount": 334,
+      "returningDonorCount": 1857
+    },
+    {
+      "month": "2024-01",
+      "totalAmount": 838527,
+      "contributionCount": 4296,
+      "donorCount": 2238,
+      "avgContribution": 195,
+      "demAmount": 433823,
+      "repAmount": 116733,
+      "otherAmount": 287971,
+      "demContributions": 2223,
+      "repContributions": 598,
+      "newDonorCount": 216,
+      "returningDonorCount": 2022
+    },
+    {
+      "month": "2024-02",
+      "totalAmount": 680241,
+      "contributionCount": 3208,
+      "donorCount": 1533,
+      "avgContribution": 212,
+      "demAmount": 315394,
+      "repAmount": 108567,
+      "otherAmount": 256281,
+      "demContributions": 1487,
+      "repContributions": 512,
+      "newDonorCount": 170,
+      "returningDonorCount": 1363
+    },
+    {
+      "month": "2024-03",
+      "totalAmount": 898964,
+      "contributionCount": 4625,
+      "donorCount": 2420,
+      "avgContribution": 194,
+      "demAmount": 461192,
+      "repAmount": 127779,
+      "otherAmount": 309994,
+      "demContributions": 2373,
+      "repContributions": 657,
+      "newDonorCount": 227,
+      "returningDonorCount": 2193
+    },
+    {
+      "month": "2024-04",
+      "totalAmount": 899948,
+      "contributionCount": 4997,
+      "donorCount": 2525,
+      "avgContribution": 180,
+      "demAmount": 459066,
+      "repAmount": 136067,
+      "otherAmount": 304814,
+      "demContributions": 2549,
+      "repContributions": 756,
+      "newDonorCount": 234,
+      "returningDonorCount": 2291
+    },
+    {
+      "month": "2024-05",
+      "totalAmount": 993743,
+      "contributionCount": 5256,
+      "donorCount": 2656,
+      "avgContribution": 189,
+      "demAmount": 481138,
+      "repAmount": 175103,
+      "otherAmount": 337502,
+      "demContributions": 2545,
+      "repContributions": 926,
+      "newDonorCount": 220,
+      "returningDonorCount": 2436
+    },
+    {
+      "month": "2024-06",
+      "totalAmount": 1074299,
+      "contributionCount": 5404,
+      "donorCount": 2625,
+      "avgContribution": 199,
+      "demAmount": 488517,
+      "repAmount": 208857,
+      "otherAmount": 376925,
+      "demContributions": 2457,
+      "repContributions": 1051,
+      "newDonorCount": 301,
+      "returningDonorCount": 2324
+    },
+    {
+      "month": "2024-07",
+      "totalAmount": 1120522,
+      "contributionCount": 6706,
+      "donorCount": 3191,
+      "avgContribution": 167,
+      "demAmount": 585814,
+      "repAmount": 163386,
+      "otherAmount": 371323,
+      "demContributions": 3506,
+      "repContributions": 978,
+      "newDonorCount": 659,
+      "returningDonorCount": 2532
+    },
+    {
+      "month": "2024-08",
+      "totalAmount": 1249367,
+      "contributionCount": 7482,
+      "donorCount": 3389,
+      "avgContribution": 167,
+      "demAmount": 666085,
+      "repAmount": 170396,
+      "otherAmount": 412886,
+      "demContributions": 3989,
+      "repContributions": 1020,
+      "newDonorCount": 604,
+      "returningDonorCount": 2785
+    },
+    {
+      "month": "2024-09",
+      "totalAmount": 2298978,
+      "contributionCount": 7085,
+      "donorCount": 2908,
+      "avgContribution": 324,
+      "demAmount": 798484,
+      "repAmount": 236309,
+      "otherAmount": 1264186,
+      "demContributions": 2461,
+      "repContributions": 728,
+      "newDonorCount": 554,
+      "returningDonorCount": 2354
+    },
+    {
+      "month": "2024-10",
+      "totalAmount": 1882776,
+      "contributionCount": 7745,
+      "donorCount": 2833,
+      "avgContribution": 243,
+      "demAmount": 679914,
+      "repAmount": 224253,
+      "otherAmount": 978608,
+      "demContributions": 2797,
+      "repContributions": 922,
+      "newDonorCount": 844,
+      "returningDonorCount": 1989
+    },
+    {
+      "month": "2024-11",
+      "totalAmount": 634929,
+      "contributionCount": 3852,
+      "donorCount": 1316,
+      "avgContribution": 165,
+      "demAmount": 284332,
+      "repAmount": 119847,
+      "otherAmount": 230750,
+      "demContributions": 1725,
+      "repContributions": 727,
+      "newDonorCount": 169,
+      "returningDonorCount": 1147
+    },
+    {
+      "month": "2024-12",
+      "totalAmount": 602221,
+      "contributionCount": 3063,
+      "donorCount": 1004,
+      "avgContribution": 197,
+      "demAmount": 267230,
+      "repAmount": 116750,
+      "otherAmount": 218241,
+      "demContributions": 1359,
+      "repContributions": 594,
+      "newDonorCount": 35,
+      "returningDonorCount": 969
+    },
+    {
+      "month": "2025-01",
+      "totalAmount": 595180,
+      "contributionCount": 2785,
+      "donorCount": 975,
+      "avgContribution": 214,
+      "demAmount": 268847,
+      "repAmount": 116844,
+      "otherAmount": 209489,
+      "demContributions": 1258,
+      "repContributions": 547,
+      "newDonorCount": 26,
+      "returningDonorCount": 949
+    },
+    {
+      "month": "2025-02",
+      "totalAmount": 467861,
+      "contributionCount": 2339,
+      "donorCount": 753,
+      "avgContribution": 200,
+      "demAmount": 231831,
+      "repAmount": 82020,
+      "otherAmount": 154009,
+      "demContributions": 1159,
+      "repContributions": 410,
+      "newDonorCount": 20,
+      "returningDonorCount": 733
+    },
+    {
+      "month": "2025-03",
+      "totalAmount": 508533,
+      "contributionCount": 2683,
+      "donorCount": 882,
+      "avgContribution": 190,
+      "demAmount": 238934,
+      "repAmount": 87101,
+      "otherAmount": 182499,
+      "demContributions": 1261,
+      "repContributions": 460,
+      "newDonorCount": 31,
+      "returningDonorCount": 851
+    },
+    {
+      "month": "2025-04",
+      "totalAmount": 457763,
+      "contributionCount": 2665,
+      "donorCount": 825,
+      "avgContribution": 172,
+      "demAmount": 221122,
+      "repAmount": 83929,
+      "otherAmount": 152712,
+      "demContributions": 1287,
+      "repContributions": 489,
+      "newDonorCount": 41,
+      "returningDonorCount": 784
+    },
+    {
+      "month": "2025-05",
+      "totalAmount": 435509,
+      "contributionCount": 2588,
+      "donorCount": 764,
+      "avgContribution": 168,
+      "demAmount": 202973,
+      "repAmount": 75120,
+      "otherAmount": 157417,
+      "demContributions": 1206,
+      "repContributions": 446,
+      "newDonorCount": 44,
+      "returningDonorCount": 720
+    },
+    {
+      "month": "2025-06",
+      "totalAmount": 491481,
+      "contributionCount": 2073,
+      "donorCount": 476,
+      "avgContribution": 237,
+      "demAmount": 186086,
+      "repAmount": 49642,
+      "otherAmount": 255753,
+      "demContributions": 785,
+      "repContributions": 209,
+      "newDonorCount": 90,
+      "returningDonorCount": 386
+    },
+    {
+      "month": "2025-07",
+      "totalAmount": 116878,
+      "contributionCount": 1656,
+      "donorCount": 394,
+      "avgContribution": 71,
+      "demAmount": 61279,
+      "repAmount": 30993,
+      "otherAmount": 24606,
+      "demContributions": 868,
+      "repContributions": 439,
+      "newDonorCount": 43,
+      "returningDonorCount": 351
+    },
+    {
+      "month": "2025-08",
+      "totalAmount": 51965,
+      "contributionCount": 910,
+      "donorCount": 147,
+      "avgContribution": 57,
+      "demAmount": 14914,
+      "repAmount": 25706,
+      "otherAmount": 11344,
+      "demContributions": 261,
+      "repContributions": 450,
+      "newDonorCount": 33,
+      "returningDonorCount": 114
+    },
+    {
+      "month": "2025-09",
+      "totalAmount": 13859,
+      "contributionCount": 414,
+      "donorCount": 50,
+      "avgContribution": 33,
+      "demAmount": 10495,
+      "repAmount": 1965,
+      "otherAmount": 1399,
+      "demContributions": 313,
+      "repContributions": 59,
+      "newDonorCount": 12,
+      "returningDonorCount": 38
+    }
+  ],
+  "zipMonthly": {
+    "48823": [
+      {
+        "month": "2021-01",
+        "total": 497,
+        "dem": 497,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 502,
+        "dem": 502,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 506,
+        "dem": 506,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 510,
+        "dem": 510,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 515,
+        "dem": 515,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 519,
+        "dem": 519,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 523,
+        "dem": 523,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 528,
+        "dem": 528,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 532,
+        "dem": 532,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 537,
+        "dem": 537,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 541,
+        "dem": 541,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 545,
+        "dem": 545,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 550,
+        "dem": 550,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 554,
+        "dem": 554,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 558,
+        "dem": 558,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 563,
+        "dem": 563,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 567,
+        "dem": 567,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 571,
+        "dem": 571,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 576,
+        "dem": 576,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 580,
+        "dem": 580,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 585,
+        "dem": 585,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 589,
+        "dem": 589,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 593,
+        "dem": 593,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 1150,
+        "dem": 1150,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2023-01",
+        "total": 13502,
+        "dem": 8537,
+        "rep": 638,
+        "other": 4327
+      },
+      {
+        "month": "2023-02",
+        "total": 71502,
+        "dem": 33313,
+        "rep": 3770,
+        "other": 34419
+      },
+      {
+        "month": "2023-03",
+        "total": 66666,
+        "dem": 41148,
+        "rep": 8515,
+        "other": 17003
+      },
+      {
+        "month": "2023-04",
+        "total": 79925,
+        "dem": 46479,
+        "rep": 9189,
+        "other": 24257
+      },
+      {
+        "month": "2023-05",
+        "total": 92406,
+        "dem": 55398,
+        "rep": 10272,
+        "other": 26737
+      },
+      {
+        "month": "2023-06",
+        "total": 84994,
+        "dem": 48801,
+        "rep": 10354,
+        "other": 25839
+      },
+      {
+        "month": "2023-07",
+        "total": 136447,
+        "dem": 88694,
+        "rep": 10936,
+        "other": 36817
+      },
+      {
+        "month": "2023-08",
+        "total": 164421,
+        "dem": 102706,
+        "rep": 11710,
+        "other": 50005
+      },
+      {
+        "month": "2023-09",
+        "total": 143802,
+        "dem": 75430,
+        "rep": 16542,
+        "other": 51829
+      },
+      {
+        "month": "2023-10",
+        "total": 183436,
+        "dem": 114256,
+        "rep": 17476,
+        "other": 51705
+      },
+      {
+        "month": "2023-11",
+        "total": 153943,
+        "dem": 83752,
+        "rep": 18136,
+        "other": 52055
+      },
+      {
+        "month": "2023-12",
+        "total": 219998,
+        "dem": 125236,
+        "rep": 23744,
+        "other": 71018
+      },
+      {
+        "month": "2024-01",
+        "total": 222280,
+        "dem": 130190,
+        "rep": 18925,
+        "other": 73166
+      },
+      {
+        "month": "2024-02",
+        "total": 166405,
+        "dem": 91609,
+        "rep": 18822,
+        "other": 55975
+      },
+      {
+        "month": "2024-03",
+        "total": 243472,
+        "dem": 139818,
+        "rep": 21979,
+        "other": 81675
+      },
+      {
+        "month": "2024-04",
+        "total": 244873,
+        "dem": 138931,
+        "rep": 22189,
+        "other": 83752
+      },
+      {
+        "month": "2024-05",
+        "total": 264580,
+        "dem": 144055,
+        "rep": 30091,
+        "other": 90434
+      },
+      {
+        "month": "2024-06",
+        "total": 279378,
+        "dem": 145514,
+        "rep": 33333,
+        "other": 100531
+      },
+      {
+        "month": "2024-07",
+        "total": 292974,
+        "dem": 163432,
+        "rep": 26675,
+        "other": 102867
+      },
+      {
+        "month": "2024-08",
+        "total": 349334,
+        "dem": 199390,
+        "rep": 24809,
+        "other": 125134
+      },
+      {
+        "month": "2024-09",
+        "total": 275796,
+        "dem": 158261,
+        "rep": 28845,
+        "other": 88690
+      },
+      {
+        "month": "2024-10",
+        "total": 320673,
+        "dem": 144519,
+        "rep": 27978,
+        "other": 148176
+      },
+      {
+        "month": "2024-11",
+        "total": 141633,
+        "dem": 77744,
+        "rep": 21674,
+        "other": 42216
+      },
+      {
+        "month": "2024-12",
+        "total": 134086,
+        "dem": 74560,
+        "rep": 19666,
+        "other": 39861
+      },
+      {
+        "month": "2025-01",
+        "total": 136719,
+        "dem": 76136,
+        "rep": 20094,
+        "other": 40489
+      },
+      {
+        "month": "2025-02",
+        "total": 104460,
+        "dem": 64517,
+        "rep": 10640,
+        "other": 29303
+      },
+      {
+        "month": "2025-03",
+        "total": 116225,
+        "dem": 73831,
+        "rep": 11956,
+        "other": 30438
+      },
+      {
+        "month": "2025-04",
+        "total": 110485,
+        "dem": 69843,
+        "rep": 13549,
+        "other": 27094
+      },
+      {
+        "month": "2025-05",
+        "total": 92881,
+        "dem": 65929,
+        "rep": 6808,
+        "other": 20144
+      },
+      {
+        "month": "2025-06",
+        "total": 52334,
+        "dem": 29232,
+        "rep": 5555,
+        "other": 17547
+      },
+      {
+        "month": "2025-07",
+        "total": 36731,
+        "dem": 20681,
+        "rep": 5615,
+        "other": 10435
+      },
+      {
+        "month": "2025-08",
+        "total": 13487,
+        "dem": 4607,
+        "rep": 3434,
+        "other": 5447
+      },
+      {
+        "month": "2025-09",
+        "total": 3843,
+        "dem": 3317,
+        "rep": 320,
+        "other": 206
+      }
+    ],
+    "48840": [
+      {
+        "month": "2021-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 274,
+        "dem": 274,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 277,
+        "dem": 277,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 280,
+        "dem": 280,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 282,
+        "dem": 282,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 285,
+        "dem": 285,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 288,
+        "dem": 288,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 291,
+        "dem": 291,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 293,
+        "dem": 293,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 296,
+        "dem": 296,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 299,
+        "dem": 299,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 302,
+        "dem": 302,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 304,
+        "dem": 304,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 307,
+        "dem": 307,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 310,
+        "dem": 310,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 312,
+        "dem": 312,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 315,
+        "dem": 315,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 318,
+        "dem": 318,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 321,
+        "dem": 321,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 323,
+        "dem": 323,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 326,
+        "dem": 326,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 329,
+        "dem": 329,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2023-01",
+        "total": 2758,
+        "dem": 1526,
+        "rep": 66,
+        "other": 1167
+      },
+      {
+        "month": "2023-02",
+        "total": 6699,
+        "dem": 4789,
+        "rep": 67,
+        "other": 1843
+      },
+      {
+        "month": "2023-03",
+        "total": 9566,
+        "dem": 6972,
+        "rep": 68,
+        "other": 2525
+      },
+      {
+        "month": "2023-04",
+        "total": 13668,
+        "dem": 10385,
+        "rep": 69,
+        "other": 3214
+      },
+      {
+        "month": "2023-05",
+        "total": 17938,
+        "dem": 11453,
+        "rep": 70,
+        "other": 6415
+      },
+      {
+        "month": "2023-06",
+        "total": 21166,
+        "dem": 15660,
+        "rep": 83,
+        "other": 5423
+      },
+      {
+        "month": "2023-07",
+        "total": 24294,
+        "dem": 18226,
+        "rep": 111,
+        "other": 5957
+      },
+      {
+        "month": "2023-08",
+        "total": 27803,
+        "dem": 20005,
+        "rep": 112,
+        "other": 7686
+      },
+      {
+        "month": "2023-09",
+        "total": 27636,
+        "dem": 19904,
+        "rep": 87,
+        "other": 7645
+      },
+      {
+        "month": "2023-10",
+        "total": 31755,
+        "dem": 23073,
+        "rep": 533,
+        "other": 8148
+      },
+      {
+        "month": "2023-11",
+        "total": 30895,
+        "dem": 23197,
+        "rep": 329,
+        "other": 7368
+      },
+      {
+        "month": "2023-12",
+        "total": 38314,
+        "dem": 25252,
+        "rep": 646,
+        "other": 12416
+      },
+      {
+        "month": "2024-01",
+        "total": 39031,
+        "dem": 24142,
+        "rep": 890,
+        "other": 13998
+      },
+      {
+        "month": "2024-02",
+        "total": 31658,
+        "dem": 21702,
+        "rep": 476,
+        "other": 9480
+      },
+      {
+        "month": "2024-03",
+        "total": 40661,
+        "dem": 26778,
+        "rep": 601,
+        "other": 13282
+      },
+      {
+        "month": "2024-04",
+        "total": 39528,
+        "dem": 26049,
+        "rep": 801,
+        "other": 12677
+      },
+      {
+        "month": "2024-05",
+        "total": 41932,
+        "dem": 26347,
+        "rep": 2369,
+        "other": 13216
+      },
+      {
+        "month": "2024-06",
+        "total": 44722,
+        "dem": 28081,
+        "rep": 1135,
+        "other": 15506
+      },
+      {
+        "month": "2024-07",
+        "total": 63206,
+        "dem": 37766,
+        "rep": 5304,
+        "other": 20135
+      },
+      {
+        "month": "2024-08",
+        "total": 76102,
+        "dem": 54552,
+        "rep": 8433,
+        "other": 13118
+      },
+      {
+        "month": "2024-09",
+        "total": 58380,
+        "dem": 29464,
+        "rep": 10368,
+        "other": 18548
+      },
+      {
+        "month": "2024-10",
+        "total": 58140,
+        "dem": 25199,
+        "rep": 16679,
+        "other": 16262
+      },
+      {
+        "month": "2024-11",
+        "total": 36505,
+        "dem": 15091,
+        "rep": 10414,
+        "other": 11000
+      },
+      {
+        "month": "2024-12",
+        "total": 31568,
+        "dem": 14974,
+        "rep": 11107,
+        "other": 5487
+      },
+      {
+        "month": "2025-01",
+        "total": 31010,
+        "dem": 15250,
+        "rep": 11924,
+        "other": 3836
+      },
+      {
+        "month": "2025-02",
+        "total": 18473,
+        "dem": 14459,
+        "rep": 735,
+        "other": 3279
+      },
+      {
+        "month": "2025-03",
+        "total": 19501,
+        "dem": 14660,
+        "rep": 610,
+        "other": 4231
+      },
+      {
+        "month": "2025-04",
+        "total": 19234,
+        "dem": 15070,
+        "rep": 621,
+        "other": 3543
+      },
+      {
+        "month": "2025-05",
+        "total": 16461,
+        "dem": 13382,
+        "rep": 632,
+        "other": 2447
+      },
+      {
+        "month": "2025-06",
+        "total": 21390,
+        "dem": 19130,
+        "rep": 545,
+        "other": 1714
+      },
+      {
+        "month": "2025-07",
+        "total": 3867,
+        "dem": 1834,
+        "rep": 0,
+        "other": 2033
+      },
+      {
+        "month": "2025-08",
+        "total": 576,
+        "dem": 213,
+        "rep": 80,
+        "other": 283
+      },
+      {
+        "month": "2025-09",
+        "total": 200,
+        "dem": 100,
+        "rep": 100,
+        "other": 0
+      }
+    ],
+    "48854": [
+      {
+        "month": "2021-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 123,
+        "dem": 123,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2023-01",
+        "total": 2659,
+        "dem": 269,
+        "rep": 2318,
+        "other": 72
+      },
+      {
+        "month": "2023-02",
+        "total": 5314,
+        "dem": 1132,
+        "rep": 3268,
+        "other": 914
+      },
+      {
+        "month": "2023-03",
+        "total": 9216,
+        "dem": 1378,
+        "rep": 5761,
+        "other": 2077
+      },
+      {
+        "month": "2023-04",
+        "total": 10211,
+        "dem": 1249,
+        "rep": 6317,
+        "other": 2645
+      },
+      {
+        "month": "2023-05",
+        "total": 11763,
+        "dem": 2301,
+        "rep": 6557,
+        "other": 2906
+      },
+      {
+        "month": "2023-06",
+        "total": 14685,
+        "dem": 1478,
+        "rep": 6743,
+        "other": 6465
+      },
+      {
+        "month": "2023-07",
+        "total": 16441,
+        "dem": 3150,
+        "rep": 7128,
+        "other": 6163
+      },
+      {
+        "month": "2023-08",
+        "total": 16757,
+        "dem": 3901,
+        "rep": 8007,
+        "other": 4849
+      },
+      {
+        "month": "2023-09",
+        "total": 20192,
+        "dem": 3942,
+        "rep": 8969,
+        "other": 7281
+      },
+      {
+        "month": "2023-10",
+        "total": 22033,
+        "dem": 4864,
+        "rep": 8644,
+        "other": 8525
+      },
+      {
+        "month": "2023-11",
+        "total": 18689,
+        "dem": 3635,
+        "rep": 7384,
+        "other": 7670
+      },
+      {
+        "month": "2023-12",
+        "total": 30802,
+        "dem": 5420,
+        "rep": 9227,
+        "other": 16156
+      },
+      {
+        "month": "2024-01",
+        "total": 29216,
+        "dem": 8239,
+        "rep": 9385,
+        "other": 11592
+      },
+      {
+        "month": "2024-02",
+        "total": 20350,
+        "dem": 4167,
+        "rep": 7891,
+        "other": 8292
+      },
+      {
+        "month": "2024-03",
+        "total": 33664,
+        "dem": 7334,
+        "rep": 10626,
+        "other": 15704
+      },
+      {
+        "month": "2024-04",
+        "total": 35630,
+        "dem": 8018,
+        "rep": 10612,
+        "other": 17000
+      },
+      {
+        "month": "2024-05",
+        "total": 38210,
+        "dem": 8131,
+        "rep": 12622,
+        "other": 17457
+      },
+      {
+        "month": "2024-06",
+        "total": 38066,
+        "dem": 8138,
+        "rep": 13499,
+        "other": 16429
+      },
+      {
+        "month": "2024-07",
+        "total": 45188,
+        "dem": 11854,
+        "rep": 12110,
+        "other": 21224
+      },
+      {
+        "month": "2024-08",
+        "total": 63856,
+        "dem": 13472,
+        "rep": 13303,
+        "other": 37081
+      },
+      {
+        "month": "2024-09",
+        "total": 69517,
+        "dem": 15921,
+        "rep": 13761,
+        "other": 39835
+      },
+      {
+        "month": "2024-10",
+        "total": 49025,
+        "dem": 14943,
+        "rep": 13953,
+        "other": 20129
+      },
+      {
+        "month": "2024-11",
+        "total": 30557,
+        "dem": 6018,
+        "rep": 12860,
+        "other": 11680
+      },
+      {
+        "month": "2024-12",
+        "total": 29636,
+        "dem": 5897,
+        "rep": 12895,
+        "other": 10844
+      },
+      {
+        "month": "2025-01",
+        "total": 29573,
+        "dem": 6021,
+        "rep": 12425,
+        "other": 11127
+      },
+      {
+        "month": "2025-02",
+        "total": 16238,
+        "dem": 5310,
+        "rep": 7399,
+        "other": 3529
+      },
+      {
+        "month": "2025-03",
+        "total": 19696,
+        "dem": 5842,
+        "rep": 7570,
+        "other": 6285
+      },
+      {
+        "month": "2025-04",
+        "total": 19254,
+        "dem": 5953,
+        "rep": 7707,
+        "other": 5594
+      },
+      {
+        "month": "2025-05",
+        "total": 32168,
+        "dem": 4514,
+        "rep": 6530,
+        "other": 21125
+      },
+      {
+        "month": "2025-06",
+        "total": 13766,
+        "dem": 1837,
+        "rep": 3519,
+        "other": 8411
+      },
+      {
+        "month": "2025-07",
+        "total": 5830,
+        "dem": 1124,
+        "rep": 3687,
+        "other": 1020
+      },
+      {
+        "month": "2025-08",
+        "total": 3625,
+        "dem": 210,
+        "rep": 3332,
+        "other": 82
+      },
+      {
+        "month": "2025-09",
+        "total": 310,
+        "dem": 213,
+        "rep": 0,
+        "other": 97
+      }
+    ],
+    "48864": [
+      {
+        "month": "2021-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 2500,
+        "dem": 0,
+        "rep": 0,
+        "other": 2500
+      },
+      {
+        "month": "2023-01",
+        "total": 24821,
+        "dem": 4423,
+        "rep": 7909,
+        "other": 12490
+      },
+      {
+        "month": "2023-02",
+        "total": 37573,
+        "dem": 13186,
+        "rep": 8032,
+        "other": 16354
+      },
+      {
+        "month": "2023-03",
+        "total": 50526,
+        "dem": 18908,
+        "rep": 8257,
+        "other": 23361
+      },
+      {
+        "month": "2023-04",
+        "total": 58812,
+        "dem": 23250,
+        "rep": 10867,
+        "other": 24695
+      },
+      {
+        "month": "2023-05",
+        "total": 62284,
+        "dem": 27704,
+        "rep": 9333,
+        "other": 25247
+      },
+      {
+        "month": "2023-06",
+        "total": 73568,
+        "dem": 27999,
+        "rep": 9318,
+        "other": 36251
+      },
+      {
+        "month": "2023-07",
+        "total": 98609,
+        "dem": 45510,
+        "rep": 9791,
+        "other": 43309
+      },
+      {
+        "month": "2023-08",
+        "total": 108330,
+        "dem": 54849,
+        "rep": 12976,
+        "other": 40505
+      },
+      {
+        "month": "2023-09",
+        "total": 111992,
+        "dem": 48265,
+        "rep": 25533,
+        "other": 38194
+      },
+      {
+        "month": "2023-10",
+        "total": 141439,
+        "dem": 62637,
+        "rep": 27198,
+        "other": 51605
+      },
+      {
+        "month": "2023-11",
+        "total": 109292,
+        "dem": 40109,
+        "rep": 27536,
+        "other": 41648
+      },
+      {
+        "month": "2023-12",
+        "total": 156708,
+        "dem": 69973,
+        "rep": 28510,
+        "other": 58225
+      },
+      {
+        "month": "2024-01",
+        "total": 154872,
+        "dem": 65158,
+        "rep": 26837,
+        "other": 62876
+      },
+      {
+        "month": "2024-02",
+        "total": 121623,
+        "dem": 42275,
+        "rep": 27574,
+        "other": 51775
+      },
+      {
+        "month": "2024-03",
+        "total": 169554,
+        "dem": 71427,
+        "rep": 29703,
+        "other": 68424
+      },
+      {
+        "month": "2024-04",
+        "total": 170327,
+        "dem": 74058,
+        "rep": 33603,
+        "other": 62665
+      },
+      {
+        "month": "2024-05",
+        "total": 173877,
+        "dem": 73629,
+        "rep": 35986,
+        "other": 64262
+      },
+      {
+        "month": "2024-06",
+        "total": 182358,
+        "dem": 71647,
+        "rep": 37551,
+        "other": 73160
+      },
+      {
+        "month": "2024-07",
+        "total": 207180,
+        "dem": 94844,
+        "rep": 39900,
+        "other": 72436
+      },
+      {
+        "month": "2024-08",
+        "total": 226658,
+        "dem": 106372,
+        "rep": 44151,
+        "other": 76135
+      },
+      {
+        "month": "2024-09",
+        "total": 208845,
+        "dem": 85012,
+        "rep": 43572,
+        "other": 80262
+      },
+      {
+        "month": "2024-10",
+        "total": 184477,
+        "dem": 81751,
+        "rep": 40223,
+        "other": 62502
+      },
+      {
+        "month": "2024-11",
+        "total": 113339,
+        "dem": 35885,
+        "rep": 32487,
+        "other": 44967
+      },
+      {
+        "month": "2024-12",
+        "total": 106230,
+        "dem": 33568,
+        "rep": 33112,
+        "other": 39550
+      },
+      {
+        "month": "2025-01",
+        "total": 101520,
+        "dem": 34306,
+        "rep": 33584,
+        "other": 33630
+      },
+      {
+        "month": "2025-02",
+        "total": 87161,
+        "dem": 27794,
+        "rep": 33400,
+        "other": 25966
+      },
+      {
+        "month": "2025-03",
+        "total": 86999,
+        "dem": 26999,
+        "rep": 34572,
+        "other": 25428
+      },
+      {
+        "month": "2025-04",
+        "total": 70244,
+        "dem": 21768,
+        "rep": 34025,
+        "other": 14451
+      },
+      {
+        "month": "2025-05",
+        "total": 72157,
+        "dem": 18916,
+        "rep": 34353,
+        "other": 18888
+      },
+      {
+        "month": "2025-06",
+        "total": 44716,
+        "dem": 19691,
+        "rep": 15717,
+        "other": 9308
+      },
+      {
+        "month": "2025-07",
+        "total": 23389,
+        "dem": 5809,
+        "rep": 14898,
+        "other": 2682
+      },
+      {
+        "month": "2025-08",
+        "total": 17911,
+        "dem": 896,
+        "rep": 14780,
+        "other": 2234
+      },
+      {
+        "month": "2025-09",
+        "total": 1276,
+        "dem": 742,
+        "rep": 233,
+        "other": 302
+      }
+    ],
+    "48895": [
+      {
+        "month": "2021-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2023-01",
+        "total": 3933,
+        "dem": 918,
+        "rep": 400,
+        "other": 2614
+      },
+      {
+        "month": "2023-02",
+        "total": 11158,
+        "dem": 4120,
+        "rep": 400,
+        "other": 6638
+      },
+      {
+        "month": "2023-03",
+        "total": 12980,
+        "dem": 5372,
+        "rep": 496,
+        "other": 7111
+      },
+      {
+        "month": "2023-04",
+        "total": 14281,
+        "dem": 6625,
+        "rep": 498,
+        "other": 7158
+      },
+      {
+        "month": "2023-05",
+        "total": 16826,
+        "dem": 6521,
+        "rep": 3053,
+        "other": 7252
+      },
+      {
+        "month": "2023-06",
+        "total": 22546,
+        "dem": 8358,
+        "rep": 696,
+        "other": 13492
+      },
+      {
+        "month": "2023-07",
+        "total": 28479,
+        "dem": 11060,
+        "rep": 4802,
+        "other": 12617
+      },
+      {
+        "month": "2023-08",
+        "total": 29894,
+        "dem": 12494,
+        "rep": 4767,
+        "other": 12633
+      },
+      {
+        "month": "2023-09",
+        "total": 30839,
+        "dem": 10998,
+        "rep": 1642,
+        "other": 18199
+      },
+      {
+        "month": "2023-10",
+        "total": 35126,
+        "dem": 13982,
+        "rep": 7541,
+        "other": 13602
+      },
+      {
+        "month": "2023-11",
+        "total": 31707,
+        "dem": 15099,
+        "rep": 1690,
+        "other": 14918
+      },
+      {
+        "month": "2023-12",
+        "total": 46587,
+        "dem": 18565,
+        "rep": 7980,
+        "other": 20043
+      },
+      {
+        "month": "2024-01",
+        "total": 46481,
+        "dem": 19997,
+        "rep": 8016,
+        "other": 18468
+      },
+      {
+        "month": "2024-02",
+        "total": 33420,
+        "dem": 17183,
+        "rep": 2234,
+        "other": 14002
+      },
+      {
+        "month": "2024-03",
+        "total": 50732,
+        "dem": 20589,
+        "rep": 8076,
+        "other": 22067
+      },
+      {
+        "month": "2024-04",
+        "total": 48128,
+        "dem": 18172,
+        "rep": 8504,
+        "other": 21452
+      },
+      {
+        "month": "2024-05",
+        "total": 49112,
+        "dem": 17948,
+        "rep": 8597,
+        "other": 22567
+      },
+      {
+        "month": "2024-06",
+        "total": 71117,
+        "dem": 18283,
+        "rep": 12301,
+        "other": 40533
+      },
+      {
+        "month": "2024-07",
+        "total": 58845,
+        "dem": 22913,
+        "rep": 9503,
+        "other": 26429
+      },
+      {
+        "month": "2024-08",
+        "total": 58113,
+        "dem": 22634,
+        "rep": 4036,
+        "other": 31442
+      },
+      {
+        "month": "2024-09",
+        "total": 61416,
+        "dem": 26094,
+        "rep": 4979,
+        "other": 30343
+      },
+      {
+        "month": "2024-10",
+        "total": 63736,
+        "dem": 18731,
+        "rep": 5932,
+        "other": 39073
+      },
+      {
+        "month": "2024-11",
+        "total": 36193,
+        "dem": 12567,
+        "rep": 2135,
+        "other": 21491
+      },
+      {
+        "month": "2024-12",
+        "total": 44819,
+        "dem": 12542,
+        "rep": 2367,
+        "other": 29911
+      },
+      {
+        "month": "2025-01",
+        "total": 46587,
+        "dem": 12769,
+        "rep": 2587,
+        "other": 31231
+      },
+      {
+        "month": "2025-02",
+        "total": 28242,
+        "dem": 12492,
+        "rep": 2319,
+        "other": 13431
+      },
+      {
+        "month": "2025-03",
+        "total": 40935,
+        "dem": 10577,
+        "rep": 2731,
+        "other": 27627
+      },
+      {
+        "month": "2025-04",
+        "total": 39442,
+        "dem": 10196,
+        "rep": 2599,
+        "other": 26647
+      },
+      {
+        "month": "2025-05",
+        "total": 28482,
+        "dem": 6562,
+        "rep": 2057,
+        "other": 19862
+      },
+      {
+        "month": "2025-06",
+        "total": 5221,
+        "dem": 2696,
+        "rep": 307,
+        "other": 2219
+      },
+      {
+        "month": "2025-07",
+        "total": 3842,
+        "dem": 2065,
+        "rep": 364,
+        "other": 1413
+      },
+      {
+        "month": "2025-08",
+        "total": 1569,
+        "dem": 945,
+        "rep": 324,
+        "other": 300
+      },
+      {
+        "month": "2025-09",
+        "total": 1157,
+        "dem": 907,
+        "rep": 0,
+        "other": 250
+      }
+    ],
+    "48910": [
+      {
+        "month": "2021-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2023-01",
+        "total": 4216,
+        "dem": 1393,
+        "rep": 1197,
+        "other": 1625
+      },
+      {
+        "month": "2023-02",
+        "total": 7098,
+        "dem": 3018,
+        "rep": 1223,
+        "other": 2857
+      },
+      {
+        "month": "2023-03",
+        "total": 7358,
+        "dem": 2725,
+        "rep": 2591,
+        "other": 2042
+      },
+      {
+        "month": "2023-04",
+        "total": 7939,
+        "dem": 3049,
+        "rep": 2617,
+        "other": 2273
+      },
+      {
+        "month": "2023-05",
+        "total": 9650,
+        "dem": 3979,
+        "rep": 2723,
+        "other": 2949
+      },
+      {
+        "month": "2023-06",
+        "total": 15440,
+        "dem": 3773,
+        "rep": 8518,
+        "other": 3149
+      },
+      {
+        "month": "2023-07",
+        "total": 13063,
+        "dem": 6317,
+        "rep": 2775,
+        "other": 3971
+      },
+      {
+        "month": "2023-08",
+        "total": 18776,
+        "dem": 7693,
+        "rep": 5576,
+        "other": 5507
+      },
+      {
+        "month": "2023-09",
+        "total": 15656,
+        "dem": 5601,
+        "rep": 6264,
+        "other": 3792
+      },
+      {
+        "month": "2023-10",
+        "total": 19099,
+        "dem": 8857,
+        "rep": 5762,
+        "other": 4480
+      },
+      {
+        "month": "2023-11",
+        "total": 16021,
+        "dem": 6136,
+        "rep": 5694,
+        "other": 4191
+      },
+      {
+        "month": "2023-12",
+        "total": 22723,
+        "dem": 10163,
+        "rep": 5809,
+        "other": 6750
+      },
+      {
+        "month": "2024-01",
+        "total": 26357,
+        "dem": 11878,
+        "rep": 5870,
+        "other": 8609
+      },
+      {
+        "month": "2024-02",
+        "total": 19277,
+        "dem": 6365,
+        "rep": 5828,
+        "other": 7084
+      },
+      {
+        "month": "2024-03",
+        "total": 25822,
+        "dem": 10632,
+        "rep": 6228,
+        "other": 8962
+      },
+      {
+        "month": "2024-04",
+        "total": 27206,
+        "dem": 10733,
+        "rep": 7149,
+        "other": 9324
+      },
+      {
+        "month": "2024-05",
+        "total": 29558,
+        "dem": 11583,
+        "rep": 5740,
+        "other": 12234
+      },
+      {
+        "month": "2024-06",
+        "total": 30439,
+        "dem": 11498,
+        "rep": 6771,
+        "other": 12170
+      },
+      {
+        "month": "2024-07",
+        "total": 35511,
+        "dem": 16250,
+        "rep": 5989,
+        "other": 13272
+      },
+      {
+        "month": "2024-08",
+        "total": 41660,
+        "dem": 18291,
+        "rep": 5750,
+        "other": 17620
+      },
+      {
+        "month": "2024-09",
+        "total": 36296,
+        "dem": 14932,
+        "rep": 3610,
+        "other": 17754
+      },
+      {
+        "month": "2024-10",
+        "total": 207084,
+        "dem": 16749,
+        "rep": 2351,
+        "other": 187984
+      },
+      {
+        "month": "2024-11",
+        "total": 14847,
+        "dem": 5477,
+        "rep": 2708,
+        "other": 6662
+      },
+      {
+        "month": "2024-12",
+        "total": 12247,
+        "dem": 5045,
+        "rep": 1752,
+        "other": 5450
+      },
+      {
+        "month": "2025-01",
+        "total": 8166,
+        "dem": 4597,
+        "rep": 395,
+        "other": 3174
+      },
+      {
+        "month": "2025-02",
+        "total": 7662,
+        "dem": 4469,
+        "rep": 129,
+        "other": 3063
+      },
+      {
+        "month": "2025-03",
+        "total": 8671,
+        "dem": 5406,
+        "rep": 912,
+        "other": 2353
+      },
+      {
+        "month": "2025-04",
+        "total": 7139,
+        "dem": 3925,
+        "rep": 425,
+        "other": 2789
+      },
+      {
+        "month": "2025-05",
+        "total": 6351,
+        "dem": 3510,
+        "rep": 421,
+        "other": 2420
+      },
+      {
+        "month": "2025-06",
+        "total": 20635,
+        "dem": 18208,
+        "rep": 293,
+        "other": 2134
+      },
+      {
+        "month": "2025-07",
+        "total": 3813,
+        "dem": 1275,
+        "rep": 62,
+        "other": 2475
+      },
+      {
+        "month": "2025-08",
+        "total": 405,
+        "dem": 54,
+        "rep": 63,
+        "other": 287
+      },
+      {
+        "month": "2025-09",
+        "total": 982,
+        "dem": 0,
+        "rep": 800,
+        "other": 182
+      }
+    ],
+    "48911": [
+      {
+        "month": "2021-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2023-01",
+        "total": 8503,
+        "dem": 8119,
+        "rep": 237,
+        "other": 147
+      },
+      {
+        "month": "2023-02",
+        "total": 13755,
+        "dem": 10968,
+        "rep": 335,
+        "other": 2452
+      },
+      {
+        "month": "2023-03",
+        "total": 15726,
+        "dem": 11574,
+        "rep": 577,
+        "other": 3575
+      },
+      {
+        "month": "2023-04",
+        "total": 26326,
+        "dem": 15826,
+        "rep": 624,
+        "other": 9876
+      },
+      {
+        "month": "2023-05",
+        "total": 27300,
+        "dem": 16312,
+        "rep": 634,
+        "other": 10354
+      },
+      {
+        "month": "2023-06",
+        "total": 30898,
+        "dem": 18740,
+        "rep": 647,
+        "other": 11511
+      },
+      {
+        "month": "2023-07",
+        "total": 37690,
+        "dem": 22630,
+        "rep": 778,
+        "other": 14282
+      },
+      {
+        "month": "2023-08",
+        "total": 37127,
+        "dem": 21556,
+        "rep": 1216,
+        "other": 14355
+      },
+      {
+        "month": "2023-09",
+        "total": 55818,
+        "dem": 19795,
+        "rep": 22958,
+        "other": 13065
+      },
+      {
+        "month": "2023-10",
+        "total": 41255,
+        "dem": 22706,
+        "rep": 4046,
+        "other": 14503
+      },
+      {
+        "month": "2023-11",
+        "total": 36795,
+        "dem": 19910,
+        "rep": 3711,
+        "other": 13175
+      },
+      {
+        "month": "2023-12",
+        "total": 53158,
+        "dem": 24013,
+        "rep": 3689,
+        "other": 25457
+      },
+      {
+        "month": "2024-01",
+        "total": 47891,
+        "dem": 23101,
+        "rep": 3699,
+        "other": 21092
+      },
+      {
+        "month": "2024-02",
+        "total": 67205,
+        "dem": 18565,
+        "rep": 4221,
+        "other": 44419
+      },
+      {
+        "month": "2024-03",
+        "total": 50665,
+        "dem": 23813,
+        "rep": 4417,
+        "other": 22435
+      },
+      {
+        "month": "2024-04",
+        "total": 51685,
+        "dem": 23678,
+        "rep": 4471,
+        "other": 23536
+      },
+      {
+        "month": "2024-05",
+        "total": 52015,
+        "dem": 23722,
+        "rep": 4850,
+        "other": 23443
+      },
+      {
+        "month": "2024-06",
+        "total": 88050,
+        "dem": 23547,
+        "rep": 40675,
+        "other": 23828
+      },
+      {
+        "month": "2024-07",
+        "total": 66091,
+        "dem": 31392,
+        "rep": 5595,
+        "other": 29104
+      },
+      {
+        "month": "2024-08",
+        "total": 59734,
+        "dem": 29428,
+        "rep": 5432,
+        "other": 24874
+      },
+      {
+        "month": "2024-09",
+        "total": 70778,
+        "dem": 28137,
+        "rep": 7028,
+        "other": 35613
+      },
+      {
+        "month": "2024-10",
+        "total": 52932,
+        "dem": 26618,
+        "rep": 1515,
+        "other": 24798
+      },
+      {
+        "month": "2024-11",
+        "total": 41683,
+        "dem": 18291,
+        "rep": 1225,
+        "other": 22167
+      },
+      {
+        "month": "2024-12",
+        "total": 36538,
+        "dem": 18885,
+        "rep": 762,
+        "other": 16891
+      },
+      {
+        "month": "2025-01",
+        "total": 37386,
+        "dem": 18933,
+        "rep": 1332,
+        "other": 17121
+      },
+      {
+        "month": "2025-02",
+        "total": 37281,
+        "dem": 20237,
+        "rep": 1098,
+        "other": 15946
+      },
+      {
+        "month": "2025-03",
+        "total": 42304,
+        "dem": 19135,
+        "rep": 3196,
+        "other": 19973
+      },
+      {
+        "month": "2025-04",
+        "total": 28706,
+        "dem": 17958,
+        "rep": 1358,
+        "other": 9389
+      },
+      {
+        "month": "2025-05",
+        "total": 23684,
+        "dem": 17461,
+        "rep": 1006,
+        "other": 5218
+      },
+      {
+        "month": "2025-06",
+        "total": 18762,
+        "dem": 13497,
+        "rep": 396,
+        "other": 4869
+      },
+      {
+        "month": "2025-07",
+        "total": 15831,
+        "dem": 12746,
+        "rep": 222,
+        "other": 2864
+      },
+      {
+        "month": "2025-08",
+        "total": 2726,
+        "dem": 952,
+        "rep": 0,
+        "other": 1774
+      },
+      {
+        "month": "2025-09",
+        "total": 970,
+        "dem": 886,
+        "rep": 0,
+        "other": 84
+      }
+    ],
+    "48917": [
+      {
+        "month": "2021-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2023-01",
+        "total": 4357,
+        "dem": 658,
+        "rep": 1698,
+        "other": 2002
+      },
+      {
+        "month": "2023-02",
+        "total": 6981,
+        "dem": 1957,
+        "rep": 1919,
+        "other": 3105
+      },
+      {
+        "month": "2023-03",
+        "total": 9172,
+        "dem": 2709,
+        "rep": 567,
+        "other": 5896
+      },
+      {
+        "month": "2023-04",
+        "total": 10976,
+        "dem": 2748,
+        "rep": 874,
+        "other": 7354
+      },
+      {
+        "month": "2023-05",
+        "total": 13254,
+        "dem": 3381,
+        "rep": 1144,
+        "other": 8730
+      },
+      {
+        "month": "2023-06",
+        "total": 13085,
+        "dem": 3651,
+        "rep": 948,
+        "other": 8486
+      },
+      {
+        "month": "2023-07",
+        "total": 20457,
+        "dem": 6996,
+        "rep": 1394,
+        "other": 12066
+      },
+      {
+        "month": "2023-08",
+        "total": 27026,
+        "dem": 9705,
+        "rep": 1781,
+        "other": 15541
+      },
+      {
+        "month": "2023-09",
+        "total": 25763,
+        "dem": 8739,
+        "rep": 4623,
+        "other": 12401
+      },
+      {
+        "month": "2023-10",
+        "total": 36029,
+        "dem": 12949,
+        "rep": 3478,
+        "other": 19602
+      },
+      {
+        "month": "2023-11",
+        "total": 25917,
+        "dem": 10153,
+        "rep": 3268,
+        "other": 12496
+      },
+      {
+        "month": "2023-12",
+        "total": 45096,
+        "dem": 18990,
+        "rep": 3777,
+        "other": 22329
+      },
+      {
+        "month": "2024-01",
+        "total": 41677,
+        "dem": 14201,
+        "rep": 4254,
+        "other": 23222
+      },
+      {
+        "month": "2024-02",
+        "total": 30843,
+        "dem": 10701,
+        "rep": 3366,
+        "other": 16775
+      },
+      {
+        "month": "2024-03",
+        "total": 44641,
+        "dem": 16105,
+        "rep": 3983,
+        "other": 24553
+      },
+      {
+        "month": "2024-04",
+        "total": 43963,
+        "dem": 14794,
+        "rep": 5651,
+        "other": 23517
+      },
+      {
+        "month": "2024-05",
+        "total": 53861,
+        "dem": 20888,
+        "rep": 5539,
+        "other": 27433
+      },
+      {
+        "month": "2024-06",
+        "total": 49370,
+        "dem": 16754,
+        "rep": 5698,
+        "other": 26918
+      },
+      {
+        "month": "2024-07",
+        "total": 76223,
+        "dem": 30347,
+        "rep": 7502,
+        "other": 38375
+      },
+      {
+        "month": "2024-08",
+        "total": 72557,
+        "dem": 24089,
+        "rep": 8611,
+        "other": 39858
+      },
+      {
+        "month": "2024-09",
+        "total": 57664,
+        "dem": 22028,
+        "rep": 6729,
+        "other": 28907
+      },
+      {
+        "month": "2024-10",
+        "total": 57928,
+        "dem": 17882,
+        "rep": 9738,
+        "other": 30307
+      },
+      {
+        "month": "2024-11",
+        "total": 34247,
+        "dem": 12818,
+        "rep": 5504,
+        "other": 15925
+      },
+      {
+        "month": "2024-12",
+        "total": 26950,
+        "dem": 7040,
+        "rep": 5733,
+        "other": 14177
+      },
+      {
+        "month": "2025-01",
+        "total": 24960,
+        "dem": 7165,
+        "rep": 5775,
+        "other": 12020
+      },
+      {
+        "month": "2025-02",
+        "total": 13928,
+        "dem": 5787,
+        "rep": 3598,
+        "other": 4543
+      },
+      {
+        "month": "2025-03",
+        "total": 24209,
+        "dem": 6926,
+        "rep": 4770,
+        "other": 12512
+      },
+      {
+        "month": "2025-04",
+        "total": 17415,
+        "dem": 6067,
+        "rep": 4905,
+        "other": 6444
+      },
+      {
+        "month": "2025-05",
+        "total": 16209,
+        "dem": 4430,
+        "rep": 4387,
+        "other": 7392
+      },
+      {
+        "month": "2025-06",
+        "total": 11201,
+        "dem": 2360,
+        "rep": 1870,
+        "other": 6971
+      },
+      {
+        "month": "2025-07",
+        "total": 5203,
+        "dem": 1313,
+        "rep": 1654,
+        "other": 2236
+      },
+      {
+        "month": "2025-08",
+        "total": 910,
+        "dem": 0,
+        "rep": 652,
+        "other": 258
+      },
+      {
+        "month": "2025-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      }
+    ],
+    "48933": [
+      {
+        "month": "2021-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2023-01",
+        "total": 2060,
+        "dem": 60,
+        "rep": 0,
+        "other": 2000
+      },
+      {
+        "month": "2023-02",
+        "total": 12701,
+        "dem": 245,
+        "rep": 0,
+        "other": 12456
+      },
+      {
+        "month": "2023-03",
+        "total": 6433,
+        "dem": 248,
+        "rep": 0,
+        "other": 6185
+      },
+      {
+        "month": "2023-04",
+        "total": 55324,
+        "dem": 251,
+        "rep": 0,
+        "other": 55072
+      },
+      {
+        "month": "2023-05",
+        "total": 65481,
+        "dem": 6311,
+        "rep": 0,
+        "other": 59170
+      },
+      {
+        "month": "2023-06",
+        "total": 58983,
+        "dem": 2147,
+        "rep": 0,
+        "other": 56836
+      },
+      {
+        "month": "2023-07",
+        "total": 93479,
+        "dem": 14380,
+        "rep": 3000,
+        "other": 76099
+      },
+      {
+        "month": "2023-08",
+        "total": 89737,
+        "dem": 15053,
+        "rep": 0,
+        "other": 74684
+      },
+      {
+        "month": "2023-09",
+        "total": 73408,
+        "dem": 8446,
+        "rep": 0,
+        "other": 64962
+      },
+      {
+        "month": "2023-10",
+        "total": 87617,
+        "dem": 13650,
+        "rep": 0,
+        "other": 73967
+      },
+      {
+        "month": "2023-11",
+        "total": 89571,
+        "dem": 2203,
+        "rep": 0,
+        "other": 87367
+      },
+      {
+        "month": "2023-12",
+        "total": 93865,
+        "dem": 13902,
+        "rep": 0,
+        "other": 79963
+      },
+      {
+        "month": "2024-01",
+        "total": 94872,
+        "dem": 14078,
+        "rep": 0,
+        "other": 80794
+      },
+      {
+        "month": "2024-02",
+        "total": 70667,
+        "dem": 766,
+        "rep": 0,
+        "other": 69902
+      },
+      {
+        "month": "2024-03",
+        "total": 91543,
+        "dem": 12885,
+        "rep": 0,
+        "other": 78657
+      },
+      {
+        "month": "2024-04",
+        "total": 90184,
+        "dem": 12061,
+        "rep": 0,
+        "other": 78123
+      },
+      {
+        "month": "2024-05",
+        "total": 116043,
+        "dem": 11487,
+        "rep": 23200,
+        "other": 81355
+      },
+      {
+        "month": "2024-06",
+        "total": 111979,
+        "dem": 10897,
+        "rep": 1276,
+        "other": 99807
+      },
+      {
+        "month": "2024-07",
+        "total": 94608,
+        "dem": 11061,
+        "rep": 276,
+        "other": 83271
+      },
+      {
+        "month": "2024-08",
+        "total": 101701,
+        "dem": 12769,
+        "rep": 276,
+        "other": 88657
+      },
+      {
+        "month": "2024-09",
+        "total": 1265933,
+        "dem": 13128,
+        "rep": 276,
+        "other": 1252530
+      },
+      {
+        "month": "2024-10",
+        "total": 700637,
+        "dem": 15609,
+        "rep": 0,
+        "other": 685028
+      },
+      {
+        "month": "2024-11",
+        "total": 84958,
+        "dem": 11267,
+        "rep": 0,
+        "other": 73691
+      },
+      {
+        "month": "2024-12",
+        "total": 84246,
+        "dem": 11499,
+        "rep": 0,
+        "other": 72748
+      },
+      {
+        "month": "2025-01",
+        "total": 85537,
+        "dem": 11730,
+        "rep": 0,
+        "other": 73807
+      },
+      {
+        "month": "2025-02",
+        "total": 87799,
+        "dem": 11962,
+        "rep": 0,
+        "other": 75837
+      },
+      {
+        "month": "2025-03",
+        "total": 84080,
+        "dem": 4776,
+        "rep": 0,
+        "other": 79303
+      },
+      {
+        "month": "2025-04",
+        "total": 80281,
+        "dem": 4896,
+        "rep": 0,
+        "other": 75385
+      },
+      {
+        "month": "2025-05",
+        "total": 80782,
+        "dem": 3390,
+        "rep": 0,
+        "other": 77393
+      },
+      {
+        "month": "2025-06",
+        "total": 259475,
+        "dem": 0,
+        "rep": 0,
+        "other": 259475
+      },
+      {
+        "month": "2025-07",
+        "total": 1153,
+        "dem": 0,
+        "rep": 0,
+        "other": 1153
+      },
+      {
+        "month": "2025-08",
+        "total": 395,
+        "dem": 0,
+        "rep": 0,
+        "other": 395
+      },
+      {
+        "month": "2025-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      }
+    ],
+    "48951": [
+      {
+        "month": "2021-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2021-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-01",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-02",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-03",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-04",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-05",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-06",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-10",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-11",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2022-12",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2023-01",
+        "total": 7113,
+        "dem": 0,
+        "rep": 0,
+        "other": 7113
+      },
+      {
+        "month": "2023-02",
+        "total": 9361,
+        "dem": 0,
+        "rep": 0,
+        "other": 9361
+      },
+      {
+        "month": "2023-03",
+        "total": 9898,
+        "dem": 0,
+        "rep": 0,
+        "other": 9898
+      },
+      {
+        "month": "2023-04",
+        "total": 10073,
+        "dem": 0,
+        "rep": 0,
+        "other": 10073
+      },
+      {
+        "month": "2023-05",
+        "total": 10103,
+        "dem": 0,
+        "rep": 0,
+        "other": 10103
+      },
+      {
+        "month": "2023-06",
+        "total": 10607,
+        "dem": 0,
+        "rep": 0,
+        "other": 10607
+      },
+      {
+        "month": "2023-07",
+        "total": 10873,
+        "dem": 0,
+        "rep": 0,
+        "other": 10873
+      },
+      {
+        "month": "2023-08",
+        "total": 11029,
+        "dem": 0,
+        "rep": 0,
+        "other": 11029
+      },
+      {
+        "month": "2023-09",
+        "total": 11069,
+        "dem": 0,
+        "rep": 0,
+        "other": 11069
+      },
+      {
+        "month": "2023-10",
+        "total": 11134,
+        "dem": 0,
+        "rep": 0,
+        "other": 11134
+      },
+      {
+        "month": "2023-11",
+        "total": 11148,
+        "dem": 0,
+        "rep": 0,
+        "other": 11148
+      },
+      {
+        "month": "2023-12",
+        "total": 11112,
+        "dem": 0,
+        "rep": 0,
+        "other": 11112
+      },
+      {
+        "month": "2024-01",
+        "total": 14070,
+        "dem": 0,
+        "rep": 0,
+        "other": 14070
+      },
+      {
+        "month": "2024-02",
+        "total": 14191,
+        "dem": 0,
+        "rep": 0,
+        "other": 14191
+      },
+      {
+        "month": "2024-03",
+        "total": 14664,
+        "dem": 0,
+        "rep": 0,
+        "other": 14664
+      },
+      {
+        "month": "2024-04",
+        "total": 14939,
+        "dem": 0,
+        "rep": 0,
+        "other": 14939
+      },
+      {
+        "month": "2024-05",
+        "total": 15213,
+        "dem": 0,
+        "rep": 0,
+        "other": 15213
+      },
+      {
+        "month": "2024-06",
+        "total": 16064,
+        "dem": 500,
+        "rep": 0,
+        "other": 15564
+      },
+      {
+        "month": "2024-07",
+        "total": 15839,
+        "dem": 0,
+        "rep": 0,
+        "other": 15839
+      },
+      {
+        "month": "2024-08",
+        "total": 16158,
+        "dem": 0,
+        "rep": 0,
+        "other": 16158
+      },
+      {
+        "month": "2024-09",
+        "total": 16780,
+        "dem": 0,
+        "rep": 0,
+        "other": 16780
+      },
+      {
+        "month": "2024-10",
+        "total": 16814,
+        "dem": 0,
+        "rep": 0,
+        "other": 16814
+      },
+      {
+        "month": "2024-11",
+        "total": 17532,
+        "dem": 0,
+        "rep": 0,
+        "other": 17532
+      },
+      {
+        "month": "2024-12",
+        "total": 18072,
+        "dem": 0,
+        "rep": 0,
+        "other": 18072
+      },
+      {
+        "month": "2025-01",
+        "total": 18428,
+        "dem": 0,
+        "rep": 0,
+        "other": 18428
+      },
+      {
+        "month": "2025-02",
+        "total": 13122,
+        "dem": 0,
+        "rep": 0,
+        "other": 13122
+      },
+      {
+        "month": "2025-03",
+        "total": 14502,
+        "dem": 0,
+        "rep": 0,
+        "other": 14502
+      },
+      {
+        "month": "2025-04",
+        "total": 14742,
+        "dem": 0,
+        "rep": 0,
+        "other": 14742
+      },
+      {
+        "month": "2025-05",
+        "total": 14623,
+        "dem": 0,
+        "rep": 0,
+        "other": 14623
+      },
+      {
+        "month": "2025-06",
+        "total": 3360,
+        "dem": 0,
+        "rep": 0,
+        "other": 3360
+      },
+      {
+        "month": "2025-07",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2025-08",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      },
+      {
+        "month": "2025-09",
+        "total": 0,
+        "dem": 0,
+        "rep": 0,
+        "other": 0
+      }
+    ]
+  },
+  "cycleComparison": [],
+  "cohorts": [],
+  "seasonalPatterns": [
+    {
+      "month": 1,
+      "avgAmount": 307242,
+      "avgContributions": 0,
+      "stdDev": 345141,
+      "seasonalIndex": 0.7913669394392753
+    },
+    {
+      "month": 2,
+      "avgAmount": 274615,
+      "avgContributions": 0,
+      "stdDev": 266293,
+      "seasonalIndex": 0.7073301560774103
+    },
+    {
+      "month": 3,
+      "avgAmount": 332696,
+      "avgContributions": 0,
+      "stdDev": 340041,
+      "seasonalIndex": 0.8569291581103262
+    },
+    {
+      "month": 4,
+      "avgAmount": 340799,
+      "avgContributions": 0,
+      "stdDev": 333917,
+      "seasonalIndex": 0.8778011971917671
+    },
+    {
+      "month": 5,
+      "avgAmount": 364358,
+      "avgContributions": 0,
+      "stdDev": 365018,
+      "seasonalIndex": 0.9384814079556478
+    },
+    {
+      "month": 6,
+      "avgAmount": 397006,
+      "avgContributions": 0,
+      "stdDev": 395466,
+      "seasonalIndex": 1.0225738267352584
+    },
+    {
+      "month": 7,
+      "avgAmount": 361807,
+      "avgContributions": 0,
+      "stdDev": 433483,
+      "seasonalIndex": 0.9319112772341064
+    },
+    {
+      "month": 8,
+      "avgAmount": 388218,
+      "avgContributions": 0,
+      "stdDev": 493388,
+      "seasonalIndex": 0.9999374237114246
+    },
+    {
+      "month": 9,
+      "avgAmount": 588265,
+      "avgContributions": 0,
+      "stdDev": 888600,
+      "seasonalIndex": 1.515202784590616
+    },
+    {
+      "month": 10,
+      "avgAmount": 655757,
+      "avgContributions": 0,
+      "stdDev": 769769,
+      "seasonalIndex": 1.6890429881208082
+    },
+    {
+      "month": 11,
+      "avgAmount": 317950,
+      "avgContributions": 0,
+      "stdDev": 317073,
+      "seasonalIndex": 0.8189475538581753
+    },
+    {
+      "month": 12,
+      "avgAmount": 364983,
+      "avgContributions": 0,
+      "stdDev": 373180,
+      "seasonalIndex": 0.9400917442137269
+    }
+  ],
+  "yoyGrowth": [
+    {
+      "period": "2021-2022",
+      "amountGrowth": 57,
+      "donorGrowth": 0,
+      "contributionGrowth": 29
+    },
+    {
+      "period": "2022-2023",
+      "amountGrowth": 41810,
+      "donorGrowth": 0,
+      "contributionGrowth": 4147
+    },
+    {
+      "period": "2023-2024",
+      "amountGrowth": 127,
+      "donorGrowth": 0,
+      "contributionGrowth": 97
+    },
+    {
+      "period": "2024-2025",
+      "amountGrowth": -76,
+      "donorGrowth": 0,
+      "contributionGrowth": -72
+    }
+  ]
+}

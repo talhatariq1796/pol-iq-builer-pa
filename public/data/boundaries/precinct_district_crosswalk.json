@@ -1,0 +1,495 @@
+{
+  "metadata": {
+    "county": "Ingham County",
+    "state": "Michigan",
+    "created": "2025-12-05",
+    "precinctCount": 40,
+    "stateHouseDistricts": [
+      "mi-house-71",
+      "mi-house-72",
+      "mi-house-73",
+      "mi-house-74",
+      "mi-house-75"
+    ],
+    "stateSenateDistricts": [
+      "mi-senate-23",
+      "mi-senate-24"
+    ],
+    "congressionalDistricts": [
+      "mi-07"
+    ],
+    "countyCommissionerDistricts": [
+      "cc-1",
+      "cc-2",
+      "cc-3",
+      "cc-4",
+      "cc-5",
+      "cc-6",
+      "cc-7",
+      "cc-8",
+      "cc-9",
+      "cc-10",
+      "cc-11",
+      "cc-12"
+    ],
+    "splitPrecincts": 2,
+    "dataSource": "Logical mapping based on municipality assignments",
+    "notes": [
+      "State House assignments based on municipality and precinct location",
+      "State Senate derived from State House districts (23: 71/73/74, 24: 72/75)",
+      "All precincts in Ingham County are in MI-07 Congressional District",
+      "County Commissioner districts are estimated based on municipality",
+      "Split precincts have area-weighted assignments for accurate analysis"
+    ]
+  },
+  "crosswalk": [
+    {
+      "precinctId": "del-pct-1",
+      "precinctName": "Delhi Township Precinct 1",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-11",
+      "municipality": "Delhi Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "del-pct-2",
+      "precinctName": "Delhi Township Precinct 2",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-11",
+      "municipality": "Delhi Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "del-pct-3",
+      "precinctName": "Delhi Township Precinct 3",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-11",
+      "municipality": "Delhi Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "del-pct-4",
+      "precinctName": "Delhi Township Precinct 4",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-11",
+      "municipality": "Delhi Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "del-pct-5",
+      "precinctName": "Delhi Township Precinct 5",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-11",
+      "municipality": "Delhi Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "del-pct-6",
+      "precinctName": "Delhi Township Precinct 6",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-11",
+      "municipality": "Delhi Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "del-pct-7",
+      "precinctName": "Delhi Township Precinct 7",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-11",
+      "municipality": "Delhi Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "el-pct-1",
+      "precinctName": "East Lansing Precinct 1",
+      "stateHouse": "mi-house-71",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-1",
+      "municipality": "East Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "el-pct-2",
+      "precinctName": "East Lansing Precinct 2",
+      "stateHouse": "mi-house-71",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-1",
+      "municipality": "East Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "el-pct-3",
+      "precinctName": "East Lansing Precinct 3",
+      "stateHouse": "mi-house-71",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-1",
+      "municipality": "East Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "el-pct-4",
+      "precinctName": "East Lansing Precinct 4",
+      "stateHouse": "mi-house-71",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-2",
+      "municipality": "East Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "el-pct-5",
+      "precinctName": "East Lansing Precinct 5",
+      "stateHouse": "mi-house-71",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-2",
+      "municipality": "East Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "el-pct-6",
+      "precinctName": "East Lansing Precinct 6",
+      "stateHouse": "mi-house-71",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-5",
+      "municipality": "East Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "el-pct-7",
+      "precinctName": "East Lansing Precinct 7",
+      "stateHouse": "mi-house-71",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-5",
+      "municipality": "East Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "el-pct-8",
+      "precinctName": "East Lansing Precinct 8",
+      "stateHouse": "mi-house-71",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-5",
+      "municipality": "East Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-1",
+      "precinctName": "Lansing Precinct 1",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-3",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-10",
+      "precinctName": "Lansing Precinct 10",
+      "stateHouse": "mi-house-73",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-8",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-11",
+      "precinctName": "Lansing Precinct 11",
+      "stateHouse": "mi-house-73",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-8",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-12",
+      "precinctName": "Lansing Precinct 12",
+      "stateHouse": "mi-house-73",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-8",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-2",
+      "precinctName": "Lansing Precinct 2",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-3",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-3",
+      "precinctName": "Lansing Precinct 3",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-4",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-4",
+      "precinctName": "Lansing Precinct 4",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-4",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-5",
+      "precinctName": "Lansing Precinct 5",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-6",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-6",
+      "precinctName": "Lansing Precinct 6",
+      "stateHouse": "mi-house-72",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-6",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": true,
+      "splitWeights": {
+        "mi-house-72": 0.75,
+        "mi-house-73": 0.25
+      }
+    },
+    {
+      "precinctId": "lan-pct-7",
+      "precinctName": "Lansing Precinct 7",
+      "stateHouse": "mi-house-73",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-6",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": true,
+      "splitWeights": {
+        "mi-house-73": 0.75,
+        "mi-house-72": 0.25
+      }
+    },
+    {
+      "precinctId": "lan-pct-8",
+      "precinctName": "Lansing Precinct 8",
+      "stateHouse": "mi-house-73",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-7",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "lan-pct-9",
+      "precinctName": "Lansing Precinct 9",
+      "stateHouse": "mi-house-73",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-7",
+      "municipality": "Lansing",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "mer-pct-1",
+      "precinctName": "Meridian Township Precinct 1",
+      "stateHouse": "mi-house-74",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-9",
+      "municipality": "Meridian Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "mer-pct-2",
+      "precinctName": "Meridian Township Precinct 2",
+      "stateHouse": "mi-house-74",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-9",
+      "municipality": "Meridian Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "mer-pct-3",
+      "precinctName": "Meridian Township Precinct 3",
+      "stateHouse": "mi-house-74",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-9",
+      "municipality": "Meridian Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "mer-pct-4",
+      "precinctName": "Meridian Township Precinct 4",
+      "stateHouse": "mi-house-74",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-9",
+      "municipality": "Meridian Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "mer-pct-5",
+      "precinctName": "Meridian Township Precinct 5",
+      "stateHouse": "mi-house-74",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-10",
+      "municipality": "Meridian Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "mer-pct-6",
+      "precinctName": "Meridian Township Precinct 6",
+      "stateHouse": "mi-house-74",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-10",
+      "municipality": "Meridian Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "mer-pct-7",
+      "precinctName": "Meridian Township Precinct 7",
+      "stateHouse": "mi-house-74",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-10",
+      "municipality": "Meridian Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "mer-pct-8",
+      "precinctName": "Meridian Township Precinct 8",
+      "stateHouse": "mi-house-74",
+      "stateSenate": "mi-senate-23",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-10",
+      "municipality": "Meridian Township",
+      "municipalityType": "township",
+      "isSplit": false
+    },
+    {
+      "precinctId": "wil-pct-1",
+      "precinctName": "Williamston Precinct 1",
+      "stateHouse": "mi-house-75",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-12",
+      "municipality": "Williamston",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "wil-pct-2",
+      "precinctName": "Williamston Precinct 2",
+      "stateHouse": "mi-house-75",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-12",
+      "municipality": "Williamston",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "wil-pct-3",
+      "precinctName": "Williamston Precinct 3",
+      "stateHouse": "mi-house-75",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-12",
+      "municipality": "Williamston",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "wil-pct-4",
+      "precinctName": "Williamston Precinct 4",
+      "stateHouse": "mi-house-75",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-12",
+      "municipality": "Williamston",
+      "municipalityType": "city",
+      "isSplit": false
+    },
+    {
+      "precinctId": "wil-pct-5",
+      "precinctName": "Williamston Precinct 5",
+      "stateHouse": "mi-house-75",
+      "stateSenate": "mi-senate-24",
+      "congressional": "mi-07",
+      "countyCommissioner": "cc-12",
+      "municipality": "Williamston",
+      "municipalityType": "city",
+      "isSplit": false
+    }
+  ]
+}

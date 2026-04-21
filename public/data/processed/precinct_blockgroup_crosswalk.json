@@ -1,0 +1,2752 @@
+{
+  "crosswalk": [
+    {
+      "precinct_id": "WP-065-00800-00001",
+      "precinct_name": "0650080000001",
+      "block_group_geoid": "260650056001",
+      "overlap_ratio": 0.4756
+    },
+    {
+      "precinct_id": "WP-065-00800-00001",
+      "precinct_name": "0650080000001",
+      "block_group_geoid": "260650056002",
+      "overlap_ratio": 0.4663
+    },
+    {
+      "precinct_id": "WP-065-00800-00001",
+      "precinct_name": "0650080000001",
+      "block_group_geoid": "260659800001",
+      "overlap_ratio": 0.0579
+    },
+    {
+      "precinct_id": "WP-065-04240-00001",
+      "precinct_name": "0650424000001",
+      "block_group_geoid": "260650064012",
+      "overlap_ratio": 0.9997
+    },
+    {
+      "precinct_id": "WP-065-04240-00002",
+      "precinct_name": "0650424000002",
+      "block_group_geoid": "260650064011",
+      "overlap_ratio": 0.9997
+    },
+    {
+      "precinct_id": "WP-065-11640-00001",
+      "precinct_name": "0651164000001",
+      "block_group_geoid": "260650060011",
+      "overlap_ratio": 0.5766
+    },
+    {
+      "precinct_id": "WP-065-11640-00001",
+      "precinct_name": "0651164000001",
+      "block_group_geoid": "260650060012",
+      "overlap_ratio": 0.3375
+    },
+    {
+      "precinct_id": "WP-065-11640-00001",
+      "precinct_name": "0651164000001",
+      "block_group_geoid": "260659803001",
+      "overlap_ratio": 0.0834
+    },
+    {
+      "precinct_id": "WP-065-11640-00001",
+      "precinct_name": "0651164000001",
+      "block_group_geoid": "260650060013",
+      "overlap_ratio": 0.0023
+    },
+    {
+      "precinct_id": "WP-065-21420-00009",
+      "precinct_name": "0652142000009",
+      "block_group_geoid": "260650053051",
+      "overlap_ratio": 0.2185
+    },
+    {
+      "precinct_id": "WP-065-21420-00009",
+      "precinct_name": "0652142000009",
+      "block_group_geoid": "260650053052",
+      "overlap_ratio": 0.2751
+    },
+    {
+      "precinct_id": "WP-065-21420-00009",
+      "precinct_name": "0652142000009",
+      "block_group_geoid": "260650053043",
+      "overlap_ratio": 0.3131
+    },
+    {
+      "precinct_id": "WP-065-21420-00009",
+      "precinct_name": "0652142000009",
+      "block_group_geoid": "260659800001",
+      "overlap_ratio": 0.193
+    },
+    {
+      "precinct_id": "WP-065-21420-00007",
+      "precinct_name": "0652142000007",
+      "block_group_geoid": "260650053043",
+      "overlap_ratio": 0.0759
+    },
+    {
+      "precinct_id": "WP-065-21420-00007",
+      "precinct_name": "0652142000007",
+      "block_group_geoid": "260650053062",
+      "overlap_ratio": 0.3004
+    },
+    {
+      "precinct_id": "WP-065-21420-00007",
+      "precinct_name": "0652142000007",
+      "block_group_geoid": "260650054021",
+      "overlap_ratio": 0.3521
+    },
+    {
+      "precinct_id": "WP-065-21420-00007",
+      "precinct_name": "0652142000007",
+      "block_group_geoid": "260650054011",
+      "overlap_ratio": 0.2712
+    },
+    {
+      "precinct_id": "WP-065-21420-00002",
+      "precinct_name": "0652142000002",
+      "block_group_geoid": "260650055012",
+      "overlap_ratio": 0.494
+    },
+    {
+      "precinct_id": "WP-065-21420-00002",
+      "precinct_name": "0652142000002",
+      "block_group_geoid": "260650052022",
+      "overlap_ratio": 0.5054
+    },
+    {
+      "precinct_id": "WP-065-21420-00001",
+      "precinct_name": "0652142000001",
+      "block_group_geoid": "260650055011",
+      "overlap_ratio": 0.7659
+    },
+    {
+      "precinct_id": "WP-065-21420-00001",
+      "precinct_name": "0652142000001",
+      "block_group_geoid": "260650051002",
+      "overlap_ratio": 0.0378
+    },
+    {
+      "precinct_id": "WP-065-21420-00001",
+      "precinct_name": "0652142000001",
+      "block_group_geoid": "260650052021",
+      "overlap_ratio": 0.1959
+    },
+    {
+      "precinct_id": "WP-065-21420-00008",
+      "precinct_name": "0652142000008",
+      "block_group_geoid": "260650053052",
+      "overlap_ratio": 0.1886
+    },
+    {
+      "precinct_id": "WP-065-21420-00008",
+      "precinct_name": "0652142000008",
+      "block_group_geoid": "260650055021",
+      "overlap_ratio": 0.8111
+    },
+    {
+      "precinct_id": "WP-065-21420-00005",
+      "precinct_name": "0652142000005",
+      "block_group_geoid": "260650055021",
+      "overlap_ratio": 0.8033
+    },
+    {
+      "precinct_id": "WP-065-21420-00005",
+      "precinct_name": "0652142000005",
+      "block_group_geoid": "260650055022",
+      "overlap_ratio": 0.1179
+    },
+    {
+      "precinct_id": "WP-065-21420-00005",
+      "precinct_name": "0652142000005",
+      "block_group_geoid": "260650054022",
+      "overlap_ratio": 0.0783
+    },
+    {
+      "precinct_id": "WP-065-21420-00004",
+      "precinct_name": "0652142000004",
+      "block_group_geoid": "260650055021",
+      "overlap_ratio": 0.0844
+    },
+    {
+      "precinct_id": "WP-065-21420-00004",
+      "precinct_name": "0652142000004",
+      "block_group_geoid": "260650055022",
+      "overlap_ratio": 0.3907
+    },
+    {
+      "precinct_id": "WP-065-21420-00004",
+      "precinct_name": "0652142000004",
+      "block_group_geoid": "260650055011",
+      "overlap_ratio": 0.0898
+    },
+    {
+      "precinct_id": "WP-065-21420-00004",
+      "precinct_name": "0652142000004",
+      "block_group_geoid": "260650055014",
+      "overlap_ratio": 0.1973
+    },
+    {
+      "precinct_id": "WP-065-21420-00004",
+      "precinct_name": "0652142000004",
+      "block_group_geoid": "260650055013",
+      "overlap_ratio": 0.2377
+    },
+    {
+      "precinct_id": "WP-065-24120-00001",
+      "precinct_name": "0652412000001",
+      "block_group_geoid": "260650040005",
+      "overlap_ratio": 0.0012
+    },
+    {
+      "precinct_id": "WP-065-24120-00001",
+      "precinct_name": "0652412000001",
+      "block_group_geoid": "260650040003",
+      "overlap_ratio": 0.3169
+    },
+    {
+      "precinct_id": "WP-065-24120-00001",
+      "precinct_name": "0652412000001",
+      "block_group_geoid": "260659801001",
+      "overlap_ratio": 0.0453
+    },
+    {
+      "precinct_id": "WP-065-24120-00001",
+      "precinct_name": "0652412000001",
+      "block_group_geoid": "260650044921",
+      "overlap_ratio": 0.6356
+    },
+    {
+      "precinct_id": "WP-065-24120-00003",
+      "precinct_name": "0652412000003",
+      "block_group_geoid": "260650040005",
+      "overlap_ratio": 0.1036
+    },
+    {
+      "precinct_id": "WP-065-24120-00003",
+      "precinct_name": "0652412000003",
+      "block_group_geoid": "260650040001",
+      "overlap_ratio": 0.4175
+    },
+    {
+      "precinct_id": "WP-065-24120-00003",
+      "precinct_name": "0652412000003",
+      "block_group_geoid": "260650040004",
+      "overlap_ratio": 0.2414
+    },
+    {
+      "precinct_id": "WP-065-24120-00003",
+      "precinct_name": "0652412000003",
+      "block_group_geoid": "260650040003",
+      "overlap_ratio": 0.0557
+    },
+    {
+      "precinct_id": "WP-065-24120-00003",
+      "precinct_name": "0652412000003",
+      "block_group_geoid": "260650041003",
+      "overlap_ratio": 0.18
+    },
+    {
+      "precinct_id": "WP-065-24120-00004",
+      "precinct_name": "0652412000004",
+      "block_group_geoid": "260650031033",
+      "overlap_ratio": 0.0164
+    },
+    {
+      "precinct_id": "WP-065-24120-00004",
+      "precinct_name": "0652412000004",
+      "block_group_geoid": "260650038013",
+      "overlap_ratio": 0.2122
+    },
+    {
+      "precinct_id": "WP-065-24120-00004",
+      "precinct_name": "0652412000004",
+      "block_group_geoid": "260650038012",
+      "overlap_ratio": 0.471
+    },
+    {
+      "precinct_id": "WP-065-24120-00004",
+      "precinct_name": "0652412000004",
+      "block_group_geoid": "260650038011",
+      "overlap_ratio": 0.3003
+    },
+    {
+      "precinct_id": "WP-065-24120-00006",
+      "precinct_name": "0652412000006",
+      "block_group_geoid": "260650038022",
+      "overlap_ratio": 0.3461
+    },
+    {
+      "precinct_id": "WP-065-24120-00006",
+      "precinct_name": "0652412000006",
+      "block_group_geoid": "260650038023",
+      "overlap_ratio": 0.5649
+    },
+    {
+      "precinct_id": "WP-065-24120-00006",
+      "precinct_name": "0652412000006",
+      "block_group_geoid": "260650038021",
+      "overlap_ratio": 0.0878
+    },
+    {
+      "precinct_id": "WP-065-24120-00007",
+      "precinct_name": "0652412000007",
+      "block_group_geoid": "260650039011",
+      "overlap_ratio": 0.9989
+    },
+    {
+      "precinct_id": "WP-065-24120-00008",
+      "precinct_name": "0652412000008",
+      "block_group_geoid": "260650039021",
+      "overlap_ratio": 0.4525
+    },
+    {
+      "precinct_id": "WP-065-24120-00008",
+      "precinct_name": "0652412000008",
+      "block_group_geoid": "260650039023",
+      "overlap_ratio": 0.5457
+    },
+    {
+      "precinct_id": "WP-065-24120-00008",
+      "precinct_name": "0652412000008",
+      "block_group_geoid": "260650039011",
+      "overlap_ratio": 0.0013
+    },
+    {
+      "precinct_id": "WP-065-24120-00009",
+      "precinct_name": "0652412000009",
+      "block_group_geoid": "260650039021",
+      "overlap_ratio": 0.2985
+    },
+    {
+      "precinct_id": "WP-065-24120-00009",
+      "precinct_name": "0652412000009",
+      "block_group_geoid": "260650041001",
+      "overlap_ratio": 0.246
+    },
+    {
+      "precinct_id": "WP-065-24120-00009",
+      "precinct_name": "0652412000009",
+      "block_group_geoid": "260650039023",
+      "overlap_ratio": 0.1358
+    },
+    {
+      "precinct_id": "WP-065-24120-00009",
+      "precinct_name": "0652412000009",
+      "block_group_geoid": "260650041002",
+      "overlap_ratio": 0.2197
+    },
+    {
+      "precinct_id": "WP-065-24120-00009",
+      "precinct_name": "0652412000009",
+      "block_group_geoid": "260650041003",
+      "overlap_ratio": 0.0212
+    },
+    {
+      "precinct_id": "WP-065-24120-00009",
+      "precinct_name": "0652412000009",
+      "block_group_geoid": "260650043014",
+      "overlap_ratio": 0.0789
+    },
+    {
+      "precinct_id": "WP-065-24120-00010",
+      "precinct_name": "0652412000010",
+      "block_group_geoid": "260650039021",
+      "overlap_ratio": 0.0483
+    },
+    {
+      "precinct_id": "WP-065-24120-00010",
+      "precinct_name": "0652412000010",
+      "block_group_geoid": "260650043013",
+      "overlap_ratio": 0.6324
+    },
+    {
+      "precinct_id": "WP-065-24120-00010",
+      "precinct_name": "0652412000010",
+      "block_group_geoid": "260650041001",
+      "overlap_ratio": 0.0178
+    },
+    {
+      "precinct_id": "WP-065-24120-00010",
+      "precinct_name": "0652412000010",
+      "block_group_geoid": "260650041002",
+      "overlap_ratio": 0.0382
+    },
+    {
+      "precinct_id": "WP-065-24120-00010",
+      "precinct_name": "0652412000010",
+      "block_group_geoid": "260650043014",
+      "overlap_ratio": 0.2632
+    },
+    {
+      "precinct_id": "WP-065-24120-00012",
+      "precinct_name": "0652412000012",
+      "block_group_geoid": "260650044911",
+      "overlap_ratio": 0.0537
+    },
+    {
+      "precinct_id": "WP-065-24120-00012",
+      "precinct_name": "0652412000012",
+      "block_group_geoid": "260659800001",
+      "overlap_ratio": 0.8311
+    },
+    {
+      "precinct_id": "WP-065-24120-00012",
+      "precinct_name": "0652412000012",
+      "block_group_geoid": "260650043021",
+      "overlap_ratio": 0.0033
+    },
+    {
+      "precinct_id": "WP-065-24120-00012",
+      "precinct_name": "0652412000012",
+      "block_group_geoid": "260650044921",
+      "overlap_ratio": 0.1093
+    },
+    {
+      "precinct_id": "WP-065-24120-00012",
+      "precinct_name": "0652412000012",
+      "block_group_geoid": "260650044931",
+      "overlap_ratio": 0.0015
+    },
+    {
+      "precinct_id": "WP-065-24120-00013",
+      "precinct_name": "0652412000013",
+      "block_group_geoid": "260650044941",
+      "overlap_ratio": 0.1103
+    },
+    {
+      "precinct_id": "WP-065-24120-00013",
+      "precinct_name": "0652412000013",
+      "block_group_geoid": "260650043022",
+      "overlap_ratio": 0.1318
+    },
+    {
+      "precinct_id": "WP-065-24120-00013",
+      "precinct_name": "0652412000013",
+      "block_group_geoid": "260650043021",
+      "overlap_ratio": 0.3171
+    },
+    {
+      "precinct_id": "WP-065-24120-00013",
+      "precinct_name": "0652412000013",
+      "block_group_geoid": "260650044931",
+      "overlap_ratio": 0.4396
+    },
+    {
+      "precinct_id": "WP-065-24120-00015",
+      "precinct_name": "0652412000015",
+      "block_group_geoid": "260650044902",
+      "overlap_ratio": 0.0262
+    },
+    {
+      "precinct_id": "WP-065-24120-00015",
+      "precinct_name": "0652412000015",
+      "block_group_geoid": "260650044901",
+      "overlap_ratio": 0.0617
+    },
+    {
+      "precinct_id": "WP-065-24120-00015",
+      "precinct_name": "0652412000015",
+      "block_group_geoid": "260659800001",
+      "overlap_ratio": 0.9113
+    },
+    {
+      "precinct_id": "WP-065-40640-00001",
+      "precinct_name": "0654064000001",
+      "block_group_geoid": "260650062003",
+      "overlap_ratio": 0.521
+    },
+    {
+      "precinct_id": "WP-065-40640-00001",
+      "precinct_name": "0654064000001",
+      "block_group_geoid": "260659803001",
+      "overlap_ratio": 0.1401
+    },
+    {
+      "precinct_id": "WP-065-40640-00001",
+      "precinct_name": "0654064000001",
+      "block_group_geoid": "260650062004",
+      "overlap_ratio": 0.3016
+    },
+    {
+      "precinct_id": "WP-065-40640-00001",
+      "precinct_name": "0654064000001",
+      "block_group_geoid": "260650062002",
+      "overlap_ratio": 0.0372
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650021011",
+      "overlap_ratio": 0.0171
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650010001",
+      "overlap_ratio": 0.0444
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650012003",
+      "overlap_ratio": 0.1008
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650065003",
+      "overlap_ratio": 0.1069
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650065002",
+      "overlap_ratio": 0.0632
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650065004",
+      "overlap_ratio": 0.1068
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650065001",
+      "overlap_ratio": 0.3543
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650031034",
+      "overlap_ratio": 0.0427
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650012002",
+      "overlap_ratio": 0.1319
+    },
+    {
+      "precinct_id": "WP-065-46000-01008",
+      "precinct_name": "0654600001008",
+      "block_group_geoid": "260650031036",
+      "overlap_ratio": 0.0312
+    },
+    {
+      "precinct_id": "WP-065-46000-01009",
+      "precinct_name": "0654600001009",
+      "block_group_geoid": "260650020001",
+      "overlap_ratio": 0.1589
+    },
+    {
+      "precinct_id": "WP-065-46000-01009",
+      "precinct_name": "0654600001009",
+      "block_group_geoid": "260650021011",
+      "overlap_ratio": 0.2727
+    },
+    {
+      "precinct_id": "WP-065-46000-01009",
+      "precinct_name": "0654600001009",
+      "block_group_geoid": "260650021012",
+      "overlap_ratio": 0.1419
+    },
+    {
+      "precinct_id": "WP-065-46000-01009",
+      "precinct_name": "0654600001009",
+      "block_group_geoid": "260650066002",
+      "overlap_ratio": 0.1187
+    },
+    {
+      "precinct_id": "WP-065-46000-01009",
+      "precinct_name": "0654600001009",
+      "block_group_geoid": "260650012003",
+      "overlap_ratio": 0.0066
+    },
+    {
+      "precinct_id": "WP-065-46000-01009",
+      "precinct_name": "0654600001009",
+      "block_group_geoid": "260650020002",
+      "overlap_ratio": 0.0559
+    },
+    {
+      "precinct_id": "WP-065-46000-01009",
+      "precinct_name": "0654600001009",
+      "block_group_geoid": "260659801001",
+      "overlap_ratio": 0.2451
+    },
+    {
+      "precinct_id": "WP-065-46000-01010",
+      "precinct_name": "0654600001010",
+      "block_group_geoid": "260650020001",
+      "overlap_ratio": 0.0134
+    },
+    {
+      "precinct_id": "WP-065-46000-01010",
+      "precinct_name": "0654600001010",
+      "block_group_geoid": "260650066002",
+      "overlap_ratio": 0.0974
+    },
+    {
+      "precinct_id": "WP-065-46000-01010",
+      "precinct_name": "0654600001010",
+      "block_group_geoid": "260650020002",
+      "overlap_ratio": 0.082
+    },
+    {
+      "precinct_id": "WP-065-46000-01010",
+      "precinct_name": "0654600001010",
+      "block_group_geoid": "260650023004",
+      "overlap_ratio": 0.1877
+    },
+    {
+      "precinct_id": "WP-065-46000-01010",
+      "precinct_name": "0654600001010",
+      "block_group_geoid": "260650020003",
+      "overlap_ratio": 0.151
+    },
+    {
+      "precinct_id": "WP-065-46000-01010",
+      "precinct_name": "0654600001010",
+      "block_group_geoid": "260650023001",
+      "overlap_ratio": 0.1162
+    },
+    {
+      "precinct_id": "WP-065-46000-01010",
+      "precinct_name": "0654600001010",
+      "block_group_geoid": "260650020004",
+      "overlap_ratio": 0.351
+    },
+    {
+      "precinct_id": "WP-065-46000-02012",
+      "precinct_name": "0654600002012",
+      "block_group_geoid": "260650026002",
+      "overlap_ratio": 0.2158
+    },
+    {
+      "precinct_id": "WP-065-46000-02012",
+      "precinct_name": "0654600002012",
+      "block_group_geoid": "260650028001",
+      "overlap_ratio": 0.0836
+    },
+    {
+      "precinct_id": "WP-065-46000-02012",
+      "precinct_name": "0654600002012",
+      "block_group_geoid": "260650028002",
+      "overlap_ratio": 0.0393
+    },
+    {
+      "precinct_id": "WP-065-46000-02012",
+      "precinct_name": "0654600002012",
+      "block_group_geoid": "260650023004",
+      "overlap_ratio": 0.0209
+    },
+    {
+      "precinct_id": "WP-065-46000-02012",
+      "precinct_name": "0654600002012",
+      "block_group_geoid": "260650026001",
+      "overlap_ratio": 0.2582
+    },
+    {
+      "precinct_id": "WP-065-46000-02012",
+      "precinct_name": "0654600002012",
+      "block_group_geoid": "260650023001",
+      "overlap_ratio": 0.0885
+    },
+    {
+      "precinct_id": "WP-065-46000-02012",
+      "precinct_name": "0654600002012",
+      "block_group_geoid": "260650023002",
+      "overlap_ratio": 0.2146
+    },
+    {
+      "precinct_id": "WP-065-46000-02012",
+      "precinct_name": "0654600002012",
+      "block_group_geoid": "260650027001",
+      "overlap_ratio": 0.0696
+    },
+    {
+      "precinct_id": "WP-065-46000-02012",
+      "precinct_name": "0654600002012",
+      "block_group_geoid": "260650027002",
+      "overlap_ratio": 0.0084
+    },
+    {
+      "precinct_id": "WP-065-46000-02013",
+      "precinct_name": "0654600002013",
+      "block_group_geoid": "260650027001",
+      "overlap_ratio": 0.1226
+    },
+    {
+      "precinct_id": "WP-065-46000-02013",
+      "precinct_name": "0654600002013",
+      "block_group_geoid": "260650027002",
+      "overlap_ratio": 0.2957
+    },
+    {
+      "precinct_id": "WP-065-46000-02013",
+      "precinct_name": "0654600002013",
+      "block_group_geoid": "260650027003",
+      "overlap_ratio": 0.3104
+    },
+    {
+      "precinct_id": "WP-065-46000-02013",
+      "precinct_name": "0654600002013",
+      "block_group_geoid": "260650037001",
+      "overlap_ratio": 0.1517
+    },
+    {
+      "precinct_id": "WP-065-46000-02013",
+      "precinct_name": "0654600002013",
+      "block_group_geoid": "260650037002",
+      "overlap_ratio": 0.1186
+    },
+    {
+      "precinct_id": "WP-065-46000-02014",
+      "precinct_name": "0654600002014",
+      "block_group_geoid": "260650022002",
+      "overlap_ratio": 0.1837
+    },
+    {
+      "precinct_id": "WP-065-46000-02014",
+      "precinct_name": "0654600002014",
+      "block_group_geoid": "260650029012",
+      "overlap_ratio": 0.0437
+    },
+    {
+      "precinct_id": "WP-065-46000-02014",
+      "precinct_name": "0654600002014",
+      "block_group_geoid": "260650028001",
+      "overlap_ratio": 0.022
+    },
+    {
+      "precinct_id": "WP-065-46000-02014",
+      "precinct_name": "0654600002014",
+      "block_group_geoid": "260650022001",
+      "overlap_ratio": 0.107
+    },
+    {
+      "precinct_id": "WP-065-46000-02014",
+      "precinct_name": "0654600002014",
+      "block_group_geoid": "260659801001",
+      "overlap_ratio": 0.6429
+    },
+    {
+      "precinct_id": "WP-065-46000-02016",
+      "precinct_name": "0654600002016",
+      "block_group_geoid": "260650029021",
+      "overlap_ratio": 0.491
+    },
+    {
+      "precinct_id": "WP-065-46000-02016",
+      "precinct_name": "0654600002016",
+      "block_group_geoid": "260650029023",
+      "overlap_ratio": 0.0646
+    },
+    {
+      "precinct_id": "WP-065-46000-02016",
+      "precinct_name": "0654600002016",
+      "block_group_geoid": "260650029022",
+      "overlap_ratio": 0.0441
+    },
+    {
+      "precinct_id": "WP-065-46000-02016",
+      "precinct_name": "0654600002016",
+      "block_group_geoid": "260650029011",
+      "overlap_ratio": 0.169
+    },
+    {
+      "precinct_id": "WP-065-46000-02016",
+      "precinct_name": "0654600002016",
+      "block_group_geoid": "260659801001",
+      "overlap_ratio": 0.2311
+    },
+    {
+      "precinct_id": "WP-065-46000-02015",
+      "precinct_name": "0654600002015",
+      "block_group_geoid": "260650028001",
+      "overlap_ratio": 0.1954
+    },
+    {
+      "precinct_id": "WP-065-46000-02015",
+      "precinct_name": "0654600002015",
+      "block_group_geoid": "260650028002",
+      "overlap_ratio": 0.2812
+    },
+    {
+      "precinct_id": "WP-065-46000-02015",
+      "precinct_name": "0654600002015",
+      "block_group_geoid": "260650028003",
+      "overlap_ratio": 0.5188
+    },
+    {
+      "precinct_id": "WP-065-46000-02015",
+      "precinct_name": "0654600002015",
+      "block_group_geoid": "260659801001",
+      "overlap_ratio": 0.0038
+    },
+    {
+      "precinct_id": "WP-065-46000-02018",
+      "precinct_name": "0654600002018",
+      "block_group_geoid": "260650053043",
+      "overlap_ratio": 0.3537
+    },
+    {
+      "precinct_id": "WP-065-46000-02018",
+      "precinct_name": "0654600002018",
+      "block_group_geoid": "260650053041",
+      "overlap_ratio": 0.1408
+    },
+    {
+      "precinct_id": "WP-065-46000-02018",
+      "precinct_name": "0654600002018",
+      "block_group_geoid": "260650056001",
+      "overlap_ratio": 0.1847
+    },
+    {
+      "precinct_id": "WP-065-46000-02018",
+      "precinct_name": "0654600002018",
+      "block_group_geoid": "260650053033",
+      "overlap_ratio": 0.1318
+    },
+    {
+      "precinct_id": "WP-065-46000-02018",
+      "precinct_name": "0654600002018",
+      "block_group_geoid": "260650053032",
+      "overlap_ratio": 0.1075
+    },
+    {
+      "precinct_id": "WP-065-46000-02018",
+      "precinct_name": "0654600002018",
+      "block_group_geoid": "260650053042",
+      "overlap_ratio": 0.0808
+    },
+    {
+      "precinct_id": "WP-065-46000-02020",
+      "precinct_name": "0654600002020",
+      "block_group_geoid": "260650053061",
+      "overlap_ratio": 0.287
+    },
+    {
+      "precinct_id": "WP-065-46000-02020",
+      "precinct_name": "0654600002020",
+      "block_group_geoid": "260650053062",
+      "overlap_ratio": 0.1963
+    },
+    {
+      "precinct_id": "WP-065-46000-02020",
+      "precinct_name": "0654600002020",
+      "block_group_geoid": "260650053031",
+      "overlap_ratio": 0.3182
+    },
+    {
+      "precinct_id": "WP-065-46000-02020",
+      "precinct_name": "0654600002020",
+      "block_group_geoid": "260650055012",
+      "overlap_ratio": 0.0461
+    },
+    {
+      "precinct_id": "WP-065-46000-02020",
+      "precinct_name": "0654600002020",
+      "block_group_geoid": "260650053034",
+      "overlap_ratio": 0.1513
+    },
+    {
+      "precinct_id": "WP-065-46000-03030",
+      "precinct_name": "0654600003030",
+      "block_group_geoid": "260650051002",
+      "overlap_ratio": 0.1007
+    },
+    {
+      "precinct_id": "WP-065-46000-03030",
+      "precinct_name": "0654600003030",
+      "block_group_geoid": "260650052014",
+      "overlap_ratio": 0.2272
+    },
+    {
+      "precinct_id": "WP-065-46000-03030",
+      "precinct_name": "0654600003030",
+      "block_group_geoid": "260650052013",
+      "overlap_ratio": 0.0546
+    },
+    {
+      "precinct_id": "WP-065-46000-03030",
+      "precinct_name": "0654600003030",
+      "block_group_geoid": "260650052012",
+      "overlap_ratio": 0.1365
+    },
+    {
+      "precinct_id": "WP-065-46000-03030",
+      "precinct_name": "0654600003030",
+      "block_group_geoid": "260650052015",
+      "overlap_ratio": 0.0986
+    },
+    {
+      "precinct_id": "WP-065-46000-03030",
+      "precinct_name": "0654600003030",
+      "block_group_geoid": "260650052011",
+      "overlap_ratio": 0.281
+    },
+    {
+      "precinct_id": "WP-065-46000-03030",
+      "precinct_name": "0654600003030",
+      "block_group_geoid": "260650052022",
+      "overlap_ratio": 0.0845
+    },
+    {
+      "precinct_id": "WP-065-46000-03030",
+      "precinct_name": "0654600003030",
+      "block_group_geoid": "260650052021",
+      "overlap_ratio": 0.0169
+    },
+    {
+      "precinct_id": "WP-065-46000-03025",
+      "precinct_name": "0654600003025",
+      "block_group_geoid": "260650037003",
+      "overlap_ratio": 0.3647
+    },
+    {
+      "precinct_id": "WP-065-46000-03025",
+      "precinct_name": "0654600003025",
+      "block_group_geoid": "260650037004",
+      "overlap_ratio": 0.2889
+    },
+    {
+      "precinct_id": "WP-065-46000-03025",
+      "precinct_name": "0654600003025",
+      "block_group_geoid": "260650037005",
+      "overlap_ratio": 0.3454
+    },
+    {
+      "precinct_id": "WP-065-46000-03027",
+      "precinct_name": "0654600003027",
+      "block_group_geoid": "260650036011",
+      "overlap_ratio": 0.2389
+    },
+    {
+      "precinct_id": "WP-065-46000-03027",
+      "precinct_name": "0654600003027",
+      "block_group_geoid": "260650036012",
+      "overlap_ratio": 0.3404
+    },
+    {
+      "precinct_id": "WP-065-46000-03027",
+      "precinct_name": "0654600003027",
+      "block_group_geoid": "260650036013",
+      "overlap_ratio": 0.4193
+    },
+    {
+      "precinct_id": "WP-065-46000-04032",
+      "precinct_name": "0654600004032",
+      "block_group_geoid": "260650017031",
+      "overlap_ratio": 0.4111
+    },
+    {
+      "precinct_id": "WP-065-46000-04032",
+      "precinct_name": "0654600004032",
+      "block_group_geoid": "260650070005",
+      "overlap_ratio": 0.1718
+    },
+    {
+      "precinct_id": "WP-065-46000-04032",
+      "precinct_name": "0654600004032",
+      "block_group_geoid": "260650070004",
+      "overlap_ratio": 0.1286
+    },
+    {
+      "precinct_id": "WP-065-46000-04032",
+      "precinct_name": "0654600004032",
+      "block_group_geoid": "260650070001",
+      "overlap_ratio": 0.1536
+    },
+    {
+      "precinct_id": "WP-065-46000-04032",
+      "precinct_name": "0654600004032",
+      "block_group_geoid": "260650070002",
+      "overlap_ratio": 0.1096
+    },
+    {
+      "precinct_id": "WP-065-46000-04032",
+      "precinct_name": "0654600004032",
+      "block_group_geoid": "260659802001",
+      "overlap_ratio": 0.0247
+    },
+    {
+      "precinct_id": "WP-065-46000-04037",
+      "precinct_name": "0654600004037",
+      "block_group_geoid": "260650007001",
+      "overlap_ratio": 0.2528
+    },
+    {
+      "precinct_id": "WP-065-46000-04037",
+      "precinct_name": "0654600004037",
+      "block_group_geoid": "260650068004",
+      "overlap_ratio": 0.1598
+    },
+    {
+      "precinct_id": "WP-065-46000-04037",
+      "precinct_name": "0654600004037",
+      "block_group_geoid": "260650068003",
+      "overlap_ratio": 0.3165
+    },
+    {
+      "precinct_id": "WP-065-46000-04037",
+      "precinct_name": "0654600004037",
+      "block_group_geoid": "260650007002",
+      "overlap_ratio": 0.159
+    },
+    {
+      "precinct_id": "WP-065-46000-04037",
+      "precinct_name": "0654600004037",
+      "block_group_geoid": "260650007003",
+      "overlap_ratio": 0.1112
+    },
+    {
+      "precinct_id": "WP-065-46000-04036",
+      "precinct_name": "0654600004036",
+      "block_group_geoid": "260650006001",
+      "overlap_ratio": 0.1318
+    },
+    {
+      "precinct_id": "WP-065-46000-04036",
+      "precinct_name": "0654600004036",
+      "block_group_geoid": "260659802001",
+      "overlap_ratio": 0.2683
+    },
+    {
+      "precinct_id": "WP-065-46000-04036",
+      "precinct_name": "0654600004036",
+      "block_group_geoid": "260650067002",
+      "overlap_ratio": 0.1679
+    },
+    {
+      "precinct_id": "WP-065-46000-04036",
+      "precinct_name": "0654600004036",
+      "block_group_geoid": "260650007001",
+      "overlap_ratio": 0.004
+    },
+    {
+      "precinct_id": "WP-065-46000-04036",
+      "precinct_name": "0654600004036",
+      "block_group_geoid": "260650068004",
+      "overlap_ratio": 0.0148
+    },
+    {
+      "precinct_id": "WP-065-46000-04036",
+      "precinct_name": "0654600004036",
+      "block_group_geoid": "260650007002",
+      "overlap_ratio": 0.0118
+    },
+    {
+      "precinct_id": "WP-065-46000-04036",
+      "precinct_name": "0654600004036",
+      "block_group_geoid": "260650006002",
+      "overlap_ratio": 0.0919
+    },
+    {
+      "precinct_id": "WP-065-46000-04036",
+      "precinct_name": "0654600004036",
+      "block_group_geoid": "260650067001",
+      "overlap_ratio": 0.3094
+    },
+    {
+      "precinct_id": "WP-065-47080-00001",
+      "precinct_name": "0654708000001",
+      "block_group_geoid": "260650059002",
+      "overlap_ratio": 0.2915
+    },
+    {
+      "precinct_id": "WP-065-47080-00001",
+      "precinct_name": "0654708000001",
+      "block_group_geoid": "260650059003",
+      "overlap_ratio": 0.0877
+    },
+    {
+      "precinct_id": "WP-065-47080-00001",
+      "precinct_name": "0654708000001",
+      "block_group_geoid": "260650059004",
+      "overlap_ratio": 0.6207
+    },
+    {
+      "precinct_id": "WP-065-47180-00001",
+      "precinct_name": "0654718000001",
+      "block_group_geoid": "260650061003",
+      "overlap_ratio": 0.4423
+    },
+    {
+      "precinct_id": "WP-065-47180-00001",
+      "precinct_name": "0654718000001",
+      "block_group_geoid": "260650061002",
+      "overlap_ratio": 0.1195
+    },
+    {
+      "precinct_id": "WP-065-47180-00001",
+      "precinct_name": "0654718000001",
+      "block_group_geoid": "260650061004",
+      "overlap_ratio": 0.4382
+    },
+    {
+      "precinct_id": "WP-065-47200-00001",
+      "precinct_name": "0654720000001",
+      "block_group_geoid": "260650061003",
+      "overlap_ratio": 0.0425
+    },
+    {
+      "precinct_id": "WP-065-47200-00001",
+      "precinct_name": "0654720000001",
+      "block_group_geoid": "260650061001",
+      "overlap_ratio": 0.5202
+    },
+    {
+      "precinct_id": "WP-065-47200-00001",
+      "precinct_name": "0654720000001",
+      "block_group_geoid": "260650061002",
+      "overlap_ratio": 0.369
+    },
+    {
+      "precinct_id": "WP-065-47200-00001",
+      "precinct_name": "0654720000001",
+      "block_group_geoid": "260650061004",
+      "overlap_ratio": 0.0681
+    },
+    {
+      "precinct_id": "WP-065-52180-00001",
+      "precinct_name": "0655218000001",
+      "block_group_geoid": "260650063014",
+      "overlap_ratio": 0.1657
+    },
+    {
+      "precinct_id": "WP-065-52180-00001",
+      "precinct_name": "0655218000001",
+      "block_group_geoid": "260650063015",
+      "overlap_ratio": 0.1231
+    },
+    {
+      "precinct_id": "WP-065-52180-00001",
+      "precinct_name": "0655218000001",
+      "block_group_geoid": "260650063012",
+      "overlap_ratio": 0.0948
+    },
+    {
+      "precinct_id": "WP-065-52180-00001",
+      "precinct_name": "0655218000001",
+      "block_group_geoid": "260650063022",
+      "overlap_ratio": 0.0195
+    },
+    {
+      "precinct_id": "WP-065-52180-00001",
+      "precinct_name": "0655218000001",
+      "block_group_geoid": "260650063021",
+      "overlap_ratio": 0.5969
+    },
+    {
+      "precinct_id": "WP-065-52180-00002",
+      "precinct_name": "0655218000002",
+      "block_group_geoid": "260650063015",
+      "overlap_ratio": 0.2474
+    },
+    {
+      "precinct_id": "WP-065-52180-00002",
+      "precinct_name": "0655218000002",
+      "block_group_geoid": "260650063012",
+      "overlap_ratio": 0.0242
+    },
+    {
+      "precinct_id": "WP-065-52180-00002",
+      "precinct_name": "0655218000002",
+      "block_group_geoid": "260650056003",
+      "overlap_ratio": 0.1087
+    },
+    {
+      "precinct_id": "WP-065-52180-00002",
+      "precinct_name": "0655218000002",
+      "block_group_geoid": "260650063013",
+      "overlap_ratio": 0.0556
+    },
+    {
+      "precinct_id": "WP-065-52180-00002",
+      "precinct_name": "0655218000002",
+      "block_group_geoid": "260650063022",
+      "overlap_ratio": 0.2065
+    },
+    {
+      "precinct_id": "WP-065-52180-00002",
+      "precinct_name": "0655218000002",
+      "block_group_geoid": "260650063021",
+      "overlap_ratio": 0.2103
+    },
+    {
+      "precinct_id": "WP-065-52180-00002",
+      "precinct_name": "0655218000002",
+      "block_group_geoid": "260650063011",
+      "overlap_ratio": 0.1472
+    },
+    {
+      "precinct_id": "WP-065-53140-00001",
+      "precinct_name": "0655314000001",
+      "block_group_geoid": "260650050022",
+      "overlap_ratio": 0.2514
+    },
+    {
+      "precinct_id": "WP-065-53140-00001",
+      "precinct_name": "0655314000001",
+      "block_group_geoid": "260650048023",
+      "overlap_ratio": 0.4929
+    },
+    {
+      "precinct_id": "WP-065-53140-00001",
+      "precinct_name": "0655314000001",
+      "block_group_geoid": "260650048022",
+      "overlap_ratio": 0.2392
+    },
+    {
+      "precinct_id": "WP-065-53140-00001",
+      "precinct_name": "0655314000001",
+      "block_group_geoid": "260650047002",
+      "overlap_ratio": 0.0163
+    },
+    {
+      "precinct_id": "WP-065-53140-00002",
+      "precinct_name": "0655314000002",
+      "block_group_geoid": "260650048012",
+      "overlap_ratio": 0.8327
+    },
+    {
+      "precinct_id": "WP-065-53140-00002",
+      "precinct_name": "0655314000002",
+      "block_group_geoid": "260650048021",
+      "overlap_ratio": 0.1457
+    },
+    {
+      "precinct_id": "WP-065-53140-00002",
+      "precinct_name": "0655314000002",
+      "block_group_geoid": "260650048011",
+      "overlap_ratio": 0.0209
+    },
+    {
+      "precinct_id": "WP-065-53140-00005",
+      "precinct_name": "0655314000005",
+      "block_group_geoid": "260650048021",
+      "overlap_ratio": 0.0145
+    },
+    {
+      "precinct_id": "WP-065-53140-00005",
+      "precinct_name": "0655314000005",
+      "block_group_geoid": "260650048022",
+      "overlap_ratio": 0.1784
+    },
+    {
+      "precinct_id": "WP-065-53140-00005",
+      "precinct_name": "0655314000005",
+      "block_group_geoid": "260650047001",
+      "overlap_ratio": 0.3663
+    },
+    {
+      "precinct_id": "WP-065-53140-00005",
+      "precinct_name": "0655314000005",
+      "block_group_geoid": "260650047002",
+      "overlap_ratio": 0.4306
+    },
+    {
+      "precinct_id": "WP-065-53140-00005",
+      "precinct_name": "0655314000005",
+      "block_group_geoid": "260650048011",
+      "overlap_ratio": 0.0097
+    },
+    {
+      "precinct_id": "WP-065-53140-00006",
+      "precinct_name": "0655314000006",
+      "block_group_geoid": "260650049031",
+      "overlap_ratio": 0.4104
+    },
+    {
+      "precinct_id": "WP-065-53140-00006",
+      "precinct_name": "0655314000006",
+      "block_group_geoid": "260650050022",
+      "overlap_ratio": 0.589
+    },
+    {
+      "precinct_id": "WP-065-53140-00007",
+      "precinct_name": "0655314000007",
+      "block_group_geoid": "260650050022",
+      "overlap_ratio": 0.4233
+    },
+    {
+      "precinct_id": "WP-065-53140-00007",
+      "precinct_name": "0655314000007",
+      "block_group_geoid": "260650050023",
+      "overlap_ratio": 0.0391
+    },
+    {
+      "precinct_id": "WP-065-53140-00007",
+      "precinct_name": "0655314000007",
+      "block_group_geoid": "260650050021",
+      "overlap_ratio": 0.5371
+    },
+    {
+      "precinct_id": "WP-065-53140-00008",
+      "precinct_name": "0655314000008",
+      "block_group_geoid": "260650049043",
+      "overlap_ratio": 0.5018
+    },
+    {
+      "precinct_id": "WP-065-53140-00008",
+      "precinct_name": "0655314000008",
+      "block_group_geoid": "260650049041",
+      "overlap_ratio": 0.0055
+    },
+    {
+      "precinct_id": "WP-065-53140-00008",
+      "precinct_name": "0655314000008",
+      "block_group_geoid": "260650049042",
+      "overlap_ratio": 0.4921
+    },
+    {
+      "precinct_id": "WP-065-53140-00009",
+      "precinct_name": "0655314000009",
+      "block_group_geoid": "260650049031",
+      "overlap_ratio": 0.1023
+    },
+    {
+      "precinct_id": "WP-065-53140-00009",
+      "precinct_name": "0655314000009",
+      "block_group_geoid": "260650049041",
+      "overlap_ratio": 0.8832
+    },
+    {
+      "precinct_id": "WP-065-53140-00009",
+      "precinct_name": "0655314000009",
+      "block_group_geoid": "260650049021",
+      "overlap_ratio": 0.0145
+    },
+    {
+      "precinct_id": "WP-065-53140-00010",
+      "precinct_name": "0655314000010",
+      "block_group_geoid": "260650049031",
+      "overlap_ratio": 0.4336
+    },
+    {
+      "precinct_id": "WP-065-53140-00010",
+      "precinct_name": "0655314000010",
+      "block_group_geoid": "260650048012",
+      "overlap_ratio": 0.0984
+    },
+    {
+      "precinct_id": "WP-065-53140-00010",
+      "precinct_name": "0655314000010",
+      "block_group_geoid": "260650046002",
+      "overlap_ratio": 0.4049
+    },
+    {
+      "precinct_id": "WP-065-53140-00010",
+      "precinct_name": "0655314000010",
+      "block_group_geoid": "260650048013",
+      "overlap_ratio": 0.0628
+    },
+    {
+      "precinct_id": "WP-065-53140-00012",
+      "precinct_name": "0655314000012",
+      "block_group_geoid": "260650043022",
+      "overlap_ratio": 0.0011
+    },
+    {
+      "precinct_id": "WP-065-53140-00012",
+      "precinct_name": "0655314000012",
+      "block_group_geoid": "260650043011",
+      "overlap_ratio": 0.5191
+    },
+    {
+      "precinct_id": "WP-065-53140-00012",
+      "precinct_name": "0655314000012",
+      "block_group_geoid": "260650043012",
+      "overlap_ratio": 0.4799
+    },
+    {
+      "precinct_id": "WP-065-53140-00013",
+      "precinct_name": "0655314000013",
+      "block_group_geoid": "260650049023",
+      "overlap_ratio": 0.0998
+    },
+    {
+      "precinct_id": "WP-065-53140-00013",
+      "precinct_name": "0655314000013",
+      "block_group_geoid": "260650049024",
+      "overlap_ratio": 0.4265
+    },
+    {
+      "precinct_id": "WP-065-53140-00013",
+      "precinct_name": "0655314000013",
+      "block_group_geoid": "260650049021",
+      "overlap_ratio": 0.4737
+    },
+    {
+      "precinct_id": "WP-065-53140-00014",
+      "precinct_name": "0655314000014",
+      "block_group_geoid": "260650050031",
+      "overlap_ratio": 0.4268
+    },
+    {
+      "precinct_id": "WP-065-53140-00014",
+      "precinct_name": "0655314000014",
+      "block_group_geoid": "260650050023",
+      "overlap_ratio": 0.5723
+    },
+    {
+      "precinct_id": "WP-065-53140-00015",
+      "precinct_name": "0655314000015",
+      "block_group_geoid": "260650050043",
+      "overlap_ratio": 0.3252
+    },
+    {
+      "precinct_id": "WP-065-53140-00015",
+      "precinct_name": "0655314000015",
+      "block_group_geoid": "260650050042",
+      "overlap_ratio": 0.6737
+    },
+    {
+      "precinct_id": "WP-065-53140-00018",
+      "precinct_name": "0655314000018",
+      "block_group_geoid": "260650045002",
+      "overlap_ratio": 0.4091
+    },
+    {
+      "precinct_id": "WP-065-53140-00018",
+      "precinct_name": "0655314000018",
+      "block_group_geoid": "260650045003",
+      "overlap_ratio": 0.1109
+    },
+    {
+      "precinct_id": "WP-065-53140-00018",
+      "precinct_name": "0655314000018",
+      "block_group_geoid": "260650039011",
+      "overlap_ratio": 0.0333
+    },
+    {
+      "precinct_id": "WP-065-53140-00018",
+      "precinct_name": "0655314000018",
+      "block_group_geoid": "260650045001",
+      "overlap_ratio": 0.4461
+    },
+    {
+      "precinct_id": "WP-065-53140-00019",
+      "precinct_name": "0655314000019",
+      "block_group_geoid": "260650046002",
+      "overlap_ratio": 0.0736
+    },
+    {
+      "precinct_id": "WP-065-53140-00019",
+      "precinct_name": "0655314000019",
+      "block_group_geoid": "260650046001",
+      "overlap_ratio": 0.4558
+    },
+    {
+      "precinct_id": "WP-065-53140-00019",
+      "precinct_name": "0655314000019",
+      "block_group_geoid": "260650045002",
+      "overlap_ratio": 0.4457
+    },
+    {
+      "precinct_id": "WP-065-53140-00019",
+      "precinct_name": "0655314000019",
+      "block_group_geoid": "260650045003",
+      "overlap_ratio": 0.0243
+    },
+    {
+      "precinct_id": "WP-065-86900-00001",
+      "precinct_name": "0658690000001",
+      "block_group_geoid": "260650060013",
+      "overlap_ratio": 0.2706
+    },
+    {
+      "precinct_id": "WP-065-86900-00001",
+      "precinct_name": "0658690000001",
+      "block_group_geoid": "260650060021",
+      "overlap_ratio": 0.7292
+    },
+    {
+      "precinct_id": "WP-065-53140-00022",
+      "precinct_name": "0655314000022",
+      "block_group_geoid": "260650050022",
+      "overlap_ratio": 0.369
+    },
+    {
+      "precinct_id": "WP-065-53140-00022",
+      "precinct_name": "0655314000022",
+      "block_group_geoid": "260650050023",
+      "overlap_ratio": 0.6309
+    },
+    {
+      "precinct_id": "WP-065-53140-00016",
+      "precinct_name": "0655314000016",
+      "block_group_geoid": "260650050031",
+      "overlap_ratio": 0.7047
+    },
+    {
+      "precinct_id": "WP-065-53140-00016",
+      "precinct_name": "0655314000016",
+      "block_group_geoid": "260650050041",
+      "overlap_ratio": 0.295
+    },
+    {
+      "precinct_id": "WP-065-53140-00021",
+      "precinct_name": "0655314000021",
+      "block_group_geoid": "260650049031",
+      "overlap_ratio": 0.906
+    },
+    {
+      "precinct_id": "WP-065-53140-00021",
+      "precinct_name": "0655314000021",
+      "block_group_geoid": "260650049022",
+      "overlap_ratio": 0.0636
+    },
+    {
+      "precinct_id": "WP-065-53140-00021",
+      "precinct_name": "0655314000021",
+      "block_group_geoid": "260650049023",
+      "overlap_ratio": 0.0286
+    },
+    {
+      "precinct_id": "WP-065-53140-00003",
+      "precinct_name": "0655314000003",
+      "block_group_geoid": "260650046002",
+      "overlap_ratio": 0.2018
+    },
+    {
+      "precinct_id": "WP-065-53140-00003",
+      "precinct_name": "0655314000003",
+      "block_group_geoid": "260650046001",
+      "overlap_ratio": 0.2491
+    },
+    {
+      "precinct_id": "WP-065-53140-00003",
+      "precinct_name": "0655314000003",
+      "block_group_geoid": "260650048013",
+      "overlap_ratio": 0.3798
+    },
+    {
+      "precinct_id": "WP-065-53140-00003",
+      "precinct_name": "0655314000003",
+      "block_group_geoid": "260650048011",
+      "overlap_ratio": 0.1687
+    },
+    {
+      "precinct_id": "WP-065-53140-00020",
+      "precinct_name": "0655314000020",
+      "block_group_geoid": "260650049022",
+      "overlap_ratio": 0.0437
+    },
+    {
+      "precinct_id": "WP-065-53140-00020",
+      "precinct_name": "0655314000020",
+      "block_group_geoid": "260650043022",
+      "overlap_ratio": 0.9551
+    },
+    {
+      "precinct_id": "WP-065-87440-00001",
+      "precinct_name": "0658744000001",
+      "block_group_geoid": "260650058001",
+      "overlap_ratio": 0.2733
+    },
+    {
+      "precinct_id": "WP-065-87440-00001",
+      "precinct_name": "0658744000001",
+      "block_group_geoid": "260650057001",
+      "overlap_ratio": 0.0305
+    },
+    {
+      "precinct_id": "WP-065-87440-00001",
+      "precinct_name": "0658744000001",
+      "block_group_geoid": "260650057003",
+      "overlap_ratio": 0.5371
+    },
+    {
+      "precinct_id": "WP-065-87440-00001",
+      "precinct_name": "0658744000001",
+      "block_group_geoid": "260650058002",
+      "overlap_ratio": 0.1454
+    },
+    {
+      "precinct_id": "WP-065-87440-00001",
+      "precinct_name": "0658744000001",
+      "block_group_geoid": "260650058003",
+      "overlap_ratio": 0.013
+    },
+    {
+      "precinct_id": "WP-065-46000-01002",
+      "precinct_name": "0654600001002",
+      "block_group_geoid": "260650066001",
+      "overlap_ratio": 0.0138
+    },
+    {
+      "precinct_id": "WP-065-46000-01002",
+      "precinct_name": "0654600001002",
+      "block_group_geoid": "260650066002",
+      "overlap_ratio": 0.768
+    },
+    {
+      "precinct_id": "WP-065-46000-01002",
+      "precinct_name": "0654600001002",
+      "block_group_geoid": "260650012003",
+      "overlap_ratio": 0.0521
+    },
+    {
+      "precinct_id": "WP-065-46000-01002",
+      "precinct_name": "0654600001002",
+      "block_group_geoid": "260650065003",
+      "overlap_ratio": 0.0614
+    },
+    {
+      "precinct_id": "WP-065-46000-01002",
+      "precinct_name": "0654600001002",
+      "block_group_geoid": "260650008003",
+      "overlap_ratio": 0.1038
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260659802001",
+      "overlap_ratio": 0.0715
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260650004001",
+      "overlap_ratio": 0.1172
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260650007001",
+      "overlap_ratio": 0.0395
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260650068004",
+      "overlap_ratio": 0.0071
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260650068003",
+      "overlap_ratio": 0.0201
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260650004002",
+      "overlap_ratio": 0.0286
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260650007003",
+      "overlap_ratio": 0.0194
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260650034001",
+      "overlap_ratio": 0.1294
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260650068001",
+      "overlap_ratio": 0.3791
+    },
+    {
+      "precinct_id": "WP-065-46000-04038",
+      "precinct_name": "0654600004038",
+      "block_group_geoid": "260650068002",
+      "overlap_ratio": 0.1874
+    },
+    {
+      "precinct_id": "WP-065-46000-04035",
+      "precinct_name": "0654600004035",
+      "block_group_geoid": "260650067004",
+      "overlap_ratio": 0.1556
+    },
+    {
+      "precinct_id": "WP-065-46000-04035",
+      "precinct_name": "0654600004035",
+      "block_group_geoid": "260650035002",
+      "overlap_ratio": 0.0262
+    },
+    {
+      "precinct_id": "WP-065-46000-04035",
+      "precinct_name": "0654600004035",
+      "block_group_geoid": "260659802001",
+      "overlap_ratio": 0.3393
+    },
+    {
+      "precinct_id": "WP-065-46000-04035",
+      "precinct_name": "0654600004035",
+      "block_group_geoid": "260650004003",
+      "overlap_ratio": 0.1531
+    },
+    {
+      "precinct_id": "WP-065-46000-04035",
+      "precinct_name": "0654600004035",
+      "block_group_geoid": "260650004001",
+      "overlap_ratio": 0.0179
+    },
+    {
+      "precinct_id": "WP-065-46000-04035",
+      "precinct_name": "0654600004035",
+      "block_group_geoid": "260650067003",
+      "overlap_ratio": 0.2032
+    },
+    {
+      "precinct_id": "WP-065-46000-04035",
+      "precinct_name": "0654600004035",
+      "block_group_geoid": "260650067002",
+      "overlap_ratio": 0.0236
+    },
+    {
+      "precinct_id": "WP-065-46000-04035",
+      "precinct_name": "0654600004035",
+      "block_group_geoid": "260650004002",
+      "overlap_ratio": 0.0782
+    },
+    {
+      "precinct_id": "WP-065-46000-04035",
+      "precinct_name": "0654600004035",
+      "block_group_geoid": "260650006002",
+      "overlap_ratio": 0.0027
+    },
+    {
+      "precinct_id": "WP-065-46000-04034",
+      "precinct_name": "0654600004034",
+      "block_group_geoid": "260650070003",
+      "overlap_ratio": 0.2458
+    },
+    {
+      "precinct_id": "WP-065-46000-04034",
+      "precinct_name": "0654600004034",
+      "block_group_geoid": "260659802001",
+      "overlap_ratio": 0.0163
+    },
+    {
+      "precinct_id": "WP-065-46000-04034",
+      "precinct_name": "0654600004034",
+      "block_group_geoid": "260650023003",
+      "overlap_ratio": 0.1877
+    },
+    {
+      "precinct_id": "WP-065-46000-04034",
+      "precinct_name": "0654600004034",
+      "block_group_geoid": "260650020003",
+      "overlap_ratio": 0.0484
+    },
+    {
+      "precinct_id": "WP-065-46000-04034",
+      "precinct_name": "0654600004034",
+      "block_group_geoid": "260650070006",
+      "overlap_ratio": 0.3901
+    },
+    {
+      "precinct_id": "WP-065-46000-04034",
+      "precinct_name": "0654600004034",
+      "block_group_geoid": "260650037001",
+      "overlap_ratio": 0.0909
+    },
+    {
+      "precinct_id": "WP-065-46000-04034",
+      "precinct_name": "0654600004034",
+      "block_group_geoid": "260650020004",
+      "overlap_ratio": 0.02
+    },
+    {
+      "precinct_id": "WP-065-46000-03026",
+      "precinct_name": "0654600003026",
+      "block_group_geoid": "260650036022",
+      "overlap_ratio": 0.4298
+    },
+    {
+      "precinct_id": "WP-065-46000-03026",
+      "precinct_name": "0654600003026",
+      "block_group_geoid": "260650036023",
+      "overlap_ratio": 0.4706
+    },
+    {
+      "precinct_id": "WP-065-46000-03026",
+      "precinct_name": "0654600003026",
+      "block_group_geoid": "260650036011",
+      "overlap_ratio": 0.0655
+    },
+    {
+      "precinct_id": "WP-065-46000-03026",
+      "precinct_name": "0654600003026",
+      "block_group_geoid": "260650036012",
+      "overlap_ratio": 0.0329
+    },
+    {
+      "precinct_id": "WP-065-21420-00006",
+      "precinct_name": "0652142000006",
+      "block_group_geoid": "260650054021",
+      "overlap_ratio": 0.1938
+    },
+    {
+      "precinct_id": "WP-065-21420-00006",
+      "precinct_name": "0652142000006",
+      "block_group_geoid": "260650054011",
+      "overlap_ratio": 0.5413
+    },
+    {
+      "precinct_id": "WP-065-21420-00006",
+      "precinct_name": "0652142000006",
+      "block_group_geoid": "260650054023",
+      "overlap_ratio": 0.2643
+    },
+    {
+      "precinct_id": "WP-065-21420-00003",
+      "precinct_name": "0652142000003",
+      "block_group_geoid": "260650055012",
+      "overlap_ratio": 0.3597
+    },
+    {
+      "precinct_id": "WP-065-21420-00003",
+      "precinct_name": "0652142000003",
+      "block_group_geoid": "260650054012",
+      "overlap_ratio": 0.0936
+    },
+    {
+      "precinct_id": "WP-065-21420-00003",
+      "precinct_name": "0652142000003",
+      "block_group_geoid": "260650055014",
+      "overlap_ratio": 0.4001
+    },
+    {
+      "precinct_id": "WP-065-21420-00003",
+      "precinct_name": "0652142000003",
+      "block_group_geoid": "260650054013",
+      "overlap_ratio": 0.146
+    },
+    {
+      "precinct_id": "WP-065-46000-02017",
+      "precinct_name": "0654600002017",
+      "block_group_geoid": "260650050031",
+      "overlap_ratio": 0.1841
+    },
+    {
+      "precinct_id": "WP-065-46000-02017",
+      "precinct_name": "0654600002017",
+      "block_group_geoid": "260650029012",
+      "overlap_ratio": 0.2226
+    },
+    {
+      "precinct_id": "WP-065-46000-02017",
+      "precinct_name": "0654600002017",
+      "block_group_geoid": "260650029021",
+      "overlap_ratio": 0.0366
+    },
+    {
+      "precinct_id": "WP-065-46000-02017",
+      "precinct_name": "0654600002017",
+      "block_group_geoid": "260659800001",
+      "overlap_ratio": 0.3179
+    },
+    {
+      "precinct_id": "WP-065-46000-02017",
+      "precinct_name": "0654600002017",
+      "block_group_geoid": "260650029011",
+      "overlap_ratio": 0.116
+    },
+    {
+      "precinct_id": "WP-065-46000-02017",
+      "precinct_name": "0654600002017",
+      "block_group_geoid": "260659801001",
+      "overlap_ratio": 0.1227
+    },
+    {
+      "precinct_id": "WP-065-00800-00002",
+      "precinct_name": "0650080000002",
+      "block_group_geoid": "260650056001",
+      "overlap_ratio": 0.1318
+    },
+    {
+      "precinct_id": "WP-065-00800-00002",
+      "precinct_name": "0650080000002",
+      "block_group_geoid": "260650056003",
+      "overlap_ratio": 0.4778
+    },
+    {
+      "precinct_id": "WP-065-00800-00002",
+      "precinct_name": "0650080000002",
+      "block_group_geoid": "260650056002",
+      "overlap_ratio": 0.3903
+    },
+    {
+      "precinct_id": "WP-065-24120-00002",
+      "precinct_name": "0652412000002",
+      "block_group_geoid": "260650040005",
+      "overlap_ratio": 0.3946
+    },
+    {
+      "precinct_id": "WP-065-24120-00002",
+      "precinct_name": "0652412000002",
+      "block_group_geoid": "260650040002",
+      "overlap_ratio": 0.277
+    },
+    {
+      "precinct_id": "WP-065-24120-00002",
+      "precinct_name": "0652412000002",
+      "block_group_geoid": "260650040003",
+      "overlap_ratio": 0.0146
+    },
+    {
+      "precinct_id": "WP-065-24120-00002",
+      "precinct_name": "0652412000002",
+      "block_group_geoid": "260650041004",
+      "overlap_ratio": 0.3132
+    },
+    {
+      "precinct_id": "WP-065-24120-00005",
+      "precinct_name": "0652412000005",
+      "block_group_geoid": "260650038013",
+      "overlap_ratio": 0.0607
+    },
+    {
+      "precinct_id": "WP-065-24120-00005",
+      "precinct_name": "0652412000005",
+      "block_group_geoid": "260650038023",
+      "overlap_ratio": 0.0469
+    },
+    {
+      "precinct_id": "WP-065-24120-00005",
+      "precinct_name": "0652412000005",
+      "block_group_geoid": "260650038021",
+      "overlap_ratio": 0.6246
+    },
+    {
+      "precinct_id": "WP-065-24120-00005",
+      "precinct_name": "0652412000005",
+      "block_group_geoid": "260650038011",
+      "overlap_ratio": 0.1234
+    },
+    {
+      "precinct_id": "WP-065-24120-00005",
+      "precinct_name": "0652412000005",
+      "block_group_geoid": "260650045001",
+      "overlap_ratio": 0.1431
+    },
+    {
+      "precinct_id": "WP-065-24120-00011",
+      "precinct_name": "0652412000011",
+      "block_group_geoid": "260650039022",
+      "overlap_ratio": 0.4474
+    },
+    {
+      "precinct_id": "WP-065-24120-00011",
+      "precinct_name": "0652412000011",
+      "block_group_geoid": "260650046001",
+      "overlap_ratio": 0.1999
+    },
+    {
+      "precinct_id": "WP-065-24120-00011",
+      "precinct_name": "0652412000011",
+      "block_group_geoid": "260650043011",
+      "overlap_ratio": 0.1455
+    },
+    {
+      "precinct_id": "WP-065-24120-00011",
+      "precinct_name": "0652412000011",
+      "block_group_geoid": "260650043012",
+      "overlap_ratio": 0.0868
+    },
+    {
+      "precinct_id": "WP-065-24120-00011",
+      "precinct_name": "0652412000011",
+      "block_group_geoid": "260650043014",
+      "overlap_ratio": 0.1197
+    },
+    {
+      "precinct_id": "WP-065-24120-00014",
+      "precinct_name": "0652412000014",
+      "block_group_geoid": "260650044941",
+      "overlap_ratio": 0.0686
+    },
+    {
+      "precinct_id": "WP-065-24120-00014",
+      "precinct_name": "0652412000014",
+      "block_group_geoid": "260659800001",
+      "overlap_ratio": 0.9312
+    },
+    {
+      "precinct_id": "WP-065-24120-00016",
+      "precinct_name": "0652412000016",
+      "block_group_geoid": "260650044023",
+      "overlap_ratio": 0.0305
+    },
+    {
+      "precinct_id": "WP-065-24120-00016",
+      "precinct_name": "0652412000016",
+      "block_group_geoid": "260650044022",
+      "overlap_ratio": 0.0242
+    },
+    {
+      "precinct_id": "WP-065-24120-00016",
+      "precinct_name": "0652412000016",
+      "block_group_geoid": "260650044031",
+      "overlap_ratio": 0.0791
+    },
+    {
+      "precinct_id": "WP-065-24120-00016",
+      "precinct_name": "0652412000016",
+      "block_group_geoid": "260650029012",
+      "overlap_ratio": 0.0628
+    },
+    {
+      "precinct_id": "WP-065-24120-00016",
+      "precinct_name": "0652412000016",
+      "block_group_geoid": "260650044021",
+      "overlap_ratio": 0.0976
+    },
+    {
+      "precinct_id": "WP-065-24120-00016",
+      "precinct_name": "0652412000016",
+      "block_group_geoid": "260659800001",
+      "overlap_ratio": 0.4892
+    },
+    {
+      "precinct_id": "WP-065-24120-00016",
+      "precinct_name": "0652412000016",
+      "block_group_geoid": "260650044032",
+      "overlap_ratio": 0.089
+    },
+    {
+      "precinct_id": "WP-065-24120-00016",
+      "precinct_name": "0652412000016",
+      "block_group_geoid": "260659801001",
+      "overlap_ratio": 0.0968
+    },
+    {
+      "precinct_id": "WP-065-24120-00016",
+      "precinct_name": "0652412000016",
+      "block_group_geoid": "260650044033",
+      "overlap_ratio": 0.0308
+    },
+    {
+      "precinct_id": "WP-065-46000-01001",
+      "precinct_name": "0654600001001",
+      "block_group_geoid": "260650001001",
+      "overlap_ratio": 0.1251
+    },
+    {
+      "precinct_id": "WP-065-46000-01001",
+      "precinct_name": "0654600001001",
+      "block_group_geoid": "260650066001",
+      "overlap_ratio": 0.1828
+    },
+    {
+      "precinct_id": "WP-065-46000-01001",
+      "precinct_name": "0654600001001",
+      "block_group_geoid": "260650001002",
+      "overlap_ratio": 0.2427
+    },
+    {
+      "precinct_id": "WP-065-46000-01001",
+      "precinct_name": "0654600001001",
+      "block_group_geoid": "260650032001",
+      "overlap_ratio": 0.2355
+    },
+    {
+      "precinct_id": "WP-065-46000-01001",
+      "precinct_name": "0654600001001",
+      "block_group_geoid": "260650032002",
+      "overlap_ratio": 0.2132
+    },
+    {
+      "precinct_id": "WP-065-46000-01003",
+      "precinct_name": "0654600001003",
+      "block_group_geoid": "260650031033",
+      "overlap_ratio": 0.3513
+    },
+    {
+      "precinct_id": "WP-065-46000-01003",
+      "precinct_name": "0654600001003",
+      "block_group_geoid": "260650038013",
+      "overlap_ratio": 0.004
+    },
+    {
+      "precinct_id": "WP-065-46000-01003",
+      "precinct_name": "0654600001003",
+      "block_group_geoid": "260650031031",
+      "overlap_ratio": 0.2372
+    },
+    {
+      "precinct_id": "WP-065-46000-01003",
+      "precinct_name": "0654600001003",
+      "block_group_geoid": "260650031032",
+      "overlap_ratio": 0.4074
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260650031033",
+      "overlap_ratio": 0.0018
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260650010002",
+      "overlap_ratio": 0.1305
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260650038013",
+      "overlap_ratio": 0.1144
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260650010001",
+      "overlap_ratio": 0.1925
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260650065002",
+      "overlap_ratio": 0.0383
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260650012001",
+      "overlap_ratio": 0.1589
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260650065001",
+      "overlap_ratio": 0.0162
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260650040003",
+      "overlap_ratio": 0.174
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260650031036",
+      "overlap_ratio": 0.0392
+    },
+    {
+      "precinct_id": "WP-065-46000-01005",
+      "precinct_name": "0654600001005",
+      "block_group_geoid": "260659801001",
+      "overlap_ratio": 0.1338
+    },
+    {
+      "precinct_id": "WP-065-46000-03028",
+      "precinct_name": "0654600003028",
+      "block_group_geoid": "260650051003",
+      "overlap_ratio": 0.2777
+    },
+    {
+      "precinct_id": "WP-065-46000-03028",
+      "precinct_name": "0654600003028",
+      "block_group_geoid": "260650051002",
+      "overlap_ratio": 0.3201
+    },
+    {
+      "precinct_id": "WP-065-46000-03028",
+      "precinct_name": "0654600003028",
+      "block_group_geoid": "260650051001",
+      "overlap_ratio": 0.2359
+    },
+    {
+      "precinct_id": "WP-065-46000-03028",
+      "precinct_name": "0654600003028",
+      "block_group_geoid": "260650052013",
+      "overlap_ratio": 0.1048
+    },
+    {
+      "precinct_id": "WP-065-46000-03028",
+      "precinct_name": "0654600003028",
+      "block_group_geoid": "260650052015",
+      "overlap_ratio": 0.0605
+    },
+    {
+      "precinct_id": "WP-065-46000-03023",
+      "precinct_name": "0654600003023",
+      "block_group_geoid": "260650017032",
+      "overlap_ratio": 0.509
+    },
+    {
+      "precinct_id": "WP-065-46000-03023",
+      "precinct_name": "0654600003023",
+      "block_group_geoid": "260650017031",
+      "overlap_ratio": 0.4907
+    },
+    {
+      "precinct_id": "WP-065-46000-04039",
+      "precinct_name": "0654600004039",
+      "block_group_geoid": "260650066001",
+      "overlap_ratio": 0.0349
+    },
+    {
+      "precinct_id": "WP-065-46000-04039",
+      "precinct_name": "0654600004039",
+      "block_group_geoid": "260650033022",
+      "overlap_ratio": 0.4587
+    },
+    {
+      "precinct_id": "WP-065-46000-04039",
+      "precinct_name": "0654600004039",
+      "block_group_geoid": "260650033021",
+      "overlap_ratio": 0.4459
+    },
+    {
+      "precinct_id": "WP-065-46000-04039",
+      "precinct_name": "0654600004039",
+      "block_group_geoid": "260650034001",
+      "overlap_ratio": 0.0585
+    },
+    {
+      "precinct_id": "WP-065-46000-04040",
+      "precinct_name": "0654600004040",
+      "block_group_geoid": "260650033011",
+      "overlap_ratio": 0.0564
+    },
+    {
+      "precinct_id": "WP-065-46000-04040",
+      "precinct_name": "0654600004040",
+      "block_group_geoid": "260650033013",
+      "overlap_ratio": 0.1192
+    },
+    {
+      "precinct_id": "WP-065-46000-04040",
+      "precinct_name": "0654600004040",
+      "block_group_geoid": "260650033012",
+      "overlap_ratio": 0.0351
+    },
+    {
+      "precinct_id": "WP-065-46000-04040",
+      "precinct_name": "0654600004040",
+      "block_group_geoid": "260650032002",
+      "overlap_ratio": 0.0366
+    },
+    {
+      "precinct_id": "WP-065-46020-00003",
+      "precinct_name": "0654602000003",
+      "block_group_geoid": "260650035003",
+      "overlap_ratio": 0.2233
+    },
+    {
+      "precinct_id": "WP-065-46020-00003",
+      "precinct_name": "0654602000003",
+      "block_group_geoid": "260650035002",
+      "overlap_ratio": 0.6253
+    },
+    {
+      "precinct_id": "WP-065-46020-00003",
+      "precinct_name": "0654602000003",
+      "block_group_geoid": "260659802001",
+      "overlap_ratio": 0.1153
+    },
+    {
+      "precinct_id": "WP-065-46020-00003",
+      "precinct_name": "0654602000003",
+      "block_group_geoid": "260650035001",
+      "overlap_ratio": 0.0351
+    },
+    {
+      "precinct_id": "WP-065-46020-00004",
+      "precinct_name": "0654602000004",
+      "block_group_geoid": "260650035003",
+      "overlap_ratio": 0.3798
+    },
+    {
+      "precinct_id": "WP-065-46020-00004",
+      "precinct_name": "0654602000004",
+      "block_group_geoid": "260659802001",
+      "overlap_ratio": 0.2022
+    },
+    {
+      "precinct_id": "WP-065-46020-00004",
+      "precinct_name": "0654602000004",
+      "block_group_geoid": "260650035001",
+      "overlap_ratio": 0.1745
+    },
+    {
+      "precinct_id": "WP-065-46020-00004",
+      "precinct_name": "0654602000004",
+      "block_group_geoid": "260650034003",
+      "overlap_ratio": 0.2423
+    },
+    {
+      "precinct_id": "WP-065-46020-00006",
+      "precinct_name": "0654602000006",
+      "block_group_geoid": "260650034002",
+      "overlap_ratio": 0.2982
+    },
+    {
+      "precinct_id": "WP-065-46020-00006",
+      "precinct_name": "0654602000006",
+      "block_group_geoid": "260659802001",
+      "overlap_ratio": 0.2635
+    },
+    {
+      "precinct_id": "WP-065-46020-00006",
+      "precinct_name": "0654602000006",
+      "block_group_geoid": "260650034001",
+      "overlap_ratio": 0.4377
+    },
+    {
+      "precinct_id": "WP-065-49040-00001",
+      "precinct_name": "0654904000001",
+      "block_group_geoid": "260650059002",
+      "overlap_ratio": 0.0516
+    },
+    {
+      "precinct_id": "WP-065-49040-00001",
+      "precinct_name": "0654904000001",
+      "block_group_geoid": "260650059003",
+      "overlap_ratio": 0.0042
+    },
+    {
+      "precinct_id": "WP-065-49040-00001",
+      "precinct_name": "0654904000001",
+      "block_group_geoid": "260650059001",
+      "overlap_ratio": 0.9441
+    },
+    {
+      "precinct_id": "WP-065-53140-00011",
+      "precinct_name": "0655314000011",
+      "block_group_geoid": "260650049022",
+      "overlap_ratio": 0.5641
+    },
+    {
+      "precinct_id": "WP-065-53140-00011",
+      "precinct_name": "0655314000011",
+      "block_group_geoid": "260650049023",
+      "overlap_ratio": 0.4353
+    },
+    {
+      "precinct_id": "WP-065-53140-00017",
+      "precinct_name": "0655314000017",
+      "block_group_geoid": "260650050031",
+      "overlap_ratio": 0.3238
+    },
+    {
+      "precinct_id": "WP-065-53140-00017",
+      "precinct_name": "0655314000017",
+      "block_group_geoid": "260650050041",
+      "overlap_ratio": 0.0562
+    },
+    {
+      "precinct_id": "WP-065-53140-00017",
+      "precinct_name": "0655314000017",
+      "block_group_geoid": "260659800001",
+      "overlap_ratio": 0.6107
+    },
+    {
+      "precinct_id": "WP-065-53140-00017",
+      "precinct_name": "0655314000017",
+      "block_group_geoid": "260650049024",
+      "overlap_ratio": 0.0092
+    },
+    {
+      "precinct_id": "WP-065-60800-00001",
+      "precinct_name": "0656080000001",
+      "block_group_geoid": "260650064021",
+      "overlap_ratio": 0.5026
+    },
+    {
+      "precinct_id": "WP-065-60800-00001",
+      "precinct_name": "0656080000001",
+      "block_group_geoid": "260650064022",
+      "overlap_ratio": 0.4972
+    },
+    {
+      "precinct_id": "WP-065-76580-00001",
+      "precinct_name": "0657658000001",
+      "block_group_geoid": "260650060012",
+      "overlap_ratio": 0.0809
+    },
+    {
+      "precinct_id": "WP-065-76580-00001",
+      "precinct_name": "0657658000001",
+      "block_group_geoid": "260650060013",
+      "overlap_ratio": 0.4156
+    },
+    {
+      "precinct_id": "WP-065-76580-00001",
+      "precinct_name": "0657658000001",
+      "block_group_geoid": "260650060022",
+      "overlap_ratio": 0.2075
+    },
+    {
+      "precinct_id": "WP-065-76580-00001",
+      "precinct_name": "0657658000001",
+      "block_group_geoid": "260650060023",
+      "overlap_ratio": 0.0915
+    },
+    {
+      "precinct_id": "WP-065-76580-00001",
+      "precinct_name": "0657658000001",
+      "block_group_geoid": "260650060021",
+      "overlap_ratio": 0.2046
+    },
+    {
+      "precinct_id": "WP-065-82220-00001",
+      "precinct_name": "0658222000001",
+      "block_group_geoid": "260650063014",
+      "overlap_ratio": 0.0407
+    },
+    {
+      "precinct_id": "WP-065-82220-00001",
+      "precinct_name": "0658222000001",
+      "block_group_geoid": "260650063013",
+      "overlap_ratio": 0.0284
+    },
+    {
+      "precinct_id": "WP-065-82220-00001",
+      "precinct_name": "0658222000001",
+      "block_group_geoid": "260650062004",
+      "overlap_ratio": 0.1506
+    },
+    {
+      "precinct_id": "WP-065-82220-00001",
+      "precinct_name": "0658222000001",
+      "block_group_geoid": "260650063021",
+      "overlap_ratio": 0.163
+    },
+    {
+      "precinct_id": "WP-065-82220-00001",
+      "precinct_name": "0658222000001",
+      "block_group_geoid": "260650062001",
+      "overlap_ratio": 0.3862
+    },
+    {
+      "precinct_id": "WP-065-82220-00001",
+      "precinct_name": "0658222000001",
+      "block_group_geoid": "260650062002",
+      "overlap_ratio": 0.2296
+    },
+    {
+      "precinct_id": "WP-065-86520-00001",
+      "precinct_name": "0658652000001",
+      "block_group_geoid": "260650057001",
+      "overlap_ratio": 0.9558
+    },
+    {
+      "precinct_id": "WP-065-86520-00001",
+      "precinct_name": "0658652000001",
+      "block_group_geoid": "260650058003",
+      "overlap_ratio": 0.0305
+    },
+    {
+      "precinct_id": "WP-065-86520-00001",
+      "precinct_name": "0658652000001",
+      "block_group_geoid": "260650058004",
+      "overlap_ratio": 0.0132
+    },
+    {
+      "precinct_id": "WP-065-87420-00001",
+      "precinct_name": "0658742000001",
+      "block_group_geoid": "260650058001",
+      "overlap_ratio": 0.1367
+    },
+    {
+      "precinct_id": "WP-065-87420-00001",
+      "precinct_name": "0658742000001",
+      "block_group_geoid": "260650057001",
+      "overlap_ratio": 0.1787
+    },
+    {
+      "precinct_id": "WP-065-87420-00001",
+      "precinct_name": "0658742000001",
+      "block_group_geoid": "260650058002",
+      "overlap_ratio": 0.2142
+    },
+    {
+      "precinct_id": "WP-065-87420-00001",
+      "precinct_name": "0658742000001",
+      "block_group_geoid": "260650058003",
+      "overlap_ratio": 0.2361
+    },
+    {
+      "precinct_id": "WP-065-87420-00001",
+      "precinct_name": "0658742000001",
+      "block_group_geoid": "260650058004",
+      "overlap_ratio": 0.2342
+    },
+    {
+      "precinct_id": "WP-065-87440-00002",
+      "precinct_name": "0658744000002",
+      "block_group_geoid": "260650057002",
+      "overlap_ratio": 0.752
+    },
+    {
+      "precinct_id": "WP-065-87440-00002",
+      "precinct_name": "0658744000002",
+      "block_group_geoid": "260650057003",
+      "overlap_ratio": 0.2429
+    },
+    {
+      "precinct_id": "WP-065-87440-00002",
+      "precinct_name": "0658744000002",
+      "block_group_geoid": "260650058002",
+      "overlap_ratio": 0.0046
+    },
+    {
+      "precinct_id": "WP-065-53140-00004",
+      "precinct_name": "0655314000004",
+      "block_group_geoid": "260650046001",
+      "overlap_ratio": 0.2719
+    },
+    {
+      "precinct_id": "WP-065-53140-00004",
+      "precinct_name": "0655314000004",
+      "block_group_geoid": "260650047001",
+      "overlap_ratio": 0.0086
+    },
+    {
+      "precinct_id": "WP-065-53140-00004",
+      "precinct_name": "0655314000004",
+      "block_group_geoid": "260650047002",
+      "overlap_ratio": 0.719
+    },
+    {
+      "precinct_id": "WP-065-46000-01004",
+      "precinct_name": "0654600001004",
+      "block_group_geoid": "260650001001",
+      "overlap_ratio": 0.0898
+    },
+    {
+      "precinct_id": "WP-065-46000-01004",
+      "precinct_name": "0654600001004",
+      "block_group_geoid": "260650066002",
+      "overlap_ratio": 0.0379
+    },
+    {
+      "precinct_id": "WP-065-46000-01004",
+      "precinct_name": "0654600001004",
+      "block_group_geoid": "260650008001",
+      "overlap_ratio": 0.125
+    },
+    {
+      "precinct_id": "WP-065-46000-01004",
+      "precinct_name": "0654600001004",
+      "block_group_geoid": "260650008002",
+      "overlap_ratio": 0.0982
+    },
+    {
+      "precinct_id": "WP-065-46000-01004",
+      "precinct_name": "0654600001004",
+      "block_group_geoid": "260650008003",
+      "overlap_ratio": 0.0849
+    },
+    {
+      "precinct_id": "WP-065-46000-01004",
+      "precinct_name": "0654600001004",
+      "block_group_geoid": "260650008004",
+      "overlap_ratio": 0.1319
+    },
+    {
+      "precinct_id": "WP-065-46000-01004",
+      "precinct_name": "0654600001004",
+      "block_group_geoid": "260650031034",
+      "overlap_ratio": 0.1643
+    },
+    {
+      "precinct_id": "WP-065-46000-01004",
+      "precinct_name": "0654600001004",
+      "block_group_geoid": "260650031035",
+      "overlap_ratio": 0.2546
+    },
+    {
+      "precinct_id": "WP-065-46000-01004",
+      "precinct_name": "0654600001004",
+      "block_group_geoid": "260650031031",
+      "overlap_ratio": 0.0133
+    },
+    {
+      "precinct_id": "WP-065-46000-03024",
+      "precinct_name": "0654600003024",
+      "block_group_geoid": "260650017032",
+      "overlap_ratio": 0.148
+    },
+    {
+      "precinct_id": "WP-065-46000-03024",
+      "precinct_name": "0654600003024",
+      "block_group_geoid": "260650017033",
+      "overlap_ratio": 0.4208
+    },
+    {
+      "precinct_id": "WP-065-46000-03024",
+      "precinct_name": "0654600003024",
+      "block_group_geoid": "260650036021",
+      "overlap_ratio": 0.4303
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260650031033",
+      "overlap_ratio": 0.0092
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260650029021",
+      "overlap_ratio": 0.3097
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260650010002",
+      "overlap_ratio": 0.0684
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260650038013",
+      "overlap_ratio": 0.0072
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260659800001",
+      "overlap_ratio": 0.3084
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260650012001",
+      "overlap_ratio": 0.0638
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260650040003",
+      "overlap_ratio": 0.0447
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260650031036",
+      "overlap_ratio": 0.0723
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260650031035",
+      "overlap_ratio": 0.0864
+    },
+    {
+      "precinct_id": "WP-065-46020-00001",
+      "precinct_name": "0654602000001",
+      "block_group_geoid": "260659801001",
+      "overlap_ratio": 0.0294
+    },
+    {
+      "precinct_id": "WP-065-46020-00002",
+      "precinct_name": "0654602000002",
+      "block_group_geoid": "260650031033",
+      "overlap_ratio": 0.0842
+    },
+    {
+      "precinct_id": "WP-065-46020-00002",
+      "precinct_name": "0654602000002",
+      "block_group_geoid": "260650001001",
+      "overlap_ratio": 0.0638
+    },
+    {
+      "precinct_id": "WP-065-46020-00002",
+      "precinct_name": "0654602000002",
+      "block_group_geoid": "260650038013",
+      "overlap_ratio": 0.0053
+    },
+    {
+      "precinct_id": "WP-065-46020-00002",
+      "precinct_name": "0654602000002",
+      "block_group_geoid": "260650038021",
+      "overlap_ratio": 0.0263
+    },
+    {
+      "precinct_id": "WP-065-46020-00002",
+      "precinct_name": "0654602000002",
+      "block_group_geoid": "260650032001",
+      "overlap_ratio": 0.1065
+    },
+    {
+      "precinct_id": "WP-065-46020-00002",
+      "precinct_name": "0654602000002",
+      "block_group_geoid": "260650031035",
+      "overlap_ratio": 0.0517
+    },
+    {
+      "precinct_id": "WP-065-46020-00002",
+      "precinct_name": "0654602000002",
+      "block_group_geoid": "260650031031",
+      "overlap_ratio": 0.62
+    },
+    {
+      "precinct_id": "WP-065-46020-00002",
+      "precinct_name": "0654602000002",
+      "block_group_geoid": "260650031032",
+      "overlap_ratio": 0.0416
+    }
+  ],
+  "_metadata": {
+    "format_version": "1.0",
+    "generated_at": "2025-12-01T17:54:22.356672",
+    "generator": "scripts/political/add-data-metadata.py",
+    "project": "Political Landscape Analysis Platform",
+    "coverage": "Ingham County, Michigan",
+    "methodology_doc": "docs/METHODOLOGY.md",
+    "data_strategy_doc": "docs/DATA-ACQUISITION-STRATEGY.md",
+    "dataset": "Precinct-Block Group Crosswalk",
+    "description": "Spatial intersection of voting precincts with Census block groups",
+    "methodology": {
+      "interpolation": {
+        "description": "Demographics estimated by overlapping block groups with precincts",
+        "formula": "precinct_value = \u03a3(overlap_ratio \u00d7 block_group_value)",
+        "doc_reference": "docs/METHODOLOGY.md#area-weighted-interpolation"
+      }
+    },
+    "calculation_script": "scripts/political/build-crosswalk.js",
+    "sources": [
+      {
+        "name": "Michigan GIS Open Data",
+        "url": "https://gis-michigan.opendata.arcgis.com/",
+        "description": "Official Michigan geospatial data portal",
+        "license": "Public Domain",
+        "usage": "Voting precinct boundaries (2024)",
+        "accessed": "2025-11-30"
+      },
+      {
+        "name": "U.S. Census Bureau - American Community Survey",
+        "url": "https://www.census.gov/programs-surveys/acs",
+        "description": "5-year estimates (2019-2023)",
+        "license": "Public Domain",
+        "usage": "Census block group boundaries (2020 vintage)",
+        "accessed": "2025-11-30"
+      }
+    ],
+    "statistics": {
+      "entry_count": 449,
+      "unique_precincts": 103,
+      "unique_block_groups": 238
+    },
+    "fields": {
+      "precinct_id": "Unique precinct identifier",
+      "precinct_name": "Human-readable precinct name",
+      "block_group_geoid": "Census block group GEOID (15 digits)",
+      "overlap_ratio": "Fraction of precinct area in this block group (0-1)"
+    },
+    "limitations": [
+      "Based on geometric intersection, not population distribution",
+      "Overlap ratios assume uniform population density within block groups",
+      "Precinct boundaries from 2024, block groups from 2020 Census"
+    ],
+    "citation_text": "Crosswalk built from Michigan GIS precinct boundaries and Census TIGER/Line block groups using Turf.js spatial intersection."
+  }
+}
