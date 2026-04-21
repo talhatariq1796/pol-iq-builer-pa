@@ -1,0 +1,730 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created": "2025-12-12",
+    "description": "Knowledge Graph seed data for Ingham County, Michigan political entities",
+    "coverage": {
+      "federal": ["US Senate", "US House MI-07"],
+      "state_senate": ["District 21", "District 28"],
+      "state_house": ["District 73", "District 74", "District 75", "District 77"]
+    }
+  },
+  "parties": [
+    {
+      "id": "party:dem",
+      "type": "party",
+      "name": "Democratic Party",
+      "aliases": ["Democrats", "DEM", "D"],
+      "metadata": {
+        "abbreviation": "DEM",
+        "color": "#2E5EAA",
+        "ideology": "center-left"
+      }
+    },
+    {
+      "id": "party:rep",
+      "type": "party",
+      "name": "Republican Party",
+      "aliases": ["Republicans", "GOP", "REP", "R"],
+      "metadata": {
+        "abbreviation": "REP",
+        "color": "#C93135",
+        "ideology": "center-right"
+      }
+    }
+  ],
+  "jurisdictions": [
+    {
+      "id": "jurisdiction:michigan",
+      "type": "jurisdiction",
+      "name": "Michigan",
+      "aliases": ["MI", "State of Michigan"],
+      "metadata": {
+        "level": "state",
+        "population": 10037261,
+        "density": "suburban"
+      }
+    },
+    {
+      "id": "jurisdiction:ingham-county",
+      "type": "jurisdiction",
+      "name": "Ingham County",
+      "aliases": ["Ingham"],
+      "metadata": {
+        "level": "county",
+        "parentJurisdiction": "jurisdiction:michigan",
+        "population": 284900,
+        "partisanLean": -15,
+        "precinctCount": 145,
+        "density": "suburban"
+      }
+    }
+  ],
+  "offices": [
+    {
+      "id": "office:us-senate-mi-class1",
+      "type": "office",
+      "name": "US Senator (Michigan, Class I)",
+      "aliases": ["Michigan Senator Class I", "MI Senate Class 1"],
+      "metadata": {
+        "level": "federal",
+        "officeType": "legislative",
+        "jurisdiction": "jurisdiction:michigan",
+        "termLength": 6,
+        "nextElection": "2030-11-03",
+        "currentHolder": "candidate:elissa-slotkin"
+      }
+    },
+    {
+      "id": "office:us-senate-mi-class2",
+      "type": "office",
+      "name": "US Senator (Michigan, Class II)",
+      "aliases": ["Michigan Senator Class II", "MI Senate Class 2"],
+      "metadata": {
+        "level": "federal",
+        "officeType": "legislative",
+        "jurisdiction": "jurisdiction:michigan",
+        "termLength": 6,
+        "nextElection": "2026-11-03",
+        "currentHolder": "candidate:gary-peters"
+      }
+    },
+    {
+      "id": "office:us-house-mi-07",
+      "type": "office",
+      "name": "US Representative (MI-07)",
+      "aliases": ["Michigan 7th Congressional District", "MI-07", "7th District"],
+      "metadata": {
+        "level": "federal",
+        "officeType": "legislative",
+        "jurisdiction": "jurisdiction:michigan",
+        "district": "7",
+        "termLength": 2,
+        "nextElection": "2026-11-03",
+        "currentHolder": "candidate:tom-barrett"
+      }
+    },
+    {
+      "id": "office:mi-senate-21",
+      "type": "office",
+      "name": "Michigan State Senator (District 21)",
+      "aliases": ["MI Senate 21", "State Senate District 21"],
+      "metadata": {
+        "level": "state",
+        "officeType": "legislative",
+        "jurisdiction": "jurisdiction:ingham-county",
+        "district": "21",
+        "termLength": 4,
+        "nextElection": "2026-11-03",
+        "currentHolder": "candidate:sarah-anthony"
+      }
+    },
+    {
+      "id": "office:mi-senate-28",
+      "type": "office",
+      "name": "Michigan State Senator (District 28)",
+      "aliases": ["MI Senate 28", "State Senate District 28"],
+      "metadata": {
+        "level": "state",
+        "officeType": "legislative",
+        "jurisdiction": "jurisdiction:ingham-county",
+        "district": "28",
+        "termLength": 4,
+        "nextElection": "2026-11-03",
+        "currentHolder": "candidate:sam-singh"
+      }
+    },
+    {
+      "id": "office:mi-house-73",
+      "type": "office",
+      "name": "Michigan State Representative (District 73)",
+      "aliases": ["MI House 73", "State House District 73"],
+      "metadata": {
+        "level": "state",
+        "officeType": "legislative",
+        "jurisdiction": "jurisdiction:ingham-county",
+        "district": "73",
+        "termLength": 2,
+        "nextElection": "2026-11-03",
+        "currentHolder": "candidate:julie-brixie"
+      }
+    },
+    {
+      "id": "office:mi-house-74",
+      "type": "office",
+      "name": "Michigan State Representative (District 74)",
+      "aliases": ["MI House 74", "State House District 74"],
+      "metadata": {
+        "level": "state",
+        "officeType": "legislative",
+        "jurisdiction": "jurisdiction:ingham-county",
+        "district": "74",
+        "termLength": 2,
+        "nextElection": "2026-11-03",
+        "currentHolder": "candidate:kara-hope"
+      }
+    },
+    {
+      "id": "office:mi-house-75",
+      "type": "office",
+      "name": "Michigan State Representative (District 75)",
+      "aliases": ["MI House 75", "State House District 75"],
+      "metadata": {
+        "level": "state",
+        "officeType": "legislative",
+        "jurisdiction": "jurisdiction:ingham-county",
+        "district": "75",
+        "termLength": 2,
+        "nextElection": "2026-11-03",
+        "currentHolder": "candidate:penelope-tsernoglou"
+      }
+    },
+    {
+      "id": "office:mi-house-77",
+      "type": "office",
+      "name": "Michigan State Representative (District 77)",
+      "aliases": ["MI House 77", "State House District 77"],
+      "metadata": {
+        "level": "state",
+        "officeType": "legislative",
+        "jurisdiction": "jurisdiction:ingham-county",
+        "district": "77",
+        "termLength": 2,
+        "nextElection": "2026-11-03",
+        "currentHolder": "candidate:emily-dievendorf"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "candidate:gary-peters",
+      "type": "candidate",
+      "name": "Gary Peters",
+      "aliases": ["Sen. Peters", "Senator Peters"],
+      "metadata": {
+        "party": "DEM",
+        "incumbentOf": "office:us-senate-mi-class2",
+        "status": "incumbent",
+        "electionYear": 2020,
+        "termStart": "2015-01-03",
+        "termEnd": "2027-01-03",
+        "notSeekingReelection": true,
+        "committees": ["Homeland Security and Governmental Affairs (Ranking Member)"],
+        "biography": "Senior US Senator from Michigan since 2015. Former US Representative (2009-2015). Former Michigan State Senator. Not seeking reelection in 2026."
+      }
+    },
+    {
+      "id": "candidate:elissa-slotkin",
+      "type": "candidate",
+      "name": "Elissa Slotkin",
+      "aliases": ["Sen. Slotkin", "Senator Slotkin"],
+      "metadata": {
+        "party": "DEM",
+        "incumbentOf": "office:us-senate-mi-class1",
+        "previousOffices": ["office:us-house-mi-07"],
+        "status": "incumbent",
+        "electionYear": 2024,
+        "termStart": "2025-01-03",
+        "termEnd": "2031-01-03",
+        "biography": "Junior US Senator from Michigan since 2025. Former US Representative for MI-07 (2019-2025). First former CIA official elected to US Senate. Narrowly defeated Mike Rogers (R) 48.6%-48.3% in 2024."
+      }
+    },
+    {
+      "id": "candidate:tom-barrett",
+      "type": "candidate",
+      "name": "Tom Barrett",
+      "aliases": ["Rep. Barrett", "Congressman Barrett"],
+      "metadata": {
+        "party": "REP",
+        "incumbentOf": "office:us-house-mi-07",
+        "status": "incumbent",
+        "electionYear": 2024,
+        "termStart": "2025-01-03",
+        "termEnd": "2027-01-03",
+        "previousOffices": ["Michigan State Senator", "Michigan State Representative"],
+        "biography": "US Representative for MI-07 since 2025. Former Michigan State Senator. Defeated Curtis Hertel (D) in 2024 after losing to Elissa Slotkin in 2022."
+      }
+    },
+    {
+      "id": "candidate:curtis-hertel",
+      "type": "candidate",
+      "name": "Curtis Hertel",
+      "aliases": ["Curtis Hertel Jr."],
+      "metadata": {
+        "party": "DEM",
+        "runningFor": ["office:us-house-mi-07"],
+        "status": "former",
+        "electionYear": 2024,
+        "previousOffices": ["Michigan State Senator"],
+        "biography": "Former Michigan State Senator. Democratic nominee for MI-07 in 2024, lost to Tom Barrett."
+      }
+    },
+    {
+      "id": "candidate:mike-rogers",
+      "type": "candidate",
+      "name": "Mike Rogers",
+      "aliases": ["Former Rep. Rogers"],
+      "metadata": {
+        "party": "REP",
+        "status": "exploring",
+        "electionYear": 2026,
+        "previousOffices": ["US Representative (MI-08, 2001-2015)"],
+        "biography": "Former US Representative for MI-08 (2001-2015). Republican nominee for US Senate in 2024, narrowly lost to Elissa Slotkin. Running again in 2026 for Gary Peters' open seat."
+      }
+    },
+    {
+      "id": "candidate:sarah-anthony",
+      "type": "candidate",
+      "name": "Sarah Anthony",
+      "aliases": ["Sen. Anthony", "Senator Anthony"],
+      "metadata": {
+        "party": "DEM",
+        "incumbentOf": "office:mi-senate-21",
+        "status": "incumbent",
+        "electionYear": 2022,
+        "termStart": "2023-01-01",
+        "termEnd": "2027-01-01",
+        "biography": "Michigan State Senator for District 21 since 2023. District covers all of Eaton County and part of Ingham County including Lansing."
+      }
+    },
+    {
+      "id": "candidate:sam-singh",
+      "type": "candidate",
+      "name": "Sam Singh",
+      "aliases": ["Sen. Singh", "Senator Singh"],
+      "metadata": {
+        "party": "DEM",
+        "incumbentOf": "office:mi-senate-28",
+        "status": "incumbent",
+        "electionYear": 2022,
+        "termStart": "2023-01-01",
+        "termEnd": "2027-01-01",
+        "previousOffices": ["Michigan State Representative"],
+        "biography": "Michigan State Senator for District 28 since 2023. District covers parts of Clinton, Ingham, and Shiawassee counties including East Lansing."
+      }
+    },
+    {
+      "id": "candidate:julie-brixie",
+      "type": "candidate",
+      "name": "Julie Brixie",
+      "aliases": ["Rep. Brixie", "Representative Brixie"],
+      "metadata": {
+        "party": "DEM",
+        "incumbentOf": "office:mi-house-73",
+        "status": "incumbent",
+        "electionYear": 2024,
+        "termStart": "2025-01-01",
+        "termEnd": "2027-01-01",
+        "election2024": {
+          "votes": 24684,
+          "percentage": 54.78,
+          "opponent": "Joshua J. Rockey (R)",
+          "opponentVotes": 20377,
+          "opponentPercentage": 45.22
+        },
+        "biography": "Michigan State Representative for District 73 since 2019. District covers MSU campus, Okemos, and Mason area."
+      }
+    },
+    {
+      "id": "candidate:kara-hope",
+      "type": "candidate",
+      "name": "Kara Hope",
+      "aliases": ["Rep. Hope", "Representative Hope"],
+      "metadata": {
+        "party": "DEM",
+        "incumbentOf": "office:mi-house-74",
+        "status": "incumbent",
+        "electionYear": 2024,
+        "termStart": "2025-01-01",
+        "termEnd": "2027-01-01",
+        "election2024": {
+          "votes": 28976,
+          "percentage": 64.25,
+          "opponent": "Tom Izzo (R)",
+          "opponentVotes": 16120,
+          "opponentPercentage": 35.75
+        },
+        "biography": "Michigan State Representative for District 74. Won 2024 with strong 64.25% margin. District covers parts of Lansing."
+      }
+    },
+    {
+      "id": "candidate:penelope-tsernoglou",
+      "type": "candidate",
+      "name": "Penelope Tsernoglou",
+      "aliases": ["Rep. Tsernoglou", "Representative Tsernoglou"],
+      "metadata": {
+        "party": "DEM",
+        "incumbentOf": "office:mi-house-75",
+        "status": "incumbent",
+        "electionYear": 2024,
+        "termStart": "2025-01-01",
+        "termEnd": "2027-01-01",
+        "election2024": {
+          "votes": 31024,
+          "percentage": 59.11,
+          "opponent": "Frank Lambert (R)",
+          "opponentVotes": 21457,
+          "opponentPercentage": 40.89
+        },
+        "biography": "Michigan State Representative for District 75. Won 2024 with 59.11% of the vote."
+      }
+    },
+    {
+      "id": "candidate:emily-dievendorf",
+      "type": "candidate",
+      "name": "Emily Dievendorf",
+      "aliases": ["Rep. Dievendorf", "Representative Dievendorf"],
+      "metadata": {
+        "party": "DEM",
+        "incumbentOf": "office:mi-house-77",
+        "status": "incumbent",
+        "electionYear": 2024,
+        "termStart": "2025-01-01",
+        "termEnd": "2027-01-01",
+        "election2024": {
+          "opponent": "Cady Ness-Smith (R)"
+        },
+        "biography": "Michigan State Representative for District 77. Represents parts of Lansing and surrounding areas."
+      }
+    }
+  ],
+  "elections": [
+    {
+      "id": "election:2024-general",
+      "type": "election",
+      "name": "2024 General Election",
+      "metadata": {
+        "date": "2024-11-05",
+        "electionType": "general",
+        "jurisdiction": "jurisdiction:michigan",
+        "offices": [
+          "office:us-senate-mi-class1",
+          "office:us-house-mi-07",
+          "office:mi-house-73",
+          "office:mi-house-74",
+          "office:mi-house-75",
+          "office:mi-house-77"
+        ]
+      }
+    },
+    {
+      "id": "election:2026-general",
+      "type": "election",
+      "name": "2026 General Election",
+      "metadata": {
+        "date": "2026-11-03",
+        "electionType": "general",
+        "jurisdiction": "jurisdiction:michigan",
+        "offices": [
+          "office:us-senate-mi-class2",
+          "office:us-house-mi-07",
+          "office:mi-senate-21",
+          "office:mi-senate-28",
+          "office:mi-house-73",
+          "office:mi-house-74",
+          "office:mi-house-75",
+          "office:mi-house-77"
+        ]
+      }
+    }
+  ],
+  "issues": [
+    {
+      "id": "issue:education",
+      "type": "issue",
+      "name": "Education",
+      "aliases": ["Schools", "Public Education", "Higher Education"],
+      "metadata": {
+        "category": "social",
+        "salience": 85,
+        "partisanValence": -20,
+        "keywords": ["schools", "teachers", "MSU", "university", "funding", "curriculum"]
+      }
+    },
+    {
+      "id": "issue:economy-jobs",
+      "type": "issue",
+      "name": "Economy and Jobs",
+      "aliases": ["Economic Development", "Employment", "Jobs"],
+      "metadata": {
+        "category": "economic",
+        "salience": 90,
+        "partisanValence": 0,
+        "keywords": ["jobs", "economy", "wages", "unemployment", "manufacturing", "auto industry"]
+      }
+    },
+    {
+      "id": "issue:healthcare",
+      "type": "issue",
+      "name": "Healthcare",
+      "aliases": ["Health Care", "Medical Care", "Insurance"],
+      "metadata": {
+        "category": "social",
+        "salience": 80,
+        "partisanValence": -30,
+        "keywords": ["healthcare", "insurance", "medicaid", "hospitals", "doctors"]
+      }
+    },
+    {
+      "id": "issue:reproductive-rights",
+      "type": "issue",
+      "name": "Reproductive Rights",
+      "aliases": ["Abortion Rights", "Prop 3"],
+      "metadata": {
+        "category": "social",
+        "salience": 75,
+        "partisanValence": -50,
+        "keywords": ["abortion", "reproductive", "Prop 3", "choice", "women's health"]
+      }
+    },
+    {
+      "id": "issue:environment",
+      "type": "issue",
+      "name": "Environment and Climate",
+      "aliases": ["Climate Change", "Clean Energy", "Environmental Protection"],
+      "metadata": {
+        "category": "environmental",
+        "salience": 70,
+        "partisanValence": -40,
+        "keywords": ["climate", "environment", "clean energy", "renewable", "pollution"]
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "sourceId": "candidate:gary-peters",
+      "type": "MEMBER_OF",
+      "targetId": "party:dem"
+    },
+    {
+      "sourceId": "candidate:gary-peters",
+      "type": "INCUMBENT",
+      "targetId": "office:us-senate-mi-class2"
+    },
+    {
+      "sourceId": "candidate:elissa-slotkin",
+      "type": "MEMBER_OF",
+      "targetId": "party:dem"
+    },
+    {
+      "sourceId": "candidate:elissa-slotkin",
+      "type": "INCUMBENT",
+      "targetId": "office:us-senate-mi-class1"
+    },
+    {
+      "sourceId": "candidate:elissa-slotkin",
+      "type": "WON",
+      "targetId": "election:2024-general",
+      "properties": { "office": "office:us-senate-mi-class1", "margin": 0.3 }
+    },
+    {
+      "sourceId": "candidate:elissa-slotkin",
+      "type": "FORMER_HOLDER",
+      "targetId": "office:us-house-mi-07"
+    },
+    {
+      "sourceId": "candidate:tom-barrett",
+      "type": "MEMBER_OF",
+      "targetId": "party:rep"
+    },
+    {
+      "sourceId": "candidate:tom-barrett",
+      "type": "INCUMBENT",
+      "targetId": "office:us-house-mi-07"
+    },
+    {
+      "sourceId": "candidate:tom-barrett",
+      "type": "WON",
+      "targetId": "election:2024-general",
+      "properties": { "office": "office:us-house-mi-07" }
+    },
+    {
+      "sourceId": "candidate:curtis-hertel",
+      "type": "MEMBER_OF",
+      "targetId": "party:dem"
+    },
+    {
+      "sourceId": "candidate:curtis-hertel",
+      "type": "LOST",
+      "targetId": "election:2024-general",
+      "properties": { "office": "office:us-house-mi-07" }
+    },
+    {
+      "sourceId": "candidate:mike-rogers",
+      "type": "MEMBER_OF",
+      "targetId": "party:rep"
+    },
+    {
+      "sourceId": "candidate:mike-rogers",
+      "type": "RUNNING_FOR",
+      "targetId": "office:us-senate-mi-class2"
+    },
+    {
+      "sourceId": "candidate:mike-rogers",
+      "type": "LOST",
+      "targetId": "election:2024-general",
+      "properties": { "office": "office:us-senate-mi-class1" }
+    },
+    {
+      "sourceId": "candidate:sarah-anthony",
+      "type": "MEMBER_OF",
+      "targetId": "party:dem"
+    },
+    {
+      "sourceId": "candidate:sarah-anthony",
+      "type": "INCUMBENT",
+      "targetId": "office:mi-senate-21"
+    },
+    {
+      "sourceId": "candidate:sarah-anthony",
+      "type": "REPRESENTS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "candidate:sam-singh",
+      "type": "MEMBER_OF",
+      "targetId": "party:dem"
+    },
+    {
+      "sourceId": "candidate:sam-singh",
+      "type": "INCUMBENT",
+      "targetId": "office:mi-senate-28"
+    },
+    {
+      "sourceId": "candidate:sam-singh",
+      "type": "REPRESENTS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "candidate:julie-brixie",
+      "type": "MEMBER_OF",
+      "targetId": "party:dem"
+    },
+    {
+      "sourceId": "candidate:julie-brixie",
+      "type": "INCUMBENT",
+      "targetId": "office:mi-house-73"
+    },
+    {
+      "sourceId": "candidate:julie-brixie",
+      "type": "WON",
+      "targetId": "election:2024-general",
+      "properties": { "office": "office:mi-house-73", "percentage": 54.78 }
+    },
+    {
+      "sourceId": "candidate:julie-brixie",
+      "type": "REPRESENTS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "candidate:kara-hope",
+      "type": "MEMBER_OF",
+      "targetId": "party:dem"
+    },
+    {
+      "sourceId": "candidate:kara-hope",
+      "type": "INCUMBENT",
+      "targetId": "office:mi-house-74"
+    },
+    {
+      "sourceId": "candidate:kara-hope",
+      "type": "WON",
+      "targetId": "election:2024-general",
+      "properties": { "office": "office:mi-house-74", "percentage": 64.25 }
+    },
+    {
+      "sourceId": "candidate:kara-hope",
+      "type": "REPRESENTS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "candidate:penelope-tsernoglou",
+      "type": "MEMBER_OF",
+      "targetId": "party:dem"
+    },
+    {
+      "sourceId": "candidate:penelope-tsernoglou",
+      "type": "INCUMBENT",
+      "targetId": "office:mi-house-75"
+    },
+    {
+      "sourceId": "candidate:penelope-tsernoglou",
+      "type": "WON",
+      "targetId": "election:2024-general",
+      "properties": { "office": "office:mi-house-75", "percentage": 59.11 }
+    },
+    {
+      "sourceId": "candidate:penelope-tsernoglou",
+      "type": "REPRESENTS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "candidate:emily-dievendorf",
+      "type": "MEMBER_OF",
+      "targetId": "party:dem"
+    },
+    {
+      "sourceId": "candidate:emily-dievendorf",
+      "type": "INCUMBENT",
+      "targetId": "office:mi-house-77"
+    },
+    {
+      "sourceId": "candidate:emily-dievendorf",
+      "type": "WON",
+      "targetId": "election:2024-general",
+      "properties": { "office": "office:mi-house-77" }
+    },
+    {
+      "sourceId": "candidate:emily-dievendorf",
+      "type": "REPRESENTS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "office:us-house-mi-07",
+      "type": "GOVERNS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "office:mi-senate-21",
+      "type": "GOVERNS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "office:mi-senate-28",
+      "type": "GOVERNS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "office:mi-house-73",
+      "type": "GOVERNS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "office:mi-house-74",
+      "type": "GOVERNS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "office:mi-house-75",
+      "type": "GOVERNS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "office:mi-house-77",
+      "type": "GOVERNS",
+      "targetId": "jurisdiction:ingham-county"
+    },
+    {
+      "sourceId": "issue:education",
+      "type": "SALIENT_IN",
+      "targetId": "jurisdiction:ingham-county",
+      "properties": { "reason": "MSU campus, multiple school districts" }
+    },
+    {
+      "sourceId": "issue:economy-jobs",
+      "type": "SALIENT_IN",
+      "targetId": "jurisdiction:ingham-county",
+      "properties": { "reason": "State capital, government employment center" }
+    }
+  ]
+}
