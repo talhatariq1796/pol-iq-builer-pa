@@ -219,7 +219,12 @@ export async function POST(req: NextRequest) {
     }
 
     // Extract expertise level from userContext if available
-    const expertiseLevel = userContext?.expertiseLevel || 'intermediate';
+    const expertiseLevel =
+      typeof userContext === 'object' &&
+      userContext !== null &&
+      'expertiseLevel' in userContext
+        ? userContext.expertiseLevel as 'novice' | 'intermediate' | 'power_user'
+        : 'intermediate';
 
     // Build system prompt with political domain knowledge + enrichment context + Session context + Expertise context
     // Prefer unified enrichment, fall back to legacy if needed

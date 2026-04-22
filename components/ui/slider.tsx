@@ -105,7 +105,7 @@ function SliderImpl(
             disabled && "cursor-not-allowed"
           )}
           style={{ left: `${thumbPosition1}%` }}
-          onMouseDown={(e) => {
+          onMouseDown={(e: React.MouseEvent<HTMLDivElement>) => {
             e.preventDefault();
             handleMouseDown(0);
           }}
@@ -119,7 +119,7 @@ function SliderImpl(
             disabled && "cursor-not-allowed"
           )}
           style={{ left: `${thumbPosition2}%` }}
-          onMouseDown={(e) => {
+          onMouseDown={(e: React.MouseEvent<HTMLDivElement>) => {
             e.preventDefault();
             handleMouseDown(1);
           }}

@@ -566,6 +566,9 @@ const TOOL_LABELS: Record<ToolType, string> = {
   'segments': 'Voter Segmentation',
   'compare': 'Comparison Tool',
   'settings': 'Settings',
+  'donors': 'Donor Tool',
+  'canvass': 'Canvassing Tool',
+  'reports': 'Reports',
 };
 
 /**

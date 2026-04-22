@@ -613,7 +613,7 @@ export function extractPage1Data(
       comparablesCount: properties.length,
       // Calculate search radius from geometry extent if available
       searchRadius: (() => {
-        const extent = selectedArea?.geometry?.extent;
+        const extent = (selectedArea?.geometry as any)?.extent;
         if (extent && extent.xmax && extent.xmin && extent.ymax && extent.ymin) {
           // Calculate approximate radius from extent (in degrees, convert to km)
           const widthDeg = Math.abs(extent.xmax - extent.xmin);

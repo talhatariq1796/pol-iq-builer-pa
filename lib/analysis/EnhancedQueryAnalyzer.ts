@@ -9,7 +9,26 @@
  * - Integration with migration automation system
  */
 
-import { FieldMappingConfig, FieldMapping, EndpointConfig } from '../migration/templates/FieldMappingTemplate';
+interface FieldMapping {
+  keywords: string[];
+  fields: string[];
+  description: string;
+  category: string;
+  priority: 'low' | 'medium' | 'high';
+}
+
+interface EndpointConfig {
+  primaryKeywords: string[];
+  contextKeywords: string[];
+  avoidTerms: string[];
+  weight: number;
+}
+
+interface FieldMappingConfig {
+  fieldMappings: Record<string, FieldMapping>;
+  endpointConfigs: Record<string, EndpointConfig>;
+  templateInfo: TemplateInfo;
+}
 
 interface EndpointScore {
   endpoint: string;

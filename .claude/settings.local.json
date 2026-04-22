@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "PowerShell(npm install *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\WhiteBox\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\D--WORK-PROJECTS-pol-PA\\\\ed730abd-5797-4787-9cd4-00287a6a6728\\\\tasks\\\\bhj22seuv.output\" -Wait)",
+      "Bash(Select-String -Pattern \"added|error|warn|npm\")"
+    ]
+  }
+}

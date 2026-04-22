@@ -304,7 +304,7 @@ export function PoliticalAreaSelector({
         }
 
         const features: BoundaryFeature[] = featuresList
-          .map(({ name, geometry }) => {
+          .map(({ name, geometry }): BoundaryFeature | null => {
             const precinct = unifiedByKey.get(name);
             if (!precinct) return null;
             return {
@@ -376,10 +376,10 @@ export function PoliticalAreaSelector({
           return;
         }
 
-        const getAttrs = (r: { graphic?: __esri.Graphic }) =>
-          r.graphic?.attributes as Record<string, unknown> | undefined;
+        const getAttrs = (r: __esri.MapViewViewHit) =>
+          'graphic' in r ? r.graphic?.attributes as Record<string, unknown> | undefined : undefined;
 
-        const h3Hit = hitResponse.results.find((result: { graphic?: __esri.Graphic }) => {
+        const h3Hit = hitResponse.results.find((result) => {
           const a = getAttrs(result);
           return a?.h3_index != null && String(a.h3_index) !== '';
         });
@@ -400,7 +400,7 @@ export function PoliticalAreaSelector({
           return;
         }
 
-        const precinctResult = hitResponse.results.find((result: { graphic?: __esri.Graphic }) => {
+        const precinctResult = hitResponse.results.find((result) => {
           const attrs = getAttrs(result);
           return attrs?.UNIQUE_ID || attrs?.precinct_name || attrs?.NAME;
         });
@@ -1534,10 +1534,10 @@ async function geometryToGeoJSON(geometry: __esri.Geometry): Promise<GeoJSON.Geo
     await projection.load();
 
     const sr = geometry.spatialReference;
-    const wkid = sr?.wkid ?? sr?.latestWkid;
+    const wkid = sr?.wkid ?? (sr as { latestWkid?: number } | undefined)?.latestWkid;
     let g: __esri.Geometry = geometry;
     if (wkid != null && wkid !== 4326) {
-      g = projection.project(geometry, new SpatialReference({ wkid: 4326 })) as __esri.Geometry;
+      g = projection.project(geometry as any, new SpatialReference({ wkid: 4326 })) as __esri.Geometry;
     }
 
     if (g.type === 'polygon') {

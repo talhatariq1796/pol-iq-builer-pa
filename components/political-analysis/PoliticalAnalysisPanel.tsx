@@ -175,6 +175,8 @@ export interface IQAction {
     query?: string;
     category?: string;
     visualType?: string;
+    metric?: string;
+    queryId?: string;
   };
 }
 

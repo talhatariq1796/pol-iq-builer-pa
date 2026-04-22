@@ -2901,6 +2901,18 @@ class ApplicationStateManager {
         settings: {
           activeSection: undefined,
         },
+        donors: {
+          selectedZips: [],
+          timeRange: null,
+          partyFilter: 'all',
+          activeView: 'zip',
+        },
+        canvass: {
+          turfs: [],
+          targetPrecincts: [],
+          efficiency: undefined,
+        },
+        reports: {},
       },
       sharedMapState: {
         layer: 'none',

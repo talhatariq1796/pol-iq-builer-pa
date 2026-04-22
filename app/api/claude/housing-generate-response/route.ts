@@ -10,7 +10,7 @@ import { ExtendedLayerConfig, LayerConfig } from '@/types/layers';
 import type { AnalysisResponse, ProcessedLayerResult } from '@/types/geospatial-chat';
 import { NextRequest } from 'next/server';
 import { LocalGeospatialFeature } from '@/types/index';
-import { getRelevantFields } from '@/app/utils/field-analysis';
+import { getRelevantFields } from '@/utils/field-analysis';
 import { EnhancedQueryAnalyzer } from '@/lib/analysis/EnhancedQueryAnalyzer';
 import { detectThresholdQuery, detectSegmentQuery, detectComparativeQuery } from '@/lib/analytics/query-analysis';
 import { getHousingPersona } from '../shared/housing-personas';
