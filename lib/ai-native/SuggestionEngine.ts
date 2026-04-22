@@ -1447,7 +1447,14 @@ class SuggestionEngine {
       swing_potential: precinct.electoral?.swing_potential ?? rawPrecinct.swing_potential as number | undefined,
       gotv_priority: precinct.targeting?.gotv_priority ?? rawPrecinct.gotv_priority as number | undefined,
       persuasion_opportunity: precinct.targeting?.persuasion_opportunity ?? rawPrecinct.persuasion_opportunity as number | undefined,
-      partisan_lean: precinct.electoral?.partisan_lean ?? rawPrecinct.partisan_lean as number | undefined,
+      partisan_lean: (() => {
+        const e = precinct.electoral as { partisanLean?: number; partisan_lean?: number } | undefined;
+        const v = e?.partisanLean ?? e?.partisan_lean ?? (rawPrecinct.partisan_lean as number | undefined);
+        if (v == null || Number.isNaN(Number(v))) return undefined;
+        // PA stores Segment-style lean in unified data; insights use display convention (positive = Dem).
+        if (getPoliticalRegionEnv().stateFips === '42') return -Number(v);
+        return Number(v);
+      })(),
       registered_voters: precinct.demographics?.total_population ?? rawPrecinct.registered_voters as number | undefined,
       // turnout may come as turnout_rate (0-1) or turnout (0-100 percentage from political_scores)
       // Normalize to 0-1 rate format if it's a percentage (>1)

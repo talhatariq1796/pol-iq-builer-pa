@@ -36,11 +36,18 @@ import { processQuery } from '@/lib/ai-native/handlers';
 import { addReportToHistory, REPORT_TYPE_CONFIG, getRecentReports } from '@/lib/ai/ReportHistoryService';
 import type { ToolType } from '@/lib/ai-native/types/unified-state';
 import { CrossToolNavigator } from '@/lib/ai-native/navigation/CrossToolNavigator';
+import { buildPoliticalChatMapSelection } from '@/lib/ai-native/politicalChatMapSelection';
+import {
+  setLastChatExportPrecinctIds,
+  setLastUserQueryForExport,
+} from '@/lib/ai-native/lastChatExportPrecinctIds';
+import { resolvePoliticalExportPrecinctIds } from '@/lib/ai-native/resolvePoliticalExportPrecinctIds';
 import { isSlashCommand, executeSlashCommand } from '@/lib/ai/SlashCommandParser';
 import { segmentStore } from '@/lib/segmentation/SegmentStore';
 import { getEntityCoordinates, extractNumberedEntities, type EntityReference } from '@/lib/ai/entityParser';
 import { toast } from '@/hooks/use-toast';
 import { politicalDataService } from '@/lib/services/PoliticalDataService';
+import { electoralAvgTurnoutToDisplayPct } from '@/lib/political/electoralAvgTurnoutDisplay';
 
 // Wave 4 Integrations
 import { RecentSearches } from '@/components/ai-native/RecentSearches';
@@ -566,9 +573,8 @@ const TOOL_LABELS: Record<ToolType, string> = {
   'segments': 'Voter Segmentation',
   'compare': 'Comparison Tool',
   'settings': 'Settings',
-  'donors': 'Donor Tool',
-  'canvass': 'Canvassing Tool',
-  'reports': 'Reports',
+  'donors': 'Donor Research',
+  'canvass': 'Canvassing',
 };
 
 /**
@@ -1278,6 +1284,8 @@ export default function UnifiedAIAssistant({
   const handleUserInput = useCallback(async (input: string) => {
     if (!input.trim()) return;
 
+    setLastUserQueryForExport(input);
+
     // Wave 4: Start performance tracking
     resetMetrics();
     startTimer('aiQuery');
@@ -1481,6 +1489,13 @@ export default function UnifiedAIAssistant({
               sessionDuration: Date.now() - sessionStartTime,
             };
 
+            const iq = stateManager.getState().iqBuilder.lastAnalysis;
+            const mapSelection = buildPoliticalChatMapSelection({
+              selectedPrecinct: selectedPrecinct ?? null,
+              currentFeature: stateManager.getCurrentFeature(),
+              iqLastAnalysis: iq,
+            });
+
             const claudeResponse = await fetchWithRetry('/api/political-chat', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -1489,12 +1504,17 @@ export default function UnifiedAIAssistant({
                 context: sessionContext,
                 currentQuery: input,
                 includeData: true,
-                userContext
+                userContext,
+                mapSelection,
               })
             });
 
             if (claudeResponse.ok) {
               const claudeData = await claudeResponse.json();
+              const exportIds = claudeData.dataPrecinctIds as string[] | undefined;
+              if (Array.isArray(exportIds) && exportIds.length > 0) {
+                setLastChatExportPrecinctIds(exportIds);
+              }
               result = {
                 response: claudeData.content,
                 mapCommands: claudeData.mapCommands || [],
@@ -1541,6 +1561,22 @@ export default function UnifiedAIAssistant({
             mapCommands: orchestratorResult.mapCommands || [],
             suggestedActions: orchestratorResult.suggestedActions || config.suggestions,
           };
+
+          try {
+            const idsRes = await fetch('/api/political-chat/precinct-ids', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ userQuery: input }),
+            });
+            if (idsRes.ok) {
+              const j = (await idsRes.json()) as { ids?: string[] };
+              if (Array.isArray(j.ids) && j.ids.length > 0) {
+                setLastChatExportPrecinctIds(j.ids);
+              }
+            }
+          } catch (sidecarErr) {
+            console.warn('[UnifiedAIAssistant] precinct-ids sidecar failed:', sidecarErr);
+          }
         }
       }
 
@@ -1644,6 +1680,28 @@ export default function UnifiedAIAssistant({
       payload: { suggestionId: action.id },
       timestamp: new Date(),
     });
+
+    if (action.action === 'analyze_detailed' || action.action === 'find_similar') {
+      const cf = stateManager.getCurrentFeature();
+      const hist = stateManager.getState().selection.selectionHistory;
+      const lastSel = hist.length > 0 ? hist[hist.length - 1] : null;
+      const focusName =
+        selectedPrecinct?.precinctName || cf?.name || lastSel?.name;
+      if (action.action === 'analyze_detailed') {
+        await handleUserInput(
+          focusName
+            ? `Give me a detailed analysis of ${focusName}`
+            : 'Give me a detailed analysis of the area shown on my map'
+        );
+      } else {
+        await handleUserInput(
+          focusName
+            ? `Find precincts similar to ${focusName}`
+            : 'Find precincts similar to my current map selection'
+        );
+      }
+      return;
+    }
 
     // Handle navigation with context
     if (action.action.startsWith('navigate:')) {
@@ -1860,12 +1918,17 @@ export default function UnifiedAIAssistant({
     metadata: Record<string, unknown>
   ) => {
     const stateManager = getStateManager();
+    const state = stateManager.getState();
+
+    const resolveExportPrecinctIds = async (): Promise<string[]> =>
+      resolvePoliticalExportPrecinctIds({
+        metadataPrecinctIds: (metadata.precinctIds as string[])?.filter(Boolean),
+        segmentMatchingPrecincts: state.segmentation.matchingPrecincts || [],
+      });
 
     switch (outputType) {
       case 'saveSegment': {
         // Prepare segment data and show modal instead of prompt
-        const state = stateManager.getState();
-
         setSegmentToSave({
           precinctIds: (metadata.precinctIds as string[]) || state.segmentation.matchingPrecincts || [],
           filters: state.segmentation.activeFilters || {},
@@ -1884,9 +1947,8 @@ export default function UnifiedAIAssistant({
 
       case 'exportCSV': {
         // Show confirmation before export
-        const state = stateManager.getState();
-        const targetIds = (metadata.precinctIds as string[]) || state.segmentation.matchingPrecincts || [];
-        const precinctCount = targetIds.length > 0 ? targetIds.length : 'all';
+        const targetIdsPreview = await resolveExportPrecinctIds();
+        const precinctCount = targetIdsPreview.length > 0 ? targetIdsPreview.length : 'all';
 
         showConfirmation(
           'Export Data',
@@ -1894,6 +1956,7 @@ export default function UnifiedAIAssistant({
           'Export',
           async () => {
             try {
+              const targetIds = await resolveExportPrecinctIds();
               // Fetch real precinct data
               const response = await fetch('/api/segments?action=precincts');
               const data = await response.json();
@@ -1903,11 +1966,32 @@ export default function UnifiedAIAssistant({
               }
 
               const allPrecincts = data.precincts;
+              const idSet = new Set(targetIds);
 
               // Filter to matching precincts, or use all if none specified
-              const precinctsToExport = targetIds.length > 0
-                ? allPrecincts.filter((p: any) => targetIds.includes(p.id))
-                : allPrecincts;
+              const precinctsToExport =
+                targetIds.length > 0
+                  ? allPrecincts.filter(
+                      (p: { id?: string; name?: string; precinctId?: string }) =>
+                        (p.id != null && idSet.has(String(p.id))) ||
+                        (p.name != null && idSet.has(String(p.name))) ||
+                        (p.precinctId != null && idSet.has(String(p.precinctId))),
+                    )
+                  : allPrecincts;
+
+              if (targetIds.length > 0 && precinctsToExport.length === 0) {
+                setMessages((prev: Message[]) => [
+                  ...prev,
+                  {
+                    role: 'assistant',
+                    content:
+                      'Could not match the saved precinct list to export rows. Run your filter query again, then export.',
+                    timestamp: new Date(),
+                  },
+                ]);
+                closeConfirmation();
+                return;
+              }
 
               // Build CSV with real data
               const headers = [
@@ -1931,7 +2015,7 @@ export default function UnifiedAIAssistant({
                 Math.round(p.targeting?.gotvPriority || 0),
                 Math.round(p.targeting?.persuasionOpportunity || 0),
                 (p.electoral?.partisanLean || 0).toFixed(1),
-                ((p.electoral?.avgTurnout || 0) * 100).toFixed(1) + '%'
+                `${electoralAvgTurnoutToDisplayPct(p.electoral?.avgTurnout).toFixed(1)}%`
               ].join(','));
 
               const csvContent = [headers.join(','), ...rows].join('\n');
@@ -1979,10 +2063,8 @@ export default function UnifiedAIAssistant({
       }
 
       case 'exportVAN': {
-        // Show confirmation before export
-        const state = stateManager.getState();
-        const targetIds = (metadata.precinctIds as string[]) || state.segmentation.matchingPrecincts || [];
-        const precinctCount = targetIds.length > 0 ? targetIds.length : 'all';
+        const targetIdsVanPreview = await resolveExportPrecinctIds();
+        const precinctCount = targetIdsVanPreview.length > 0 ? targetIdsVanPreview.length : 'all';
 
         showConfirmation(
           'Export VAN File',
@@ -1990,6 +2072,7 @@ export default function UnifiedAIAssistant({
           'Export',
           async () => {
             try {
+              const targetIds = await resolveExportPrecinctIds();
               // Fetch real precinct data
               const response = await fetch('/api/segments?action=precincts');
               const data = await response.json();
@@ -1999,11 +2082,32 @@ export default function UnifiedAIAssistant({
               }
 
               const allPrecincts = data.precincts;
+              const idSetVan = new Set(targetIds);
 
               // Filter to matching precincts
-              const precinctsToExport = targetIds.length > 0
-                ? allPrecincts.filter((p: any) => targetIds.includes(p.id))
-                : allPrecincts;
+              const precinctsToExport =
+                targetIds.length > 0
+                  ? allPrecincts.filter(
+                      (p: { id?: string; name?: string; precinctId?: string }) =>
+                        (p.id != null && idSetVan.has(String(p.id))) ||
+                        (p.name != null && idSetVan.has(String(p.name))) ||
+                        (p.precinctId != null && idSetVan.has(String(p.precinctId))),
+                    )
+                  : allPrecincts;
+
+              if (targetIds.length > 0 && precinctsToExport.length === 0) {
+                setMessages((prev: Message[]) => [
+                  ...prev,
+                  {
+                    role: 'assistant',
+                    content:
+                      'Could not match the saved precinct list to export rows. Run your filter query again, then export.',
+                    timestamp: new Date(),
+                  },
+                ]);
+                closeConfirmation();
+                return;
+              }
 
               // Build VAN-compatible CSV
               const headers = [

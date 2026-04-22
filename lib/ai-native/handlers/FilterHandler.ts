@@ -157,7 +157,8 @@ export class FilterHandler implements NLPHandler {
   // Entity Extraction
   // --------------------------------------------------------------------------
 
-  private extractFilterCriteria(query: string): any {
+  /** Used by political CSV export ID resolution — must stay aligned with handleFilterRequest. */
+  extractFilterCriteria(query: string): any {
     const criteria: any = {};
 
     // GOTV mobilization + lower turnout — phrasing often uses "high potential" not "high GOTV"
@@ -186,7 +187,33 @@ export class FilterHandler implements NLPHandler {
       return criteria;
     }
 
-    // "Margin less than 5%" = tight races → partisan lean band (not swing_potential threshold)
+    // Modeled partisan lean on −100..+100 (SegmentEngine), distinct from presidential vote margin
+    const leanBetween =
+      query.match(
+        /\bpartisan\s+lean\s+(?:between|from)\s+(-?\d+(?:\.\d+)?)\s+and\s+(?:\+)?(-?\d+(?:\.\d+)?)/i
+      ) ||
+      query.match(
+        /\b(?:between|from)\s+(-?\d+(?:\.\d+)?)\s+and\s+(?:\+)?(-?\d+(?:\.\d+)?)\s+partisan\s+lean\b/i
+      );
+    if (leanBetween) {
+      const a = parseFloat(leanBetween[1]);
+      const b = parseFloat(leanBetween[2]);
+      criteria.metric = 'partisan_lean';
+      criteria.partisanLeanRange = [Math.min(a, b), Math.max(a, b)];
+      return criteria;
+    }
+
+    const leanPlusMinus = query.match(
+      /\bpartisan\s+lean\s+(?:within|of)\s*±\s*(\d+(?:\.\d+)?)\s*(?:points?)?\b/i
+    );
+    if (leanPlusMinus) {
+      const t = Math.min(50, Math.abs(parseFloat(leanPlusMinus[1])));
+      criteria.metric = 'partisan_lean';
+      criteria.partisanLeanRange = [-t, t];
+      return criteria;
+    }
+
+    // "Margin less than 5%" → presidential |Dem−Rep| margin (2024/2020), aligned with chat CSV export
     const marginLt =
       query.match(/\bmargin\s+(?:less than|under|below)\s*(\d+(?:\.\d+)?)\s*%?/i) ||
       query.match(/\b(?:less than|under)\s*(\d+(?:\.\d+)?)\s*%?\s*margin\b/i);
@@ -194,7 +221,7 @@ export class FilterHandler implements NLPHandler {
       criteria.metric = 'margin';
       criteria.threshold = parseFloat(marginLt[1]);
       criteria.operator = 'less_than';
-      criteria.marginMode = 'partisan_lean_band';
+      criteria.marginMode = 'presidential_margin';
     }
 
     // Extract metric
@@ -250,8 +277,10 @@ export class FilterHandler implements NLPHandler {
     }
 
     // Detect "high" or "low" modifiers
+    // GOTV scores often cluster well below 70 statewide; 70 here yields 0 matches. Use 50 for implicit
+    // "high GOTV" (aligns with VAN-style tiers / presets that use lower floors than 70).
     if (/\bhigh\b/i.test(query) && !criteria.threshold) {
-      criteria.threshold = 70;
+      criteria.threshold = criteria.metric === 'gotv' ? 50 : 70;
       criteria.operator = '>=';
     }
 
@@ -297,5 +326,10 @@ export class FilterHandler implements NLPHandler {
 // ============================================================================
 
 export const filterHandler = new FilterHandler();
+
+/** Same criteria object as the map filter / segment query path (for export ID resolution). */
+export function extractFilterCriteriaFromUserQuery(query: string): any {
+  return filterHandler.extractFilterCriteria(query);
+}
 
 export default FilterHandler;

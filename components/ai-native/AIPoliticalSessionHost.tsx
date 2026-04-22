@@ -27,10 +27,17 @@ import {
 import { getStateManager, type StateEvent } from '@/lib/ai-native/ApplicationStateManager';
 import { notifyTourAIResponseComplete } from '@/lib/tour/tourActions';
 import { getPoliticalRegionEnv } from '@/lib/political/politicalRegionConfig';
+import { electoralAvgTurnoutToDisplayPct } from '@/lib/political/electoralAvgTurnoutDisplay';
 import { stripActionDirectives } from '@/lib/ai/stripActionDirectives';
 import { normalizeChatMarkdown } from '@/lib/ai/normalizeChatMarkdown';
 import { getSuggestionEngine } from '@/lib/ai-native/SuggestionEngine';
 import { CrossToolNavigator } from '@/lib/ai-native/navigation/CrossToolNavigator';
+import { buildPoliticalChatMapSelection } from '@/lib/ai-native/politicalChatMapSelection';
+import {
+  setLastChatExportPrecinctIds,
+  setLastUserQueryForExport,
+} from '@/lib/ai-native/lastChatExportPrecinctIds';
+import { resolvePoliticalExportPrecinctIds } from '@/lib/ai-native/resolvePoliticalExportPrecinctIds';
 import { FeatureSelectionCard } from './FeatureSelectionCard';
 import {
   extractFeatureData,
@@ -717,12 +724,12 @@ Available actions:
     // Dispatch to state manager and show feature card
     const stateManager = getStateManager();
 
-    // Build metrics object
+    // Build metrics object (partisan_lean first so session context shows lean in the first metrics slots)
     const metrics = {
+      partisan_lean: selectedPrecinct.attributes?.partisan_lean,
       swing_potential: selectedPrecinct.attributes?.swing_potential,
       gotv_priority: selectedPrecinct.attributes?.gotv_priority,
       persuasion_opportunity: selectedPrecinct.attributes?.persuasion_opportunity,
-      partisan_lean: selectedPrecinct.attributes?.partisan_lean,
     };
 
     stateManager.dispatch({
@@ -1387,6 +1394,8 @@ Available actions:
     actions?: SuggestedAction[];
     metadata?: Message['metadata'];
   }> => {
+    setLastUserQueryForExport(input);
+
     // Build map context for AI awareness
     let contextMessage = input;
     if (selectedPrecinct) {
@@ -1500,20 +1509,11 @@ Available actions:
           const escalationStateManager = getStateManager();
           const sessionContext = escalationStateManager.getContextForAI();
           const iq = escalationStateManager.getState().iqBuilder.lastAnalysis;
-          const attrs = selectedPrecinct?.attributes || {};
-          const mapSelection = {
-            selectedPrecinctName: selectedPrecinct?.precinctName,
-            selectedPrecinctJurisdiction:
-              (attrs.Jurisdiction_Name as string | undefined) ||
-              (attrs.MunicipalityName as string | undefined) ||
-              (attrs.MUNICIPALITY as string | undefined) ||
-              (attrs.municipality as string | undefined) ||
-              undefined,
-            lastAnalysisAreaName: iq?.areaName,
-            lastAnalysisPrecinctNames: iq?.precincts
-              ?.map((p) => p.name)
-              .filter((n): n is string => Boolean(n)),
-          };
+          const mapSelection = buildPoliticalChatMapSelection({
+            selectedPrecinct: selectedPrecinct ?? null,
+            currentFeature: escalationStateManager.getCurrentFeature(),
+            iqLastAnalysis: iq,
+          });
 
           const recentMessages = messages.slice(-15);
           const formattedMessages = recentMessages.map((m, idx) => {
@@ -1539,6 +1539,11 @@ Available actions:
 
           if (claudeResponse.ok) {
             const claudeData = await claudeResponse.json();
+
+            const exportIds = claudeData.dataPrecinctIds as string[] | undefined;
+            if (Array.isArray(exportIds) && exportIds.length > 0) {
+              setLastChatExportPrecinctIds(exportIds);
+            }
 
             // Parse Claude's response for map-related content and generate map commands
             const generatedMapCommands: MapCommand[] = [];
@@ -1610,6 +1615,23 @@ Available actions:
           setGraphEntities(result.metadata.entities);
           setGraphRelationships(result.metadata.relationships || []);
           setShowGraphPanel(true);
+        }
+
+        // Orchestrator path skips /api/political-chat — still resolve export IDs for CSV/VAN.
+        try {
+          const idsRes = await fetch('/api/political-chat/precinct-ids', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userQuery: input }),
+          });
+          if (idsRes.ok) {
+            const j = (await idsRes.json()) as { ids?: string[] };
+            if (Array.isArray(j.ids) && j.ids.length > 0) {
+              setLastChatExportPrecinctIds(j.ids);
+            }
+          }
+        } catch (sidecarErr) {
+          console.warn('[AIPoliticalSessionHost] precinct-ids sidecar failed:', sidecarErr);
         }
       }
     }
@@ -1767,6 +1789,29 @@ Available actions:
       timestamp: new Date(),
     });
 
+    // Deep dive / similarity: use NL + current map focus (avoid raw "analyze_detailed" and stale IQ context)
+    if (action.action === 'analyze_detailed' || action.action === 'find_similar') {
+      const cf = stateManager.getCurrentFeature();
+      const hist = stateManager.getState().selection.selectionHistory;
+      const lastSel = hist.length > 0 ? hist[hist.length - 1] : null;
+      const focusName =
+        selectedPrecinct?.precinctName || cf?.name || lastSel?.name;
+      if (action.action === 'analyze_detailed') {
+        await handleUserInput(
+          focusName
+            ? `Give me a detailed analysis of ${focusName}`
+            : 'Give me a detailed analysis of the area shown on my map'
+        );
+      } else {
+        await handleUserInput(
+          focusName
+            ? `Find precincts similar to ${focusName}`
+            : 'Find precincts similar to my current map selection'
+        );
+      }
+      return;
+    }
+
     // S7-003: Check if this is a resume action with map commands
     if (action.action.startsWith('resume:') && action.metadata?.mapCommands) {
       const mapCommands = action.metadata.mapCommands as MapCommand[];
@@ -1875,7 +1920,7 @@ Available actions:
       // New format: action is the message to send
       await handleUserInput(effectiveAction.action);
     }
-  }, [handleUserInput, addAssistantMessage, generateContextualActions, executeMapCommand]);
+  }, [handleUserInput, addAssistantMessage, generateContextualActions, executeMapCommand, selectedPrecinct]);
 
   const handleMapAction = (operation: string, metadata?: Record<string, unknown>) => {
     console.log('[AIPoliticalSessionHost] handleMapAction called:', { operation, metadata });
@@ -2147,6 +2192,12 @@ Available actions:
     const stateManager = getStateManager();
     const state = stateManager.getState();
 
+    const resolveExportPrecinctIds = async (): Promise<string[]> =>
+      resolvePoliticalExportPrecinctIds({
+        metadataPrecinctIds: (metadata?.precinctIds as string[])?.filter(Boolean),
+        segmentMatchingPrecincts: state.segmentation.matchingPrecincts || [],
+      });
+
     try {
       switch (operation) {
         case 'exportSegments':
@@ -2161,14 +2212,27 @@ Available actions:
             break;
           }
 
-          const targetIds = (metadata?.precinctIds as string[]) ||
-            state.segmentation.matchingPrecincts || [];
+          const targetIds = await resolveExportPrecinctIds();
           const allPrecincts = data.precincts;
+          const idSet = new Set(targetIds);
 
-          // Filter to matching precincts, or use all if none specified
-          const precinctsToExport = targetIds.length > 0
-            ? allPrecincts.filter((p: any) => targetIds.includes(p.id))
-            : allPrecincts;
+          // Filter to matching precincts, or use all if none specified (explicit full export only when no chat list)
+          const precinctsToExport =
+            targetIds.length > 0
+              ? allPrecincts.filter(
+                  (p: { id?: string; name?: string; precinctId?: string }) =>
+                    (p.id != null && idSet.has(String(p.id))) ||
+                    (p.name != null && idSet.has(String(p.name))) ||
+                    (p.precinctId != null && idSet.has(String(p.precinctId))),
+                )
+              : allPrecincts;
+
+          if (targetIds.length > 0 && precinctsToExport.length === 0) {
+            addAssistantMessage(
+              'Could not match the saved precinct list to export rows. Run your filter query again, then export.',
+            );
+            break;
+          }
 
           // Build CSV
           const headers = [
@@ -2192,7 +2256,7 @@ Available actions:
             Math.round(p.targeting?.gotvPriority || 0),
             Math.round(p.targeting?.persuasionOpportunity || 0),
             (p.electoral?.partisanLean || 0).toFixed(1),
-            ((p.electoral?.avgTurnout || 0) * 100).toFixed(1) + '%'
+            `${electoralAvgTurnoutToDisplayPct(p.electoral?.avgTurnout).toFixed(1)}%`
           ].join(','));
 
           const csvContent = [headers.join(','), ...rows].join('\n');
@@ -2250,7 +2314,7 @@ Available actions:
             Math.round(p.targeting?.swingPotential || 0),
             Math.round(p.targeting?.gotvPriority || 0),
             Math.round(p.targeting?.persuasionOpportunity || 0),
-            ((p.electoral?.avgTurnout || 0) * 100).toFixed(1) + '%',
+            `${electoralAvgTurnoutToDisplayPct(p.electoral?.avgTurnout).toFixed(1)}%`,
             p.demographics?.density || 'Unknown'
           ].join(','));
 
@@ -2285,13 +2349,26 @@ Available actions:
             break;
           }
 
-          const targetIds = (metadata?.precinctIds as string[]) ||
-            state.segmentation.matchingPrecincts || [];
+          const targetIds = await resolveExportPrecinctIds();
           const allPrecincts = data.precincts;
+          const idSetVan = new Set(targetIds);
 
-          const precinctsToExport = targetIds.length > 0
-            ? allPrecincts.filter((p: any) => targetIds.includes(p.id))
-            : allPrecincts;
+          const precinctsToExport =
+            targetIds.length > 0
+              ? allPrecincts.filter(
+                  (p: { id?: string; name?: string; precinctId?: string }) =>
+                    (p.id != null && idSetVan.has(String(p.id))) ||
+                    (p.name != null && idSetVan.has(String(p.name))) ||
+                    (p.precinctId != null && idSetVan.has(String(p.precinctId))),
+                )
+              : allPrecincts;
+
+          if (targetIds.length > 0 && precinctsToExport.length === 0) {
+            addAssistantMessage(
+              'Could not match the saved precinct list to export rows. Run your filter query again, then export.',
+            );
+            break;
+          }
 
           // VAN format headers
           const headers = [

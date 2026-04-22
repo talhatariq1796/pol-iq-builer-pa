@@ -3,8 +3,6 @@ export type { HelpDialogProps, HelpSection, WorkflowTutorial } from './HelpDialo
 export {
   politicalAIHelp,
   segmentsHelp,
-  donorsHelp,
-  canvassHelp,
   compareHelp,
   knowledgeGraphHelp,
   // Cross-tool navigation help
@@ -12,9 +10,7 @@ export {
   // Tutorial configurations per page
   politicalAITutorials,
   segmentsTutorials,
-  donorsTutorials,
-  canvassTutorials,
-  compareTutorials,
+compareTutorials,
   knowledgeGraphTutorials,
   // Cross-tool workflow tutorials
   crossToolTutorials,

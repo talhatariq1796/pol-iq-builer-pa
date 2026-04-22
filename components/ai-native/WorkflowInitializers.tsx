@@ -95,12 +95,12 @@ export function getSwingDetectionInit(): {
         action: 'List the top 10 most competitive areas',
         icon: 'trending-up'
       },
-      {
-        id: 'show-tossup',
-        label: 'Show toss-up areas',
-        action: 'Show me all toss-up areas',
-        icon: 'target'
-      },
+      // {
+      //   id: 'show-tossup',
+      //   label: 'Show toss-up areas',
+      //   action: 'Show me all toss-up areas',
+      //   icon: 'target'
+      // },
       {
         id: 'switch-to-precincts',
         label: 'Show as precinct boundaries',

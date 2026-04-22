@@ -23,7 +23,6 @@
  */
 
 import type { MapCommand, SuggestedAction } from '@/components/ai-native/AIPoliticalSessionHost';
-import type { SegmentFilters } from '@/lib/segmentation/types';
 import { fuzzyMatchPrecinct } from './intentParser';
 import { getRecentReports, REPORT_TYPE_CONFIG } from './ReportHistoryService';
 import { getStateManager } from '@/lib/ai-native/ApplicationStateManager';
@@ -42,6 +41,15 @@ import {
   getCitationService,
   type CitationKey,
 } from '@/lib/ai/confidence';
+import {
+  getLastChatExportPrecinctIds,
+  getLastUserQueryForExport,
+} from '@/lib/ai-native/lastChatExportPrecinctIds';
+import {
+  buildSegmentFiltersFromFilterCriteria,
+  hasAnySegmentFilters,
+  normalizeFilterMetric,
+} from '@/lib/segmentation/buildSegmentFiltersFromFilterCriteria';
 
 import {
   createSourcesSection,
@@ -259,13 +267,13 @@ export async function handleDistrictAnalysis(
         response: `County Commissioner district analysis is coming soon. For now, try State House, State Senate, Congressional, or School districts.`,
         suggestedActions: isPAPoliticalRegion()
           ? [
-              { id: 'ph-171', label: 'State House 171', action: 'Show State House 171', icon: 'map-pin' },
-              { id: 'ps-45', label: 'Senate District 45', action: 'Show Senate District 45', icon: 'map-pin' },
-            ]
+            { id: 'ph-171', label: 'State House 171', action: 'Show State House 171', icon: 'map-pin' },
+            { id: 'ps-45', label: 'Senate District 45', action: 'Show Senate District 45', icon: 'map-pin' },
+          ]
           : [
-              { id: 'hd-73', label: 'State House 73', action: 'Show State House 73', icon: 'map-pin' },
-              { id: 'sd-21', label: 'Senate District 21', action: 'Show Senate District 21', icon: 'map-pin' },
-            ],
+            { id: 'hd-73', label: 'State House 73', action: 'Show State House 73', icon: 'map-pin' },
+            { id: 'sd-21', label: 'Senate District 21', action: 'Show Senate District 21', icon: 'map-pin' },
+          ],
       };
     }
 
@@ -555,86 +563,13 @@ function filterResultPrecinctKey(p: {
   return p.precinctId ?? p.id ?? filterResultPrecinctLabel(p);
 }
 
-/** Map FilterHandler short metric keys to SegmentEngine / API names */
-function normalizeFilterMetric(metric: string | undefined): string | undefined {
-  if (!metric) return undefined;
-  const aliases: Record<string, string> = {
-    gotv: 'gotv_priority',
-    swing: 'swing_potential',
-    persuasion: 'persuasion_opportunity',
-    combined: 'combined_score',
-  };
-  return aliases[metric] ?? metric;
-}
-
 export async function handleFilterRequest(filterCriteria: any): Promise<HandlerResult> {
   try {
     filterCriteria.metric = normalizeFilterMetric(filterCriteria.metric);
 
-    // Build filters from criteria
-    const filters: SegmentFilters = {};
+    const filters = buildSegmentFiltersFromFilterCriteria(filterCriteria);
 
-    // High GOTV opportunity + below-average turnout (classic mobilization target)
-    if (
-      filterCriteria.composite === 'gotv_high_turnout_low' ||
-      (filterCriteria.metric === 'gotv_priority' &&
-        filterCriteria.max_turnout != null &&
-        typeof filterCriteria.max_turnout === 'number')
-    ) {
-      filters.targeting = {
-        min_gotv_priority: filterCriteria.min_gotv_priority ?? filterCriteria.threshold ?? 60,
-        max_turnout: filterCriteria.max_turnout,
-      };
-    } else if (filterCriteria.metric === 'swing_potential') {
-      filters.targeting = {
-        min_swing_potential: filterCriteria.threshold || 60,
-      };
-    } else if (filterCriteria.metric === 'margin') {
-      // Tight race: |partisan lean| within ±N points (e.g. margin under 5%)
-      if (
-        filterCriteria.marginMode === 'partisan_lean_band' &&
-        typeof filterCriteria.threshold === 'number'
-      ) {
-        const t = Math.min(50, Math.max(0, filterCriteria.threshold));
-        filters.political = {
-          partisanLeanRange: [-t, t],
-        };
-      } else {
-        filters.political = {
-          competitiveness: ['toss_up', 'lean_d', 'lean_r'],
-        };
-      }
-    } else if (filterCriteria.metric === 'turnout') {
-      filters.targeting = {
-        min_turnout: filterCriteria.threshold || 60
-      };
-    } else if (filterCriteria.metric === 'gotv_priority') {
-      filters.targeting = {
-        min_gotv_priority: filterCriteria.threshold || 70
-      };
-    } else if (filterCriteria.metric === 'persuasion_opportunity') {
-      filters.targeting = {
-        min_persuasion: filterCriteria.threshold || 60
-      };
-    }
-
-    // NLP / FilterHandler may send competitiveness without metric (e.g. legacy patterns)
-    if (
-      filterCriteria.competitiveness?.length &&
-      (!filters.political || filterCriteria.metric === undefined)
-    ) {
-      filters.political = {
-        ...(filters.political || {}),
-        competitiveness: filterCriteria.competitiveness,
-      };
-    }
-
-    const hasAnyFilter =
-      (filters.political && Object.keys(filters.political).length > 0) ||
-      (filters.targeting && Object.keys(filters.targeting).length > 0) ||
-      (filters.demographics && Object.keys(filters.demographics).length > 0);
-
-    if (!hasAnyFilter) {
+    if (!hasAnySegmentFilters(filters)) {
       return {
         response:
           'I could not apply a filter from that question (no metric or criteria was recognized). Try asking for **precincts with GOTV priority above 70**, **swing potential**, or **partisan lean within ±5 points**.',
@@ -676,8 +611,14 @@ export async function handleFilterRequest(filterCriteria: any): Promise<HandlerR
     try {
       const precinctNames =
         results.matchingPrecincts?.slice(0, 10).map((p: any) => filterResultPrecinctLabel(p)) || [];
-      const queryDescription = `${filterCriteria.metric || 'filtered'} precincts`;
-      enrichmentContext = await enrichFilterQuery(queryDescription, precinctNames);
+      const competitivenessOnly =
+        filterCriteria.competitiveness?.length > 0 && !filterCriteria.metric;
+      const queryDescription = competitivenessOnly
+        ? `modeled competitiveness bucket(s): ${filterCriteria.competitiveness.join(', ')}`
+        : `${filterCriteria.metric || 'filtered'} precincts`;
+      enrichmentContext = await enrichFilterQuery(queryDescription, precinctNames, {
+        includeCurrentIntel: !competitivenessOnly,
+      });
     } catch (e) {
       console.warn('[handleFilterRequest] Enrichment failed:', e);
     }
@@ -939,6 +880,11 @@ export async function handleOutputIntent(
     hasMapSelection,
   } = context;
 
+  /** Chat may have resolved a precinct list (sessionStorage) without map clicks or IQ analysis. */
+  const hasChatResolvedPrecinctList =
+    typeof window !== 'undefined' &&
+    (getLastChatExportPrecinctIds().length > 0 || getLastUserQueryForExport().trim().length > 0);
+
   // Build context-aware suggestions
   const suggestions: SuggestedAction[] = [];
   const availableOutputs: string[] = [];
@@ -957,20 +903,26 @@ export async function handleOutputIntent(
     availableOutputs.push(`segment with ${precinctCount} precincts`);
   }
 
-  // CSV export (always available if any data exists)
-  if (precinctsExplored > 0 || hasActiveSegment || hasAnalysisResults) {
+  // CSV export — map/segment/IQ **or** precinct list from last chat (filter queries)
+  if (precinctsExplored > 0 || hasActiveSegment || hasAnalysisResults || hasChatResolvedPrecinctList) {
     suggestions.push({
       id: 'export-csv',
       label: 'Export to CSV',
       action: 'output:exportCSV',
       icon: 'file-spreadsheet',
-      description: 'Download precinct data with targeting scores as spreadsheet',
+      description: hasChatResolvedPrecinctList
+        ? 'Download the precinct list from your last chat query (targeting scores included)'
+        : 'Download precinct data with targeting scores as spreadsheet',
     });
-    availableOutputs.push('CSV with precinct data');
+    availableOutputs.push(
+      hasChatResolvedPrecinctList && precinctsExplored === 0 && !hasActiveSegment && !hasAnalysisResults
+        ? 'CSV from your last chat filter'
+        : 'CSV with precinct data',
+    );
   }
 
   // VAN/VoteBuilder export (for Democratic campaigns)
-  if (precinctsExplored > 0 || hasActiveSegment || hasAnalysisResults) {
+  if (precinctsExplored > 0 || hasActiveSegment || hasAnalysisResults || hasChatResolvedPrecinctList) {
     suggestions.push({
       id: 'export-van',
       label: 'Export for VAN/VoteBuilder',
@@ -982,16 +934,16 @@ export async function handleOutputIntent(
   }
 
   // PDF report (if there's meaningful analysis)
-  if (hasAnalysisResults || hasMapSelection || precinctsExplored >= 3) {
-    suggestions.push({
-      id: 'generate-report',
-      label: 'Generate PDF report',
-      action: 'output:generateReport',
-      icon: 'file-text',
-      description: 'Create a comprehensive Political Profile report',
-    });
-    availableOutputs.push('PDF Political Profile report');
-  }
+  // if (hasAnalysisResults || hasMapSelection || precinctsExplored >= 3) {
+  //   suggestions.push({
+  //     id: 'generate-report',
+  //     label: 'Generate PDF report',
+  //     action: 'output:generateReport',
+  //     icon: 'file-text',
+  //     description: 'Create a comprehensive Political Profile report',
+  //   });
+  //   availableOutputs.push('PDF Political Profile report');
+  // }
 
   // Conversation export (if there's conversation history)
   if (messageCount >= 3) {
@@ -1005,17 +957,17 @@ export async function handleOutputIntent(
     availableOutputs.push('conversation transcript');
   }
 
-  // Canvassing plan (if there's a segment or explored precincts)
-  if ((hasActiveSegment && segmentPrecinctCount > 0) || precinctsExplored >= 2) {
-    suggestions.push({
-      id: 'plan-canvass',
-      label: 'Plan canvassing operation',
-      action: 'output:planCanvass',
-      icon: 'route',
-      description: 'Create a canvassing plan for these precincts',
-    });
-    availableOutputs.push('canvassing plan');
-  }
+  // // Canvassing plan (if there's a segment or explored precincts)
+  // if ((hasActiveSegment && segmentPrecinctCount > 0) || precinctsExplored >= 2) {
+  //   suggestions.push({
+  //     id: 'plan-canvass',
+  //     label: 'Plan canvassing operation',
+  //     action: 'output:planCanvass',
+  //     icon: 'route',
+  //     description: 'Create a canvassing plan for these precincts',
+  //   });
+  //   availableOutputs.push('canvassing plan');
+  // }
 
   // Generate response based on request type and available outputs
   let response: string;
@@ -2295,7 +2247,11 @@ function getFilterMetricDisplayValue(p: any, criteria: any): number | null {
   if (criteria.metric === 'persuasion_opportunity') {
     return p.persuasionOpportunity ?? p.targeting?.persuasionOpportunity ?? null;
   }
-  if (criteria.metric === 'margin' && criteria.marginMode === 'partisan_lean_band') {
+  if (criteria.metric === 'margin' && criteria.marginMode === 'presidential_margin') {
+    const v = p.presidentialMargin;
+    return typeof v === 'number' && !Number.isNaN(v) ? v : null;
+  }
+  if (criteria.metric === 'partisan_lean') {
     const v = p.partisanLean ?? p.electoral?.partisanLean;
     return typeof v === 'number' && !Number.isNaN(v) ? v : null;
   }
@@ -2313,15 +2269,22 @@ function formatFilterResults(criteria: any, results: any): string {
   const totalVoters = results.estimatedVoters || 0;
   const matchingPrecincts = results.matchingPrecincts || [];
   const areaName = getPoliticalRegionEnv().summaryAreaName;
-  const isTightMarginBand =
+  const isTightPresidentialMargin =
     criteria.metric === 'margin' &&
-    criteria.marginMode === 'partisan_lean_band' &&
+    criteria.marginMode === 'presidential_margin' &&
     typeof criteria.threshold === 'number';
 
   let criteriaText = '';
-  if (isTightMarginBand) {
+  if (isTightPresidentialMargin) {
     const t = criteria.threshold as number;
-    criteriaText = ` — partisan lean ±${t} points (tight races; same idea as margin under ${t}%)`;
+    criteriaText = ` — presidential |margin| < ${t} pp (2024, else 2020; same as CSV export)`;
+  } else if (
+    criteria.metric === 'partisan_lean' &&
+    Array.isArray(criteria.partisanLeanRange) &&
+    criteria.partisanLeanRange.length === 2
+  ) {
+    const [lo, hi] = criteria.partisanLeanRange as [number, number];
+    criteriaText = ` — modeled partisan lean between ${lo} and ${hi}`;
   } else if (criteria.metric) {
     criteriaText = ` with ${criteria.metric.replace(/_/g, ' ')}`;
     if (criteria.threshold !== undefined && criteria.threshold !== null) {
@@ -2329,6 +2292,9 @@ function formatFilterResults(criteria: any, results: any): string {
       criteriaText += ` ${operator} ${criteria.threshold}`;
     }
   }
+
+  const useLeanStyleMetricSuffix =
+    isTightPresidentialMargin || criteria.metric === 'partisan_lean';
 
   // Assess confidence based on data quality and result count
   const confidence = assessConfidence({
@@ -2359,10 +2325,10 @@ function formatFilterResults(criteria: any, results: any): string {
   // Wave 6D.3: Expertise-based formatting
   if (expertise === 'power_user') {
     // Terse format for power users
-    const leadPrefix = isTightMarginBand
-      ? `**${count} tight-margin precincts** (${areaName}, ±${criteria.threshold} pt lean) — ${recommendation}`
+    const leadPrefix = isTightPresidentialMargin
+      ? `**${count} tight-margin precincts** (${areaName}, |presidential margin| < ${criteria.threshold} pp, 2024 else 2020) — ${recommendation}`
       : `**${recommendation}**`;
-    let response = isTightMarginBand ? `${leadPrefix}\n` : `${leadPrefix}${criteriaText}\n`;
+    let response = isTightPresidentialMargin ? `${leadPrefix}\n` : `${leadPrefix}${criteriaText}\n`;
     if (matchingPrecincts.length > 0 && matchingPrecincts.length <= 10) {
       const topPrecincts = matchingPrecincts.slice(0, 5);
       response += topPrecincts.map((p: any, i: number) => {
@@ -2370,7 +2336,7 @@ function formatFilterResults(criteria: any, results: any): string {
         const label = filterResultPrecinctLabel(p);
         const suffix =
           metricValue !== null
-            ? isTightMarginBand
+            ? useLeanStyleMetricSuffix
               ? ` (${formatLeanForFilterDisplay(metricValue)})`
               : ` (${Math.round(metricValue)})`
             : '';
@@ -2391,11 +2357,11 @@ function formatFilterResults(criteria: any, results: any): string {
   }
 
   let response: string;
-  if (isTightMarginBand) {
+  if (isTightPresidentialMargin) {
     const t = criteria.threshold as number;
     response =
-      `**Answer:** In **${areaName}**, these are precincts where **partisan lean is within ±${t} points** of even — ` +
-      `our stand-in for **“margin under ${t}%”** when we don’t have a single-race margin for every precinct.\n\n` +
+      `**Answer:** In **${areaName}**, these are precincts where **|Dem−Rep presidential margin| is under ${t} percentage points** ` +
+      `(**2024** president where reported, else **2020**) — **the same rule** as the assistant’s “Authoritative filter / export” count and downloadable CSV.\n\n` +
       `Found **${count} precincts** with approximately **${totalVoters.toLocaleString()}** registered voters.\n\n`;
   } else {
     response =
@@ -2412,7 +2378,7 @@ function formatFilterResults(criteria: any, results: any): string {
       const label = filterResultPrecinctLabel(p);
       const suffix =
         metricValue !== null
-          ? isTightMarginBand
+          ? useLeanStyleMetricSuffix
             ? ` (${formatLeanForFilterDisplay(metricValue)})`
             : ` (${Math.round(metricValue)})`
           : '';
@@ -2531,7 +2497,10 @@ function getTargetedResponse(
   const relevantSuggestion = suggestions.find(s => {
     if (targetType === 'analysis') return s.id === 'generate-report' || s.id === 'export-csv';
     if (targetType === 'conversation') return s.id === 'export-conversation';
-    if (targetType === 'segment') return s.id === 'save-segment';
+    // "Segment" often means the precinct list the user filtered — CSV/VAN is the right action, not only save-segment
+    if (targetType === 'segment') {
+      return s.id === 'save-segment' || s.id === 'export-csv' || s.id === 'export-van';
+    }
     if (targetType === 'report') return s.id === 'generate-report';
     if (targetType === 'data') return s.id === 'export-csv';
     return false;

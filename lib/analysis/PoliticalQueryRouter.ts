@@ -72,7 +72,8 @@ export class PoliticalQueryRouter {
   private readonly PROFILE_PATTERNS = [
     /(?:what(?:'s| is)?|tell me about|describe|profile)\s+(?:the\s+)?(.+?)(?:\s+like|\?|$)/i,
     /(?:partisan lean|swing potential|turnout|demographics?)\s+(?:of|in|for)\s+(.+)/i,
-    /(?:show|get|display)\s+(?:me\s+)?(?:the\s+)?(?:political\s+)?(?:profile|data|info)\s+(?:for|of|about)\s+(.+)/i,
+    // "Show me the full profile for X" — allow optional "full" before profile
+    /(?:show|get|display)\s+(?:me\s+)?(?:the\s+)?(?:full\s+)?(?:political\s+)?(?:profile|data|info)\s+(?:for|of|about)\s+(.+)/i,
   ];
 
   private readonly FILTER_PATTERNS = [
@@ -208,6 +209,27 @@ export class PoliticalQueryRouter {
   }
 
   private tryRanking(query: string, parsed: ParsedPoliticalQuery): QueryRouteResult {
+    // "List/show the top N most competitive areas" — statewide precinct ranking (swing_potential), not general chat
+    const topNCompetitiveAreas = query.match(
+      /(?:show|find|list)\s+(?:me\s+)?(?:the\s+)?top\s+(\d+)\s+(?:most\s+)?(?:competitive|swing|volatile|battleground)\s+(?:areas|precincts|jurisdictions?)\b/i
+    );
+    if (topNCompetitiveAreas) {
+      const limit = Math.min(100, Math.max(1, parseInt(topNCompetitiveAreas[1], 10) || 10));
+      parsed.type = 'ranking';
+      parsed.metric = this.extractMetric(query) || 'swing_potential';
+      parsed.ranking = 'highest';
+      parsed.limit = limit;
+      parsed.confidence = 0.88;
+      parsed.locationNames = [];
+      parsed.locations = [];
+      return {
+        parsed,
+        handler: 'ranking',
+        dataNeeded: ['precinct_scores', 'targeting_scores'],
+        suggestedResponse: `I'll list the top ${limit} precincts by ${parsed.metric?.replace('_', ' ') || 'swing potential'}.`,
+      };
+    }
+
     // "Show/List precincts with the highest/top ..." (e.g. college concentration) — statewide unless "in <place>"
     const showPrecinctsWithExtreme = query.match(
       /(?:show|find|list)\s+(?:me\s+)?(?:the\s+)?precincts?\s+with\s+(?:the\s+)?(?:highest|top|most|lowest|least)\b/i

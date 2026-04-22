@@ -1,28 +1,28 @@
-import type { CMAProperty } from '../types';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * CMA Data Service - stub implementation
+ */
 
 export class CMADataService {
-  private static instance: CMADataService | null = null;
+  private static instance: CMADataService;
+
+  private constructor() {}
 
   static getInstance(): CMADataService {
-    this.instance ??= new CMADataService();
-    return this.instance;
+    if (!CMADataService.instance) {
+      CMADataService.instance = new CMADataService();
+    }
+    return CMADataService.instance;
   }
 
   async loadCMAData(): Promise<void> {
-    return Promise.resolve();
+    // stub
   }
 
-  getCMATableData(_id: string | number): Record<string, any> | null {
+  getCMATableData(id: string): Record<string, any> | null {
+    void id;
     return null;
   }
-
-  static getPropertyAddress(property: Partial<CMAProperty>): string {
-    return typeof property.address === 'string' && property.address.trim()
-      ? property.address
-      : 'Unknown Address';
-  }
-
-  static getDisplayPrice(property: Partial<CMAProperty>): number {
-    return typeof property.price === 'number' ? property.price : 0;
-  }
 }
+
+export default CMADataService;

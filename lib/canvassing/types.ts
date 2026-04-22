@@ -1,58 +1,58 @@
-import type { PrecinctMatch } from '@/lib/segmentation/types';
+/**
+ * Canvassing Types
+ *
+ * Core type definitions for canvassing universe management.
+ */
 
 export type DensityType = 'urban' | 'suburban' | 'rural';
 
-export interface CanvassingPrecinct extends Partial<PrecinctMatch> {
-  id: any;
-  name: any;
-  precinctId: any;
-  precinctName: any;
-  jurisdiction: any;
-  doorCount: any;
-  estimatedDoors: any;
-  estimatedHours: any;
-  estimatedTurfs: any;
-  density: any;
-  assignedTurf: any;
-  assignedVolunteers: any;
-  priority: any;
-  priorityRank: any;
-  gotvPriority: any;
-  persuasionOpportunity: any;
-  swingPotential: any;
-  partisanLean: any;
-  targetingStrategy: any;
-  status: any;
-  notes: any;
-  [key: string]: any;
+export interface CanvassingPrecinct {
+  precinctId: string;
+  precinctName: string;
+  jurisdiction: string;
+  priorityRank: number;
+  estimatedDoors: number;
+  estimatedHours: number;
+  estimatedTurfs?: number;
+  gotvPriority: number;
+  persuasionOpportunity: number;
+  swingPotential: number;
+  targetingStrategy: string;
+  assignedVolunteers?: string[];
+  status?: string;
+  density?: DensityType;
+  centroid?: [number, number];
 }
 
 export interface CanvassingUniverse {
   id: string;
   name: string;
-  description?: string;
+  description: string;
   precincts: CanvassingPrecinct[];
+  targetDoorsPerTurf: number;
+  targetDoorsPerHour: number;
+  targetContactRate: number;
+  totalPrecincts: number;
+  totalEstimatedDoors: number;
+  estimatedTurfs: number;
+  estimatedHours: number;
+  volunteersNeeded: number;
   createdAt?: string;
   updatedAt?: string;
-  [key: string]: any;
+  segmentId?: string;
 }
 
 export interface CanvassSummary {
-  universeId: any;
-  universeName: any;
-  createdAt: any;
-  totalPrecincts: any;
-  totalDoors: any;
-  estimatedDoors: any;
-  estimatedTurfs: any;
-  estimatedHours: any;
-  volunteersFor8HrShifts: any;
-  volunteersFor4HrShifts: any;
-  expectedContacts: any;
-  contactRate: any;
-  avgDoorsPerHour: any;
-  precincts: any;
-  topPrecincts: any[];
-  strategyBreakdown: Record<string, any>;
-  [key: string]: any;
+  universeName: string;
+  createdAt: string;
+  precincts: number;
+  estimatedDoors: number;
+  estimatedTurfs: number;
+  estimatedHours: number;
+  volunteersFor8HrShifts: number;
+  volunteersFor4HrShifts: number;
+  expectedContacts: number;
+  contactRate: number;
+  topPrecincts: Array<{ rank: number; name: string; doors: number }>;
+  strategyBreakdown: Record<string, number>;
 }

@@ -185,7 +185,7 @@ export class CompareJurisdictions {
       // Use PoliticalDataService for single source of truth (blob storage)
       const data = await politicalDataService.getPrecinctDataFileFormat();
 
-      this.jurisdictions = data.jurisdictions.map((j: any) => ({
+      this.jurisdictions = data.jurisdictions.map((j: { id: string; name: string; type: string; precinctIds: string[] }) => ({
         id: j.id,
         name: j.name,
         type: j.type,

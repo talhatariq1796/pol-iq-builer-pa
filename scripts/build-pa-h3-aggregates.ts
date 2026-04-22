@@ -1,6 +1,9 @@
 /**
  * Build PA H3 resolution-7 aggregates + GeoJSON for H3HeatmapLayer / PoliticalDataService.
  *
+ * Uses **polygon → H3 polyfill** (all cells intersecting each precinct polygon), not centroid-only,
+ * so hex coverage matches precinct land area with no large “empty” gaps between populated regions.
+ *
  * Usage: npm run build:pa-h3
  *
  * Reads:
@@ -15,11 +18,19 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as turf from '@turf/turf';
-import { latLngToCell, cellToBoundary, cellToLatLng } from 'h3-js';
+import {
+  cellToBoundary,
+  cellToLatLng,
+  latLngToCell,
+  polygonToCellsExperimental,
+  POLYGON_TO_CELLS_FLAGS,
+} from 'h3-js';
 import type { Feature, FeatureCollection, Polygon, MultiPolygon } from 'geojson';
 
 const H3_RES = 7;
 const H3_CELL_AREA_KM2 = 5.16;
+/** Guardrail: degenerate / huge geometries that explode cell count fall back to centroid. */
+const MAX_CELLS_PER_PRECINCT = 800;
 
 const DATA_DIR = path.join(process.cwd(), 'public/data/political/pensylvania');
 const PRECINCT_DIR = path.join(DATA_DIR, 'precincts');
@@ -87,6 +98,61 @@ function aggregateMetrics(b: Bucket) {
   };
 }
 
+/**
+ * All H3 cells that intersect the precinct polygon (GeoJSON [lng,lat] rings).
+ * Falls back to centroid cell if polyfill fails or exceeds MAX_CELLS_PER_PRECINCT.
+ */
+function h3CellsForPrecinctFeature(
+  feat: Feature<Polygon | MultiPolygon>,
+  id: string,
+): { cells: string[]; fallbackCentroid: boolean } {
+  const geom = feat.geometry;
+  if (!geom) return { cells: [], fallbackCentroid: false };
+
+  const tryPolyfill = (): string[] => {
+    const set = new Set<string>();
+
+    const addRings = (rings: number[][][]) => {
+      const cells = polygonToCellsExperimental(
+        rings,
+        H3_RES,
+        POLYGON_TO_CELLS_FLAGS.containmentOverlapping,
+        true,
+      );
+      for (const c of cells) set.add(c);
+    };
+
+    if (geom.type === 'Polygon') {
+      addRings(geom.coordinates as number[][][]);
+    } else {
+      for (const poly of geom.coordinates) {
+        addRings(poly as number[][][]);
+      }
+    }
+    return [...set];
+  };
+
+  try {
+    let cells = tryPolyfill();
+    if (cells.length > MAX_CELLS_PER_PRECINCT) {
+      console.warn(
+        `[build-pa-h3] Precinct ${id}: ${cells.length} cells > max ${MAX_CELLS_PER_PRECINCT}, using centroid`,
+      );
+      cells = [];
+    }
+    if (cells.length > 0) {
+      return { cells, fallbackCentroid: false };
+    }
+  } catch (e) {
+    console.warn(`[build-pa-h3] Precinct ${id}: polyfill failed, using centroid`, e);
+  }
+
+  const c = turf.centroid(feat as Feature<Polygon | MultiPolygon>);
+  const [lng, lat] = c.geometry.coordinates;
+  const one = latLngToCell(lat, lng, H3_RES);
+  return { cells: [one], fallbackCentroid: true };
+}
+
 function main() {
   const fc = JSON.parse(fs.readFileSync(PRECINCT_GEO, 'utf-8')) as FeatureCollection;
   const scoresData = JSON.parse(fs.readFileSync(SCORES_JSON, 'utf-8')) as {
@@ -98,8 +164,18 @@ function main() {
 
   let skippedNoScore = 0;
   let skippedNoGeom = 0;
+  let polyfillPrecincts = 0;
+  let centroidFallbacks = 0;
+
+  let processed = 0;
+  const total = fc.features.length;
 
   for (const f of fc.features) {
+    processed++;
+    if (processed % 1000 === 0) {
+      console.log(`[build-pa-h3] ${processed}/${total} precincts…`);
+    }
+
     const id = String((f.properties as Record<string, unknown>)?.UNIQUE_ID ?? '');
     if (!id) continue;
     const row = scores[id];
@@ -113,14 +189,18 @@ function main() {
     }
 
     const feat = f as Feature<Polygon | MultiPolygon>;
-    const c = turf.centroid(feat);
-    const [lng, lat] = c.geometry.coordinates;
-    const h3 = latLngToCell(lat, lng, H3_RES);
+    const { cells, fallbackCentroid } = h3CellsForPrecinctFeature(feat, id);
+    if (cells.length === 0) continue;
+    if (fallbackCentroid) centroidFallbacks++;
+    else polyfillPrecincts++;
 
     const pop =
       typeof row.total_population === 'number' && row.total_population > 0
         ? row.total_population
         : 1;
+
+    const n = cells.length;
+    const weightPerCell = pop / n;
 
     const pl = row.political_scores?.partisan_lean;
     const sp = row.swing_potential ?? row.political_scores?.swing_potential;
@@ -128,32 +208,37 @@ function main() {
     const pers = row.persuasion_opportunity;
     const comb = row.combined_score;
 
-    let b = buckets.get(h3);
-    if (!b) {
-      b = {
-        weights: [],
-        partisan: [],
-        swing: [],
-        gotv: [],
-        persuasion: [],
-        combined: [],
-        names: [],
-      };
-      buckets.set(h3, b);
-    }
+    for (const h3 of cells) {
+      let b = buckets.get(h3);
+      if (!b) {
+        b = {
+          weights: [],
+          partisan: [],
+          swing: [],
+          gotv: [],
+          persuasion: [],
+          combined: [],
+          names: [],
+        };
+        buckets.set(h3, b);
+      }
 
-    b.weights.push(pop);
-    b.partisan.push(pl != null && !Number.isNaN(pl) ? pl : NaN);
-    b.swing.push(sp != null && !Number.isNaN(sp) ? sp : NaN);
-    b.gotv.push(gotv != null && !Number.isNaN(gotv) ? gotv : NaN);
-    b.persuasion.push(pers != null && !Number.isNaN(pers) ? pers : NaN);
-    b.combined.push(comb != null && !Number.isNaN(comb) ? comb : NaN);
-    b.names.push(String(row.precinct_name || row.precinct_id || id));
+      b.weights.push(weightPerCell);
+      b.partisan.push(pl != null && !Number.isNaN(pl) ? pl : NaN);
+      b.swing.push(sp != null && !Number.isNaN(sp) ? sp : NaN);
+      b.gotv.push(gotv != null && !Number.isNaN(gotv) ? gotv : NaN);
+      b.persuasion.push(pers != null && !Number.isNaN(pers) ? pers : NaN);
+      b.combined.push(comb != null && !Number.isNaN(comb) ? comb : NaN);
+      b.names.push(String(row.precinct_name || row.precinct_id || id));
+    }
   }
 
   const cellCount = buckets.size;
   console.log(
     `H3 buckets: ${cellCount}, skipped (no targeting row): ${skippedNoScore}, skipped (no geometry): ${skippedNoGeom}`,
+  );
+  console.log(
+    `[build-pa-h3] Precincts with polyfill: ${polyfillPrecincts}, centroid fallback: ${centroidFallbacks}`,
   );
 
   const cells: Record<string, Record<string, unknown>> = {};
@@ -226,7 +311,10 @@ function main() {
       cell_count: cellCount,
       source_precincts: Object.keys(scores).length,
       metrics: metricsList,
-      note: 'PA statewide; metrics are population-weighted means of precinct targeting scores per H3 cell.',
+      note:
+        'PA statewide; H3 cells from polygonToCells (containmentOverlapping) per precinct. ' +
+        'Population split equally across intersecting cells per precinct; metrics are weighted means. ' +
+        'Centroid-only used when polyfill fails or exceeds max cells per precinct.',
     },
     cells,
   };

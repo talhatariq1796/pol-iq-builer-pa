@@ -6,7 +6,22 @@
  */
 
 import { PropertyTypeClassifier } from '@/lib/analysis/PropertyTypeClassifier';
-import { calculateTimeOnMarket, type CMAProperty } from '@/components/cma/types';
+import blobUrlsBundled from '@/public/data/blob-urls.json';
+function calculateTimeOnMarket(property: { date_bc?: string; date_pp_acpt_expiration?: string; st?: string; status?: string }): number | undefined {
+  if (!property.date_bc) return undefined;
+  const listingDate = new Date(property.date_bc);
+  if (isNaN(listingDate.getTime())) return undefined;
+  const status = (property.st || property.status || '').toLowerCase();
+  let endDate: Date;
+  if ((status === 'so' || status === 'sold') && property.date_pp_acpt_expiration) {
+    const accepted = new Date(property.date_pp_acpt_expiration);
+    endDate = isNaN(accepted.getTime()) ? new Date() : accepted;
+  } else {
+    endDate = new Date();
+  }
+  const days = Math.floor((endDate.getTime() - listingDate.getTime()) / (1000 * 60 * 60 * 24));
+  return days >= 0 ? days : undefined;
+}
 
 /**
  * Extract square footage from living_area_imperial string (e.g., "1,890 sqft")
@@ -126,8 +141,7 @@ export class ServerPropertyLoader {
       const firstProp = this.properties[0];
       // FORCE CACHE CLEAR: Check if status field exists and hasn't been overwritten
       // This forces a reload after fixing the ...props spread issue
-      const hasValidStructure = firstProp.sourcePropertyType &&
-                                (firstProp.st || firstProp.status);
+      const hasValidStructure = firstProp.sourcePropertyType && (firstProp.st || firstProp.status);
 
       if (!hasValidStructure) {
         console.log(`[ServerPropertyLoader] Cache invalidated - missing required fields`);
@@ -139,11 +153,15 @@ export class ServerPropertyLoader {
     }
 
     try {
-      // Load blob URL mappings from public directory
-      const blobUrlsPath = process.cwd() + '/public/data/blob-urls.json';
       const fs = await import('fs/promises');
-      const blobUrlsContent = await fs.readFile(blobUrlsPath, 'utf-8');
-      const blobUrls = JSON.parse(blobUrlsContent);
+      const blobUrlsPath = `${process.cwd()}/public/data/blob-urls.json`;
+      let blobUrls: Record<string, string>;
+      try {
+        const blobUrlsContent = await fs.readFile(blobUrlsPath, 'utf-8');
+        blobUrls = JSON.parse(blobUrlsContent);
+      } catch {
+        blobUrls = blobUrlsBundled as Record<string, string>;
+      }
 
       console.log('[ServerPropertyLoader] Loaded blob URLs:', {
         keys: Object.keys(blobUrls),
@@ -267,7 +285,7 @@ export class ServerPropertyLoader {
         st: props.st || props.status,
         status: props.status || props.st,
       };
-      const timeOnMarket = calculateTimeOnMarket(propertyForCalc as CMAProperty) || 0;
+      const timeOnMarket = calculateTimeOnMarket(propertyForCalc) || 0;
 
       // Extract price with rental detection
       const { price: extractedPrice, isRental } = extractSalePrice(props);

@@ -226,6 +226,9 @@ export interface SegmentFilters {
   political?: PoliticalFilters;
   targeting?: TargetingFilters;
   engagement?: EngagementFilters;
+
+  /** Presidential race margin filter (see ElectionHistoryFilters.presidentialMarginAbsLt) */
+  electionHistory?: ElectionHistoryFilters;
 }
 
 // ============================================================================
@@ -245,6 +248,8 @@ export interface PrecinctMatch {
   swingPotential: number;
   targetingStrategy: string;
   partisanLean: number;
+  /** Dem−Rep margin (points) from 2024 president if present, else 2020 — for tight-margin filters */
+  presidentialMargin?: number;
   matchScore: number; // How well it matches filters (0-100)
 }
 
@@ -531,6 +536,12 @@ export interface ElectionHistoryFilters {
 
   // Margin filtering
   marginRange?: [number, number];        // Point spread: [-10, +10] for competitive
+
+  /**
+   * |presidential margin| < this threshold (strict), using 2024 president then 2020 — same rule as
+   * political chat CSV export (`collectDataPrecinctIdsForQuery`).
+   */
+  presidentialMarginAbsLt?: number;
 
   // Turnout filtering
   minTurnout?: number;                   // % turnout in specific race
@@ -1017,9 +1028,6 @@ export interface ExtendedSegmentFilters extends SegmentFilters {
 
   // Phase 1: Electoral filtering
   electoral?: ElectoralFilters;
-
-  // Phase 2: Election history filtering
-  electionHistory?: ElectionHistoryFilters;
 
   // Phase 4: Tapestry filtering
   tapestry?: TapestryFilters;

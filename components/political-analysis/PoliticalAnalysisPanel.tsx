@@ -95,6 +95,87 @@ function readTargetingPoliticalOverrides(targeting: unknown): {
   };
 }
 
+let precinctBoundariesCache: Promise<GeoJSON.FeatureCollection> | null = null;
+
+function getPrecinctBoundaryLayer(): Promise<GeoJSON.FeatureCollection> {
+  if (!precinctBoundariesCache) {
+    precinctBoundariesCache = loadBoundaryFeatureCollection(BOUNDARY_LAYERS.precinct);
+  }
+  return precinctBoundariesCache;
+}
+
+/**
+ * Combine precinct polygon(s) into one GeoJSON MultiPolygon (same idea as PoliticalAreaSelector).
+ * Used so Esri Census infographics cover the **same** precincts as IQ totals (not the last map click only).
+ */
+/** PA and other layers use IDs like "041-:-SOUTH MIDDLETON PRECINCT 09"; boundaries may key NAME without the prefix. */
+function expandPrecinctKeysForBoundaryMatch(keys: string[]): {
+  wanted: Set<string>;
+  wantedLower: Set<string>;
+} {
+  const wanted = new Set<string>();
+  const wantedLower = new Set<string>();
+  for (const raw of keys) {
+    const k = raw.trim();
+    if (!k) continue;
+    wanted.add(k);
+    wantedLower.add(k.toLowerCase());
+    const sep = k.indexOf(':-');
+    if (sep !== -1) {
+      const suffix = k.slice(sep + 2).trim();
+      if (suffix) {
+        wanted.add(suffix);
+        wantedLower.add(suffix.toLowerCase());
+      }
+    }
+  }
+  return { wanted, wantedLower };
+}
+
+async function buildMultiPolygonFromPrecinctKeys(
+  precinctKeys: string[],
+): Promise<GeoJSON.MultiPolygon | null> {
+  if (precinctKeys.length === 0) return null;
+  const boundaries = await getPrecinctBoundaryLayer();
+  const { wanted, wantedLower } = expandPrecinctKeysForBoundaryMatch(precinctKeys);
+
+  const polygons: GeoJSON.Polygon[] = [];
+
+  for (const feature of boundaries.features) {
+    const props = feature.properties as Record<string, unknown> | undefined;
+    const key =
+      props?.UNIQUE_ID != null && String(props.UNIQUE_ID) !== ''
+        ? String(props.UNIQUE_ID)
+        : props?.precinct_id != null && String(props.precinct_id) !== ''
+          ? String(props.precinct_id)
+          : props?.NAME != null && String(props.NAME) !== ''
+            ? String(props.NAME)
+            : '';
+    if (!key) continue;
+    const match =
+      wanted.has(key) ||
+      wantedLower.has(key.toLowerCase()) ||
+      (props?.NAME != null && wantedLower.has(String(props.NAME).toLowerCase()));
+    if (!match) continue;
+
+    const g = feature.geometry;
+    if (!g) continue;
+    if (g.type === 'Polygon') {
+      polygons.push(g as GeoJSON.Polygon);
+    } else if (g.type === 'MultiPolygon') {
+      for (const poly of (g as GeoJSON.MultiPolygon).coordinates) {
+        polygons.push({ type: 'Polygon', coordinates: poly });
+      }
+    }
+  }
+
+  if (polygons.length === 0) return null;
+  return {
+    type: 'MultiPolygon',
+    coordinates: polygons.map((p) => p.coordinates),
+  };
+}
+
 function resolvePartisanLeanForDisplay(
   political: PrecinctPoliticalScores | undefined,
   targeting: unknown,
@@ -454,10 +535,19 @@ export function PoliticalAnalysisPanel({
 
       const leanAttr = attrs.partisan_lean;
       const swingAttr = attrs.swing_potential;
+      // PA unified `electoral.partisanLean` is stored in SegmentEngine convention (negative ≈ Dem);
+      // map/choropleth `partisan_lean` is raw targeting (positive ≈ Dem). formatLean() expects D+ / R+.
+      const unifiedLeanRaw = unified?.electoral?.partisanLean;
+      const leanFromUnified =
+        unifiedLeanRaw != null && !Number.isNaN(Number(unifiedLeanRaw))
+          ? pa
+            ? -Number(unifiedLeanRaw)
+            : Number(unifiedLeanRaw)
+          : null;
       const leanNum =
         leanAttr != null && leanAttr !== ''
           ? Number(leanAttr)
-          : unified?.electoral?.partisanLean;
+          : leanFromUnified;
       const swingNum =
         swingAttr != null && swingAttr !== ''
           ? Number(swingAttr)
@@ -642,32 +732,75 @@ export function PoliticalAnalysisPanel({
       return;
     }
 
-    // Get geometry from current selection
+    const locationLabel =
+      analysisResult?.areaName ??
+      selectedArea?.displayName ??
+      selectedPrecinct?.precinctName ??
+      'Selected area';
+
+    // Prefer geometries for **all precincts** in the IQ result so Census matches Results totals.
+    // 1) Use the same combined MultiPolygon the map built on Analyze (avoids ID mismatch with boundary files).
+    // 2) Else rebuild from boundary GeoJSON using precinct keys from analysis / selection metadata.
+    // GeoEnrichment CreateReport often applies Infographic templates to the **first** study area only when
+    // multiple studyAreas are sent — so we send **one** multipart polygon (all outer rings) below.
+    let effectiveGeoJson: GeoJSON.Geometry | null = null;
+    const selectionMulti =
+      selectedArea?.geometry?.type === 'MultiPolygon'
+        ? (selectedArea.geometry as GeoJSON.MultiPolygon)
+        : null;
+
+    // Same GeoJSON the map combined when you picked multiple precincts — best match to IQ voter totals.
+    if (
+      selectionMulti &&
+      selectionMulti.coordinates.length > 1 &&
+      selectedArea?.metadata?.boundaryType === 'precinct'
+    ) {
+      effectiveGeoJson = selectionMulti;
+    }
+
+    if (!effectiveGeoJson && analysisResult && analysisResult.includedPrecincts.length > 0) {
+      const keys = analysisResult.includedPrecincts.map((p) => p.name).filter(Boolean);
+      if (keys.length > 0) {
+        effectiveGeoJson = await buildMultiPolygonFromPrecinctKeys(keys);
+      }
+    }
+
+    if (!effectiveGeoJson && selectedArea?.metadata?.boundaryNames?.length) {
+      const keys = selectedArea.metadata.boundaryNames.filter(Boolean);
+      if (keys.length > 0) {
+        effectiveGeoJson = await buildMultiPolygonFromPrecinctKeys(keys);
+      }
+    }
+
+    if (!effectiveGeoJson && selectedArea?.geometry) {
+      effectiveGeoJson = selectedArea.geometry;
+    }
+
+    // Get ArcGIS geometry from GeoJSON or map graphic
     let geometry: __esri.Geometry | null = null;
 
-    if (selectedArea?.geometry) {
-      // Convert GeoJSON to ArcGIS geometry
+    if (effectiveGeoJson) {
       const Point = (await import('@arcgis/core/geometry/Point')).default;
       const Polygon = (await import('@arcgis/core/geometry/Polygon')).default;
 
-      if (selectedArea.geometry.type === 'Point') {
-        const pt = selectedArea.geometry as GeoJSON.Point;
+      if (effectiveGeoJson.type === 'Point') {
+        const pt = effectiveGeoJson as GeoJSON.Point;
         geometry = new Point({
           longitude: pt.coordinates[0],
           latitude: pt.coordinates[1],
-          spatialReference: { wkid: 4326 }
+          spatialReference: { wkid: 4326 },
         });
-      } else if (selectedArea.geometry.type === 'Polygon') {
-        const poly = selectedArea.geometry as GeoJSON.Polygon;
+      } else if (effectiveGeoJson.type === 'Polygon') {
+        const poly = effectiveGeoJson as GeoJSON.Polygon;
         geometry = new Polygon({
           rings: poly.coordinates,
-          spatialReference: { wkid: 4326 }
+          spatialReference: { wkid: 4326 },
         });
-      } else if (selectedArea.geometry.type === 'MultiPolygon') {
-        const multi = selectedArea.geometry as GeoJSON.MultiPolygon;
+      } else if (effectiveGeoJson.type === 'MultiPolygon') {
+        const multi = effectiveGeoJson as GeoJSON.MultiPolygon;
         geometry = new Polygon({
-          rings: multi.coordinates.flat(),
-          spatialReference: { wkid: 4326 }
+          rings: multi.coordinates.flat(1) as number[][][],
+          spatialReference: { wkid: 4326 },
         });
       }
     } else if (selectedPrecinct?.geometry) {
@@ -693,26 +826,22 @@ export function PoliticalAnalysisPanel({
       // Build study area(s) for GeoEnrichment CreateReport.
       // Polygons must use plain geometry + optional attributes — not areaType "StandardGeography"
       // (that type requires IntersectingGeographies). See Esri CreateReport polygon example.
-      const locationLabel =
-        selectedArea?.displayName ?? selectedPrecinct?.precinctName ?? 'Selected area';
-
       let studyAreas: any[];
 
-      if (selectedArea?.geometry?.type === 'MultiPolygon') {
-        const multi = selectedArea.geometry as GeoJSON.MultiPolygon;
-        studyAreas = multi.coordinates.map((polygonCoords, i) => ({
-          geometry: {
-            rings: polygonCoords,
-            spatialReference: { wkid: 4326 },
+      if (effectiveGeoJson?.type === 'MultiPolygon') {
+        const multi = effectiveGeoJson as GeoJSON.MultiPolygon;
+        // Single study area with one multipart polygon so Esri aggregates ACS across all rings (precincts).
+        // Multiple studyAreas[] entries often yield Infographic stats for the first polygon only.
+        const rings = multi.coordinates.flat(1) as number[][][];
+        studyAreas = [
+          {
+            geometry: {
+              rings,
+              spatialReference: { wkid: 4326 },
+            },
+            attributes: { id: '1', name: locationLabel },
           },
-          attributes: {
-            id: String(i + 1),
-            name:
-              multi.coordinates.length > 1
-                ? `${locationLabel} (${i + 1}/${multi.coordinates.length})`
-                : locationLabel,
-          },
-        }));
+        ];
       } else if (geometry.type === 'point' && bufferType !== 'none') {
         const point = geometry as __esri.Point;
         const base = {
@@ -819,7 +948,7 @@ export function PoliticalAnalysisPanel({
     } finally {
       setInfographicLoading(false);
     }
-  }, [selectedInfographicTemplate, view, selectedArea, selectedPrecinct, bufferType, bufferValue]);
+  }, [selectedInfographicTemplate, view, selectedArea, selectedPrecinct, analysisResult, bufferType, bufferValue]);
 
   /**
    * Generate AI-powered insights based on analysis results

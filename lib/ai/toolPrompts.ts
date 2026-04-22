@@ -39,7 +39,7 @@ Data Sources (Pennsylvania: public/data/political/pensylvania/ with precincts/, 
 
 Voter Targeting Scores (0-100 or -100 to +100):
 
-1. PARTISAN LEAN (-100 D to +100 R):
+1. PARTISAN LEAN (signed: **−100 = solid R** through **+100 = solid D**; matches IQ panel **R+** / **D+** display):
    - Formula: Weighted avg of election margins: 2024 (50%) + 2022 (30%) + 2020 (20%)
    - Classification: Safe (>±20), Likely (±10-20), Lean (±5-10), Toss-up (<±5)
 

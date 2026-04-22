@@ -94,6 +94,28 @@ interface PrecinctData {
 
 type DensityType = 'urban' | 'suburban' | 'rural';
 
+/** 2024 president margin, else 2020 — matches `collectDataPrecinctIdsForQuery` / CSV export. */
+function presidentialMarginForSegmentPrecinct(
+  elections: PrecinctData['elections']
+): number | null {
+  if (!elections) return null;
+  const e24 = elections['2024'];
+  const e20 = elections['2020'];
+  if (e24 && typeof e24.margin === 'number' && !Number.isNaN(e24.margin)) return e24.margin;
+  if (e20 && typeof e20.margin === 'number' && !Number.isNaN(e20.margin)) return e20.margin;
+  return null;
+}
+
+function isOnlyPresidentialMarginLt(filters: ElectionHistoryFilters): boolean {
+  if (filters.presidentialMarginAbsLt === undefined) return false;
+  for (const key of Object.keys(filters) as (keyof ElectionHistoryFilters)[]) {
+    if (key === 'presidentialMarginAbsLt') continue;
+    const v = filters[key];
+    if (v !== undefined && v !== null) return false;
+  }
+  return true;
+}
+
 /**
  * Main segmentation engine class
  */
@@ -118,6 +140,7 @@ export class SegmentEngine {
 
     for (const precinct of this.precincts) {
       if (this.matchesAllFilters(precinct, filters)) {
+        const pm = presidentialMarginForSegmentPrecinct(precinct.elections);
         const match: PrecinctMatch = {
           precinctId: precinct.id,
           precinctName: precinct.name,
@@ -128,6 +151,7 @@ export class SegmentEngine {
           swingPotential: precinct.electoral.swingPotential,
           targetingStrategy: precinct.targeting.strategy,
           partisanLean: precinct.electoral.partisanLean,
+          ...(pm != null ? { presidentialMargin: pm } : {}),
           matchScore: this.calculateMatchScore(precinct, filters),
         };
         matchingPrecincts.push(match);
@@ -282,6 +306,14 @@ export class SegmentEngine {
    */
   private matchesElectionHistory(precinct: PrecinctData, filters: ElectionHistoryFilters): boolean {
     const elections = precinct.elections;
+
+    if (filters.presidentialMarginAbsLt !== undefined) {
+      const t = filters.presidentialMarginAbsLt;
+      const m = presidentialMarginForSegmentPrecinct(elections);
+      if (m == null || Math.abs(m) >= t) return false;
+      if (isOnlyPresidentialMarginLt(filters)) return true;
+    }
+
     const year = filters.races?.[0]?.year ?? 2024;
     const y = year.toString();
 
@@ -728,7 +760,13 @@ export class SegmentEngine {
       // Data uses: 'Safe D', 'Likely D', 'Lean D', 'Tossup', 'Lean R', 'Likely R', 'Safe R'
       // Filters use: 'safe_d', 'likely_d', 'lean_d', 'toss_up', 'lean_r', 'likely_r', 'safe_r'
       const normalizeCompetitiveness = (comp: string): string => {
-        return comp.toLowerCase().replace(/\s+/g, '_').replace('tossup', 'toss_up');
+        // Data may be snake_case (toss_up), Title Case + hyphen (Toss-up), or one word (Tossup)
+        return comp
+          .toLowerCase()
+          .trim()
+          .replace(/\s+/g, '_')
+          .replace(/-/g, '_')
+          .replace('tossup', 'toss_up');
       };
       
       const normalizedPrecinctComp = normalizeCompetitiveness(elec.competitiveness);

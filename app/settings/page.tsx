@@ -147,11 +147,6 @@ const settingsTutorials: import('@/components/help/HelpDialog').WorkflowTutorial
     description: 'Export, rename, or delete your saved voter segments',
   },
   {
-    theme: 'canvassing' as const,
-    label: 'Configure Campaign Timeline',
-    description: 'Set election dates and important deadlines',
-  },
-  {
     theme: 'workflow-find-swing' as const,
     label: 'Adjust Targeting Weights',
     description: 'Fine-tune how voter targeting scores are calculated',

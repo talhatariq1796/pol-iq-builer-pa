@@ -1295,12 +1295,11 @@ function detectOutputIntent(lower: string): ParsedIntent['outputParams'] | null 
   ) {
     targetType = 'conversation';
   }
-  // Segment
+  // Segment — do **not** use the word "precincts" alone (conflicts with "export these precincts to CSV")
   else if (
     lower.includes('segment') ||
-    lower.includes('precincts') ||
     lower.includes('selection') ||
-    lower.includes('filtered')
+    /\bfiltered\b/.test(lower)
   ) {
     targetType = 'segment';
   }

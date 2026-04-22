@@ -248,7 +248,7 @@ export class CanvassExporter {
           persuasion_opportunity: Math.round(precinct.persuasionOpportunity),
           targeting_strategy: precinct.targetingStrategy,
           assigned_volunteer: precinct.assignedVolunteers?.[turfNum - 1] || undefined,
-          status: precinct.status || 'unassigned',
+          status: (precinct.status || 'unassigned') as 'unassigned' | 'assigned' | 'in_progress' | 'complete',
           universe_name: universe.name,
           exported_at: timestamp,
         });
@@ -272,7 +272,7 @@ export class CanvassExporter {
       expected_contacts: summary.expectedContacts,
       contact_rate: summary.contactRate,
       top_precincts: summary.topPrecincts
-        .map((p) => `${p.rank}. ${p.name} (${p.doors} doors)`)
+        .map((p: { rank: number; name: string; doors: number }) => `${p.rank}. ${p.name} (${p.doors} doors)`)
         .join('; '),
       strategy_breakdown: Object.entries(summary.strategyBreakdown)
         .map(([strategy, count]) => `${strategy}: ${count}`)

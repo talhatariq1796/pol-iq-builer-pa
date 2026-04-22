@@ -17,7 +17,6 @@ import type { TourAction } from './tourActions';
 export type TourTheme =
   | 'welcome'
   | 'segmentation'
-  | 'canvassing'
   | 'comparison'
   | 'full'
   // Demo scenarios - comprehensive campaign walkthroughs (Democratic perspective)
@@ -29,11 +28,7 @@ export type TourTheme =
   | 'workflow-analyze-precinct'
   | 'workflow-build-gotv'
   | 'workflow-compare-areas'
-  | 'workflow-find-donors'
-  | 'workflow-plan-canvass'
   // Cross-tool workflow tours
-  | 'cross-tool-segment-to-canvass'
-  | 'cross-tool-analyze-to-donors'
   | 'cross-tool-full-workflow';      // Complete end-to-end campaign workflow
 
 /**
@@ -1825,11 +1820,6 @@ export const TOUR_STEP_COUNTS: Record<TourTheme, number> = {
   'workflow-analyze-precinct': WORKFLOW_ANALYZE_PRECINCT_STEPS.length,
   'workflow-build-gotv': WORKFLOW_BUILD_GOTV_STEPS.length,
   'workflow-compare-areas': WORKFLOW_COMPARE_AREAS_STEPS.length,
-  'workflow-find-donors': WORKFLOW_FIND_SWING_STEPS.length,
-  'workflow-plan-canvass': WORKFLOW_BUILD_GOTV_STEPS.length,
-  canvassing: SEGMENTATION_TOUR_STEPS.length,
   // Cross-tool workflow tours
-  'cross-tool-segment-to-canvass': CROSS_TOOL_FULL_WORKFLOW_STEPS.length,
-  'cross-tool-analyze-to-donors': CROSS_TOOL_FULL_WORKFLOW_STEPS.length,
   'cross-tool-full-workflow': CROSS_TOOL_FULL_WORKFLOW_STEPS.length,
 };

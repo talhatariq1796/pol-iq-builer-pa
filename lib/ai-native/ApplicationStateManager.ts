@@ -20,6 +20,7 @@ import type {
   FeatureSelectionState,
 } from './types/unified-state';
 import { getSettingsManager, type CampaignState, type AllSettings } from '@/lib/settings';
+import { formatPartisanLeanPanel } from '@/lib/political/formatPartisanLeanPanel';
 
 // Municipality data type (simplified for state tracking)
 export interface MunicipalityData {
@@ -1250,11 +1251,19 @@ class ApplicationStateManager {
     // Session metrics
     parts.push(`Session: ${metrics.precinctsViewed} precincts viewed, ${metrics.filtersApplied} filters applied, ${metrics.comparisonsMade} comparisons`);
 
-    if (this.state.iqBuilder.lastAnalysis?.areaName) {
+    // IQ "last area" is stale once the user focuses a new map feature — omit it so chat/deep-dive match current focus
+    if (
+      !this.state.featureSelection.currentFeature &&
+      this.state.iqBuilder.lastAnalysis?.areaName
+    ) {
       const n = this.state.iqBuilder.lastAnalysis.precincts?.length ?? 0;
       parts.push(
         `IQ area analysis (use as "this area" when the user says so): ${this.state.iqBuilder.lastAnalysis.areaName} — ${n} precincts`
       );
+    }
+    if (this.state.featureSelection.currentFeature) {
+      const f = this.state.featureSelection.currentFeature;
+      parts.push(`Current map focus: ${f.name} (${f.featureType})`);
     }
     if (metrics.toolsVisited.length > 1) {
       parts.push(`Tools visited: ${metrics.toolsVisited.join(', ')}`);
@@ -1312,8 +1321,24 @@ class ApplicationStateManager {
       selectionHistory.forEach(sel => {
         let selDetail = `- ${sel.type}: ${sel.name}`;
         if (sel.metrics) {
-          const metricKeys = Object.keys(sel.metrics).slice(0, 3);
-          const metricStr = metricKeys.map(k => `${k}: ${sel.metrics![k]}`).join(', ');
+          const keys = Object.keys(sel.metrics);
+          const preferred = ['partisan_lean', 'swing_potential', 'gotv_priority', 'persuasion_opportunity'];
+          const metricKeys = [
+            ...preferred.filter((k) => keys.includes(k)),
+            ...keys.filter((k) => !preferred.includes(k)),
+          ].slice(0, 5);
+          const metricStr = metricKeys
+            .map((k) => {
+              const raw = sel.metrics![k];
+              if (k === 'partisan_lean') {
+                const n = typeof raw === 'number' ? raw : Number(raw);
+                if (!Number.isNaN(n)) {
+                  return `${k}: ${formatPartisanLeanPanel(n)}`;
+                }
+              }
+              return `${k}: ${raw}`;
+            })
+            .join(', ');
           if (metricStr) {
             selDetail += ` (${metricStr})`;
           }
@@ -2901,18 +2926,6 @@ class ApplicationStateManager {
         settings: {
           activeSection: undefined,
         },
-        donors: {
-          selectedZips: [],
-          timeRange: null,
-          partyFilter: 'all',
-          activeView: 'zip',
-        },
-        canvass: {
-          turfs: [],
-          targetPrecincts: [],
-          efficiency: undefined,
-        },
-        reports: {},
       },
       sharedMapState: {
         layer: 'none',

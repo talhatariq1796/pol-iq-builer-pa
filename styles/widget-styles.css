@@ -108,9 +108,9 @@
 /* ESRI Widget Overrides */
 .esri-widget {
     max-width: 280px !important;
-    width: 280px !important;
+    width: 40px !important;
     font-size: 12px !important;
-    background: var(--theme-bg-primary) !important;
+    /* background: var(--theme-bg-primary) !important; */
     border-radius: 8px !important;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
     display: block !important;

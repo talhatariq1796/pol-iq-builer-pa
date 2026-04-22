@@ -14,7 +14,7 @@ interface FieldMapping {
   fields: string[];
   description: string;
   category: string;
-  priority: 'low' | 'medium' | 'high';
+  priority: string;
 }
 
 interface EndpointConfig {

@@ -24,7 +24,6 @@ const QUICK_START_PRESETS = {
   donors: 'preset-high-value-donors',
 } as const;
 import { ErrorBoundary } from '@/components/common/error-boundary';
-import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { useBreadcrumbs } from '@/hooks/useBreadcrumbs';
 
 // Dynamic import to prevent SSR issues with ArcGIS/ResizeObserver
@@ -219,7 +218,7 @@ function SegmentsPageContent() {
       {/* Main Content */}
       <main className="flex-1 overflow-auto bg-background">
         <div className="container mx-auto py-6 px-4">
-          <Breadcrumbs items={breadcrumbs} className="mb-4" />
+          {/* <Breadcrumbs items={breadcrumbs} className="mb-4" /> */}
           <div className="mb-6">
             <h1 className="text-2xl font-bold">Voter Segmentation</h1>
             <p className="text-muted-foreground">

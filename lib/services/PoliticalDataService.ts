@@ -1,4 +1,3 @@
-@ -1,162 +1,163 @@
 /**
  * Political Data Service
  *
@@ -162,11 +161,1210 @@ interface TargetingScoresPrecinct {
   };
   // BA demographics
   total_population?: number;
-@ -1364,7 +1365,11 @@ export class PoliticalDataService {
+  population_age_18up?: number;
+  median_household_income?: number;
+  median_age?: number;
+  owner_pct?: number;
+  population_density?: number;
+  dem_affiliation_pct?: number;
+  rep_affiliation_pct?: number;
+  ind_affiliation_pct?: number;
+  liberal_pct?: number;
+  moderate_pct?: number;
+  conservative_pct?: number;
+  college_pct?: number;
+  diversity_index?: number;
+}
+
+interface DemographicsData {
+  metadata: {
+    generated: string;
+    precinct_count: number;
+  };
+  precincts: Record<string, any>;
+}
+
+interface H3AggregatesData {
+  metadata: {
+    generated: string;
+    h3_resolution: number;
+    cell_count: number;
+  };
+  cells: Record<string, H3Cell>;
+}
+
+interface H3Cell {
+  h3_index: string;
+  resolution: number;
+  center: [number, number];
+  precinct_count: number;
+  precincts: string[];
+  partisan_lean: number | null;
+  swing_potential: number | null;
+  gotv_priority: number | null;
+  persuasion_opportunity: number | null;
+  combined_score: number | null;
+  total_population: number | null;
+  dem_affiliation_pct: number | null;
+  rep_affiliation_pct: number | null;
+}
+
+interface ElectionResultsData {
+  // Support both formats: legacy 'precincts' and current 'precinctHistory'
+  precincts?: Record<string, any>;
+  precinctHistory?: Record<string, Record<string, {
+    turnout: number;
+    demVoteShare: number;
+    repVoteShare: number;
+    margin: number;
+  }>>;
+  metadata: {
+    elections: Array<{ year: number; type: string; date: string }> | string[];
+    totalPrecincts?: number;
+    totalRaces?: number;
+  };
+}
+
+interface PoliticalScoresData {
+  generated: string;
+  methodology: any;
+  summary: {
+    total_precincts: number;
+    lean_distribution: Record<string, number>;
+    swing_distribution: Record<string, number>;
+  };
+  precincts: Record<string, RawPrecinctScore>;
+}
+
+interface RawPrecinctScore {
+  partisan_lean: number | null;
+  swing_potential: number | null;
+  turnout: {
+    average: number;
+    presidential_avg: number | null;
+    midterm_avg: number | null;
+    dropoff: number | null;
+    elections: number;
+  } | null;
+  classification: {
+    competitiveness: string;
+    volatility: string;
+    targeting_priority: string;
+  };
+  elections_analyzed: number;
+}
+
+// Jurisdiction aggregation types (Phase 4: Natural Language Geo-Awareness)
+interface JurisdictionAggregate {
+  jurisdictionName: string;
+  precinctCount: number;
+  precinctNames: string[];
+  totalPopulation: number;
+  estimatedVoters: number;
+  scores: {
+    partisanLean: number;
+    swingPotential: number;
+    gotvPriority: number;
+    persuasionOpportunity: number;
+    averageTurnout: number;
+  };
+  demographics: {
+    medianIncome: number;
+    demAffiliation: number;
+    repAffiliation: number;
+    indAffiliation: number;
+  };
+  dominantCompetitiveness: string;
+  dominantStrategy: string;
+  strategyDistribution: Record<string, number>;
+  competitivenessDistribution: Record<string, number>;
+}
+
+interface JurisdictionComparison {
+  jurisdiction1: JurisdictionAggregate;
+  jurisdiction2: JurisdictionAggregate;
+  differences: {
+    partisanLean: number;
+    swingPotential: number;
+    gotvPriority: number;
+    persuasionOpportunity: number;
+    turnout: number;
+  };
+  summary: string;
+}
+
+interface JurisdictionRanking {
+  jurisdictionName: string;
+  value: number;
+  precinctCount: number;
+  dominantStrategy: string;
+}
+
+interface PrecinctRanking {
+  precinctName: string;
+  value: number;
+  strategy: string;
+  competitiveness: string;
+}
+
+/** Metrics supported by precinct-level ranking (jurisdiction or statewide). */
+export type PrecinctRankingMetric =
+  | 'partisan_lean'
+  | 'swing_potential'
+  | 'gotv_priority'
+  | 'persuasion_opportunity'
+  | 'turnout'
+  | 'combined_score'
+  /** Modeled % adults 25+ with bachelor's degree or higher (unified precinct demographics) */
+  | 'college_pct';
+
+interface BABlockGroupData {
+  geoid: string;
+  // Political attitudes
+  veryLiberal?: number;
+  somewhatLiberal?: number;
+  middleOfRoad?: number;
+  somewhatConservative?: number;
+  veryConservative?: number;
+  registeredDemocrat?: number;
+  registeredRepublican?: number;
+  registeredIndependent?: number;
+  likelyVoters?: number;
+  // Engagement
+  politicalPodcast?: number;
+  politicalContributor?: number;
+  wroteCalledPolitician?: number;
+  cashGiftsPolitical?: number;
+  followsPoliticians?: number;
+  followsPoliticalGroups?: number;
+  votedLastElection?: number;
+  alwaysVotes?: number;
+  // Demographics
+  totalPopulation?: number;
+  votingAgePopulation?: number;
+  medianAge?: number;
+  medianIncome?: number;
+  educationBachelorsPlus?: number;
+  ownerOccupied?: number;
+  renterOccupied?: number;
+  // Psychographics
+  tapestrySegment?: string;
+  tapestryCode?: string;
+}
+
+const cache: DataCache = {
+  precinctBoundaries: null,
+  blockGroupBoundaries: null,
+  electionResults: null,
+  politicalScores: null,
+  targetingScores: null,
+  demographics: null,
+  crosswalk: null,
+  h3Aggregates: null,
+  h3GeoJSON: null,
+  baData: null,
+  analysisUnits: null,
+};
+
+// Track deployment version to invalidate cache on new deployments
+// Vercel serverless functions stay "warm" and cache persists across requests
+// This ensures fresh data is loaded after each deployment
+let cachedDeploymentVersion: string | null = null;
+// Use a static fallback 'development' for local dev to avoid hydration mismatches
+// In production, VERCEL_GIT_COMMIT_SHA will always be set
+const CURRENT_DEPLOYMENT_VERSION = process.env.VERCEL_GIT_COMMIT_SHA ||
+  process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ||
+  'development';
+
+// Centroid cache (computed from geometry)
+const centroidCache: Map<string, [number, number]> = new Map();
+
+/**
+ * Calculate centroid of a polygon geometry
+ */
+function calculatePolygonCentroid(coordinates: number[][][]): [number, number] {
+  // For simple polygons, use the first ring (outer boundary)
+  const ring = coordinates[0];
+  if (!ring || ring.length === 0) return [0, 0];
+
+  let sumX = 0;
+  let sumY = 0;
+  let area = 0;
+
+  for (let i = 0; i < ring.length - 1; i++) {
+    const x0 = ring[i][0];
+    const y0 = ring[i][1];
+    const x1 = ring[i + 1][0];
+    const y1 = ring[i + 1][1];
+
+    const cross = x0 * y1 - x1 * y0;
+    area += cross;
+    sumX += (x0 + x1) * cross;
+    sumY += (y0 + y1) * cross;
+  }
+
+  area /= 2;
+  if (Math.abs(area) < 1e-10) {
+    // Fallback to simple average for degenerate polygons
+    const avgX = ring.reduce((sum, p) => sum + p[0], 0) / ring.length;
+    const avgY = ring.reduce((sum, p) => sum + p[1], 0) / ring.length;
+    return [avgX, avgY];
+  }
+
+  return [sumX / (6 * area), sumY / (6 * area)];
+}
+
+// ============================================================================
+// Blob URL Loading
+// ============================================================================
+
+/**
+ * Check if we're in Node.js server runtime (not edge, not browser)
+ * Edge runtime has no `process.versions.node`
+ */
+function isNodeRuntime(): boolean {
+  return typeof process !== 'undefined' &&
+    process.versions != null &&
+    process.versions.node != null;
+}
+
+/**
+ * Origin for fetching `/data/...` assets when running on Vercel: `public/` is **not** on the
+ * serverless filesystem (`/var/task/public/...` is missing), but the same files are served from the deployment URL.
+ *
+ * Uses several Vercel system env vars — some builds only expose bracket `process.env['VERCEL_URL']`.
+ */
+function getServerDeploymentOrigin(): string | null {
+  const explicit =
+    process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+    process.env.NEXT_PUBLIC_VERCEL_URL?.trim();
+  if (explicit) {
+    if (explicit.startsWith('http://') || explicit.startsWith('https://')) {
+      return explicit.replace(/\/$/, '');
+    }
+    return `https://${explicit.replace(/\/$/, '')}`;
+  }
+  const candidates = [
+    process.env['VERCEL_URL'],
+    process.env['VERCEL_PROJECT_PRODUCTION_URL'],
+    process.env['VERCEL_BRANCH_URL'],
+  ];
+  for (const c of candidates) {
+    const t = c?.trim();
+    if (!t) continue;
+    if (t.startsWith('http://') || t.startsWith('https://')) {
+      return t.replace(/\/$/, '');
+    }
+    return `https://${t.replace(/\/$/, '')}`;
+  }
+  return null;
+}
+
+/**
+ * Load blob URL mappings from the static JSON file
+ *
+ * Works in:
+ * - Browser: fetch from /data/blob-urls.json
+ * - Edge / Node without disk: bundled import + optional fetch to deployment `/data/blob-urls.json`
+ * - Node local dev: optional merge from `public/data/blob-urls.json` over bundled defaults
+ */
+async function loadBlobUrlMappings(): Promise<Record<string, string>> {
+  if (blobUrlMappings !== null) {
+    return blobUrlMappings;
+  }
+
+  try {
+    if (typeof window !== 'undefined') {
+      const response = await fetch('/data/blob-urls.json');
+      if (response.ok) {
+        blobUrlMappings = await response.json();
+        return blobUrlMappings!;
+      }
+      blobUrlMappings = { ...(blobUrlsBundled as Record<string, string>) };
+      return blobUrlMappings;
+    }
+
+    if (!isNodeRuntime()) {
+      const origin = getServerDeploymentOrigin();
+      if (origin) {
+        const response = await fetch(`${origin}/data/blob-urls.json`);
+        if (response.ok) {
+          blobUrlMappings = await response.json();
+          return blobUrlMappings!;
+        }
+      }
+      blobUrlMappings = { ...(blobUrlsBundled as Record<string, string>) };
+      return blobUrlMappings;
+    }
+
+    // Node (e.g. Vercel serverless): bundled JSON is always in the bundle; disk file is optional override.
+    let merged: Record<string, string> = { ...(blobUrlsBundled as Record<string, string>) };
+    try {
+      const fs = await import('fs/promises');
+      const path = await import('path');
+      const filePath = path.join(process.cwd(), 'public/data/blob-urls.json');
+      const fileContent = await fs.readFile(filePath, 'utf-8');
+      merged = { ...merged, ...JSON.parse(fileContent) };
+    } catch {
+      // keep bundled-only (production Vercel has no public/ on disk)
+    }
+    blobUrlMappings = merged;
+    return merged;
+  } catch (error) {
+    console.warn('[PoliticalDataService] Failed to load blob URL mappings:', error);
+    blobUrlMappings = { ...(blobUrlsBundled as Record<string, string>) };
+    return blobUrlMappings;
+  }
+}
+
+/**
+ * Read a JSON file from `public/` given a browser-style path (e.g. `/data/foo.json`).
+ * On Vercel, `public/` is not on the Lambda disk — prefer HTTP to the deployment origin first.
+ */
+async function readJsonFromPublicPath(localPath: string): Promise<unknown> {
+  const trimmed = localPath.startsWith('/') ? localPath.slice(1) : localPath;
+  const origin = getServerDeploymentOrigin();
+  if (origin) {
+    const url = `${origin}/${trimmed}`;
+    try {
+      const response = await fetch(url);
+      if (response.ok) {
+        return await response.json();
+      }
+      console.warn(
+        `[PoliticalDataService] readJsonFromPublicPath: ${url} returned ${response.status}, trying local fs`,
+      );
+    } catch (e) {
+      console.warn(`[PoliticalDataService] readJsonFromPublicPath: fetch ${url} failed, trying fs`, e);
+    }
+  }
+
+  const path = await import('path');
+  const fs = await import('fs/promises');
+  const filePath = path.join(process.cwd(), 'public', trimmed);
+  try {
+    const raw = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(raw);
+  } catch (firstErr) {
+    if (origin) {
+      const response = await fetch(`${origin}/${trimmed}`);
+      if (response.ok) return await response.json();
+      throw new Error(
+        `readJsonFromPublicPath: ${filePath} missing and ${origin}/${trimmed} returned ${response.status}`,
+      );
+    }
+    throw firstErr;
+  }
+}
+
+/**
+ * `fetch` implementation for Node: loads `/data/...` from `public/data/...` so GeoJSON merge
+ * manifests can resolve part URLs the same way as in the browser.
+ */
+async function nodePublicFetch(input: RequestInfo | URL): Promise<Response> {
+  let pathname: string;
+  if (typeof input === 'string') {
+    pathname =
+      input.startsWith('http://') || input.startsWith('https://')
+        ? new URL(input).pathname
+        : input.startsWith('/')
+          ? input
+          : `/${input}`;
+  } else if (input instanceof URL) {
+    pathname = input.pathname;
+  } else {
+    pathname = new URL((input as Request).url).pathname;
+  }
+  const pathMod = await import('path');
+  const fs = await import('fs/promises');
+  const rel = pathname.replace(/^\//, '');
+  const filePath = pathMod.join(process.cwd(), 'public', rel);
+  const origin = getServerDeploymentOrigin();
+  const pathForOrigin = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  if (origin) {
+    const absoluteUrl = `${origin}${pathForOrigin}`;
+    try {
+      const res = await fetch(absoluteUrl);
+      if (res.ok) return res;
+    } catch {
+      // fall through to fs
+    }
+  }
+  try {
+    const buf = await fs.readFile(filePath);
+    return new Response(new Uint8Array(buf), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch {
+    if (!origin) {
+      throw new Error(`nodePublicFetch: missing file ${filePath} and no deployment origin (VERCEL_URL / NEXT_PUBLIC_SITE_URL)`);
+    }
+    return fetch(`${origin}${pathForOrigin}`);
+  }
+}
+
+/**
+ * Fetch data from blob storage with fallback to local files
+ */
+async function fetchFromBlobOrLocal<T>(blobKey: string, localPath: string): Promise<T> {
+  const urlMappings = await loadBlobUrlMappings();
+  const blobUrl = urlMappings[blobKey];
+
+  // Try blob storage first
+  if (blobUrl) {
+    try {
+      // Simple fetch - blob storage has proper CORS headers (access-control-allow-origin: *)
+      // Don't use cache: 'no-store' as it can cause issues in some browser contexts
+      // Blob URLs include unique hashes, so caching is safe and beneficial
+      const response = await fetch(blobUrl);
+      if (response.ok) {
+        console.log(`[PoliticalDataService] Loaded ${blobKey} from blob storage`);
+        return await response.json();
+      }
+    } catch (error) {
+      console.warn(`[PoliticalDataService] Blob fetch failed for ${blobKey}:`, error);
+    }
+  }
+
+  // Fallback: Node server — readJsonFromPublicPath (HTTP to deployment first on Vercel, else fs)
+  if (isNodeRuntime()) {
+    console.log(
+      `[PoliticalDataService] Loading ${blobKey} from public/ (HTTP or filesystem): ${localPath}`,
+    );
+    try {
+      const data = await readJsonFromPublicPath(localPath);
+      return data as T;
+    } catch (error) {
+      console.error(`[PoliticalDataService] Failed to read ${blobKey} from public/:`, error);
+      throw error;
+    }
+  }
+
+  // Browser: same-origin fetch to public asset
+  console.log(`[PoliticalDataService] Loading ${blobKey} from local path: ${localPath}`);
+  const response = await fetch(localPath);
+  if (!response.ok) {
+    throw new Error(`Failed to load ${blobKey} from ${localPath}: ${response.status}`);
+  }
+  return await response.json();
+}
+
+/**
+ * Like fetchFromBlobOrLocal but supports *.manifest.json sharded GeoJSON locally and on blob.
+ */
+async function fetchGeoJSONFromBlobOrLocal(
+  blobKey: string,
+  localPath: string,
+): Promise<GeoJSON.FeatureCollection> {
+  const urlMappings = await loadBlobUrlMappings();
+  const blobUrl = urlMappings[blobKey];
+
+  if (blobUrl) {
+    try {
+      const response = await fetch(blobUrl);
+      if (response.ok) {
+        console.log(`[PoliticalDataService] Loaded ${blobKey} from blob storage`);
+        return resolveGeoJSONData(await response.json());
+      }
+    } catch (error) {
+      console.warn(`[PoliticalDataService] Blob fetch failed for ${blobKey}:`, error);
+    }
+  }
+
+  if (isNodeRuntime()) {
+    console.log(
+      `[PoliticalDataService] Loading ${blobKey} from local filesystem: public/${localPath.replace(/^\//, '')}`,
+    );
+    const data = await readJsonFromPublicPath(localPath);
+    return resolveGeoJSONData(data, nodePublicFetch);
+  }
+
+  console.log(`[PoliticalDataService] Loading ${blobKey} from local path: ${localPath}`);
+  return loadGeoJSONMerged(localPath);
+}
+
+// ============================================================================
+// Core Service Class
+// ============================================================================
+
+export class PoliticalDataService {
+  private static instance: PoliticalDataService;
+  private initialized = false;
+  private initPromise: Promise<void> | null = null;
+
+  /**
+   * Memoized heavy transforms (Compare dropdown hits these repeatedly; concurrent requests share one Promise).
+   * Cleared in clearCache().
+   */
+  private unifiedPrecinctDataPromise: Promise<Record<string, UnifiedPrecinct>> | null = null;
+  /** Full Compare precinct payload (unified + election merge) — expensive; shared across callers. */
+  private precinctDataFileFormatPromise: Promise<any> | null = null;
+  private municipalityDataFileFormatPromise: Promise<MunicipalityDataFile> | null = null;
+  /** Keys: chamber:state_house | county | school_districts | zip_codes */
+  private paCompareAggregatedDistrictPromises: Map<string, Promise<StateHouseDataFile>> = new Map();
+
+  private constructor() { }
+
+  /**
+   * Get singleton instance
+   */
+  static getInstance(): PoliticalDataService {
+    if (!PoliticalDataService.instance) {
+      PoliticalDataService.instance = new PoliticalDataService();
+    }
+    return PoliticalDataService.instance;
+  }
+
+  /**
+   * Configure Business Analyst feature service URL (legacy)
+   */
+  static setBAFeatureServiceURL(url: string): void {
+    BA_FEATURE_SERVICE_URL = url;
+    // Clear BA cache when URL changes
+    cache.baData = null;
+    cache.analysisUnits = null;
+  }
+
+  /**
+   * Initialize service - load all data from blob storage
+   * Automatically invalidates cache on new deployments (detected via VERCEL_GIT_COMMIT_SHA)
+   */
+  async initialize(): Promise<void> {
+    // Check if deployment version changed (new deployment on Vercel)
+    // This ensures stale data from warm serverless functions is cleared
+    if (cachedDeploymentVersion && cachedDeploymentVersion !== CURRENT_DEPLOYMENT_VERSION) {
+      console.log(`[PoliticalDataService] Deployment version changed (${cachedDeploymentVersion} -> ${CURRENT_DEPLOYMENT_VERSION}), clearing cache...`);
+      this.clearCache();
+    }
+
+    if (this.initialized) return;
+    if (this.initPromise) return this.initPromise;
+
+    // Track current deployment version
+    cachedDeploymentVersion = CURRENT_DEPLOYMENT_VERSION;
+
+    this.initPromise = this._doInitialize();
+    await this.initPromise;
+    this.initialized = true;
+  }
+
+  private async _doInitialize(): Promise<void> {
+    console.log('[PoliticalDataService] Initializing from Vercel Blob Storage...');
+
+    try {
+      // Load all data in parallel from blob storage
+      const [targetingScores, politicalScores, crosswalk, elections, demographics] = await Promise.all([
+        this.loadTargetingScores(),
+        this.loadPoliticalScores(),
+        this.loadCrosswalk(),
+        this.loadElectionResults(),
+        this.loadDemographics(),
+      ]);
+
+      console.log(`[PoliticalDataService] Loaded ${Object.keys(targetingScores.precincts).length} precinct targeting scores`);
+      console.log(`[PoliticalDataService] Loaded ${Object.keys(politicalScores.precincts).length} precinct political scores`);
+      console.log(`[PoliticalDataService] Loaded ${crosswalk.length} crosswalk entries`);
+      console.log(`[PoliticalDataService] Loaded ${Object.keys(elections.precincts || elections.precinctHistory || {}).length} precinct election records`);
+      console.log(`[PoliticalDataService] Loaded ${Object.keys(demographics.precincts).length} precinct demographics`);
+
+      // Load H3 aggregates (for heatmaps)
+      const h3 = await this.loadH3Aggregates();
+      console.log(`[PoliticalDataService] Loaded ${Object.keys(h3.cells).length} H3 cells`);
+
+      console.log('[PoliticalDataService] Initialization complete');
+    } catch (error) {
+      console.error('[PoliticalDataService] Initialization error:', error);
+      throw error;
+    }
+  }
+
+  // ============================================================================
+  // Data Loading Methods
+  // ============================================================================
+
+  /**
+   * Load targeting scores (GOTV Priority, Persuasion Opportunity) from blob storage
+   */
+  private async loadTargetingScores(): Promise<TargetingScoresData> {
+    if (cache.targetingScores) return cache.targetingScores;
+
+    cache.targetingScores = await fetchFromBlobOrLocal<TargetingScoresData>(
+      BLOB_KEYS.targetingScores,
+      LOCAL_PATHS.targetingScores
+    );
+    return cache.targetingScores!;
+  }
+
+  /**
+   * Load political scores (Partisan Lean, Swing Potential) from blob storage
+   */
+  private async loadPoliticalScores(): Promise<PoliticalScoresData> {
+    if (cache.politicalScores) return cache.politicalScores;
+
+    if (getPoliticalRegionEnv().stateFips === '42') {
+      cache.politicalScores = {
+        generated: new Date().toISOString(),
+        methodology: {
+          note: 'PA deployment uses precinct_targeting_scores.json for lean/swing; legacy precinct_political_scores is not keyed to PA precincts.',
+        },
+        summary: {
+          total_precincts: 0,
+          lean_distribution: {},
+          swing_distribution: {},
+        },
+        precincts: {},
+      };
+      return cache.politicalScores;
+    }
+
+    cache.politicalScores = await fetchFromBlobOrLocal<PoliticalScoresData>(
+      BLOB_KEYS.politicalScores,
+      LOCAL_PATHS.politicalScores
+    );
+    return cache.politicalScores!;
+  }
+
+  /**
+   * Load demographics (BA data joined to precincts) from blob storage
+   */
+  private async loadDemographics(): Promise<DemographicsData> {
+    if (cache.demographics) return cache.demographics;
+
+    if (getPoliticalRegionEnv().stateFips === '42') {
+      // Always use PA bundle from public/ — do not use MI BA blob key `political/demographics/precinct_ba`.
+      if (isNodeRuntime()) {
+        cache.demographics = (await readJsonFromPublicPath(
+          LOCAL_PATHS.paPrecinctDemographics,
+        )) as DemographicsData;
+      } else {
+        const response = await fetch(LOCAL_PATHS.paPrecinctDemographics);
+        if (!response.ok) {
+          throw new Error(`Failed to load PA demographics: ${response.status}`);
+        }
+        cache.demographics = (await response.json()) as DemographicsData;
+      }
+      return cache.demographics!;
+    }
+
+    cache.demographics = await fetchFromBlobOrLocal<DemographicsData>(
+      BLOB_KEYS.demographics,
+      LOCAL_PATHS.demographics
+    );
+    return cache.demographics!;
+  }
+
+  /**
+   * Load precinct-to-block-group crosswalk from blob storage
+   */
+  private async loadCrosswalk(): Promise<CrosswalkEntry[]> {
+    if (cache.crosswalk) return cache.crosswalk;
+
+    if (getPoliticalRegionEnv().stateFips === '42') {
+      cache.crosswalk = [];
+      return cache.crosswalk;
+    }
+
+    const data = await fetchFromBlobOrLocal<{ crosswalk?: unknown[] }>(
+      BLOB_KEYS.crosswalk,
+      LOCAL_PATHS.crosswalk
+    );
+    const raw = data.crosswalk || (data as unknown as unknown[]);
+    cache.crosswalk = (Array.isArray(raw) ? raw : []).map((e: unknown) => {
+      const o = e as Record<string, unknown>;
+      return {
+        precinctId: String(o.precinctId ?? o.precinct_id ?? ''),
+        precinctName: String(o.precinctName ?? o.precinct_name ?? ''),
+        blockGroupGeoid: String(o.blockGroupGeoid ?? o.block_group_geoid ?? ''),
+        overlapRatio: Number(o.overlapRatio ?? o.overlap_ratio ?? 0),
+        precinctArea: o.precinctArea != null ? Number(o.precinctArea) : undefined,
+        overlapArea: o.overlapArea != null ? Number(o.overlapArea) : undefined,
+      } as CrosswalkEntry;
+    });
+    return cache.crosswalk!;
+  }
+
+  /**
+   * Load election results from blob storage
+   */
+  private async loadElectionResults(): Promise<ElectionResultsData> {
+    if (cache.electionResults) return cache.electionResults;
+
+    cache.electionResults = await fetchFromBlobOrLocal<ElectionResultsData>(
+      BLOB_KEYS.electionResults,
+      LOCAL_PATHS.electionResults
+    );
+    return cache.electionResults!;
+  }
+
+  /**
+   * Load H3 hexagonal aggregates from blob storage
+   */
+  private async loadH3Aggregates(): Promise<H3AggregatesData> {
+    if (cache.h3Aggregates) return cache.h3Aggregates;
+
+    if (getPoliticalRegionEnv().stateFips === '42') {
+      cache.h3Aggregates = await fetchFromBlobOrLocal<H3AggregatesData>(
+        BLOB_KEYS.paH3Aggregates,
+        LOCAL_PATHS.paH3Aggregates,
+      );
+      return cache.h3Aggregates;
+    }
+
+    cache.h3Aggregates = await fetchFromBlobOrLocal<H3AggregatesData>(
+      BLOB_KEYS.h3Aggregates,
+      LOCAL_PATHS.h3Aggregates
+    );
+    return cache.h3Aggregates!;
+  }
+
+  /**
+   * Load H3 GeoJSON for map visualization
+   */
+  async loadH3GeoJSON(): Promise<GeoJSON.FeatureCollection> {
+    if (cache.h3GeoJSON) return cache.h3GeoJSON;
+
+    if (getPoliticalRegionEnv().stateFips === '42') {
+      cache.h3GeoJSON = await fetchFromBlobOrLocal<GeoJSON.FeatureCollection>(
+        BLOB_KEYS.paH3GeoJSON,
+        LOCAL_PATHS.paH3GeoJSON,
+      );
+      return cache.h3GeoJSON;
+    }
+
+    cache.h3GeoJSON = await fetchFromBlobOrLocal<GeoJSON.FeatureCollection>(
+      BLOB_KEYS.h3GeoJSON,
+      LOCAL_PATHS.h3GeoJSON
+    );
+    return cache.h3GeoJSON!;
+  }
+
+  /**
+   * Load precinct boundaries GeoJSON from blob storage
+   */
+  async loadPrecinctBoundaries(): Promise<GeoJSON.FeatureCollection> {
+    if (cache.precinctBoundaries) return cache.precinctBoundaries;
+
+    cache.precinctBoundaries = await fetchGeoJSONFromBlobOrLocal(
+      BLOB_KEYS.precinctBoundaries,
+      LOCAL_PATHS.precinctBoundaries
+    );
+    return cache.precinctBoundaries!;
+  }
+
+  /**
+   * Get centroid for a precinct from its geometry
+   * Loads the GeoJSON precinct boundaries and calculates/caches centroids
+   */
+  async getPrecinctCentroid(precinctId: string): Promise<[number, number]> {
+    // Check cache first
+    const normalizedId = precinctId.toLowerCase().replace(/[^a-z0-9-]/g, '-');
+    if (centroidCache.has(normalizedId)) {
+      return centroidCache.get(normalizedId)!;
+    }
+
+    // Try to load from local GeoJSON first (faster)
+    try {
+      const geojson = await loadGeoJSONMerged(LOCAL_PATHS.precinctBoundaries);
+
+      // Build centroids for all precincts (PA: UNIQUE_ID, MI: PRECINCT_ID)
+      for (const feature of geojson.features) {
+        const id = (feature.properties?.UNIQUE_ID || feature.properties?.PRECINCT_ID || feature.properties?.id || feature.properties?.NAME || '').toLowerCase().replace(/[^a-z0-9-]/g, '-');
+        if (feature.geometry?.type === 'Polygon') {
+          const centroid = calculatePolygonCentroid((feature.geometry as GeoJSON.Polygon).coordinates);
+          centroidCache.set(id, centroid);
+        } else if (feature.geometry?.type === 'MultiPolygon') {
+          // For MultiPolygon, use the largest polygon's centroid
+          const multiCoords = (feature.geometry as GeoJSON.MultiPolygon).coordinates;
+          const centroid = calculatePolygonCentroid(multiCoords[0]);
+          centroidCache.set(id, centroid);
+        }
+      }
+
+      if (centroidCache.has(normalizedId)) {
+        return centroidCache.get(normalizedId)!;
+      }
+    } catch (error) {
+      console.warn('[PoliticalDataService] Failed to load precinct GeoJSON for centroids:', error);
+    }
+
+    // Fallback: Use Pennsylvania state center
+    return [-77.27, 40.89];
+  }
+
+  /**
+   * Load Business Analyst data from feature service (legacy - now use loadDemographics)
+   */
+  private async loadBAData(): Promise<void> {
+    if (!BA_FEATURE_SERVICE_URL) {
+      console.log('[PoliticalDataService] No BA feature service URL configured');
+      return;
+    }
+
+    console.log('[PoliticalDataService] Loading BA data from feature service...');
+
+    try {
+      // Query the feature service
+      const queryUrl = `${BA_FEATURE_SERVICE_URL}/query?where=1=1&outFields=*&f=json`;
+      const response = await fetch(queryUrl);
+
+      if (!response.ok) {
+        throw new Error(`BA feature service error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      cache.baData = new Map();
+
+      for (const feature of data.features || []) {
+        const attrs = feature.attributes;
+        const geoid = attrs.GEOID || attrs.geoid || attrs.GEOID20;
+
+        if (geoid) {
+          cache.baData.set(geoid, this.mapBAAttributes(attrs));
+        }
+      }
+
+      console.log(`[PoliticalDataService] Loaded BA data for ${cache.baData.size} block groups`);
+    } catch (error) {
+      console.error('[PoliticalDataService] Error loading BA data:', error);
+      // Continue without BA data - it's optional
+    }
+  }
+
+  /**
+   * Map BA feature service attributes to our interface
+   */
+  private mapBAAttributes(attrs: any): BABlockGroupData {
+    return {
+      geoid: attrs.GEOID || attrs.geoid || attrs.GEOID20,
+      // Political attitudes (BA variable names)
+      veryLiberal: attrs.POLOLKVLIB,
+      somewhatLiberal: attrs.POLOLKLEAN,
+      middleOfRoad: attrs.POLOLKMID,
+      somewhatConservative: attrs.POLOLKCONS,
+      veryConservative: attrs.POLOLKVCON,
+      registeredDemocrat: attrs.POLAFFDEM,
+      registeredRepublican: attrs.POLAFFREP,
+      registeredIndependent: attrs.POLAFFIND,
+      likelyVoters: attrs.POLLKELVOTE,
+      // Engagement
+      politicalPodcast: attrs.POLPODCAST,
+      politicalContributor: attrs.POLCONTRIB,
+      wroteCalledPolitician: attrs.POLWROTECALL,
+      cashGiftsPolitical: attrs.POLCASHGIFT,
+      followsPoliticians: attrs.SMFOLPOL,
+      followsPoliticalGroups: attrs.SMFOLPOLGRP,
+      votedLastElection: attrs.POLVOTEDLST,
+      alwaysVotes: attrs.POLVOTEFRE1,
+      // Demographics
+      totalPopulation: attrs.TOTPOP || attrs.B01001_001E,
+      votingAgePopulation: attrs.POPVOTAGE || attrs.VAP,
+      medianAge: attrs.MEDAGE || attrs.B01002_001E,
+      medianIncome: attrs.MEDHHINC || attrs.B19013_001E,
+      educationBachelorsPlus: attrs.EDUBACHPCT,
+      ownerOccupied: attrs.OWNOCCPCT,
+      renterOccupied: attrs.RNTOCCPCT,
+      // Psychographics
+      tapestrySegment: attrs.TAPSEGNAM,
+      tapestryCode: attrs.TAPSEGCODE,
+    };
+  }
+
+  // ============================================================================
+  // Public Data Access Methods
+  // ============================================================================
+
+  /**
+   * Get targeting scores (GOTV Priority, Persuasion Opportunity) for a precinct
+   */
+  async getPrecinctTargetingScores(precinctName: string): Promise<TargetingScoresPrecinct | null> {
+    await this.initialize();
+    return cache.targetingScores?.precincts[precinctName] || null;
+  }
+
+  /**
+   * Get all precinct targeting scores
+   */
+  async getAllTargetingScores(): Promise<Record<string, TargetingScoresPrecinct>> {
+    await this.initialize();
+    return cache.targetingScores?.precincts || {};
+  }
+
+  /**
+   * Get targeting scores summary statistics
+   */
+  async getTargetingScoresSummary(): Promise<TargetingScoresData['summary'] | null> {
+    await this.initialize();
+    return cache.targetingScores?.summary || null;
+  }
+
+  /**
+   * Get precincts by targeting strategy
+   */
+  async getPrecinctsByStrategy(strategy: string): Promise<string[]> {
+    await this.initialize();
+
+    const results: string[] = [];
+    for (const [name, scores] of Object.entries(cache.targetingScores?.precincts || {})) {
+      if (scores.targeting_strategy === strategy) {
+        results.push(name);
+      }
+    }
+    return results;
+  }
+
+  /**
+   * Get H3 aggregates for heatmap visualization
+   */
+  async getH3Aggregates(): Promise<H3AggregatesData> {
+    await this.initialize();
+    return cache.h3Aggregates!;
+  }
+
+  /**
+   * Get H3 cells filtered by metric value
+   */
+  async getH3CellsByMetric(
+    metric: 'partisan_lean' | 'gotv_priority' | 'persuasion_opportunity' | 'combined_score',
+    minValue?: number,
+    maxValue?: number
+  ): Promise<H3Cell[]> {
+    await this.initialize();
+
+    const cells = Object.values(cache.h3Aggregates?.cells || {});
+    return cells.filter(cell => {
+      const value = cell[metric];
+      if (value === null) return false;
+      if (minValue !== undefined && value < minValue) return false;
+      if (maxValue !== undefined && value > maxValue) return false;
+      return true;
+    });
+  }
+
+  /**
+   * Get political scores for a specific precinct
+   */
+  async getPrecinctScores(precinctName: string): Promise<PrecinctPoliticalScores | null> {
+    await this.initialize();
+
+    const raw = cache.politicalScores?.precincts[precinctName];
+    if (!raw) return null;
+
+    return this.transformRawScores(precinctName, raw);
+  }
+
+  /**
+   * Get all precinct scores
+   */
+  async getAllPrecinctScores(): Promise<Map<string, PrecinctPoliticalScores>> {
+    await this.initialize();
+
+    const result = new Map<string, PrecinctPoliticalScores>();
+
+    for (const [name, raw] of Object.entries(cache.politicalScores?.precincts || {})) {
+      const scores = this.transformRawScores(name, raw);
+      if (scores) {
+        result.set(name, scores);
+      }
+    }
+
+    return result;
+  }
+
+  // ============================================================================
+  // Unified Precinct Data (Data Consolidation - Single Source of Truth)
+  // ============================================================================
+
+  /**
+   * SegmentEngine party_lean: negative = Democratic, positive = Republican.
+   * PA targeting `political_scores.partisan_lean` is (demVoteShare - 50) * 2 (positive = D lean).
+   */
+  private paPartisanLeanForSegment(rawLean: number): number {
+    return -rawLean;
+  }
+
+  /** Map modeled Dem vote share to competitiveness bucket (snake_case as in SegmentEngine). */
+  private paCompetitivenessFromRawLean(rawLean: number): string {
+    const demPct = Math.max(0, Math.min(100, 50 + rawLean / 2));
+    if (demPct >= 62) return 'safe_d';
+    if (demPct >= 55) return 'likely_d';
+    if (demPct >= 52) return 'lean_d';
+    if (demPct >= 48) return 'toss_up';
+    if (demPct >= 45) return 'lean_r';
+    if (demPct >= 38) return 'likely_r';
+    return 'safe_r';
+  }
+
+  /**
+   * Synthetic affiliation / outlook from presidential lean when BA survey fields are absent (PA).
+   *
+   * Previous version fixed moderate ~40% and capped liberal/conservative ~38%, so moderate always
+   * won the SegmentEngine plurality check — liberal/conservative filters matched 0 precincts.
+   * Split the non-independent pool using weights that peak moderate near 50–50 races and favor
+   * liberal/conservative as partisan lean moves away from the center.
+   */
+  private paDerivedPoliticalOutlook(rawLean: number): {
+    demAffiliationPct: number;
+    repAffiliationPct: number;
+    independentPct: number;
+    liberalPct: number;
+    moderatePct: number;
+    conservativePct: number;
+  } {
+    const demVoteShare = Math.max(0, Math.min(100, 50 + rawLean / 2));
+    const repVoteShare = 100 - demVoteShare;
+    const swing = Math.abs(demVoteShare - 50);
+    const independentPct = Math.round((18 + swing * 0.22) * 10) / 10;
+    const cap = Math.max(0, 100 - independentPct);
+    const d = demVoteShare / 100;
+    const r = repVoteShare / 100;
+    const demAffiliationPct = Math.round(cap * d * 10) / 10;
+    const repAffiliationPct = Math.round(cap * r * 10) / 10;
+    // Ideology weights (sum to 1): L/R grow with partisan strength; moderate peaks in competitive areas.
+    // Small additive bias on wM breaks exact 50–50 ties (otherwise L=M=C and no outlook filter matches).
+    const wL = d * d;
+    const wC = r * r;
+    const wM = 4 * d * d * r * r + 0.12;
+    const s = wL + wM + wC;
+    let liberalPct = 0;
+    let moderatePct = 0;
+    let conservativePct = 0;
+    if (s > 0 && cap > 0) {
+      liberalPct = Math.round(((cap * wL) / s) * 10) / 10;
+      moderatePct = Math.round(((cap * wM) / s) * 10) / 10;
+      conservativePct = Math.round(((cap * wC) / s) * 10) / 10;
+      const sum3 = liberalPct + moderatePct + conservativePct;
+      if (sum3 > 0 && Math.abs(sum3 - cap) > 0.05) {
+        const f = cap / sum3;
+        liberalPct = Math.round(liberalPct * f * 10) / 10;
+        moderatePct = Math.round(moderatePct * f * 10) / 10;
+        conservativePct = Math.round(conservativePct * f * 10) / 10;
+      }
+    }
+    return {
+      demAffiliationPct,
+      repAffiliationPct,
+      independentPct,
+      liberalPct,
+      moderatePct,
+      conservativePct,
+    };
+  }
+
+  /**
+   * Get unified precinct data combining targeting and political scores.
+   *
+   * This is the SINGLE SOURCE OF TRUTH for precinct data across the application.
+   * All components should use this method instead of loading local JSON files directly.
+   *
+   * @returns Record of precinct name -> UnifiedPrecinct data
+   */
+  async getUnifiedPrecinctData(): Promise<Record<string, UnifiedPrecinct>> {
+    await this.initialize();
+
+    if (!this.unifiedPrecinctDataPromise) {
+      this.unifiedPrecinctDataPromise = this.buildUnifiedPrecinctData();
+    }
+    return this.unifiedPrecinctDataPromise;
+  }
+
+  private async buildUnifiedPrecinctData(): Promise<Record<string, UnifiedPrecinct>> {
+    const targeting = cache.targetingScores?.precincts || {};
+    const political = cache.politicalScores?.precincts || {};
+
+    // Build a union of all precinct names from both sources
+    const allPrecinctNames = new Set<string>([
+      ...Object.keys(targeting),
+      ...Object.keys(political),
+    ]);
+
+    const unified: Record<string, UnifiedPrecinct> = {};
+    const isPA = getPoliticalRegionEnv().stateFips === '42';
+    const paDemoRows = isPA ? cache.demographics?.precincts || {} : {};
+
+    for (const name of allPrecinctNames) {
+      const targetingData = targeting[name];
+      const politicalData = political[name];
+
+      // Skip if no data from either source
+      if (!targetingData && !politicalData) continue;
+
+      const paRow = paDemoRows[name] as
+        | {
+          median_age?: number;
+          median_household_income?: number;
+          college_pct?: number;
+          diversity_index?: number;
+          population_density?: number;
+          owner_pct?: number;
+        }
+        | undefined;
+
+      const rawLean =
+        politicalData?.partisan_lean ??
+        targetingData?.political_scores?.partisan_lean ??
+        0;
+
+      const totalPop = targetingData?.total_population || 0;
+      const pop18 =
+        targetingData?.population_age_18up ||
+        (totalPop > 0 ? Math.round(totalPop * 0.78) : 0);
+
+      const paOutlook =
+        isPA && !(targetingData?.moderate_pct || targetingData?.liberal_pct)
+          ? this.paDerivedPoliticalOutlook(rawLean)
+          : null;
+
+      // Create unified precinct entry
+      unified[name] = {
+        // Core identifiers
+        id: targetingData?.precinct_id || name.replace(/[^a-zA-Z0-9]/g, '_'),
+        name: targetingData?.precinct_name || name,
+        jurisdiction: this.extractJurisdiction(name),
+
+        // Demographics (from targeting scores / BA data)
+        demographics: {
+          totalPopulation: totalPop,
+          population18up: pop18,
+          registeredVoters: targetingData?.registered_voters,  // From election data
+          medianAge: paRow?.median_age ?? targetingData?.median_age ?? undefined,
+          medianHHI: paRow?.median_household_income ?? targetingData?.median_household_income ?? 0,
+          collegePct: paRow?.college_pct ?? targetingData?.college_pct ?? 0,
+          homeownerPct: paRow?.owner_pct ?? targetingData?.owner_pct ?? undefined,
+          diversityIndex: paRow?.diversity_index ?? targetingData?.diversity_index ?? 0,
+          populationDensity:
+            paRow?.population_density ?? targetingData?.population_density ?? undefined,
+        },
+
+        // Political affiliation (from targeting scores / BA data)
+        political: {
+          demAffiliationPct:
+            (paOutlook?.demAffiliationPct ?? targetingData?.dem_affiliation_pct) ?? 0,
+          repAffiliationPct:
+            (paOutlook?.repAffiliationPct ?? targetingData?.rep_affiliation_pct) ?? 0,
+          independentPct:
+            (paOutlook?.independentPct ?? targetingData?.ind_affiliation_pct) ?? 0,
+          liberalPct: (paOutlook?.liberalPct ?? targetingData?.liberal_pct) ?? 0,
+          moderatePct: (paOutlook?.moderatePct ?? targetingData?.moderate_pct) ?? 0,
+          conservativePct:
+            (paOutlook?.conservativePct ?? targetingData?.conservative_pct) ?? 0,
+        },
+
+        // Electoral scores - prefer political_scores, fallback to targeting embedded scores
+        electoral: {
+          partisanLean: isPA
+            ? this.paPartisanLeanForSegment(
+              politicalData?.partisan_lean ??
+              targetingData?.political_scores?.partisan_lean ??
+              0,
+            )
+            : politicalData?.partisan_lean ??
+            targetingData?.political_scores?.partisan_lean ??
+            0,
+          swingPotential:
             politicalData?.swing_potential ??
             targetingData?.political_scores?.swing_potential ??
             0,
-          avgTurnout: politicalData?.turnout?.average ?? 0,
           avgTurnout: this.normalizeElectoralTurnoutToPct(
             politicalData?.turnout?.average ??
               targetingData?.political_scores?.turnout?.average ??
@@ -175,7 +1373,41 @@ interface TargetingScoresPrecinct {
           competitiveness: isPA
             ? this.paCompetitivenessFromRawLean(rawLean)
             : politicalData?.classification?.competitiveness ?? 'Unknown',
-@ -1406,6 +1411,10 @@ export class PoliticalDataService {
+          volatility: politicalData?.classification?.volatility ?? 'Unknown',
+        },
+
+        // Targeting scores (from targeting scores)
+        targeting: {
+          gotvPriority: targetingData?.gotv_priority ?? 0,
+          persuasionOpportunity: targetingData?.persuasion_opportunity ?? 0,
+          combinedScore: targetingData?.combined_score ?? 0,
+          strategy: targetingData?.targeting_strategy ?? 'Unknown',
+          priority: targetingData?.targeting_priority ?? 5,
+          recommendation: targetingData?.recommendation ?? '',
+          gotvClassification: targetingData?.gotv_classification ?? undefined,
+        },
+
+        // Components (for detailed analysis)
+        gotvComponents: targetingData?.gotv_components
+          ? {
+            supportStrength: targetingData.gotv_components.support_strength,
+            turnoutOpportunity: targetingData.gotv_components.turnout_opportunity,
+            voterPoolWeight: targetingData.gotv_components.voter_pool_weight,
+          }
+          : undefined,
+
+        persuasionComponents: targetingData?.persuasion_components
+          ? {
+            marginCloseness: targetingData.persuasion_components.margin_closeness,
+            swingFactor: targetingData.persuasion_components.swing_factor,
+            moderateFactor: targetingData.persuasion_components.moderate_factor,
+            independentFactor: targetingData.persuasion_components.independent_factor,
+            lowEngagement: targetingData.persuasion_components.low_engagement,
+          }
+          : undefined,
+
+        // Engagement / media (for segment News Preference and engagement filters)
+        engagement: this.buildEngagementFromTargeting(targetingData),
       };
     }
 
@@ -186,7 +1418,7 @@ interface TargetingScoresPrecinct {
     console.log(
       `[PoliticalDataService] getUnifiedPrecinctData: Merged ${Object.keys(unified).length} precincts from targeting (${Object.keys(targeting).length}) and political (${Object.keys(political).length}) sources`
     );
-@ -1413,3007 +1422,3046 @@
+
     return unified;
   }
 

@@ -293,27 +293,27 @@ export function H3HeatmapLayer({
         // Debug: Log raw data
         console.log(`[H3HeatmapLayer] Raw GeoJSON loaded: ${rawGeojson?.features?.length || 0} features`);
 
-        // Filter out features with null values for the current metric
-        // This prevents grey hexagons from appearing
-        const filteredFeatures = rawGeojson.features.filter(feature => {
-          const value = feature.properties?.[metric];
-          return value !== null && value !== undefined && !isNaN(value);
-        });
+        // Render all H3 cells (polyfill build covers precinct areas). Null metric → defaultSymbol in renderer.
+        const filteredFeatures = rawGeojson.features;
 
         const geojson: GeoJSON.FeatureCollection = {
           type: 'FeatureCollection',
           features: filteredFeatures,
         };
 
-        console.log(`[H3HeatmapLayer] Filtered ${rawGeojson.features.length} -> ${filteredFeatures.length} features for metric '${metric}'`);
+        console.log(`[H3HeatmapLayer] ${filteredFeatures.length} hex features for metric '${metric}'`);
 
         // Debug: Show metric value distribution
         if (filteredFeatures.length > 0) {
-          const values = filteredFeatures.map(f => f.properties?.[metric] as number).filter(v => v !== null);
-          const min = Math.min(...values);
-          const max = Math.max(...values);
-          const avg = values.reduce((a, b) => a + b, 0) / values.length;
-          console.log(`[H3HeatmapLayer] Metric '${metric}' stats: min=${min.toFixed(2)}, max=${max.toFixed(2)}, avg=${avg.toFixed(2)}`);
+          const values = filteredFeatures
+            .map((f) => f.properties?.[metric] as number)
+            .filter((v) => v !== null && v !== undefined && !Number.isNaN(v));
+          const min = values.length ? Math.min(...values) : NaN;
+          const max = values.length ? Math.max(...values) : NaN;
+          const avg = values.length ? values.reduce((a, b) => a + b, 0) / values.length : NaN;
+          console.log(
+            `[H3HeatmapLayer] Metric '${metric}' stats: min=${values.length ? min.toFixed(2) : 'n/a'}, max=${values.length ? max.toFixed(2) : 'n/a'}, avg=${values.length ? avg.toFixed(2) : 'n/a'}`,
+          );
           console.log(`[H3HeatmapLayer] Sample feature:`, {
             h3_index: filteredFeatures[0].properties?.h3_index,
             [metric]: filteredFeatures[0].properties?.[metric],

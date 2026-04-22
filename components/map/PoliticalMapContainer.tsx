@@ -480,25 +480,8 @@ const PoliticalMapContainer: React.FC<PoliticalMapContainerProps> = ({
       selectedPrecincts: data?.precincts || [],
     }));
 
-    // Dispatch FEATURE_SELECTED event to AI via state manager
-    const stateManager = getStateManager();
-    stateManager.selectFeature({
-      id: h3Index,
-      name: h3DisplayName,
-      featureType: 'hexagon',
-      metrics: {
-        h3Index,
-        partisan_lean: data?.partisan_lean,
-        gotv_priority: data?.gotv_priority,
-        persuasion_opportunity: data?.persuasion_opportunity,
-        combined_score: data?.combined_score,
-        total_population: data?.total_population,
-        precinct_count: data?.precinct_count,
-        value: data?.value,
-        metric: data?.metric || h3Metric,
-      },
-      raw: data,
-    });
+    // FEATURE_SELECTED is emitted from AIPoliticalSessionHost when `onPrecinctSelected` updates
+    // parent state — avoid calling selectFeature here too or the chat shows duplicate cards.
 
     // Notify parent via original callback (if any)
     // H3 cells contain multiple precincts, so we pass the first precinct name if available
@@ -528,6 +511,25 @@ const PoliticalMapContainer: React.FC<PoliticalMapContainerProps> = ({
         },
       };
       onPrecinctSelected(h3Info);
+    } else {
+      const stateManager = getStateManager();
+      stateManager.selectFeature({
+        id: h3Index,
+        name: h3DisplayName,
+        featureType: 'hexagon',
+        metrics: {
+          h3Index,
+          partisan_lean: data?.partisan_lean,
+          gotv_priority: data?.gotv_priority,
+          persuasion_opportunity: data?.persuasion_opportunity,
+          combined_score: data?.combined_score,
+          total_population: data?.total_population,
+          precinct_count: data?.precinct_count,
+          value: data?.value,
+          metric: data?.metric || h3Metric,
+        },
+        raw: data,
+      });
     }
 
     console.log('[PoliticalMapContainer] H3 cell selected for AI:', h3DisplayName, data);
@@ -2042,34 +2044,33 @@ const PoliticalMapContainer: React.FC<PoliticalMapContainerProps> = ({
       // Clear H3 selection when precinct is selected
       setSelectedH3CellForPanel(null);
 
-      // Dispatch FEATURE_SELECTED to state manager (Phase G)
-      // This enables AI-integrated feature selection in chat
-      const stateManager = getStateManager();
-      stateManager.selectFeature({
-        id: data?.id || precinctName,
-        name: precinctName,
-        featureType: 'precinct',
-        metrics: {
-          registered_voters: data?.registered_voters,
-          turnout: data?.turnout,
-          partisan_lean: data?.partisan_lean,
-          swing_potential: data?.swing_potential,
-          gotv_priority: data?.gotv_priority,
-          persuasion_opportunity: data?.persuasion_opportunity,
-          municipality: data?.municipality,
-          targeting_strategy: data?.targeting_strategy,
-        },
-        raw: data,
-      });
-
       // Notify parent via original callback
       if (onPrecinctSelect) {
         onPrecinctSelect(precinctName);
       }
 
-      // Notify AI mode parent
+      // AI session host calls selectFeature once when selectedPrecinct updates — do not call
+      // it here too or FEATURE_SELECTED fires twice and duplicate feature cards appear in chat.
       if (onPrecinctSelected) {
         onPrecinctSelected(precinctInfo);
+      } else {
+        const stateManager = getStateManager();
+        stateManager.selectFeature({
+          id: data?.precinct_id || data?.UNIQUE_ID || data?.id || precinctName,
+          name: data?.precinct_name || data?.NAME || precinctName,
+          featureType: 'precinct',
+          metrics: {
+            registered_voters: data?.registered_voters,
+            turnout: data?.turnout,
+            partisan_lean: data?.partisan_lean,
+            swing_potential: data?.swing_potential,
+            gotv_priority: data?.gotv_priority,
+            persuasion_opportunity: data?.persuasion_opportunity,
+            municipality: data?.municipality,
+            targeting_strategy: data?.targeting_strategy,
+          },
+          raw: data,
+        });
       }
 
       console.log('[PoliticalMapContainer] Precinct selected (Phase G):', precinctName, data);

@@ -1,7 +1,13 @@
-export type ColorStop = [number, number, number] | [number, number, number, number];
+/**
+ * Renderer utility types for createQuartileRenderer
+ */
+import type ClassBreaksRenderer from '@arcgis/core/renderers/ClassBreaksRenderer';
+import type FeatureLayer from '@arcgis/core/layers/FeatureLayer';
+
+export type ColorStop = [number, number, number];
 
 export interface RendererConfig {
-  layer: __esri.FeatureLayer;
+  layer: FeatureLayer;
   field: string;
   colorStops?: ColorStop[];
   isCurrency?: boolean;
@@ -10,12 +16,10 @@ export interface RendererConfig {
   customBreaks?: number[];
   filterField?: string;
   filterThreshold?: number;
-  outlineWidth?: number;
-  outlineColor?: number[];
 }
 
-export type RendererResult = {
-  renderer: __esri.ClassBreaksRenderer;
+export interface RendererResult {
+  renderer: ClassBreaksRenderer;
   breaks: number[];
   statistics: {
     min: number;
@@ -23,4 +27,4 @@ export type RendererResult = {
     mean: number;
     median: number;
   };
-} | null;
+}

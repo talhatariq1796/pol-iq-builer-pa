@@ -411,15 +411,17 @@ export async function enrichDistrictAnalysis(
 
 /**
  * Quick enrichment for filter/segment queries
+ * @param options.includeCurrentIntel - Set false for pure competitiveness-bucket filters so election-calendar intel does not steer the model toward invented "pre-primary" narratives unrelated to the segment.
  */
 export async function enrichFilterQuery(
   query: string,
-  precincts: string[]
+  precincts: string[],
+  options?: { includeCurrentIntel?: boolean }
 ): Promise<EnrichmentContext> {
   return enrich(query, {
     precincts,
     includeCandidates: false, // Less relevant for filter queries
-    includeCurrentIntel: true,
+    includeCurrentIntel: options?.includeCurrentIntel ?? true,
     includeIssues: true,
     includeMethodology: query.toLowerCase().includes('how') || query.toLowerCase().includes('why'),
     relevanceThreshold: 0.4, // Higher threshold - only very relevant content

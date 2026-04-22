@@ -1,5 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { filterPropertiesByType, type PropertyCategory } from '@/components/cma/propertyTypeConfig';
+import { type PropertyCategory } from '@/lib/analysis/PropertyTypeClassifier';
+
+function filterPropertiesByType<T extends Record<string, any>>(
+  records: T[],
+  selectedPropertyTypes: string[],
+  allowedCategory?: PropertyCategory
+): T[] {
+  return records.filter(record => {
+    if (allowedCategory === 'revenue' && !record.isRevenueProperty) return false;
+    if (allowedCategory === 'residential' && record.isRevenueProperty) return false;
+    if (!selectedPropertyTypes || selectedPropertyTypes.length === 0) return true;
+    const sourceType = (record.sourcePropertyType || '').toLowerCase();
+    const propCategory = (record.propertyCategory || record.property_category || '').toLowerCase();
+    return selectedPropertyTypes.some(t => {
+      const st = t.toLowerCase();
+      if (st === 'house') return sourceType === 'house' || propCategory === 'house';
+      if (st === 'condo') return sourceType === 'condo' || propCategory === 'condo';
+      if (st === 'revenue' || st === 'multiplex') return sourceType === 'multiplex' || record.isRevenueProperty === true;
+      return sourceType.includes(st) || propCategory.includes(st);
+    });
+  });
+}
 
 // Disable static generation for this API route
 export const dynamic = 'force-dynamic';

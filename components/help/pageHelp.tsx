@@ -561,32 +561,6 @@ export const segmentsTutorials: WorkflowTutorial[] = [
   },
 ];
 
-/**
- * Donors Page Tutorials
- */
-export const donorsTutorials: WorkflowTutorial[] = [
-  {
-    theme: 'workflow-find-donors',
-    label: 'Find Top Donor Areas',
-    description: 'Discover donor concentrations by ZIP',
-  },
-];
-
-/**
- * Canvass Page Tutorials
- */
-export const canvassTutorials: WorkflowTutorial[] = [
-  {
-    theme: 'workflow-plan-canvass',
-    label: 'Plan a Canvass',
-    description: 'Convert segments to door-knocking plans',
-  },
-  {
-    theme: 'workflow-build-gotv',
-    label: 'Build a Canvassing Universe',
-    description: 'Select precincts for field operations',
-  },
-];
 
 /**
  * Compare Page Tutorials
@@ -617,16 +591,6 @@ export const knowledgeGraphTutorials: WorkflowTutorial[] = [
  * Demonstrates workflows that span multiple tools
  */
 export const crossToolTutorials: WorkflowTutorial[] = [
-  {
-    theme: 'cross-tool-segment-to-canvass',
-    label: 'Segment → Canvass',
-    description: 'Build a voter segment, then create canvassing turfs from it',
-  },
-  {
-    theme: 'cross-tool-analyze-to-donors',
-    label: 'Analyze → Donors',
-    description: 'Explore an area, then find donor overlap and prospects',
-  },
   {
     theme: 'cross-tool-full-workflow',
     label: 'Full Campaign Workflow',
